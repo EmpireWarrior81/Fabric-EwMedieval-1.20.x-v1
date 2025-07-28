@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ewmedieval:block/cracked_deepslate_pillar_top",
+    "east": "ewmedieval:block/cracked_deepslate_pillar",
+    "north": "ewmedieval:block/cracked_deepslate_pillar",
+    "particle": "ewmedieval:block/cracked_deepslate_pillar",
+    "south": "ewmedieval:block/cracked_deepslate_pillar",
+    "up": "ewmedieval:block/cracked_deepslate_pillar_top",
+    "west": "ewmedieval:block/cracked_deepslate_pillar"
+  }
+}

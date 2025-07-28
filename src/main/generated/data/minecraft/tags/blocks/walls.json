@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "ewmedieval:slate_wall",
+    "ewmedieval:polished_slate_wall",
+    "ewmedieval:slate_bricks_wall",
+    "ewmedieval:cobbled_slate_wall",
+    "ewmedieval:old_deepslate_wall",
+    "ewmedieval:smooth_deepslate_wall",
+    "ewmedieval:mossy_smooth_deepslate_wall",
+    "ewmedieval:cracked_smooth_deepslate_wall",
+    "ewmedieval:mossy_cobbled_deepslate_wall",
+    "ewmedieval:mossy_deepslate_bricks_wall",
+    "ewmedieval:mossy_deepslate_tiles_wall",
+    "ewmedieval:cracked_polished_deepslate_wall",
+    "ewmedieval:mossy_polished_deepslate_wall",
+    "ewmedieval:deepslate_brickwork_wall"
+  ]
+}
