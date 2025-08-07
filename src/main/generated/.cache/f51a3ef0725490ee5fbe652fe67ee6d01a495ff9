@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-22T17:51:46.378257	Ew medieval/Block Loot Tables
+// 1.20.1	2025-07-28T16:06:44.6471208	Ew medieval/Block Loot Tables
 33cecaa6f281dd5e58fbcaae6799844bf4a938db data\ewmedieval\loot_tables\blocks\cobbled_slate_wall.json
 d6517aa6e7be77bda9cd958f2406f54bb7ab4568 data\ewmedieval\loot_tables\blocks\slate_bricks_stairs.json
 8b15c45ebd29dd8133c7345eeb50a1f8cbfd02b4 data\ewmedieval\loot_tables\blocks\slate_pressure_plate.json
@@ -18,8 +18,8 @@ cdd9d0ea7bb1217ae9a5fc41a8a51f4386bf6bf7 data\ewmedieval\loot_tables\blocks\poli
 f48e633b3267edd7f40113d4a0ed8d1eb3db1396 data\ewmedieval\loot_tables\blocks\mossy_cobbled_deepslate_stairs.json
 391ea450d0a7b6a5fe02694b3317f5d3b145a62c data\ewmedieval\loot_tables\blocks\smooth_deepslate_wall.json
 71f8852ccf35e0d5923d25844c2100a456235802 data\ewmedieval\loot_tables\blocks\cobbled_slate_slab.json
-5f2c91b08171054be0c7c185bae03fde5c202ae5 data\ewmedieval\loot_tables\blocks\deepslate_trapdoor.json
 2c7dd1a7999ee523fdcedebb02abe4e5c889cf79 data\ewmedieval\loot_tables\blocks\smooth_deepslate_slab.json
+5f2c91b08171054be0c7c185bae03fde5c202ae5 data\ewmedieval\loot_tables\blocks\deepslate_trapdoor.json
 ff26133e73ba34fdf4230a5d1585283359bfaa3f data\ewmedieval\loot_tables\blocks\deepslate_brickwork.json
 bf0795c79ae17044af5adcdae0399cc49a833a74 data\ewmedieval\loot_tables\blocks\deepslate_pillar.json
 21da95df64304dfa8dc1adebbef477a3390deaec data\ewmedieval\loot_tables\blocks\chiseled_smooth_deepslate.json
