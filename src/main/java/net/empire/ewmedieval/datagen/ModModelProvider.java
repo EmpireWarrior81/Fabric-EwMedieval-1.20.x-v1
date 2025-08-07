@@ -68,6 +68,17 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerTrapdoor(ModBlocks.SLATE_TRAPDOOR);
 
+        BlockStateModelGenerator.BlockTexturePool tuffbricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TUFF_BRICKS);
+        tuffbricksPool.stairs(ModBlocks.TUFF_BRICK_STAIRS);
+        tuffbricksPool.slab(ModBlocks.TUFF_BRICK_SLAB);
+        tuffbricksPool.wall(ModBlocks.TUFF_BRICK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool polishedtuffPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_TUFF);
+        polishedtuffPool.stairs(ModBlocks.POLISHED_TUFF_STAIRS);
+        polishedtuffPool.slab(ModBlocks.POLISHED_TUFF_SLAB);
+        polishedtuffPool.wall(ModBlocks.POLISHED_TUFF_WALL);
+
+
 // Old Deepslate
         BlockStateModelGenerator.BlockTexturePool oldDeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.OLD_DEEPSLATE);
         oldDeepslatePool.stairs(ModBlocks.OLD_DEEPSLATE_STAIRS);
@@ -151,7 +162,13 @@ public class ModModelProvider extends FabricModelProvider {
                         "block/chiseled_polished_deepslate_top"),
                 new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_DEEPSLATE,
                         "block/chiseled_smooth_deepslate",
-                        "block/chiseled_smooth_deepslate_top")
+                        "block/chiseled_smooth_deepslate_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_TUFF,
+                        "block/chiseled_tuff",
+                        "block/chiseled_tuff_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_TUFF_BRICKS,
+                        "block/chiseled_tuff_bricks",
+                        "block/chiseled_tuff_bricks_top")
 
         );
 

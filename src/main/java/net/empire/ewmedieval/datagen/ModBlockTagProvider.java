@@ -122,7 +122,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                .add(ModBlocks.DEEPSLATE_PRESSURE_PLATE)
                .add(ModBlocks.DEEPSLATE_BUTTON)
-               .add(ModBlocks.DEEPSLATE_TRAPDOOR);
+               .add(ModBlocks.DEEPSLATE_TRAPDOOR)
+
+               .add(ModBlocks.POLISHED_TUFF)
+               .add(ModBlocks.TUFF_BRICKS)
+               .add(ModBlocks.TUFF_BRICK_STAIRS)
+               .add(ModBlocks.CHISELED_TUFF)
+               .add(ModBlocks.TUFF_BRICK_SLAB)
+               .add(ModBlocks.CHISELED_TUFF_BRICKS)
+               .add(ModBlocks.POLISHED_TUFF_STAIRS)
+               .add(ModBlocks.POLISHED_TUFF_SLAB);
+
 
 
 
@@ -170,7 +180,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_DEEPSLATE_TILES_WALL)
                 .add(ModBlocks.CRACKED_POLISHED_DEEPSLATE_WALL)
                 .add(ModBlocks.MOSSY_POLISHED_DEEPSLATE_WALL)
-                .add(ModBlocks.DEEPSLATE_BRICKWORK_WALL);
+                .add(ModBlocks.DEEPSLATE_BRICKWORK_WALL)
+                .add(ModBlocks.POLISHED_TUFF_WALL)
+                .add(ModBlocks.TUFF_BRICK_WALL);
+
+
 
     }
 }
