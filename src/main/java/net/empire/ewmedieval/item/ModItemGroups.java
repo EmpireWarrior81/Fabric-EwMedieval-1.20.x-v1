@@ -183,6 +183,21 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.DEEPSLATE_PRESSURE_PLATE);
                         entries.add(ModBlocks.DEEPSLATE_BUTTON);
+
+                        // tuff varianten
+                        entries.add(ModBlocks.POLISHED_TUFF);
+                        entries.add(ModBlocks.POLISHED_TUFF_SLAB);
+                        entries.add(ModBlocks.POLISHED_TUFF_STAIRS);
+                        entries.add(ModBlocks.POLISHED_TUFF_WALL);
+
+                        entries.add(ModBlocks.CHISELED_TUFF);
+
+                        entries.add(ModBlocks.TUFF_BRICKS);
+                        entries.add(ModBlocks.TUFF_BRICK_SLAB);
+                        entries.add(ModBlocks.TUFF_BRICK_STAIRS);
+                        entries.add(ModBlocks.TUFF_BRICK_WALL);
+                        entries.add(ModBlocks.CHISELED_TUFF_BRICKS);
+
                     }).build());
 
     public static void registerItemGroups() {

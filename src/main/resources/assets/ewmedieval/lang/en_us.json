@@ -135,7 +135,19 @@
   "block.ewmedieval.deepslate_pressure_plate": "Deepslate Pressure Plate",
   "block.ewmedieval.deepslate_button": "Deepslate Button",
 
-
+  "block.ewmedieval.tuff_slab": "Tuff Slab",
+  "block.ewmedieval.polished_tuff_wall": "Polished Tuff Wall",
+  "block.ewmedieval.tuff_brick_stairs": "Tuff Brick Stairs",
+  "block.ewmedieval.chiseled_tuff": "Chiseled Tuff",
+  "block.ewmedieval.tuff_brick_slab": "Tuff Brick Slab",
+  "block.ewmedieval.polished_tuff": "Polished Tuff",
+  "block.ewmedieval.chiseled_tuff_bricks": "Chiseled Tuff Bricks",
+  "block.ewmedieval.tuff_stairs": "Tuff Stairs",
+  "block.ewmedieval.polished_tuff_stairs": "Polished Tuff Stairs",
+  "block.ewmedieval.tuff_wall": "Tuff Wall",
+  "block.ewmedieval.tuff_bricks": "Tuff Bricks",
+  "block.ewmedieval.tuff_brick_wall": "Tuff Brick Wall",
+  "block.ewmedieval.polished_tuff_slab": "Polished Tuff Slab",
 
   "block.ewmedieval.tin_ore": "Tin Ore",
   "block.ewmedieval.deepslate_tin_ore": "Deepslate Tin Ore",

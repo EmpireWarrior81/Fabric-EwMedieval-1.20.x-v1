@@ -1,6 +1,8 @@
 package net.empire.ewmedieval.block;
 
 import net.empire.ewmedieval.EwMedieval;
+import net.empire.ewmedieval.sound.ModBlockSoundGroups;
+import net.empire.ewmedieval.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -8,6 +10,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
@@ -139,42 +143,29 @@ public class ModBlocks {
     public static final Block DEEPSLATE_TRAPDOOR = registerBlock("deepslate_trapdoor",
             new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE), BlockSetType.STONE));
 
-
     public static final Block POLISHED_TUFF = registerBlock("polished_tuff",
-            new Block(FabricBlockSettings.copyOf(ModBlocks.POLISHED_TUFF)));
-
+            new Block(FabricBlockSettings.copyOf(Blocks.TUFF).sounds(ModBlockSoundGroups.POLISHED_TUFF).strength(1.5f, 6f)));
     public static final Block TUFF_BRICKS = registerBlock("tuff_bricks",
-            new Block(FabricBlockSettings.copyOf(Blocks.TUFF)));
+            new Block(FabricBlockSettings.copyOf(Blocks.TUFF).sounds(ModBlockSoundGroups.TUFF_BRICKS).strength(1.5f,6f)));
 
     public static final Block POLISHED_TUFF_WALL = registerBlock("polished_tuff_wall",
             new WallBlock(FabricBlockSettings.copyOf(ModBlocks.POLISHED_TUFF)));
-
     public static final Block TUFF_BRICK_STAIRS = registerBlock("tuff_brick_stairs",
             new StairsBlock(ModBlocks.TUFF_BRICKS.getDefaultState(),
                     FabricBlockSettings.copyOf(ModBlocks.TUFF_BRICKS)));
-
     public static final Block CHISELED_TUFF = registerBlock("chiseled_tuff",
             new Block(FabricBlockSettings.copyOf(Blocks.TUFF)));
-
     public static final Block TUFF_BRICK_SLAB = registerBlock("tuff_brick_slab",
             new SlabBlock(FabricBlockSettings.copyOf(ModBlocks.TUFF_BRICKS)));
-
     public static final Block CHISELED_TUFF_BRICKS = registerBlock("chiseled_tuff_bricks",
             new Block(FabricBlockSettings.copyOf(ModBlocks.TUFF_BRICKS)));
-
-
     public static final Block POLISHED_TUFF_STAIRS = registerBlock("polished_tuff_stairs",
             new StairsBlock(ModBlocks.POLISHED_TUFF.getDefaultState(),
                     FabricBlockSettings.copyOf(ModBlocks.POLISHED_TUFF)));
-
-
     public static final Block TUFF_BRICK_WALL = registerBlock("tuff_brick_wall",
             new WallBlock(FabricBlockSettings.copyOf(ModBlocks.TUFF_BRICKS)));
-
     public static final Block POLISHED_TUFF_SLAB = registerBlock("polished_tuff_slab",
             new SlabBlock(FabricBlockSettings.copyOf(ModBlocks.POLISHED_TUFF)));
-
-
 
 
     public static final Block TIN_BLOCK = registerBlock("tin_block",

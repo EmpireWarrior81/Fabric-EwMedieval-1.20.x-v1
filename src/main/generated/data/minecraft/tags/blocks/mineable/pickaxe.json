@@ -90,6 +90,14 @@
     "ewmedieval:deepslate_brickwork_wall",
     "ewmedieval:deepslate_pressure_plate",
     "ewmedieval:deepslate_button",
-    "ewmedieval:deepslate_trapdoor"
+    "ewmedieval:deepslate_trapdoor",
+    "ewmedieval:polished_tuff",
+    "ewmedieval:tuff_bricks",
+    "ewmedieval:tuff_brick_stairs",
+    "ewmedieval:chiseled_tuff",
+    "ewmedieval:tuff_brick_slab",
+    "ewmedieval:chiseled_tuff_bricks",
+    "ewmedieval:polished_tuff_stairs",
+    "ewmedieval:polished_tuff_slab"
   ]
 }
