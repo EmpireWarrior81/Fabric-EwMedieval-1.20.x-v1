@@ -1,7 +1,7 @@
-// 1.20.1	2025-08-08T11:37:10.190243	Ew medieval/Tags for minecraft:block
-2661c418a62526e53d79ae9f3a8d2484710b29db data\minecraft\tags\blocks\walls.json
+// 1.20.1	2025-08-11T15:05:42.501373	Ew medieval/Tags for minecraft:block
+3dad5302fbffb116cb715c074433985d0a6a193c data\minecraft\tags\blocks\walls.json
 68e577cdf4787e8a063f98dc30e4f48fc5b1c72d data\minecraft\tags\blocks\needs_iron_tool.json
 0036729ee0e7e930d2ad1219cfa6cc24eb33b95b data\minecraft\tags\blocks\needs_diamond_tool.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
-9e146854a255dfa6a118dd6481ea6c90c3be86a4 data\minecraft\tags\blocks\mineable\pickaxe.json
 f28995870ccffeef30de73b1629e33e6eedf7b51 data\minecraft\tags\blocks\needs_stone_tool.json
+10da6cd51cbce25dc3aff4ea3c50e73f7eadee9f data\minecraft\tags\blocks\mineable\pickaxe.json

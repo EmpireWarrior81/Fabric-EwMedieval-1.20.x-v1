@@ -19,6 +19,7 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
@@ -40,6 +41,67 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MITHRIL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_MITHRIL_BLOCK);
 
+        // Polished Stone
+        BlockStateModelGenerator.BlockTexturePool polishedStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_STONE);
+        polishedStonePool.slab(ModBlocks.POLISHED_STONE_SLAB);
+        polishedStonePool.stairs(ModBlocks.POLISHED_STONE_STAIRS);
+        polishedStonePool.wall(ModBlocks.POLISHED_STONE_WALL);
+
+// Mossy Polished Stone
+        BlockStateModelGenerator.BlockTexturePool mossyPolishedStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_POLISHED_STONE);
+        mossyPolishedStonePool.slab(ModBlocks.MOSSY_POLISHED_STONE_SLAB);
+        mossyPolishedStonePool.stairs(ModBlocks.MOSSY_POLISHED_STONE_STAIRS);
+        mossyPolishedStonePool.wall(ModBlocks.MOSSY_POLISHED_STONE_WALL);
+
+// Cracked Polished Stone
+        BlockStateModelGenerator.BlockTexturePool crackedPolishedStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_POLISHED_STONE);
+        crackedPolishedStonePool.slab(ModBlocks.CRACKED_POLISHED_STONE_SLAB);
+        crackedPolishedStonePool.stairs(ModBlocks.CRACKED_POLISHED_STONE_STAIRS);
+        crackedPolishedStonePool.wall(ModBlocks.CRACKED_POLISHED_STONE_WALL);
+
+// Stone Tiles
+        BlockStateModelGenerator.BlockTexturePool stoneTilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.STONE_TILES);
+        stoneTilesPool.slab(ModBlocks.STONE_TILES_SLAB);
+        stoneTilesPool.stairs(ModBlocks.STONE_TILES_STAIRS);
+        stoneTilesPool.wall(ModBlocks.STONE_TILES_WALL);
+
+// Mossy Stone Tiles
+        BlockStateModelGenerator.BlockTexturePool mossyStoneTilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_STONE_TILES);
+        mossyStoneTilesPool.slab(ModBlocks.MOSSY_STONE_TILES_SLAB);
+        mossyStoneTilesPool.stairs(ModBlocks.MOSSY_STONE_TILES_STAIRS);
+        mossyStoneTilesPool.wall(ModBlocks.MOSSY_STONE_TILES_WALL);
+
+// Cracked Stone Tiles
+        BlockStateModelGenerator.BlockTexturePool crackedStoneTilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_STONE_TILES);
+        crackedStoneTilesPool.slab(ModBlocks.CRACKED_STONE_TILES_SLAB);
+        crackedStoneTilesPool.stairs(ModBlocks.CRACKED_STONE_TILES_STAIRS);
+        crackedStoneTilesPool.wall(ModBlocks.CRACKED_STONE_TILES_WALL);
+
+// Mossy Smooth Stone
+        BlockStateModelGenerator.BlockTexturePool mossySmoothStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_SMOOTH_STONE);
+        mossySmoothStonePool.slab(ModBlocks.MOSSY_SMOOTH_STONE_SLAB);
+        mossySmoothStonePool.stairs(ModBlocks.MOSSY_SMOOTH_STONE_STAIRS);
+        mossySmoothStonePool.wall(ModBlocks.MOSSY_SMOOTH_STONE_WALL);
+
+// Cracked Smooth Stone
+        BlockStateModelGenerator.BlockTexturePool crackedSmoothStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CRACKED_SMOOTH_STONE);
+        crackedSmoothStonePool.slab(ModBlocks.CRACKED_SMOOTH_STONE_SLAB);
+        crackedSmoothStonePool.stairs(ModBlocks.CRACKED_SMOOTH_STONE_STAIRS);
+        crackedSmoothStonePool.wall(ModBlocks.CRACKED_SMOOTH_STONE_WALL);
+
+// Old Stone
+        BlockStateModelGenerator.BlockTexturePool oldStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.OLD_STONE);
+        oldStonePool.slab(ModBlocks.OLD_STONE_SLAB);
+        oldStonePool.stairs(ModBlocks.OLD_STONE_STAIRS);
+        oldStonePool.wall(ModBlocks.OLD_STONE_WALL);
+
+// Stone Brickwork
+        BlockStateModelGenerator.BlockTexturePool stoneBrickworkPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.STONE_BRICKWORK);
+        stoneBrickworkPool.slab(ModBlocks.STONE_BRICKWORK_SLAB);
+        stoneBrickworkPool.stairs(ModBlocks.STONE_BRICKWORK_STAIRS);
+        stoneBrickworkPool.wall(ModBlocks.STONE_BRICKWORK_WALL);
+
+// Slate
         BlockStateModelGenerator.BlockTexturePool slatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SLATE);
         BlockStateModelGenerator.BlockTexturePool cobbledslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.COBBLED_SLATE);
         BlockStateModelGenerator.BlockTexturePool polishedslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_SLATE);
@@ -78,6 +140,13 @@ public class ModModelProvider extends FabricModelProvider {
         polishedtuffPool.slab(ModBlocks.POLISHED_TUFF_SLAB);
         polishedtuffPool.wall(ModBlocks.POLISHED_TUFF_WALL);
 
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.TUFF_TRAPDOOR);
+
+        BlockStateModelGenerator.BlockTexturePool tuffPool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TUFF);
+        tuffPool.slab(ModBlocks.TUFF_SLAB);
+        tuffPool.stairs(ModBlocks.TUFF_STAIRS);
+        tuffPool.wall(ModBlocks.TUFF_WALL);
 
 // Old Deepslate
         BlockStateModelGenerator.BlockTexturePool oldDeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.OLD_DEEPSLATE);
@@ -140,11 +209,27 @@ public class ModModelProvider extends FabricModelProvider {
         deepslateBrickworkPool.slab(ModBlocks.DEEPSLATE_BRICKWORK_SLAB);
         deepslateBrickworkPool.wall(ModBlocks.DEEPSLATE_BRICKWORK_WALL);
 
-// Pressure Plate en Button (los toevoegen)
-//        blockStateModelGenerator.pressurePlate(ModBlocks.DEEPSLATE_PRESSURE_PLATE, ModBlocks.DEEPSLATE_PRESSURE_PLATE);
-//        blockStateModelGenerator.button(ModBlocks.DEEPSLATE_BUTTON, ModBlocks.DEEPSLATE_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool deepslatePool =
+                blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DEEPSLATE);
+        deepslatePool.button(ModBlocks.DEEPSLATE_BUTTON);
+        deepslatePool.pressurePlate(ModBlocks.DEEPSLATE_PRESSURE_PLATE);
 
         blockStateModelGenerator.registerTrapdoor(ModBlocks.DEEPSLATE_TRAPDOOR);
+
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUFF_CARVED_WINDOW);
+
+
+// TextureMap paneTextures = TextureMap.texture(new Identifier("ewmedieval", "block/tuff_carved_window_pane"));
+    //    BlockStateModelGenerator.TintType tint = BlockStateModelGenerator.TintType.NOT_TINTED;
+
+   //     blockStateModelGenerator.registerGlassPane(
+   //             ModBlocks.TUFF_CARVED_WINDOW_PANE,
+ //               paneTextures,
+ //               paneTextures
+//        );
+
+
 
 // Maak een helper-klasse om de gegevens op te slaan
         record CustomBlockTextures(Block block, String side, String top) { }
@@ -168,7 +253,19 @@ public class ModModelProvider extends FabricModelProvider {
                         "block/chiseled_tuff_top"),
                 new CustomBlockTextures(ModBlocks.CHISELED_TUFF_BRICKS,
                         "block/chiseled_tuff_bricks",
-                        "block/chiseled_tuff_bricks_top")
+                        "block/chiseled_tuff_bricks_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_STONE,
+                        "block/chiseled_smooth_stone",
+                        "block/chiseled_smooth_stone_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_STONE,
+                        "block/chiseled_stone",
+                        "block/chiseled_stone_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_STONE,
+                        "block/chiseled_polished_stone",
+                        "block/chiseled_polished_stone_top"),
+                new CustomBlockTextures(ModBlocks.CHISELED_STONE_TILES,
+                        "block/chiseled_stone_tiles",
+                        "block/chiseled_stone_tiles_top")
 
         );
 
@@ -187,7 +284,10 @@ public class ModModelProvider extends FabricModelProvider {
         List<CustomBlockTextures> pillarBlocks = List.of(
                 new CustomBlockTextures(ModBlocks.DEEPSLATE_PILLAR, "block/deepslate_pillar", "block/deepslate_pillar_top"),
                 new CustomBlockTextures(ModBlocks.MOSSY_DEEPSLATE_PILLAR, "block/mossy_deepslate_pillar", "block/mossy_deepslate_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_DEEPSLATE_PILLAR, "block/cracked_deepslate_pillar", "block/cracked_deepslate_pillar_top")
+                new CustomBlockTextures(ModBlocks.CRACKED_DEEPSLATE_PILLAR, "block/cracked_deepslate_pillar", "block/cracked_deepslate_pillar_top"),
+                new CustomBlockTextures(ModBlocks.STONE_PILLAR, "block/stone_pillar" , "block/stone_pillar_top"),
+                new CustomBlockTextures(ModBlocks.MOSSY_STONE_PILLAR, "block/mossy_stone_pillar" , "block/mossy_stone_pillar_top"),
+                new CustomBlockTextures(ModBlocks.CRACKED_STONE_PILLAR, "block/cracked_stone_pillar" , "block/cracked_stone_pillar_top")
         );
 
         for (CustomBlockTextures data : pillarBlocks) {

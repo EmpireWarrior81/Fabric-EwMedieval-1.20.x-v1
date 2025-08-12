@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "ewmedieval:block/tuff_carved_window_pane_top",
+    "pane": "ewmedieval:block/tuff_carved_window"
+  }
+}

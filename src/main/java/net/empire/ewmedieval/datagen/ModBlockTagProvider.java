@@ -131,7 +131,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                .add(ModBlocks.TUFF_BRICK_SLAB)
                .add(ModBlocks.CHISELED_TUFF_BRICKS)
                .add(ModBlocks.POLISHED_TUFF_STAIRS)
-               .add(ModBlocks.POLISHED_TUFF_SLAB);
+               .add(ModBlocks.POLISHED_TUFF_SLAB)
+               .add(ModBlocks.TUFF_SLAB)
+               .add(ModBlocks.TUFF_STAIRS)
+               .add(ModBlocks.TUFF_TRAPDOOR)
+               .add(ModBlocks.TUFF_CARVED_WINDOW_PANE)
+               .add(ModBlocks.TUFF_CARVED_WINDOW);
 
 
 
@@ -167,6 +172,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.STONE_BRICKWORK_WALL)
+                .add(ModBlocks.STONE_TILES_WALL)
+                .add(ModBlocks.CRACKED_SMOOTH_STONE_WALL)
+                .add(ModBlocks.MOSSY_SMOOTH_STONE_WALL)
+                .add(ModBlocks.POLISHED_STONE_WALL)
+                .add(ModBlocks.MOSSY_POLISHED_STONE_WALL)
+                .add(ModBlocks.CRACKED_POLISHED_STONE_WALL)
+                .add(ModBlocks.MOSSY_STONE_TILES_WALL)
+                .add(ModBlocks.CRACKED_STONE_TILES_WALL)
+                .add(ModBlocks.OLD_STONE_WALL)
                 .add(ModBlocks.SLATE_WALL)
                 .add(ModBlocks.POLISHED_SLATE_WALL)
                 .add(ModBlocks.SLATE_BRICKS_WALL)
@@ -182,6 +197,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_POLISHED_DEEPSLATE_WALL)
                 .add(ModBlocks.DEEPSLATE_BRICKWORK_WALL)
                 .add(ModBlocks.POLISHED_TUFF_WALL)
+                .add(ModBlocks.TUFF_WALL)
                 .add(ModBlocks.TUFF_BRICK_WALL);
 
 

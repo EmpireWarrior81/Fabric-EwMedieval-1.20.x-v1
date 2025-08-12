@@ -16,6 +16,129 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
+
+    // Stone Pillars
+    public static final Block STONE_PILLAR = registerBlock("stone_pillar",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MOSSY_STONE_PILLAR = registerBlock("mossy_stone_pillar",
+            new PillarBlock(FabricBlockSettings.copyOf(STONE_PILLAR)));
+    public static final Block CRACKED_STONE_PILLAR = registerBlock("cracked_stone_pillar",
+            new PillarBlock(FabricBlockSettings.copyOf(STONE_PILLAR)));
+
+    // Chiseled & Smooth Stone
+    public static final Block CHISELED_SMOOTH_STONE = registerBlock("chiseled_smooth_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+
+    // Polished Stone set
+    public static final Block POLISHED_STONE = registerBlock("polished_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE)));
+    public static final Block POLISHED_STONE_SLAB = registerBlock("polished_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(POLISHED_STONE)));
+    public static final Block POLISHED_STONE_STAIRS = registerBlock("polished_stone_stairs",
+            new StairsBlock(POLISHED_STONE.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_STONE)));
+    public static final Block POLISHED_STONE_WALL = registerBlock("polished_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(POLISHED_STONE)));
+
+    // Mossy Polished Stone set
+    public static final Block MOSSY_POLISHED_STONE = registerBlock("mossy_polished_stone",
+            new Block(FabricBlockSettings.copyOf(POLISHED_STONE)));
+    public static final Block MOSSY_POLISHED_STONE_SLAB = registerBlock("mossy_polished_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(MOSSY_POLISHED_STONE)));
+    public static final Block MOSSY_POLISHED_STONE_STAIRS = registerBlock("mossy_polished_stone_stairs",
+            new StairsBlock(MOSSY_POLISHED_STONE.getDefaultState(), FabricBlockSettings.copyOf(MOSSY_POLISHED_STONE)));
+    public static final Block MOSSY_POLISHED_STONE_WALL = registerBlock("mossy_polished_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(MOSSY_POLISHED_STONE)));
+
+    // Cracked Polished Stone set
+    public static final Block CRACKED_POLISHED_STONE = registerBlock("cracked_polished_stone",
+            new Block(FabricBlockSettings.copyOf(POLISHED_STONE)));
+    public static final Block CRACKED_POLISHED_STONE_SLAB = registerBlock("cracked_polished_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(CRACKED_POLISHED_STONE)));
+    public static final Block CRACKED_POLISHED_STONE_STAIRS = registerBlock("cracked_polished_stone_stairs",
+            new StairsBlock(CRACKED_POLISHED_STONE.getDefaultState(), FabricBlockSettings.copyOf(CRACKED_POLISHED_STONE)));
+    public static final Block CRACKED_POLISHED_STONE_WALL = registerBlock("cracked_polished_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(CRACKED_POLISHED_STONE)));
+
+    // Stone Tiles set
+    public static final Block STONE_TILES = registerBlock("stone_tiles",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block STONE_TILES_SLAB = registerBlock("stone_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(STONE_TILES)));
+    public static final Block STONE_TILES_STAIRS = registerBlock("stone_tiles_stairs",
+            new StairsBlock(STONE_TILES.getDefaultState(), FabricBlockSettings.copyOf(STONE_TILES)));
+    public static final Block STONE_TILES_WALL = registerBlock("stone_tiles_wall",
+            new WallBlock(FabricBlockSettings.copyOf(STONE_TILES)));
+
+    // Mossy Stone Tiles set
+    public static final Block MOSSY_STONE_TILES = registerBlock("mossy_stone_tiles",
+            new Block(FabricBlockSettings.copyOf(STONE_TILES)));
+    public static final Block MOSSY_STONE_TILES_SLAB = registerBlock("mossy_stone_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(MOSSY_STONE_TILES)));
+    public static final Block MOSSY_STONE_TILES_STAIRS = registerBlock("mossy_stone_tiles_stairs",
+            new StairsBlock(MOSSY_STONE_TILES.getDefaultState(), FabricBlockSettings.copyOf(MOSSY_STONE_TILES)));
+    public static final Block MOSSY_STONE_TILES_WALL = registerBlock("mossy_stone_tiles_wall",
+            new WallBlock(FabricBlockSettings.copyOf(MOSSY_STONE_TILES)));
+
+    // Cracked Stone Tiles set
+    public static final Block CRACKED_STONE_TILES = registerBlock("cracked_stone_tiles",
+            new Block(FabricBlockSettings.copyOf(STONE_TILES)));
+    public static final Block CRACKED_STONE_TILES_SLAB = registerBlock("cracked_stone_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(CRACKED_STONE_TILES)));
+    public static final Block CRACKED_STONE_TILES_STAIRS = registerBlock("cracked_stone_tiles_stairs",
+            new StairsBlock(CRACKED_STONE_TILES.getDefaultState(), FabricBlockSettings.copyOf(CRACKED_STONE_TILES)));
+    public static final Block CRACKED_STONE_TILES_WALL = registerBlock("cracked_stone_tiles_wall",
+            new WallBlock(FabricBlockSettings.copyOf(CRACKED_STONE_TILES)));
+
+    // Mossy Smooth Stone set
+    public static final Block MOSSY_SMOOTH_STONE = registerBlock("mossy_smooth_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block MOSSY_SMOOTH_STONE_SLAB = registerBlock("mossy_smooth_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(MOSSY_SMOOTH_STONE)));
+    public static final Block MOSSY_SMOOTH_STONE_STAIRS = registerBlock("mossy_smooth_stone_stairs",
+            new StairsBlock(MOSSY_SMOOTH_STONE.getDefaultState(), FabricBlockSettings.copyOf(MOSSY_SMOOTH_STONE)));
+    public static final Block MOSSY_SMOOTH_STONE_WALL = registerBlock("mossy_smooth_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(MOSSY_SMOOTH_STONE)));
+
+    // Cracked Smooth Stone set
+    public static final Block CRACKED_SMOOTH_STONE = registerBlock("cracked_smooth_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block CRACKED_SMOOTH_STONE_SLAB = registerBlock("cracked_smooth_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(CRACKED_SMOOTH_STONE)));
+    public static final Block CRACKED_SMOOTH_STONE_STAIRS = registerBlock("cracked_smooth_stone_stairs",
+            new StairsBlock(CRACKED_SMOOTH_STONE.getDefaultState(), FabricBlockSettings.copyOf(CRACKED_SMOOTH_STONE)));
+    public static final Block CRACKED_SMOOTH_STONE_WALL = registerBlock("cracked_smooth_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(CRACKED_SMOOTH_STONE)));
+
+    // Old Stone set
+    public static final Block OLD_STONE = registerBlock("old_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block OLD_STONE_SLAB = registerBlock("old_stone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(OLD_STONE)));
+    public static final Block OLD_STONE_STAIRS = registerBlock("old_stone_stairs",
+            new StairsBlock(OLD_STONE.getDefaultState(), FabricBlockSettings.copyOf(OLD_STONE)));
+    public static final Block OLD_STONE_WALL = registerBlock("old_stone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(OLD_STONE)));
+
+    // Stone Brickwork set
+    public static final Block STONE_BRICKWORK = registerBlock("stone_brickwork",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block STONE_BRICKWORK_SLAB = registerBlock("stone_brickwork_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(STONE_BRICKWORK)));
+    public static final Block STONE_BRICKWORK_STAIRS = registerBlock("stone_brickwork_stairs",
+            new StairsBlock(STONE_BRICKWORK.getDefaultState(), FabricBlockSettings.copyOf(STONE_BRICKWORK)));
+    public static final Block STONE_BRICKWORK_WALL = registerBlock("stone_brickwork_wall",
+            new WallBlock(FabricBlockSettings.copyOf(STONE_BRICKWORK)));
+
+    // Chiseled Stone variants
+    public static final Block CHISELED_STONE = registerBlock("chiseled_stone",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block CHISELED_POLISHED_STONE = registerBlock("chiseled_polished_stone",
+            new Block(FabricBlockSettings.copyOf(POLISHED_STONE)));
+    public static final Block CHISELED_STONE_TILES = registerBlock("chiseled_stone_tiles",
+            new Block(FabricBlockSettings.copyOf(STONE_TILES)));
+
+
+
     public static final Block SLATE = registerBlock("slate",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block COBBLED_SLATE = registerBlock("cobbled_slate",
@@ -166,6 +289,21 @@ public class ModBlocks {
             new WallBlock(FabricBlockSettings.copyOf(ModBlocks.TUFF_BRICKS)));
     public static final Block POLISHED_TUFF_SLAB = registerBlock("polished_tuff_slab",
             new SlabBlock(FabricBlockSettings.copyOf(ModBlocks.POLISHED_TUFF)));
+
+    public static final Block TUFF_TRAPDOOR = registerBlock("tuff_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.TUFF), BlockSetType.STONE));
+
+    public static final Block TUFF_SLAB = registerBlock("tuff_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.TUFF)));
+    public static final Block TUFF_STAIRS = registerBlock("tuff_stairs",
+            new StairsBlock(Blocks.TUFF.getDefaultState(), FabricBlockSettings.copyOf(Blocks.TUFF)));
+    public static final Block TUFF_WALL = registerBlock("tuff_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.TUFF)));
+
+    public static final Block TUFF_CARVED_WINDOW = registerBlock("tuff_carved_window",
+            new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
+    public static final Block TUFF_CARVED_WINDOW_PANE = registerBlock("tuff_carved_window_pane",
+            new PaneBlock(FabricBlockSettings.copyOf(Blocks.GLASS_PANE)));
 
 
     public static final Block TIN_BLOCK = registerBlock("tin_block",

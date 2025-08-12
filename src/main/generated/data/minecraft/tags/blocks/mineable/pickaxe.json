@@ -98,6 +98,11 @@
     "ewmedieval:tuff_brick_slab",
     "ewmedieval:chiseled_tuff_bricks",
     "ewmedieval:polished_tuff_stairs",
-    "ewmedieval:polished_tuff_slab"
+    "ewmedieval:polished_tuff_slab",
+    "ewmedieval:tuff_slab",
+    "ewmedieval:tuff_stairs",
+    "ewmedieval:tuff_trapdoor",
+    "ewmedieval:tuff_carved_window_pane",
+    "ewmedieval:tuff_carved_window"
   ]
 }
