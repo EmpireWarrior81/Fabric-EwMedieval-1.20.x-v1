@@ -1,12 +1,7 @@
 {
-  "parent": "minecraft:block/cube",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "down": "ewmedieval:block/stone_pillar_top",
-    "east": "ewmedieval:block/stone_pillar",
-    "north": "ewmedieval:block/stone_pillar",
-    "particle": "ewmedieval:block/stone_pillar",
-    "south": "ewmedieval:block/stone_pillar",
-    "up": "ewmedieval:block/stone_pillar_top",
-    "west": "ewmedieval:block/stone_pillar"
+    "end": "ewmedieval:block/stone_pillar_top",
+    "side": "ewmedieval:block/stone_pillar"
   }
 }

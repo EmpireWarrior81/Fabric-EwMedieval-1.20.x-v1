@@ -261,6 +261,234 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CHISELED_POLISHED_STONE);
                         entries.add(ModBlocks.CHISELED_STONE_TILES);
 
+                        entries.add(ModBlocks.BLUE_TUFF);
+                        entries.add(ModBlocks.BLUE_TUFF_BRICKS);
+                        entries.add(ModBlocks.BLUE_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.BLUE_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.BLUE_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.BLUE_TUFF_BUTTON);
+                        entries.add(ModBlocks.BLUE_TUFF_PILLAR);
+                        entries.add(ModBlocks.BLUE_TUFF_PRESSURE_PLATE);
+                        entries.add(ModBlocks.BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.BLUE_TUFF_TILES);
+                        entries.add(ModBlocks.BLUE_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.BLUE_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.BLUE_TUFF_TILES_WALL);
+                        entries.add(ModBlocks.BLUE_TUFF_TRAPDOOR);
+                        entries.add(ModBlocks.BLUE_TUFF_WALL);
+
+                        entries.add(ModBlocks.CHISELED_BLUE_TUFF_BRICKS);
+
+                        entries.add(ModBlocks.CHISELED_GREEN_TUFF);
+                        entries.add(ModBlocks.CHISELED_GREEN_TUFF_BRICKS);
+                        entries.add(ModBlocks.CHISELED_GREEN_TUFF_TILES);
+
+                        entries.add(ModBlocks.CHISELED_POLISHED_BLUE_TUFF);
+                        entries.add(ModBlocks.CHISELED_POLISHED_GREEN_TUFF);
+                        entries.add(ModBlocks.CHISELED_POLISHED_TUFF);
+
+                        entries.add(ModBlocks.CHISELED_SMOOTH_GREEN_TUFF);
+                        entries.add(ModBlocks.CHISELED_SMOOTH_TUFF);
+
+                        entries.add(ModBlocks.CHISELED_TUFF_TILES);
+
+                        entries.add(ModBlocks.COBBLED_BLUE_TUFF);
+                        entries.add(ModBlocks.COBBLED_BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.COBBLED_BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.COBBLED_BLUE_TUFF_WALL);
+
+                        entries.add(ModBlocks.COBBLED_GREEN_TUFF);
+                        entries.add(ModBlocks.COBBLED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.COBBLED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.COBBLED_GREEN_TUFF_WALL);
+
+                        entries.add(ModBlocks.COBBLED_TUFF);
+                        entries.add(ModBlocks.COBBLED_TUFF_SLAB);
+                        entries.add(ModBlocks.COBBLED_TUFF_STAIRS);
+                        entries.add(ModBlocks.COBBLED_TUFF_WALL);
+
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_BRICKS);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_PILLAR);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_TILES);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.CRACKED_BLUE_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_BRICKS);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_PILLAR);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_TILES);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.CRACKED_GREEN_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.CRACKED_POLISHED_BLUE_TUFF);
+                        entries.add(ModBlocks.CRACKED_POLISHED_BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.CRACKED_POLISHED_BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.CRACKED_POLISHED_BLUE_TUFF_WALL);
+                        entries.add(ModBlocks.CRACKED_POLISHED_GREEN_TUFF);
+                        entries.add(ModBlocks.CRACKED_POLISHED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.CRACKED_POLISHED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.CRACKED_POLISHED_GREEN_TUFF_WALL);
+                        entries.add(ModBlocks.CRACKED_POLISHED_TUFF);
+                        entries.add(ModBlocks.CRACKED_POLISHED_TUFF_SLAB);
+                        entries.add(ModBlocks.CRACKED_POLISHED_TUFF_STAIRS);
+                        entries.add(ModBlocks.CRACKED_POLISHED_TUFF_WALL);
+
+                        entries.add(ModBlocks.CRACKED_SMOOTH_GREEN_TUFF);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_GREEN_TUFF_WALL);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_TUFF);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_TUFF_SLAB);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_TUFF_STAIRS);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_TUFF_WALL);
+
+                        entries.add(ModBlocks.CRACKED_TUFF_BRICKS);
+                        entries.add(ModBlocks.CRACKED_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.CRACKED_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.CRACKED_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.CRACKED_TUFF_PILLAR);
+                        entries.add(ModBlocks.CRACKED_TUFF_TILES);
+                        entries.add(ModBlocks.CRACKED_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.CRACKED_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.CRACKED_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.GILDED_CHISELED_GREEN_TUFF);
+                        entries.add(ModBlocks.GILDED_CHISELED_GREEN_TUFF_BRICKS);
+                        entries.add(ModBlocks.GILDED_CHISELED_GREEN_TUFF_TILES);
+                        entries.add(ModBlocks.GILDED_CHISELED_POLISHED_GREEN_TUFF);
+                        entries.add(ModBlocks.GILDED_CHISELED_SMOOTH_GREEN_TUFF);
+
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_BUTTON);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_PRESSURE_PLATE);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_TRAPDOOR);
+                        entries.add(ModBlocks.GILDED_GREEN_TUFF_WALL);
+
+                        entries.add(ModBlocks.GREEN_TUFF);
+                        entries.add(ModBlocks.GREEN_TUFF_BRICKS);
+                        entries.add(ModBlocks.GREEN_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.GREEN_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.GREEN_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.GREEN_TUFF_BUTTON);
+                        entries.add(ModBlocks.GREEN_TUFF_PILLAR);
+                        entries.add(ModBlocks.GREEN_TUFF_PRESSURE_PLATE);
+                        entries.add(ModBlocks.GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.GREEN_TUFF_TILES);
+                        entries.add(ModBlocks.GREEN_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.GREEN_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.GREEN_TUFF_TILES_WALL);
+                        entries.add(ModBlocks.GREEN_TUFF_TRAPDOOR);
+                        entries.add(ModBlocks.GREEN_TUFF_WALL);
+
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_BRICKS);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_PILLAR);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_TILES);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.MOSSY_BLUE_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF);
+                        entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_WALL);
+                        entries.add(ModBlocks.MOSSY_COBBLED_GREEN_TUFF);
+                        entries.add(ModBlocks.MOSSY_COBBLED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_COBBLED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_COBBLED_GREEN_TUFF_WALL);
+                        entries.add(ModBlocks.MOSSY_COBBLED_TUFF);
+                        entries.add(ModBlocks.MOSSY_COBBLED_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_COBBLED_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_COBBLED_TUFF_WALL);
+
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_BRICKS);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_PILLAR);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_TILES);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.MOSSY_GREEN_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.MOSSY_POLISHED_BLUE_TUFF);
+                        entries.add(ModBlocks.MOSSY_POLISHED_BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_POLISHED_BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_POLISHED_BLUE_TUFF_WALL);
+                        entries.add(ModBlocks.MOSSY_POLISHED_GREEN_TUFF);
+                        entries.add(ModBlocks.MOSSY_POLISHED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_POLISHED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_POLISHED_GREEN_TUFF_WALL);
+                        entries.add(ModBlocks.MOSSY_POLISHED_TUFF);
+                        entries.add(ModBlocks.MOSSY_POLISHED_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_POLISHED_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_POLISHED_TUFF_WALL);
+
+                        entries.add(ModBlocks.MOSSY_SMOOTH_TUFF);
+                        entries.add(ModBlocks.MOSSY_SMOOTH_TUFF_SLAB);
+                        entries.add(ModBlocks.MOSSY_SMOOTH_TUFF_STAIRS);
+                        entries.add(ModBlocks.MOSSY_SMOOTH_TUFF_WALL);
+
+                        entries.add(ModBlocks.MOSSY_TUFF_BRICKS);
+                        entries.add(ModBlocks.MOSSY_TUFF_BRICKS_SLAB);
+                        entries.add(ModBlocks.MOSSY_TUFF_BRICKS_STAIRS);
+                        entries.add(ModBlocks.MOSSY_TUFF_BRICKS_WALL);
+                        entries.add(ModBlocks.MOSSY_TUFF_PILLAR);
+                        entries.add(ModBlocks.MOSSY_TUFF_TILES);
+                        entries.add(ModBlocks.MOSSY_TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.MOSSY_TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.MOSSY_TUFF_TILES_WALL);
+
+                        entries.add(ModBlocks.OLD_TUFF);
+                        entries.add(ModBlocks.OLD_TUFF_SLAB);
+                        entries.add(ModBlocks.OLD_TUFF_STAIRS);
+                        entries.add(ModBlocks.OLD_TUFF_WALL);
+
+                        entries.add(ModBlocks.POLISHED_BLUE_TUFF);
+                        entries.add(ModBlocks.POLISHED_BLUE_TUFF_SLAB);
+                        entries.add(ModBlocks.POLISHED_BLUE_TUFF_STAIRS);
+                        entries.add(ModBlocks.POLISHED_BLUE_TUFF_WALL);
+
+                        entries.add(ModBlocks.POLISHED_GREEN_TUFF);
+                        entries.add(ModBlocks.POLISHED_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.POLISHED_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.POLISHED_GREEN_TUFF_WALL);
+
+                        entries.add(ModBlocks.SMOOTH_GREEN_TUFF);
+                        entries.add(ModBlocks.SMOOTH_GREEN_TUFF_SLAB);
+                        entries.add(ModBlocks.SMOOTH_GREEN_TUFF_STAIRS);
+                        entries.add(ModBlocks.SMOOTH_GREEN_TUFF_WALL);
+
+                        entries.add(ModBlocks.SMOOTH_TUFF);
+                        entries.add(ModBlocks.SMOOTH_TUFF_SLAB);
+                        entries.add(ModBlocks.SMOOTH_TUFF_STAIRS);
+                        entries.add(ModBlocks.SMOOTH_TUFF_WALL);
+
+                        entries.add(ModBlocks.TUFF_BRICKWORK);
+                        entries.add(ModBlocks.TUFF_BRICKWORK_SLAB);
+                        entries.add(ModBlocks.TUFF_BRICKWORK_STAIRS);
+                        entries.add(ModBlocks.TUFF_BRICKWORK_WALL);
+
+                        entries.add(ModBlocks.TUFF_PILLAR);
+
+                        entries.add(ModBlocks.TUFF_TILES);
+                        entries.add(ModBlocks.TUFF_TILES_SLAB);
+                        entries.add(ModBlocks.TUFF_TILES_STAIRS);
+                        entries.add(ModBlocks.TUFF_TILES_WALL);
+
                         entries.add(ModBlocks.TUFF_CARVED_WINDOW);
                         entries.add(ModBlocks.TUFF_CARVED_WINDOW_PANE);
 

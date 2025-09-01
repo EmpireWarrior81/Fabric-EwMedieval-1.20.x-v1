@@ -1,15 +1,12 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.utils.armor;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Lazy;
-import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 

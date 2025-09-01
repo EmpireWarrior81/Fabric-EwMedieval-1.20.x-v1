@@ -8,6 +8,9 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 public class ModTags {
+
+    public static TagKey<Item> DYEABLE = TagKey.of(RegistryKeys.ITEM, Identifier.of(EwMedieval.MOD_ID, "dyeable"));
+
     public static class Blocks {
 
 
@@ -18,9 +21,11 @@ public class ModTags {
 
     public static class Items {
 
-
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(EwMedieval.MOD_ID, name));
+
+
+
         }
     }
 }

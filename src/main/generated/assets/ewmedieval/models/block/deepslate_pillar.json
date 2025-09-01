@@ -1,12 +1,7 @@
 {
-  "parent": "minecraft:block/cube",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "down": "ewmedieval:block/deepslate_pillar_top",
-    "east": "ewmedieval:block/deepslate_pillar",
-    "north": "ewmedieval:block/deepslate_pillar",
-    "particle": "ewmedieval:block/deepslate_pillar",
-    "south": "ewmedieval:block/deepslate_pillar",
-    "up": "ewmedieval:block/deepslate_pillar_top",
-    "west": "ewmedieval:block/deepslate_pillar"
+    "end": "ewmedieval:block/deepslate_pillar_top",
+    "side": "ewmedieval:block/deepslate_pillar"
   }
 }
