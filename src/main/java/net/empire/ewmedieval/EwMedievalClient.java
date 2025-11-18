@@ -6,10 +6,14 @@ import net.empire.ewmedieval.client.model.equipment.CustomChestplateModel;
 import net.empire.ewmedieval.client.model.equipment.CustomHelmetModel;
 import net.empire.ewmedieval.client.model.equipment.CustomLeggingsModel;
 import net.empire.ewmedieval.client.renderer.ModArmorRenderer;
+import net.empire.ewmedieval.gui.ModScreenHandlers;
+import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreen;
+import net.empire.ewmedieval.gui.forge.ForgeScreen;
 import net.empire.ewmedieval.item.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.RenderLayer;
@@ -40,6 +44,9 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModItems.GONDORIAN_FOUNTAIN_GUARD_LEGGINGS,
                 ModItems.GONDORIAN_FOUNTAIN_GUARD_BOOTS
         );
+
+        HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);
+        HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
 
     }
 }

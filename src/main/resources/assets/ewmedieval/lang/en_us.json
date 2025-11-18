@@ -20,10 +20,30 @@
   "item.ewmedieval.raw_mithril": "Raw Mithril",
   "item.ewmedieval.mithril_ingot": "Mithril Ingot",
   "item.ewmedieval.mithril_nugget": "Mithril Nugget",
+  "item.ewmedieval.bronze_ingot": "Bronze Ingot",
+  "item.ewmedieval.bronze_nugget": "Bronze Nugget",
+  "item.ewmedieval.bronze_mixture": "Bronze Mixture",
+  "item.ewmedieval.bronze_ash_mixture": "Bronze Ash Mixture",
+  "item.ewmedieval.ash": "Ash",
+  "item.ewmedieval.ash_piece": "Ash Piece",
+  "item.ewmedieval.steel_nugget": "Steel Nugget",
+  "item.ewmedieval.steel_ingot": "Steel Ingot",
+  "item.ewmedieval.raw_iron_nugget": "Raw Iron Nugget",
+
+  "item.ewmedieval.stone_pebble": "Stone Pebble",
+  "item.ewmedieval.fur": "Fur",
+
+  "item.ewmedieval.bronze_pickaxe": "Bronze Pickaxe",
+  "item.ewmedieval.bronze_axe": "Bronze Axe",
+  "item.ewmedieval.bronze_hoe": "Bronze Hoe",
+  "item.ewmedieval.bronze_shovel": "Bronze Shovel",
+  "item.ewmedieval.bronze_shears": "Bronze Shears",
 
 
   "item.ewmedieval.raw_horse": "Raw Horse",
   "item.ewmedieval.raw_swan": "Raw Swan",
+  "item.ewmedieval.raw_wolf": "Raw Wolf",
+  "item.ewmedieval.cooked_wolf": "Cooked Wolf",
   "item.ewmedieval.cooked_horse": "Cooked Horse",
   "item.ewmedieval.cooked_swan": "Cooked Swan",
   "item.ewmedieval.lembas": "Lembas",
@@ -43,6 +63,8 @@
   "item.ewmedieval.bat_wing": "Bat Wing",
   "item.ewmedieval.smoked_bat_wing": "Smoked Bat Wing",
 
+  "block.ewmedieval.forge": "High Forge",
+  "block.ewmedieval.earlyforge": "Forge",
 
   "block.ewmedieval.tin_block": "Block of Tin",
   "block.ewmedieval.raw_tin_block": "Block of Raw Tin",
@@ -477,5 +499,6 @@
   "itemgroup.ewmedieval_metals": "EwMedieval Metals",
   "itemgroup.ewmedieval_food": "EwMedieval Food",
   "itemgroup.ewmedieval_blocks": "EwMedieval Blocks",
-  "itemgroup.ewmedieval_artifacts": "EwMedieval Artifacts"
+  "itemgroup.ewmedieval_artifacts": "EwMedieval Artifacts",
+  "itemgroup.ewmedieval_tools": "EwMedieval Tools"
 }

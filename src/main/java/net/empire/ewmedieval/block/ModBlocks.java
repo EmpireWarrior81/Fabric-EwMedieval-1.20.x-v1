@@ -2,6 +2,8 @@ package net.empire.ewmedieval.block;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabBlock;
+import net.empire.ewmedieval.block.special.earlyforge.EarlyForgeBlock;
+import net.empire.ewmedieval.block.special.forge.ForgeBlock;
 import net.empire.ewmedieval.sound.ModBlockSoundGroups;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -18,6 +20,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
+
 
 
 
@@ -622,6 +625,20 @@ public class ModBlocks {
 
     public static final Block BLUE_TUFF_VERTICAL_SLAB = registerBlock("blue_tuff_vertical_slab",
             new VerticalSlabBlock(FabricBlockSettings.copyOf(ModBlocks.BLUE_TUFF)));
+
+
+    public static final Block FORGE = registerBlock("forge",
+            new ForgeBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
+
+    public static final Block EARLY_FORGE = registerBlock("earlyforge",
+            new EarlyForgeBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
+
+
+
+
+
+
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

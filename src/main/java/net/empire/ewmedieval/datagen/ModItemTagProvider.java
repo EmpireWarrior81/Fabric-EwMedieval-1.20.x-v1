@@ -23,6 +23,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TIN_INGOT);
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("c", "silver_ingots")))
                 .add(ModItems.SILVER_INGOT);
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("c", "bronze_ingots")))
+                .add(ModItems.BRONZE_INGOT);
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("c", "steel_ingots")))
+                .add(ModItems.STEEL_INGOT);
     }
 
 }

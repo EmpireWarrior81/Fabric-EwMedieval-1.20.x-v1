@@ -3,7 +3,8 @@
       "package": "net.empire.ewmedieval.mixin",
       "compatibilityLevel": "JAVA_21",
       "mixins": [
-        "ExampleMixin"
+        "ExampleMixin",
+        "MiningToolItemMixin"
       ],
       "injectors": {
         "defaultRequire": 1

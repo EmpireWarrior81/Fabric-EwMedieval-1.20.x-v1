@@ -69,6 +69,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COBBLED_SLATE_WALL);
         addDrop(ModBlocks.COBBLED_SLATE_STAIRS);
 
+        addDrop(ModBlocks.STONE_PILLAR);
+
         addDrop(ModBlocks.OLD_DEEPSLATE);
         addDrop(ModBlocks.OLD_DEEPSLATE_SLAB, slabDrops(ModBlocks.OLD_DEEPSLATE_SLAB));
         addDrop(ModBlocks.OLD_DEEPSLATE_STAIRS);

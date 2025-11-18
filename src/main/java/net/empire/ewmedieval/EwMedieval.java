@@ -1,12 +1,17 @@
 package net.empire.ewmedieval;
 
 import net.empire.ewmedieval.block.ModBlocks;
+import net.empire.ewmedieval.block.entity.ModBlockEntities;
+import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.empire.ewmedieval.item.ModItemGroups;
 import net.empire.ewmedieval.item.ModItems;
+import net.empire.ewmedieval.recipe.ModRecipes;
+import net.empire.ewmedieval.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 public class EwMedieval implements ModInitializer {
     public static final String MOD_ID = "ewmedieval";
@@ -17,11 +22,22 @@ public class EwMedieval implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing ewmedieval mod...");
+        LOGGER.info("ewmedieval mod initialized successfully.");
+
 
         ModItemGroups.registerItemGroups();
+
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
 
-        LOGGER.info("ewmedieval mod initialized successfully.");
+        ModLootTableModifiers.modifyLootTables();
+        ModLootTableModifiers.replaceLootTables();
+
+        ModBlockEntities.registerBlockEntities();
+        ModScreenHandlers.registerScreenHandlers();
+
+        ModRecipes.registerRecipes();
+
+
     }
 }

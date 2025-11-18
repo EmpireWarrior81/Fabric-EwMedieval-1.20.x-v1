@@ -8,7 +8,7 @@ import net.minecraft.util.math.ColorHelper;
 
 import java.util.List;
 
-public static class CustomDyeableHelper {
+public class CustomDyeableDataComponent {
     public static final String NBT_KEY = "CustomColor";
     public static final int DEFAULT_COLOR = -6265536;
 

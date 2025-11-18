@@ -2,8 +2,10 @@ package net.empire.ewmedieval.client.renderer;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.item.ModItems;
+import net.empire.ewmedieval.item.dataComponents.CustomDyeableDataComponent;
 import net.empire.ewmedieval.item.utils.armor.ModDyeablePieces;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.util.math.MatrixStack;
@@ -39,13 +41,13 @@ public class ModArmorRenderer implements ArmorRenderer {
     }
 
     static void renderDyeable(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemStack stack, Model model, Identifier texture) {
-        VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumers, RenderLayer.getArmorCutoutNoCull(texture), stack.hasGlint());
+        VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumers, RenderLayer.getArmorCutoutNoCull(texture), false ,stack.hasGlint());
         int color = CustomDyeableDataComponent.getColor(stack, CustomDyeableDataComponent.DEFAULT_COLOR);
-        model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, color);
+        model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, 0, 0, 0,0);
     }
 
     static void renderTranslucentPiece(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemStack stack, Model model, Identifier texture) {
-        VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumers, RenderLayer.getEntityTranslucent(texture), stack.hasGlint());
-        model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, 0xFFFFFFFF);
+        VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumers, RenderLayer.getEntityTranslucent(texture), false, stack.hasGlint());
+        model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, 0xFFFFFFFF, 0,0, 0.0f);
     }
 }

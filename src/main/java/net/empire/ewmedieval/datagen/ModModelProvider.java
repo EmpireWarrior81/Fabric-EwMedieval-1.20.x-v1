@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.data.client.TextureMap;
 import net.minecraft.data.client.TexturedModel;
@@ -673,6 +674,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MITHRIL_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MITHRIL_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_MITHRIL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BRONZE_MIXTURE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BRONZE_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BRONZE_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_IRON_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BRONZE_ASH_MIXTURE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.RAW_HORSE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_SWAN, Models.GENERATED);
@@ -682,6 +691,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.COOKED_GOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BAT_WING, Models.GENERATED);
         itemModelGenerator.register(ModItems.SMOKED_BAT_WING, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_WOLF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_WOLF, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.LEMBAS, Models.GENERATED);
 
@@ -697,11 +708,30 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PEAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.BAKED_PEAR, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.GONDORIAN_FOUNTAIN_GUARD_HELMET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GONDORIAN_FOUNTAIN_GUARD_CHESTPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GONDORIAN_FOUNTAIN_GUARD_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GONDORIAN_FOUNTAIN_GUARD_BOOTS, Models.GENERATED);
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_BOOTS));
 
         itemModelGenerator.register(ModItems.ARKENSTONE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FUR, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ASH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ASH_PIECE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.STONE_PEBBLE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.CRUDE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRUDE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRUDE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CRUDE_SHOVEL, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.BRONZE_SHEARS, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BRONZE_KNIFE, Models.HANDHELD);
+
+
+        itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
     }
 }

@@ -14,14 +14,20 @@ public class ModItemGroups {
 
     public static final ItemGroup ARTIFACTS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(EwMedieval.MOD_ID, "artifacts"),
-            FabricItemGroup.builder().displayName(Text.translatable("Ew Medieval Artifacts"))
+            FabricItemGroup.builder().displayName(Text.translatable("EwM Artifacts"))
                     .icon(() -> new ItemStack(ModItems.ARKENSTONE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.ARKENSTONE);
+                        entries.add(ModItems.FUR);
+                        entries.add(ModItems.STONE_PEBBLE);
+                        entries.add(ModBlocks.FORGE);
+                        entries.add(ModBlocks.EARLY_FORGE);
+                        entries.add(ModItems.ASH);
+                        entries.add(ModItems.ASH_PIECE);
                     }).build());
 
     public static final ItemGroup METALS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(EwMedieval.MOD_ID, "metals"),
-            FabricItemGroup.builder().displayName(Text.translatable("Ew Medieval - Metals"))
+            FabricItemGroup.builder().displayName(Text.translatable("EwM Metals"))
                     .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((displayContext, entries) -> {
                         entries.add(ModItems.RAW_TIN);
                         entries.add(ModItems.TIN_INGOT);
@@ -35,6 +41,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BURZUM_STEEL_NUGGET);
                         entries.add(ModItems.EDHEL_STEEL_INGOT);
                         entries.add(ModItems.EDHEL_STEEL_NUGGET);
+                        entries.add(ModItems.BRONZE_ASH_MIXTURE);
                         entries.add(ModItems.CRUDE_INGOT);
                         entries.add(ModItems.CRUDE_NUGGET);
                         entries.add(ModItems.RAW_LEAD);
@@ -43,11 +50,29 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_MITHRIL);
                         entries.add(ModItems.MITHRIL_INGOT);
                         entries.add(ModItems.MITHRIL_NUGGET);
+                        entries.add(ModItems.STEEL_INGOT);
+                        entries.add(ModItems.STEEL_NUGGET);
+                        entries.add(ModItems.RAW_IRON_NUGGET);
+                        entries.add(ModItems.BRONZE_MIXTURE);
+                        entries.add(ModItems.BRONZE_NUGGET);
+                        entries.add(ModItems.BRONZE_INGOT);
+
+                    }).build());
+
+    public static final ItemGroup TOOLS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(EwMedieval.MOD_ID, "tools"),
+            FabricItemGroup.builder().displayName(Text.translatable("EwM Tools"))
+                    .icon(() -> new ItemStack(ModItems.BRONZE_PICKAXE)).entries((displayContext, entries) -> {
+                        entries.add(ModItems.BRONZE_AXE);
+                        entries.add(ModItems.BRONZE_PICKAXE);
+                        entries.add(ModItems.BRONZE_HOE);
+                        entries.add(ModItems.BRONZE_SHOVEL);
+                        entries.add(ModItems.BRONZE_SHEARS);
                     }).build());
 
     public static final ItemGroup FOOD_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(EwMedieval.MOD_ID, "food"),
-            FabricItemGroup.builder().displayName(Text.translatable("Ew Medieval - Food"))
+            FabricItemGroup.builder().displayName(Text.translatable("EwM Food"))
                     .icon(() -> new ItemStack(ModItems.LEMBAS)).entries((displayContext, entries) -> {
                         entries.add(ModItems.RAW_HORSE);
                         entries.add(ModItems.COOKED_HORSE);
@@ -69,11 +94,13 @@ public class ModItemGroups {
                         entries.add(ModItems.PEACH);
                         entries.add(ModItems.PEAR);
                         entries.add(ModItems.BAKED_PEAR);
+                        entries.add(ModItems.RAW_WOLF);
+                        entries.add(ModItems.COOKED_WOLF);
                     }).build());
 
     public static final ItemGroup BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(EwMedieval.MOD_ID, "blocks"),
-            FabricItemGroup.builder().displayName(Text.translatable("Ew Medieval - Blocks"))
+            FabricItemGroup.builder().displayName(Text.translatable("EwM Blocks"))
                     .icon(() -> new ItemStack(ModBlocks.TIN_BLOCK)).entries((displayContext, entries) -> {
                         // metalen en grondstoffen
                         entries.add(ModBlocks.TIN_BLOCK);

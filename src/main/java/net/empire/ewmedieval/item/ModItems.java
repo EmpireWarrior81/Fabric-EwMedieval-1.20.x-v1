@@ -5,15 +5,16 @@ import net.empire.ewmedieval.item.utils.armor.ModArmorMaterials;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import static net.empire.ewmedieval.EwMedieval.MOD_ID;
+
 
 public class ModItems {
+
 
     public static final Item ARKENSTONE = registerItem("arkenstone", new Item(new FabricItemSettings()));
     public static final Item RAW_TIN = registerItem("raw_tin", new Item(new FabricItemSettings()));
@@ -36,6 +37,20 @@ public class ModItems {
     public static final Item MITHRIL_INGOT = registerItem("mithril_ingot", new Item(new FabricItemSettings()));
     public static final Item MITHRIL_NUGGET = registerItem("mithril_nugget", new Item(new FabricItemSettings()));
     public static final Item RAW_MITHRIL = registerItem("raw_mithril", new Item(new FabricItemSettings()));
+    public static final Item BRONZE_MIXTURE = registerItem("bronze_mixture", new Item(new FabricItemSettings()));
+    public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(new FabricItemSettings()));
+    public static final Item BRONZE_NUGGET = registerItem("bronze_nugget", new Item(new FabricItemSettings()));
+    public static final Item COPPER_NUGGET = registerItem("copper_nugget", new Item(new FabricItemSettings()));
+    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
+    public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
+
+    public static final Item BRONZE_ASH_MIXTURE = registerItem("bronze_ash_mixture", new Item(new FabricItemSettings()));
+
+    public static final Item RAW_IRON_NUGGET = registerItem("raw_iron_nugget", new Item(new FabricItemSettings()));
+
+    public static final Item ASH = registerItem("ash", new Item(new FabricItemSettings()));
+    public static final Item ASH_PIECE = registerItem("ash_piece", new Item(new FabricItemSettings()));
+    public static final Item FUR = registerItem("fur", new Item(new FabricItemSettings()));
 
     public static final Item RAW_HORSE = registerItem("raw_horse", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_HORSE)));
     public static final Item RAW_SWAN = registerItem("raw_swan", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_SWAN)));
@@ -45,6 +60,8 @@ public class ModItems {
     public static final Item COOKED_GOAT = registerItem("cooked_goat", new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_GOAT)));
     public static final Item BAT_WING = registerItem("bat_wing", new Item(new FabricItemSettings().food(ModFoodComponents.BAT_WING)));
     public static final Item SMOKED_BAT_WING = registerItem("smoked_bat_wing", new Item(new FabricItemSettings().food(ModFoodComponents.SMOKED_BAT_WING)));
+    public static final Item RAW_WOLF = registerItem("raw_wolf", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_WOLF)));
+    public static final Item COOKED_WOLF = registerItem("cooked_wolf", new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_WOLF)));
 
     public static final Item LEMBAS = registerItem("lembas", new Item(new FabricItemSettings().food(ModFoodComponents.LEMBAS)));
 
@@ -61,6 +78,8 @@ public class ModItems {
     public static final Item BAKED_PEAR = registerItem("baked_pear", new Item(new FabricItemSettings().food(ModFoodComponents.BAKED_PEAR)));
 
 
+    public static final Item STONE_PEBBLE = registerItem("stone_pebble", new Item(new FabricItemSettings()));
+
     public static final Item GONDORIAN_FOUNTAIN_GUARD_HELMET = registerItem("gondorian_fountain_guard_helmet",
             new ArmorItem(ModArmorMaterials.GONDORIAN_FOUNTAIN_GUARD, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
@@ -75,6 +94,38 @@ public class ModItems {
                     new FabricItemSettings()));
 
 
+    public static final Item CRUDE_PICKAXE = registerItem("crude_pickaxe",
+            new PickaxeItem(ModToolMaterial.CRUDE, 1, -2.8f, new FabricItemSettings()));
+      public static final Item CRUDE_AXE = registerItem("crude_axe",
+            new AxeItem(ModToolMaterial.CRUDE, 6, -3.0f, new FabricItemSettings()));
+      public static final Item CRUDE_SHOVEL = registerItem("crude_shovel",
+            new ShovelItem(ModToolMaterial.CRUDE, 1, -3.0f, new FabricItemSettings()));
+      public static final Item CRUDE_HOE = registerItem("crude_hoe",
+            new HoeItem(ModToolMaterial.CRUDE, -1, -1.0f, new FabricItemSettings()));
+
+    public static final Item BRONZE_SHEARS = registerItem("bronze_shears",
+            new BronzeShears(new Item.Settings().maxCount(1)));
+
+    public static final Item BRONZE_PICKAXE = registerItem("bronze_pickaxe",
+            new PickaxeItem(ModToolMaterial.BRONZE, 1, -2.8f, new FabricItemSettings()));
+
+    public static final Item BRONZE_AXE = registerItem("bronze_axe",
+            new AxeItem(ModToolMaterial.BRONZE, 5, -3.0f, new FabricItemSettings()));
+
+    public static final Item BRONZE_SHOVEL = registerItem("bronze_shovel",
+            new ShovelItem(ModToolMaterial.BRONZE, 1, -3.0f, new FabricItemSettings()));
+
+    public static final Item BRONZE_HOE = registerItem("bronze_hoe",
+            new HoeItem(ModToolMaterial.BRONZE, -1, -1.0f, new FabricItemSettings()));
+
+    public static final Item BRONZE_KNIFE = registerItem("bronze_knife",
+            new KnifeItem(ModToolMaterial.BRONZE, 2, -1.6f,
+                    new FabricItemSettings().maxDamage(150)));
+
+
+
+
+
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RAW_TIN);
         entries.add(TIN_INGOT);
@@ -85,11 +136,11 @@ public class ModItems {
     }
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(EwMedieval.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, new Identifier(MOD_ID, name), item);
     }
 
     public static void registerModItems() {
-        EwMedieval.LOGGER.info("Registering ModItems for EwMedieval " + EwMedieval.MOD_ID);
+        EwMedieval.LOGGER.info("Registering ModItems for EwMedieval " + MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
     }
 }

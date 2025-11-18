@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-31T21:22:10.8546338	Ew medieval/Block Loot Tables
+// 1.20.1	2025-11-17T14:20:43.9098491	Ew medieval/Block Loot Tables
 d6517aa6e7be77bda9cd958f2406f54bb7ab4568 data\ewmedieval\loot_tables\blocks\slate_bricks_stairs.json
 8842c651f3912ab3bd62795566ef881febc2c749 data\ewmedieval\loot_tables\blocks\polished_tuff_wall.json
 ff741a078e85e568271bd86076ac3d6564f8f6ef data\ewmedieval\loot_tables\blocks\mossy_smooth_deepslate.json
@@ -104,3 +104,4 @@ b44dde37078f1b7d66ed5669cb39313eac699238 data\ewmedieval\loot_tables\blocks\deep
 fa3e9df174ec2b4e34c231f6c955b88b03e5374a data\ewmedieval\loot_tables\blocks\deepslate_brickwork_slab.json
 eaff59cd092154c8ad1c5976da986efbe8078f5c data\ewmedieval\loot_tables\blocks\silver_block.json
 8ba92eff7f8378df01507336f56404956a0c86e1 data\ewmedieval\loot_tables\blocks\mithril_block.json
+b3f49855120f1112b2932d3eff0e92fc6fe3eef6 data\ewmedieval\loot_tables\blocks\stone_pillar.json

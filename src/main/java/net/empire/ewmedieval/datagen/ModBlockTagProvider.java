@@ -4,6 +4,8 @@ import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -16,6 +18,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
+
+    public static final TagKey<Block> NEEDS_BRONZE_TOOL =
+            TagKey.of(RegistryKeys.BLOCK, new Identifier("ewmedieval", "needs_bronze_tool"));
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
@@ -342,6 +347,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(Blocks.LAPIS_ORE)
+                .add(Blocks.COPPER_ORE)
+                .add(Blocks.DEEPSLATE_COPPER_ORE)
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_ORE)
@@ -350,6 +358,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LEAD_BLOCK)
                 .add(ModBlocks.CUT_LEAD)
                 .add(ModBlocks.DEEPSLATE_LEAD_ORE);
+
+        getOrCreateTagBuilder(ModBlockTagProvider.NEEDS_BRONZE_TOOL)
+                .add(Blocks.IRON_BLOCK)
+                .add(Blocks.RAW_IRON_BLOCK)
+                .add(Blocks.IRON_ORE)
+                .add(Blocks.DEEPSLATE_IRON_ORE);
+
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RAW_SILVER_BLOCK)
@@ -367,6 +382,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MITHRIL_BLOCK);
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.STONE_BRICKWORK_WALL)
