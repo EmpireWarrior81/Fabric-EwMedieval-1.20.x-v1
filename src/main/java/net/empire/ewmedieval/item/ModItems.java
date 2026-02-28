@@ -1,13 +1,15 @@
 package net.empire.ewmedieval.item;
 
 import net.empire.ewmedieval.EwMedieval;
-import net.empire.ewmedieval.item.utils.armor.ModArmorMaterials;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import static net.empire.ewmedieval.EwMedieval.MOD_ID;
@@ -77,21 +79,10 @@ public class ModItems {
     public static final Item PEAR = registerItem("pear", new Item(new FabricItemSettings().food(ModFoodComponents.PEAR)));
     public static final Item BAKED_PEAR = registerItem("baked_pear", new Item(new FabricItemSettings().food(ModFoodComponents.BAKED_PEAR)));
 
+    public static final Item CAKE_SLICE = registerItem("cake_slice", new Item(new FabricItemSettings().food(ModFoodComponents.CAKE_SLICE)));
+    public static final Item PUMPKIN_SLICE = registerItem("pumpkin_slice", new Item(new FabricItemSettings().food(ModFoodComponents.PUMPKIN_SLICE)));
 
     public static final Item STONE_PEBBLE = registerItem("stone_pebble", new Item(new FabricItemSettings()));
-
-    public static final Item GONDORIAN_FOUNTAIN_GUARD_HELMET = registerItem("gondorian_fountain_guard_helmet",
-            new ArmorItem(ModArmorMaterials.GONDORIAN_FOUNTAIN_GUARD, ArmorItem.Type.HELMET,
-                    new FabricItemSettings()));
-    public static final Item GONDORIAN_FOUNTAIN_GUARD_CHESTPLATE = registerItem("gondorian_fountain_guard_chestplate",
-            new ArmorItem(ModArmorMaterials.GONDORIAN_FOUNTAIN_GUARD, ArmorItem.Type.CHESTPLATE,
-                    new FabricItemSettings()));
-    public static final Item GONDORIAN_FOUNTAIN_GUARD_LEGGINGS = registerItem("gondorian_fountain_guard_leggings",
-            new ArmorItem(ModArmorMaterials.GONDORIAN_FOUNTAIN_GUARD, ArmorItem.Type.LEGGINGS,
-                    new FabricItemSettings()));
-    public static final Item GONDORIAN_FOUNTAIN_GUARD_BOOTS = registerItem("gondorian_fountain_guard_boots",
-            new ArmorItem(ModArmorMaterials.GONDORIAN_FOUNTAIN_GUARD, ArmorItem.Type.BOOTS,
-                    new FabricItemSettings()));
 
 
     public static final Item CRUDE_PICKAXE = registerItem("crude_pickaxe",
@@ -110,7 +101,7 @@ public class ModItems {
             new PickaxeItem(ModToolMaterial.BRONZE, 1, -2.8f, new FabricItemSettings()));
 
     public static final Item BRONZE_AXE = registerItem("bronze_axe",
-            new AxeItem(ModToolMaterial.BRONZE, 5, -3.0f, new FabricItemSettings()));
+            new AxeItem(ModToolMaterial.BRONZE, 5.5f, -3.0f, new FabricItemSettings()));
 
     public static final Item BRONZE_SHOVEL = registerItem("bronze_shovel",
             new ShovelItem(ModToolMaterial.BRONZE, 1, -3.0f, new FabricItemSettings()));
@@ -119,8 +110,31 @@ public class ModItems {
             new HoeItem(ModToolMaterial.BRONZE, -1, -1.0f, new FabricItemSettings()));
 
     public static final Item BRONZE_KNIFE = registerItem("bronze_knife",
-            new KnifeItem(ModToolMaterial.BRONZE, 2, -1.6f,
-                    new FabricItemSettings().maxDamage(150)));
+            new KnifeItem(ModToolMaterial.BRONZE, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+
+    public static final Item IRON_KNIFE = registerItem("iron_knife",
+            new KnifeItem(ToolMaterials.IRON, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+
+    public static final Item GOLDEN_KNIFE = registerItem("golden_knife",
+            new KnifeItem(ToolMaterials.GOLD, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+    public static final Item DIAMOND_KNIFE = registerItem("diamond_knife",
+            new KnifeItem(ToolMaterials.DIAMOND, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+    public static final Item NETHERITE_KNIFE = registerItem("netherite_knife",
+            new KnifeItem(ToolMaterials.NETHERITE, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+    public static final Item FLINT_KNIFE = registerItem("flint_knife",
+            new KnifeItem(ModToolMaterial.FLINT, 0.5f, -2.0f,
+                    new FabricItemSettings()));
+ /*   public static final Item WOODEN_KNIFE = registerItem("wooden_knife",
+            new KnifeItem(ToolMaterials.WOOD, 0.5f, -2.0f,
+                    new FabricItemSettings())); */
+    public static final Item STONE_KNIFE = registerItem("stone_knife",
+            new KnifeItem(ToolMaterials.STONE, 0.5f, -2.0f,
+                    new FabricItemSettings()));
 
 
 

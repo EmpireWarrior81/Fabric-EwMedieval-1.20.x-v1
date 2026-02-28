@@ -20,6 +20,11 @@ public class ModBlockEntities {
                     FabricBlockEntityTypeBuilder.create(EarlyForgeBlockEntity::new,
                             ModBlocks.EARLY_FORGE).build());
 
+    public static final BlockEntityType<CuttingBoardBlockEntity> CUTTING_BOARD_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "cutting_board_be"),
+                    FabricBlockEntityTypeBuilder.create(CuttingBoardBlockEntity::new,
+                            ModBlocks.CUTTING_BOARD).build());
+
     public static void registerBlockEntities() {
         EwMedieval.LOGGER.info("Registering Block Entities for " + EwMedieval.MOD_ID);
     }

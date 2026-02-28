@@ -68,6 +68,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BRONZE_HOE);
                         entries.add(ModItems.BRONZE_SHOVEL);
                         entries.add(ModItems.BRONZE_SHEARS);
+                        entries.add(ModItems.BRONZE_KNIFE);
                     }).build());
 
     public static final ItemGroup FOOD_GROUP = Registry.register(Registries.ITEM_GROUP,

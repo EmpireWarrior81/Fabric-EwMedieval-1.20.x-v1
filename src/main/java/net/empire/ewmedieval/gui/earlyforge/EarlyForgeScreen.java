@@ -10,7 +10,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class EarlyForgeScreen extends HandledScreen<EarlyForgeScreenHandler> {
-    // verwijst naar je texture in resources/assets/ewmedieval/textures/gui/earlyforge_gui.png
     private static final Identifier TEXTURE = new Identifier(EwMedieval.MOD_ID, "textures/gui/earlyforge_gui.png");
 
     public EarlyForgeScreen(EarlyForgeScreenHandler handler, PlayerInventory inventory, Text title) {
@@ -20,7 +19,6 @@ public class EarlyForgeScreen extends HandledScreen<EarlyForgeScreenHandler> {
     @Override
     protected void init() {
         super.init();
-        // titels uitzetten (zet ze buiten beeld)
         titleY = 1000;
         playerInventoryTitleY = 1000;
     }
@@ -34,23 +32,20 @@ public class EarlyForgeScreen extends HandledScreen<EarlyForgeScreenHandler> {
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
 
-        // achtergrond tekenen
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
-        // vlam (burn-time indicator)
         renderFuelIndicator(context, x, y);
 
-        // pijltje (craft progress)
         renderProgressArrow(context, x, y);
     }
 
     private void renderFuelIndicator(DrawContext context, int x, int y) {
         if (handler.isBurning()) {
-            int fuelHeight = handler.getFuelScaled(); // max 14 px hoog
+            int fuelHeight = handler.getFuelScaled();
             context.drawTexture(TEXTURE,
-                    x + 42, y + 36 + (14 - fuelHeight), // GUI-coords
-                    176, 14 - fuelHeight,               // texture-coords (begin flame sprite)
-                    14, fuelHeight);                    // breedte=14, hoogte=variabel
+                    x + 42, y + 36 + (14 - fuelHeight),
+                    176, 14 - fuelHeight,
+                    14, fuelHeight);
         }
     }
 
@@ -58,9 +53,9 @@ public class EarlyForgeScreen extends HandledScreen<EarlyForgeScreenHandler> {
         int progress = handler.getScaledProgress(); // max 26 px breed
         if (progress > 0) {
             context.drawTexture(TEXTURE,
-                    x + 87, y + 15,   // GUI-coords
-                    176, 14,          // texture start van arrow
-                    progress, 17);    // breedte variabel, hoogte=17
+                    x + 87, y + 15,
+                    176, 14,
+                    progress, 17);
         }
     }
 

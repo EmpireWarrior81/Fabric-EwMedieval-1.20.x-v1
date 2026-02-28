@@ -1,6 +1,5 @@
 package net.empire.ewmedieval.datagen;
 
-import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabShape;
@@ -11,17 +10,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.data.client.Models;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.data.client.TextureMap;
 import net.minecraft.data.client.TexturedModel;
 import net.minecraft.data.client.TextureKey;
 import net.minecraft.util.math.Direction;
-import net.minecraft.registry.Registries;
-import net.minecraft.state.property.Properties;
-import java.rmi.registry.Registry;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 import net.minecraft.data.client.VariantSettings;
@@ -696,6 +690,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.LEMBAS, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.CAKE_SLICE, Models.GENERATED);
+       itemModelGenerator.register(ModItems.PUMPKIN_SLICE, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.CACTUS_FLESH, Models.GENERATED);
         itemModelGenerator.register(ModItems.CACTUS_STEAK, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRANBERRY, Models.GENERATED);
@@ -707,11 +704,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PEACH, Models.GENERATED);
         itemModelGenerator.register(ModItems.PEAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.BAKED_PEAR, Models.GENERATED);
-
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.GONDORIAN_FOUNTAIN_GUARD_BOOTS));
 
         itemModelGenerator.register(ModItems.ARKENSTONE, Models.GENERATED);
         itemModelGenerator.register(ModItems.FUR, Models.GENERATED);
@@ -728,10 +720,19 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BRONZE_SHEARS, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_KNIFE, Models.HANDHELD);
 
-
         itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.IRON_KNIFE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.GOLDEN_KNIFE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DIAMOND_KNIFE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NETHERITE_KNIFE, Models.HANDHELD);
+//        itemModelGenerator.register(ModItems.WOODEN_KNIFE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STONE_KNIFE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLINT_KNIFE, Models.HANDHELD);
+
+
     }
 }

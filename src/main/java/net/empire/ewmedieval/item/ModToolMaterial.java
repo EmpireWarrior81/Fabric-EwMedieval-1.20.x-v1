@@ -1,5 +1,6 @@
 package net.empire.ewmedieval.item;
 
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -7,13 +8,14 @@ import java.util.function.Supplier;
 
 
 public enum ModToolMaterial implements ToolMaterial {
-    CRUDE(1, 200, 5.0f, 1.0f, 5,
+    CRUDE(1, 185, 5.0f, 1.0f, 5,
             () -> Ingredient.ofItems(ModItems.CRUDE_INGOT)),
+
+    FLINT(1, 111, 4.0f, 1.0f, 5,
+            () -> Ingredient.ofItems(Items.FLINT)),
 
     BRONZE(1, 200, 5.5f, 1.5f, 12,
             () -> Ingredient.ofItems(ModItems.BRONZE_INGOT));
-
-
 
 
 

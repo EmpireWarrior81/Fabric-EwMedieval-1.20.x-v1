@@ -14,6 +14,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
 
     private final Identifier id;
@@ -28,8 +31,7 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        // Tel hoeveel echte items en hoeveel lege plekken dit recept verwacht
-        java.util.List<Ingredient> requiredItems = new java.util.ArrayList<>();
+        List<Ingredient> requiredItems = new ArrayList<>();
         int requiredEmpty = 0;
 
         for (Ingredient ing : recipeItems) {
@@ -40,39 +42,35 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
             }
         }
 
-        // Kopie van de slotten
-        java.util.List<ItemStack> slots = new java.util.ArrayList<>();
+        List<ItemStack> slots = new ArrayList<>();
         for (int i = 0; i < inventory.size(); i++) {
             slots.add(inventory.getStack(i));
         }
 
-        // Eerst: check lege plekken
         int actualEmpty = 0;
         for (ItemStack s : slots) {
             if (s.isEmpty()) {
                 actualEmpty++;
             }
         }
-        if (actualEmpty < requiredEmpty) return false; // te weinig lege slots
+        if (actualEmpty < requiredEmpty) return false;
 
-        // Vervolgens: probeer alle vereiste items te matchen
         for (Ingredient ing : requiredItems) {
             boolean matched = false;
             for (int i = 0; i < slots.size(); i++) {
                 ItemStack stack = slots.get(i);
                 if (!stack.isEmpty() && ing.test(stack)) {
-                    slots.set(i, ItemStack.EMPTY); // gebruik die slot
+                    slots.set(i, ItemStack.EMPTY);
                     matched = true;
                     break;
                 }
             }
-            if (!matched) return false; // item niet gevonden
+            if (!matched) return false;
         }
 
-        // Tot slot: check dat er geen extra items zijn achtergebleven
         for (ItemStack s : slots) {
             if (!s.isEmpty()) {
-                return false; // er zit iets in wat niet in het recept hoort
+                return false;
             }
         }
 
@@ -87,7 +85,7 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean fits(int width, int height) {
-        return true; // maakt niet uit, onze forge heeft vaste slots
+        return true; // not a grid recipe, always fits
     }
 
     @Override
@@ -115,6 +113,11 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
+    @Override
+    public boolean isIgnoredInRecipeBook() {
+        return true;
+    }
+
     public static class Type implements RecipeType<EarlyForgeRecipe> {
         public static final Type INSTANCE = new Type();
         public static final String ID = "earlyforge";
@@ -126,16 +129,14 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
 
         @Override
         public EarlyForgeRecipe read(Identifier id, JsonObject json) {
-            // output
+
             ItemStack output = net.minecraft.recipe.ShapedRecipe.outputFromJson(json.getAsJsonObject("result"));
 
-            // inputs
             JsonArray ingredientsJson = json.getAsJsonArray("ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY);
 
             for (int i = 0; i < ingredientsJson.size(); i++) {
                 if (ingredientsJson.get(i).isJsonObject() && ingredientsJson.get(i).getAsJsonObject().entrySet().isEmpty()) {
-                    // {} in JSON -> echt leeg slot
                     inputs.set(i, Ingredient.EMPTY);
                 } else {
                     inputs.set(i, Ingredient.fromJson(ingredientsJson.get(i)));
@@ -151,7 +152,7 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
             for (int i = 0; i < size; i++) {
-                boolean isEmpty = buf.readBoolean(); // nieuwe flag
+                boolean isEmpty = buf.readBoolean();
                 if (isEmpty) {
                     inputs.set(i, Ingredient.EMPTY);
                 } else {
@@ -169,7 +170,7 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
 
             for (Ingredient ing : recipe.getIngredients()) {
                 if (ing.isEmpty()) {
-                    buf.writeBoolean(true); // flag: empty
+                    buf.writeBoolean(true);
                 } else {
                     buf.writeBoolean(false);
                     ing.write(buf);

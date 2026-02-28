@@ -21,6 +21,8 @@ public class ModSounds {
     public static final SoundEvent TUFF_BRICKS_HIT   = register("block.tuff_bricks.hit");
     public static final SoundEvent TUFF_BRICKS_FALL  = register("block.tuff_bricks.fall");
 
+    public static final SoundEvent BLOCK_CUTTING_BOARD_KNIFE = register("block.cutting_board.knife");
+
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(EwMedieval.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));

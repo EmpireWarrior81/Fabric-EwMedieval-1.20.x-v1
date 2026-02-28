@@ -38,8 +38,11 @@
   "item.ewmedieval.bronze_hoe": "Bronze Hoe",
   "item.ewmedieval.bronze_shovel": "Bronze Shovel",
   "item.ewmedieval.bronze_shears": "Bronze Shears",
+  "item.ewmedieval.bronze_knife": "Bronze Knife",
 
 
+  "item.ewmedieval.cake_slice": "Slice of Cake",
+  "item.ewmedieval.pumpkin_slice": "Pumpkin Slice ",
   "item.ewmedieval.raw_horse": "Raw Horse",
   "item.ewmedieval.raw_swan": "Raw Swan",
   "item.ewmedieval.raw_wolf": "Raw Wolf",
@@ -495,6 +498,11 @@
   "block.ewmedieval.deepslate_lead_ore": "Deepslate Lead Ore",
   "block.ewmedieval.slate_copper_ore": "Slate Copper Ore",
   "block.ewmedieval.slate_coal_ore": "Slate Coal Ore",
+
+  "enchantment.ewmedieval.backstabbing": "Backstabbing",
+
+
+  "block.ewmedieval.cutting_board": "Cutting Board",
 
   "itemgroup.ewmedieval_metals": "EwMedieval Metals",
   "itemgroup.ewmedieval_food": "EwMedieval Food",

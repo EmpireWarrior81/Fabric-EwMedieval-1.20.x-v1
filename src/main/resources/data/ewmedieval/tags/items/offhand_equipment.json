@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#ewmedieval:knives",
+    "#ewmedieval:axes",
+    "ewmedieval:bronze_shears",
+    "#minecraft:axes",
+    "minecraft:iron_sword",
+    "minecraft:stone_sword",
+    "minecraft:golden_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword",
+    "minecraft:shears"
+  ]
+}

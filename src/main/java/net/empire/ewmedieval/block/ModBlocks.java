@@ -1,6 +1,7 @@
 package net.empire.ewmedieval.block;
 
 import net.empire.ewmedieval.EwMedieval;
+import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.special.earlyforge.EarlyForgeBlock;
 import net.empire.ewmedieval.block.special.forge.ForgeBlock;
@@ -632,6 +633,9 @@ public class ModBlocks {
 
     public static final Block EARLY_FORGE = registerBlock("earlyforge",
             new EarlyForgeBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
+
+    public static final Block CUTTING_BOARD = registerBlock("cutting_board",
+            new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
 
 
 

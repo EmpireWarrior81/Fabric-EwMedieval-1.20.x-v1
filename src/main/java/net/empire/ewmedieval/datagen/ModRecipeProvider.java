@@ -12,16 +12,11 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
-
-
-
 import java.util.List;
 import java.util.function.Consumer;
-
 
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -350,14 +345,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModBlocks.SILVER_BLOCK , 1);
 
 
-
-
-// Cactus → Cactus Flesh
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CACTUS_FLESH, 3)
-                .input(Items.CACTUS)
-                .criterion("has_cactus", conditionsFromItem(Items.CACTUS))
-                .offerTo(exporter, new Identifier("ewmedieval", "cactus_flesh_from_cactus"));
-
 // Stone version Block recipes
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
                 ModBlocks.POLISHED_SLATE,
@@ -566,6 +553,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModItems.BRONZE_INGOT)
                 .criterion("has_bronze_ingot", conditionsFromItem(ModItems.BRONZE_INGOT))
                 .offerTo(exporter);
+
+
 
 
     }

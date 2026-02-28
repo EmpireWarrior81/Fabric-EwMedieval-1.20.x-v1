@@ -16,6 +16,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -86,7 +89,7 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Earlyforge");
+        return Text.translatable("block.ewmedieval.earlyforge");
     }
 
     @Override
@@ -108,6 +111,17 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
     }
 
     @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new EarlyForgeScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
@@ -121,13 +135,13 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
 
         boolean wasBurning = isBurning();
 
-        // Verminder brandtijd als er brandstof brandt
+        SimpleInventory inv = getInputInventory();
+
         if (isBurning()) {
             burnTime--;
         }
 
-        // Start nieuwe fuel als er een recept is en fuel aanwezig
-        if (!isBurning() && hasValidRecipe() && !getStack(FUEL_SLOT).isEmpty()) {
+        if (!isBurning() && hasValidRecipe(inv) && !getStack(FUEL_SLOT).isEmpty()) {
             ItemStack fuelStack = getStack(FUEL_SLOT);
             Integer fuelTicks = FuelRegistry.INSTANCE.get(fuelStack.getItem());
             if (fuelTicks != null && fuelTicks > 0) {
@@ -142,29 +156,27 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
             }
         }
 
-        boolean hasRecipe = hasValidRecipe();
-        boolean canInsert = canInsertResult();
+        boolean hasRecipe = hasValidRecipe(inv);
+        boolean canInsert = canInsertResult(inv);
         boolean changed = false;
 
         if (hasRecipe && canInsert) {
             if (isBurning()) {
-                // Recept + brandstof: voortgang omhoog
                 progress++;
                 changed = true;
                 if (progress >= maxProgress) {
-                    craftItem();
+                    craftItem(inv);
                     progress = 0;
-                    changed = true;
                 }
             } else {
-                // Recept aanwezig maar geen brandstof: langzaam teruglopen
+
                 if (progress > 0) {
                     progress--;
                     changed = true;
                 }
             }
         } else {
-            // Geen recept of geen plek in output: direct reset
+
             if (progress != 0) {
                 progress = 0;
                 changed = true;
@@ -175,13 +187,11 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
             markDirty(world, pos, state);
         }
 
-        // Update visuals als brandstatus verandert
         if (wasBurning != isBurning()) {
             world.setBlockState(pos, state.with(EarlyForgeBlock.LIT, isBurning()), Block.NOTIFY_ALL);
         }
     }
 
-    // ---- Helper methods ----
     private SimpleInventory getInputInventory() {
         SimpleInventory inv = new SimpleInventory(4);
         inv.setStack(0, getStack(INPUT_SLOT_1));
@@ -191,17 +201,15 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
         return inv;
     }
 
-    private boolean hasValidRecipe() {
+    private boolean hasValidRecipe(SimpleInventory inv) {
         if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
         return world.getRecipeManager()
                 .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
                 .isPresent();
     }
 
-    private boolean canInsertResult() {
+    private boolean canInsertResult(SimpleInventory inv) {
         if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
 
         return world.getRecipeManager()
                 .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
@@ -215,25 +223,25 @@ public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreen
                 .orElse(false);
     }
 
-    private void craftItem() {
+    private void craftItem(SimpleInventory inv) {
         if (world == null) return;
-        SimpleInventory inv = getInputInventory();
+        world.getRecipeManager()
+                .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
+                .ifPresent(recipe -> {
+                    for (int i = 0; i < 4; i++) {
+                        if (!getStack(i).isEmpty()) {
+                            removeStack(i, 1);
+                        }
+                    }
 
-        world.getRecipeManager().getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world).ifPresent(recipe -> {
-            // consume inputs
-            for (int i = 0; i < 4; i++) {
-                removeStack(i, 1);
-            }
+                    ItemStack result = recipe.craft(inv, world.getRegistryManager());
+                    ItemStack output = getStack(OUTPUT_SLOT);
 
-            // produce output
-            ItemStack result = recipe.craft(inv, world.getRegistryManager());
-            ItemStack output = getStack(OUTPUT_SLOT);
-
-            if (output.isEmpty()) {
-                setStack(OUTPUT_SLOT, result.copy());
-            } else if (output.getItem() == result.getItem()) {
-                output.increment(result.getCount());
-            }
-        });
+                    if (output.isEmpty()) {
+                        setStack(OUTPUT_SLOT, result.copy());
+                    } else if (output.getItem() == result.getItem()) {
+                        output.increment(result.getCount());
+                    }
+                });
     }
 }

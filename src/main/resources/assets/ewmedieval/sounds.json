@@ -112,5 +112,13 @@
       "ewmedieval:tuff_bricks_step5",
       "ewmedieval:tuff_bricks_step6"
     ]
+  },
+  "block.cutting_board.knife": {
+    "category": "block",
+    "subtitle": "subtitles.block.cutting_board.knife",
+    "sounds": [
+      "ewmedieval:block/cutting_board/knife1",
+      "ewmedieval:block/cutting_board/knife2"
+    ]
   }
 }

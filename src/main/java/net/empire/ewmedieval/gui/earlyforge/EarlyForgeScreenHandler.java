@@ -17,36 +17,32 @@ import net.minecraft.screen.slot.Slot;
 import org.jetbrains.annotations.Nullable;
 
 public class EarlyForgeScreenHandler extends ScreenHandler {
-    private final Inventory inventory;            // the block's inventory (6 slots)
+    private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     private final EarlyForgeBlockEntity blockEntity;
 
     private static final int BLOCK_INV_SIZE = 6;
     private static final int INPUT_START = 0;
-    private static final int INPUT_END = 4; // exclusive: slots 0..3 are inputs
+    private static final int INPUT_END = 4;
     private static final int OUTPUT_SLOT = 4;
-    private static final int FUEL_SLOT = EarlyForgeBlockEntity.FUEL_SLOT; // should be 5
+    private static final int FUEL_SLOT = EarlyForgeBlockEntity.FUEL_SLOT;
 
-    // Client-side constructor (PacketByteBuf). IMPORTANT: use size 4 here.
+
     public EarlyForgeScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
         this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(4)); // <<< 4, niet 2
+                new ArrayPropertyDelegate(4)); // < 4, not 2
     }
 
-    // Server-side constructor (blockEntity passed in)
     public EarlyForgeScreenHandler(int syncId, PlayerInventory playerInventory,
                               @Nullable BlockEntity blockEntity, PropertyDelegate delegate) {
         super(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, syncId);
 
-        // Veilig: als blockEntity null is (zeldzaam op client), gebruik tijdelijke inventory
+
         Inventory inv;
-        if (blockEntity instanceof Inventory) {
-            inv = (Inventory) blockEntity;
-        } else {
-            inv = new SimpleInventory(BLOCK_INV_SIZE);
+        if (blockEntity instanceof Inventory) { inv = (Inventory) blockEntity;
+        } else { inv = new SimpleInventory(BLOCK_INV_SIZE);
         }
 
-        // controleer juiste grootte (6 slots)
         checkSize(inv, BLOCK_INV_SIZE);
 
         this.inventory = inv;
@@ -57,14 +53,11 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
 
         this.blockEntity = blockEntity instanceof EarlyForgeBlockEntity ? (EarlyForgeBlockEntity) blockEntity : null;
 
-        // --- block slots ---
-        // inputs 0..3
         this.addSlot(new Slot(this.inventory, 0, 14, 16));
         this.addSlot(new Slot(this.inventory, 1, 32, 16));
         this.addSlot(new Slot(this.inventory, 2, 50, 16));
         this.addSlot(new Slot(this.inventory, 3, 68, 16));
 
-        // output slot (no inserting into output)
         this.addSlot(new Slot(this.inventory, OUTPUT_SLOT, 120, 17) {
             @Override
             public boolean canInsert(ItemStack stack) {
@@ -72,7 +65,6 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
             }
         });
 
-        // fuel slot (alleen items die in FuelRegistry staan mogen erin)
         this.addSlot(new Slot(this.inventory, FUEL_SLOT, 41, 55) {
             @Override
             public boolean canInsert(ItemStack stack) {
@@ -81,7 +73,6 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
             }
         });
 
-        // player inv & hotbar
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
     }
@@ -90,7 +81,6 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
         return this.propertyDelegate.get(0) > 0;
     }
 
-    // schaal voor het craft-pijltje (bijv. breedte 26 px)
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);
@@ -98,12 +88,10 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
         return maxProgress > 0 && progress > 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
-    // brandstatus
     public boolean isBurning() {
         return this.propertyDelegate.get(2) > 0;
     }
 
-    // schaal voor de vlam (bijv. hoogte 14 px)
     public int getFuelScaled() {
         int burn = this.propertyDelegate.get(2);
         int total = this.propertyDelegate.get(3);
@@ -121,30 +109,24 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
             newStack = originalStack.copy();
 
             int playerInvStart = BLOCK_INV_SIZE;
-            int playerInvEnd = playerInvStart + 27; // main inventory
+            int playerInvEnd = playerInvStart + 27;
             int hotbarStart = playerInvEnd;
-            int hotbarEnd = hotbarStart + 9; // hotbar
+            int hotbarEnd = hotbarStart + 9;
 
             if (invSlot < BLOCK_INV_SIZE) {
-                // van block naar speler
                 if (!this.insertItem(originalStack, playerInvStart, hotbarEnd, true)) {
                     return ItemStack.EMPTY;
                 }
             } else {
-                // van speler naar block: probeer fuel eerst, anders inputs
                 Integer fuelTicks = FuelRegistry.INSTANCE.get(originalStack.getItem());
                 if (fuelTicks != null && fuelTicks > 0) {
-                    // probeer fuel-slot
                     if (!this.insertItem(originalStack, FUEL_SLOT, FUEL_SLOT + 1, false)) {
-                        // als fuel-slot vol is, probeer inputs
                         if (!this.insertItem(originalStack, INPUT_START, INPUT_END, false)) {
                             return ItemStack.EMPTY;
                         }
                     }
                 } else {
-                    // niet-brandstof: probeer input slots
                     if (!this.insertItem(originalStack, INPUT_START, INPUT_END, false)) {
-                        // als niet in inputs past: verplaats tussen player inv <-> hotbar
                         if (invSlot >= playerInvStart && invSlot < playerInvEnd) {
                             if (!this.insertItem(originalStack, hotbarStart, hotbarEnd, false)) return ItemStack.EMPTY;
                         } else if (invSlot >= hotbarStart && invSlot < hotbarEnd) {

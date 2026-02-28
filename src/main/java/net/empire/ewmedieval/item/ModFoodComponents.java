@@ -1,6 +1,7 @@
 package net.empire.ewmedieval.item;
 
 import net.minecraft.item.FoodComponent;
+import net.minecraft.item.FoodComponents;
 
 public class ModFoodComponents {
     public static final FoodComponent RAW_HORSE = new FoodComponent.Builder().hunger(3).saturationModifier(0.4f).build();
@@ -15,6 +16,8 @@ public class ModFoodComponents {
     public static final FoodComponent COOKED_WOLF = new FoodComponent.Builder().hunger(6).saturationModifier(0.7f).build();
 
 
+    public static final FoodComponent CAKE_SLICE = new FoodComponent.Builder().hunger(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PUMPKIN_SLICE = new FoodComponent.Builder().hunger(2).saturationModifier(0.1f).build();
 
     public static final FoodComponent LEMBAS = new FoodComponent.Builder().hunger(20).saturationModifier(1f).build();
 
