@@ -1,6 +1,6 @@
 package net.empire.ewmedieval.block.entity;
 
-import net.empire.ewmedieval.block.special.forge.ForgeBlock;
+import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
 import net.empire.ewmedieval.gui.forge.ForgeScreenHandler;
 import net.empire.ewmedieval.recipe.ForgeRecipe;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;

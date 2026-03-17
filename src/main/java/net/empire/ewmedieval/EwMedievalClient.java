@@ -19,7 +19,22 @@ public class EwMedievalClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                 ModBlocks.TUFF_CARVED_WINDOW,
-                ModBlocks.TUFF_CARVED_WINDOW_PANE);
+                ModBlocks.TUFF_CARVED_WINDOW_PANE,
+                ModBlocks.ROAST_CHICKEN_BLOCK,
+                ModBlocks.WILD_CARROTS,
+                ModBlocks.WILD_BEETROOTS,
+                ModBlocks.WILD_CABBAGES,
+                ModBlocks.WILD_ONIONS,
+                ModBlocks.WILD_POTATOES,
+                ModBlocks.WILD_TOMATOES,
+                ModBlocks.WILD_RICE,
+                ModBlocks.ONION_CROP,
+                ModBlocks.CABBAGE_CROP,
+                ModBlocks.RICE_CROP,
+                ModBlocks.RICE_CROP_PANICLES,
+                ModBlocks.ROPE,
+                ModBlocks.TOMATO_CROP,
+                ModBlocks.BUDDING_TOMATO_CROP);
 
 
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);

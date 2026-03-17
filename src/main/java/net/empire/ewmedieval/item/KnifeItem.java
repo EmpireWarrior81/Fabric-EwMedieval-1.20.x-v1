@@ -56,15 +56,17 @@ public class KnifeItem extends MiningToolItem implements CustomEnchantingBehavio
             Block block = state.getBlock();
 
             if (state.isIn(ModTags.DROPS_CAKE_SLICE)) {
-                level.setBlockState(pos, Blocks.CAKE.getDefaultState().with(CakeBlock.BITES, 1), 3);
-                Block.dropStacks(state, level, pos);
-                ItemEntity itemEntity = new ItemEntity(level,
-                        pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5,
-                        new ItemStack(ModItems.CAKE_SLICE.asItem()));
-                itemEntity.setVelocity(-0.05, 0, 0);
-                level.spawnEntity(itemEntity);
-                level.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
-                return ActionResult.SUCCESS;
+                if (!level.isClient) {
+                    level.setBlockState(pos, Blocks.CAKE.getDefaultState().with(CakeBlock.BITES, 1), 3);
+                    Block.dropStacks(state, level, pos);
+                    ItemEntity itemEntity = new ItemEntity(level,
+                            pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5,
+                            new ItemStack(ModItems.CAKE_SLICE.asItem()));
+                    itemEntity.setVelocity(-0.05, 0, 0);
+                    level.spawnEntity(itemEntity);
+                    level.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                    return ActionResult.SUCCESS;
+                }
             }
 
             if (block == Blocks.CAKE) {
@@ -133,5 +135,18 @@ public class KnifeItem extends MiningToolItem implements CustomEnchantingBehavio
         if (DENIED_ENCHANTMENTS.contains(enchantment)) return false;
 
         return enchantment.target.isAcceptableItem(stack.getItem());
+    }
+
+
+    @Override
+    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        if (!world.isClient && state.isIn(ModTags.MINEABLE_WITH_KNIFE)) {
+            stack.damage(1, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+
+            if (state.getBlock() == Blocks.CAKE && state.get(CakeBlock.BITES) == 0) {
+                Block.dropStack(world, pos, new ItemStack(Items.CAKE));
+            }
+        }
+        return true;
     }
 }

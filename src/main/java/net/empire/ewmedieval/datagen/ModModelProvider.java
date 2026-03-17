@@ -1,8 +1,8 @@
 package net.empire.ewmedieval.datagen;
 
 import net.empire.ewmedieval.block.ModBlocks;
-import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabBlock;
-import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabShape;
+import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
+import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabShape;
 import net.empire.ewmedieval.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -224,11 +224,10 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerTrapdoor(ModBlocks.TUFF_TRAPDOOR);
 
-        BlockStateModelGenerator.BlockTexturePool tuffPool =
-                blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TUFF);
-        tuffPool.slab(ModBlocks.TUFF_SLAB);
-        tuffPool.stairs(ModBlocks.TUFF_STAIRS);
-        tuffPool.wall(ModBlocks.TUFF_WALL);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TUFF)
+                .slab(ModBlocks.TUFF_SLAB)
+                .stairs(ModBlocks.TUFF_STAIRS)
+                .wall(ModBlocks.TUFF_WALL);
 
 // Old Deepslate
         BlockStateModelGenerator.BlockTexturePool oldDeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.OLD_DEEPSLATE);
@@ -501,19 +500,15 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUFF_CARVED_WINDOW);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUFF_CARVED_WINDOW_PANE);
 
 
-// TextureMap paneTextures = TextureMap.texture(new Identifier("ewmedieval", "block/tuff_carved_window_pane"));
-    //    BlockStateModelGenerator.TintType tint = BlockStateModelGenerator.TintType.NOT_TINTED;
-
-   //     blockStateModelGenerator.registerGlassPane(
-   //             ModBlocks.TUFF_CARVED_WINDOW_PANE,
- //               paneTextures,
- //               paneTextures
-//        );
-
-
-
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CABBAGES, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_ONIONS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_TOMATOES, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CARROTS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_POTATOES, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_BEETROOTS, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 
         registerVerticalSlab(blockStateModelGenerator, ModBlocks.BLUE_TUFF_VERTICAL_SLAB, ModBlocks.BLUE_TUFF);
@@ -691,7 +686,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.LEMBAS, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CAKE_SLICE, Models.GENERATED);
-       itemModelGenerator.register(ModItems.PUMPKIN_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PUMPKIN_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STUFFED_PUMPKIN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROAST_CHICKEN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CACTUS_FLESH, Models.GENERATED);
         itemModelGenerator.register(ModItems.CACTUS_STEAK, Models.GENERATED);
@@ -729,9 +726,27 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GOLDEN_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.DIAMOND_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NETHERITE_KNIFE, Models.HANDHELD);
-//        itemModelGenerator.register(ModItems.WOODEN_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.STONE_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_KNIFE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.BACON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MINCED_BEEF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CABBAGE_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CABBAGE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ONION, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RICE_PANICLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHICKEN_CUTS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MUTTON_CHOPS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.TOMATO_SEEDS, Models.GENERATED);
+
+
+        itemModelGenerator.register(ModItems.ROPE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DOG_FOOD, Models.GENERATED);
+
+
 
 
     }

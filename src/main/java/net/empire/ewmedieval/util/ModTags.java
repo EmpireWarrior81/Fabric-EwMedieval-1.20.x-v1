@@ -2,6 +2,7 @@ package net.empire.ewmedieval.util;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -24,6 +25,8 @@ public class ModTags {
     public static final TagKey<Item> CUTTING_TOOLS = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "cutting_tools"));
 
     public static final TagKey<Item> FLAT_ON_CUTTING_BOARD = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "flat_on_cutting_board"));
+
+    public static final TagKey<EntityType<?>> DOG_FOOD_USERS = TagKey.of(RegistryKeys.ENTITY_TYPE, new Identifier("ewmedieval", "dog_food_users"));
 
     public static class Blocks {
         private static TagKey<Block> createTag(String name) {

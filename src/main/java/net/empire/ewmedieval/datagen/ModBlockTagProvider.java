@@ -455,6 +455,31 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.TUFF_BRICK_WALL);
 
 
+        getOrCreateTagBuilder(ModTags.MINEABLE_WITH_KNIFE)
+                .add(Blocks.CAKE);
+
+        getOrCreateTagBuilder(ModTags.DROPS_CAKE_SLICE);
+
+        getOrCreateTagBuilder(ModTags.MINEABLE_WITH_KNIFE)
+                .add(Blocks.COBWEB)
+                .forceAddTag(BlockTags.LEAVES)
+                .add(Blocks.VINE)
+                .add(Blocks.GLOW_LICHEN)
+                .add(Blocks.TALL_GRASS)
+                .add(Blocks.GRASS)
+                .add(Blocks.FERN)
+                .add(Blocks.LARGE_FERN)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.HANGING_ROOTS)
+                .add(Blocks.NETHER_SPROUTS)
+                .add(Blocks.WARPED_ROOTS)
+                .add(Blocks.CRIMSON_ROOTS)
+                .add(Blocks.TWISTING_VINES)
+                .add(Blocks.WEEPING_VINES)
+                .add(Blocks.CAVE_VINES);
+
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(ModBlocks.ROPE);
 
     }
 }

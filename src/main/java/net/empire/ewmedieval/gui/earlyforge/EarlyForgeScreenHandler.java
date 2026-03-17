@@ -37,11 +37,7 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
                               @Nullable BlockEntity blockEntity, PropertyDelegate delegate) {
         super(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, syncId);
 
-
-        Inventory inv;
-        if (blockEntity instanceof Inventory) { inv = (Inventory) blockEntity;
-        } else { inv = new SimpleInventory(BLOCK_INV_SIZE);
-        }
+        Inventory inv = blockEntity instanceof Inventory i ? i : new SimpleInventory(BLOCK_INV_SIZE);
 
         checkSize(inv, BLOCK_INV_SIZE);
 
@@ -75,10 +71,6 @@ public class EarlyForgeScreenHandler extends ScreenHandler {
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
-    }
-
-    public boolean isCrafting() {
-        return this.propertyDelegate.get(0) > 0;
     }
 
     public int getScaledProgress() {

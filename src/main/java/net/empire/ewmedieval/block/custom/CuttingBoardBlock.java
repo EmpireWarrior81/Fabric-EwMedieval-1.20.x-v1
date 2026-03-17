@@ -34,6 +34,8 @@ import net.empire.ewmedieval.block.entity.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.util.ModTags;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 
+@SuppressWarnings("deprecation")
+
 public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable {
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
@@ -55,9 +57,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
         UseBlockCallback.EVENT.register(ToolCarvingEvent::onSneakPlaceTool);
     }
 
-    // -------------------------------------------------------------------------
-    // Rendering
-    // -------------------------------------------------------------------------
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {
@@ -69,9 +68,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
         return SHAPE;
     }
 
-    // -------------------------------------------------------------------------
-    // Interaction
-    // -------------------------------------------------------------------------
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
@@ -86,13 +82,11 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
 
         if (cuttingBoard.isEmpty()) {
             if (!offhandStack.isEmpty()) {
-                // Let the offhand handle it if mainhand item is not a block or special equipment
                 if (hand == Hand.MAIN_HAND
                         && !offhandStack.isIn(ModTags.OFFHAND_EQUIPMENT)
                         && !(heldStack.getItem() instanceof BlockItem)) {
                     return ActionResult.PASS;
                 }
-                // Items tagged as offhand equipment should not be placed from the offhand
                 if (hand == Hand.OFF_HAND && offhandStack.isIn(ModTags.OFFHAND_EQUIPMENT)) {
                     return ActionResult.PASS;
                 }
@@ -109,7 +103,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
             }
 
         } else if (!heldStack.isEmpty()) {
-            // Use the held tool to process the stored item
             ItemStack boardStack = cuttingBoard.getStoredItem().copy();
             if (cuttingBoard.processStoredItemUsingTool(heldStack, player)) {
                 spawnCuttingParticles(world, pos, boardStack, 5);
@@ -118,7 +111,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
             return ActionResult.CONSUME;
 
         } else if (hand == Hand.MAIN_HAND) {
-            // Empty hand: retrieve stored item
             if (!player.getAbilities().creativeMode) {
                 ItemStack removed = cuttingBoard.removeItem();
                 if (!player.getInventory().insertStack(removed)) {
@@ -147,10 +139,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
         }
         super.onStateReplaced(state, world, pos, newState, moved);
     }
-
-    // -------------------------------------------------------------------------
-    // Placement & State
-    // -------------------------------------------------------------------------
 
     @Nullable
     @Override
@@ -190,10 +178,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
-    // -------------------------------------------------------------------------
-    // Comparator support
-    // -------------------------------------------------------------------------
-
     @Override
     public boolean hasComparatorOutput(BlockState state) {
         return true;
@@ -208,19 +192,11 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
         return 0;
     }
 
-    // -------------------------------------------------------------------------
-    // Block Entity
-    // -------------------------------------------------------------------------
-
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY.instantiate(pos, state);
     }
-
-    // -------------------------------------------------------------------------
-    // Rotation & Mirroring
-    // -------------------------------------------------------------------------
 
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
@@ -231,10 +207,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
     }
-
-    // -------------------------------------------------------------------------
-    // Particles
-    // -------------------------------------------------------------------------
 
     public static void spawnCuttingParticles(World world, BlockPos pos, ItemStack stack, int count) {
         for (int i = 0; i < count; i++) {
@@ -255,10 +227,6 @@ public class CuttingBoardBlock extends BlockWithEntity implements Waterloggable 
             }
         }
     }
-
-    // -------------------------------------------------------------------------
-    // Sneak + Right-Click Tool Placement
-    // -------------------------------------------------------------------------
 
     public static class ToolCarvingEvent {
         public static ActionResult onSneakPlaceTool(PlayerEntity player, World world,

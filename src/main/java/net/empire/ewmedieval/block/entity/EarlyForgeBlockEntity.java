@@ -1,6 +1,6 @@
 package net.empire.ewmedieval.block.entity;
 
-import net.empire.ewmedieval.block.special.earlyforge.EarlyForgeBlock;
+import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreenHandler;
 import net.empire.ewmedieval.recipe.EarlyForgeRecipe;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;

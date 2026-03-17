@@ -38,7 +38,14 @@
   "item.ewmedieval.bronze_hoe": "Bronze Hoe",
   "item.ewmedieval.bronze_shovel": "Bronze Shovel",
   "item.ewmedieval.bronze_shears": "Bronze Shears",
+
   "item.ewmedieval.bronze_knife": "Bronze Knife",
+  "item.ewmedieval.iron_knife": "Iron Knife",
+  "item.ewmedieval.golden_knife": "Golden Knife",
+  "item.ewmedieval.diamond_knife": "Diamond Knife",
+  "item.ewmedieval.netherite_knife": "Netherite Knife",
+  "item.ewmedieval.stone_knife": "Stone Knife",
+  "item.ewmedieval.flint_knife": "Flint Knife",
 
 
   "item.ewmedieval.cake_slice": "Slice of Cake",
@@ -503,6 +510,8 @@
 
 
   "block.ewmedieval.cutting_board": "Cutting Board",
+  "block.ewmedieval.cutting_board.invalid_item": "This doesn't seem cuttable...",
+  "block.ewmedieval.cutting_board.invalid_tool": "Maybe with a different tool...",
 
   "itemgroup.ewmedieval_metals": "EwMedieval Metals",
   "itemgroup.ewmedieval_food": "EwMedieval Food",

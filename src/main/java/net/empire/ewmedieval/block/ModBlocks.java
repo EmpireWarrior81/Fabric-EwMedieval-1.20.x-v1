@@ -2,21 +2,24 @@ package net.empire.ewmedieval.block;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
-import net.empire.ewmedieval.block.special.VerticalSlabs.VerticalSlabBlock;
-import net.empire.ewmedieval.block.special.earlyforge.EarlyForgeBlock;
-import net.empire.ewmedieval.block.special.forge.ForgeBlock;
+import net.empire.ewmedieval.block.custom.RopeBlock;
+import net.empire.ewmedieval.block.custom.cropblocks.*;
+import net.empire.ewmedieval.block.custom.feastblocks.FeastBlock;
+import net.empire.ewmedieval.block.custom.feastblocks.RoastChickenBlock;
+import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
+import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
+import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
+import net.empire.ewmedieval.item.ModItems;
 import net.empire.ewmedieval.sound.ModBlockSoundGroups;
-import net.empire.ewmedieval.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
@@ -637,15 +640,77 @@ public class ModBlocks {
     public static final Block CUTTING_BOARD = registerBlock("cutting_board",
             new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
 
+    public static final Block STUFFED_PUMPKIN_BLOCK = registerBlock("stuffed_pumpkin_block",
+            new FeastBlock(FabricBlockSettings.copyOf(Blocks.PUMPKIN), () -> ModItems.STUFFED_PUMPKIN, false),
+            new FabricItemSettings().maxCount(1));
+
+
+    public static final Block ROAST_CHICKEN_BLOCK = registerBlock("roast_chicken_block",
+            new RoastChickenBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.ROAST_CHICKEN, true),
+            new FabricItemSettings().maxCount(1));
 
 
 
+    public static final Block WILD_CABBAGES = registerBlock("wild_cabbages",
+            new WildCropBlock(StatusEffects.STRENGTH, 6,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_ONIONS = registerBlock("wild_onions",
+            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 6,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_TOMATOES = registerBlock("wild_tomatoes",
+            new WildCropBlock(StatusEffects.POISON, 10,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_CARROTS = registerBlock("wild_carrots",
+            new WildCropBlock(StatusEffects.MINING_FATIGUE, 6,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_POTATOES = registerBlock("wild_potatoes",
+            new WildCropBlock(StatusEffects.NAUSEA, 8,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_BEETROOTS = registerBlock("wild_beetroots",
+            new WildCropBlock(StatusEffects.WATER_BREATHING, 8,
+                    FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_RICE = registerBlock("wild_rice",
+            new WildRiceBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+
+    public static final Block CABBAGE_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "cabbages"),
+            new CabbageBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block ONION_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "onions"),
+            new OnionBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block RICE_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "rice"),
+            new RiceBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).strength(0.2f)));
+    public static final Block RICE_CROP_PANICLES = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "rice_panicles"),
+            new RicePaniclesBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block BUDDING_TOMATO_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "budding_tomatoes"),
+            new BuddingTomatoBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "tomatoes"),
+            new TomatoVineBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
+
+    public static final Block ROPE = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "rope"),
+            new RopeBlock(FabricBlockSettings.copyOf(Blocks.BROWN_CARPET)
+                    .noCollision().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOL)));
 
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(EwMedieval.MOD_ID, name), block);
+    }
+
+    private static Block registerBlock(String name, Block block, FabricItemSettings itemSettings) {
+        Registry.register(Registries.ITEM, new Identifier(EwMedieval.MOD_ID, name),
+                new BlockItem(block, itemSettings));
         return Registry.register(Registries.BLOCK, new Identifier(EwMedieval.MOD_ID, name), block);
     }
 

@@ -5,14 +5,12 @@ import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.enchantment.ModEnchantments;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
-import net.empire.ewmedieval.item.KnifeItem;
-import net.empire.ewmedieval.item.ModBannerPatterns;
-import net.empire.ewmedieval.item.ModItemGroups;
-import net.empire.ewmedieval.item.ModItems;
+import net.empire.ewmedieval.item.*;
 import net.empire.ewmedieval.recipe.ModRecipes;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.empire.ewmedieval.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,11 +46,15 @@ public class EwMedieval implements ModInitializer {
         ModSounds.registerModSounds();
 
 
-
         CuttingBoardBlock.init();
+        DogFoodItem.init();
+        RopeItem.init();
 
     //    ModBannerPatterns.register();
 
+
+
+        FuelRegistry.INSTANCE.add(ModItems.ROPE, 200);
 
     }
 }
