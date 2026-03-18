@@ -39,6 +39,8 @@
   "item.ewmedieval.bronze_shovel": "Bronze Shovel",
   "item.ewmedieval.bronze_shears": "Bronze Shears",
 
+  "item.ewmedieval.mithril_pickaxe": "Mithril Pickaxe",
+
   "item.ewmedieval.bronze_knife": "Bronze Knife",
   "item.ewmedieval.iron_knife": "Iron Knife",
   "item.ewmedieval.golden_knife": "Golden Knife",
@@ -46,6 +48,7 @@
   "item.ewmedieval.netherite_knife": "Netherite Knife",
   "item.ewmedieval.stone_knife": "Stone Knife",
   "item.ewmedieval.flint_knife": "Flint Knife",
+
 
 
   "item.ewmedieval.cake_slice": "Slice of Cake",
