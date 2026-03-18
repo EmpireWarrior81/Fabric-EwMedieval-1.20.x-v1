@@ -1,6 +1,7 @@
-package net.empire.ewmedieval.block.entity;
+package net.empire.ewmedieval.block.entity.custom;
 
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
+import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.recipe.CuttingBoardRecipe;
 import net.empire.ewmedieval.recipe.ModRecipes;
 import net.minecraft.block.BlockState;

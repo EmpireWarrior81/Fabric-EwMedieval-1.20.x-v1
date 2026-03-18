@@ -26,6 +26,8 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    //Vertical Slab
+
     public static final Model VERTICAL_SLAB = new Model(
             Optional.of(new Identifier("minecraft", "block/block")), // parent = simpel blockmodel
             Optional.empty(), // suffix optioneel
@@ -500,7 +502,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUFF_CARVED_WINDOW);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUFF_CARVED_WINDOW_PANE);
+
 
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CABBAGES, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -710,9 +712,17 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.STONE_PEBBLE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CRUDE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.CRUDE_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CRUDE_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CRUDE_SHOVEL, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.EDHEL_STEEL_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EDHEL_STEEL_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EDHEL_STEEL_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.MITHRIL_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_AXE, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.BRONZE_SHEARS, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_KNIFE, Models.HANDHELD);
@@ -741,6 +751,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MUTTON_CHOPS, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TOMATO_SEEDS, Models.GENERATED);
+
 
 
         itemModelGenerator.register(ModItems.ROPE, Models.GENERATED);

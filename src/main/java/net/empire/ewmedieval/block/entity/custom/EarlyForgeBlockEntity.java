@@ -1,8 +1,10 @@
-package net.empire.ewmedieval.block.entity;
+package net.empire.ewmedieval.block.entity.custom;
 
-import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
-import net.empire.ewmedieval.gui.forge.ForgeScreenHandler;
-import net.empire.ewmedieval.recipe.ForgeRecipe;
+import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
+import net.empire.ewmedieval.block.entity.ImplementedInventory;
+import net.empire.ewmedieval.block.entity.ModBlockEntities;
+import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreenHandler;
+import net.empire.ewmedieval.recipe.EarlyForgeRecipe;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
@@ -16,6 +18,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -25,7 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class EarlyForgeBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);
 
@@ -43,8 +48,8 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     protected final PropertyDelegate propertyDelegate;
 
-    public ForgeBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.FORGE_BLOCK_ENTITY, pos, state);
+    public EarlyForgeBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.EARLYFORGE_BLOCK_ENTITY, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             @Override
             public int get(int index) {
@@ -86,30 +91,41 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Forge");
+        return Text.translatable("block.ewmedieval.earlyforge");
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("forge.progress", progress);
-        nbt.putInt("forge.burnTime", burnTime);
-        nbt.putInt("forge.fuelTime", fuelTime);
+        nbt.putInt("earlyforge.progress", progress);
+        nbt.putInt("earlyforge.burnTime", burnTime);
+        nbt.putInt("earlyforge.fuelTime", fuelTime);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("forge.progress");
-        burnTime = nbt.getInt("forge.burnTime");
-        fuelTime = nbt.getInt("forge.fuelTime");
+        progress = nbt.getInt("earlyforge.progress");
+        burnTime = nbt.getInt("earlyforge.burnTime");
+        fuelTime = nbt.getInt("earlyforge.fuelTime");
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
     }
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new ForgeScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+        return new EarlyForgeScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     public boolean isBurning() {
@@ -121,13 +137,13 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
         boolean wasBurning = isBurning();
 
-        // Verminder brandtijd als er brandstof brandt
+        SimpleInventory inv = getInputInventory();
+
         if (isBurning()) {
             burnTime--;
         }
 
-        // Start nieuwe fuel als er een recept is en fuel aanwezig
-        if (!isBurning() && hasValidRecipe() && !getStack(FUEL_SLOT).isEmpty()) {
+        if (!isBurning() && hasValidRecipe(inv) && !getStack(FUEL_SLOT).isEmpty()) {
             ItemStack fuelStack = getStack(FUEL_SLOT);
             Integer fuelTicks = FuelRegistry.INSTANCE.get(fuelStack.getItem());
             if (fuelTicks != null && fuelTicks > 0) {
@@ -142,29 +158,27 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
             }
         }
 
-        boolean hasRecipe = hasValidRecipe();
-        boolean canInsert = canInsertResult();
+        boolean hasRecipe = hasValidRecipe(inv);
+        boolean canInsert = canInsertResult(inv);
         boolean changed = false;
 
         if (hasRecipe && canInsert) {
             if (isBurning()) {
-                // Recept + brandstof: voortgang omhoog
                 progress++;
                 changed = true;
                 if (progress >= maxProgress) {
-                    craftItem();
+                    craftItem(inv);
                     progress = 0;
-                    changed = true;
                 }
             } else {
-                // Recept aanwezig maar geen brandstof: langzaam teruglopen
+
                 if (progress > 0) {
                     progress--;
                     changed = true;
                 }
             }
         } else {
-            // Geen recept of geen plek in output: direct reset
+
             if (progress != 0) {
                 progress = 0;
                 changed = true;
@@ -175,13 +189,11 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
             markDirty(world, pos, state);
         }
 
-        // Update visuals als brandstatus verandert
         if (wasBurning != isBurning()) {
-            world.setBlockState(pos, state.with(ForgeBlock.LIT, isBurning()), Block.NOTIFY_ALL);
+            world.setBlockState(pos, state.with(EarlyForgeBlock.LIT, isBurning()), Block.NOTIFY_ALL);
         }
     }
 
-    // ---- Helper methods ----
     private SimpleInventory getInputInventory() {
         SimpleInventory inv = new SimpleInventory(4);
         inv.setStack(0, getStack(INPUT_SLOT_1));
@@ -191,20 +203,18 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         return inv;
     }
 
-    private boolean hasValidRecipe() {
+    private boolean hasValidRecipe(SimpleInventory inv) {
         if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
         return world.getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world)
+                .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
                 .isPresent();
     }
 
-    private boolean canInsertResult() {
+    private boolean canInsertResult(SimpleInventory inv) {
         if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
 
         return world.getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world)
+                .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
                 .map(recipe -> {
                     ItemStack result = recipe.craft(inv, world.getRegistryManager());
                     ItemStack output = getStack(OUTPUT_SLOT);
@@ -215,25 +225,25 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
                 .orElse(false);
     }
 
-    private void craftItem() {
+    private void craftItem(SimpleInventory inv) {
         if (world == null) return;
-        SimpleInventory inv = getInputInventory();
+        world.getRecipeManager()
+                .getFirstMatch(EarlyForgeRecipe.Type.INSTANCE, inv, world)
+                .ifPresent(recipe -> {
+                    for (int i = 0; i < 4; i++) {
+                        if (!getStack(i).isEmpty()) {
+                            removeStack(i, 1);
+                        }
+                    }
 
-        world.getRecipeManager().getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world).ifPresent(recipe -> {
-            // consume inputs
-            for (int i = 0; i < 4; i++) {
-                removeStack(i, 1);
-            }
+                    ItemStack result = recipe.craft(inv, world.getRegistryManager());
+                    ItemStack output = getStack(OUTPUT_SLOT);
 
-            // produce output
-            ItemStack result = recipe.craft(inv, world.getRegistryManager());
-            ItemStack output = getStack(OUTPUT_SLOT);
-
-            if (output.isEmpty()) {
-                setStack(OUTPUT_SLOT, result.copy());
-            } else if (output.getItem() == result.getItem()) {
-                output.increment(result.getCount());
-            }
-        });
+                    if (output.isEmpty()) {
+                        setStack(OUTPUT_SLOT, result.copy());
+                    } else if (output.getItem() == result.getItem()) {
+                        output.increment(result.getCount());
+                    }
+                });
     }
 }

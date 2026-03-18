@@ -55,14 +55,10 @@ public class ChanceResult {
         return ItemStack.EMPTY;
     }
 
-    // -------------------------------------------------------------------------
-    // JSON serialization
-    // -------------------------------------------------------------------------
 
     public static ChanceResult deserialize(JsonElement element) {
         JsonObject json = element.getAsJsonObject();
 
-        // Parse the item + count using Minecraft's built-in helper
         ItemStack stack = parseItemStack(json);
         float chance = JsonHelper.getFloat(json, "chance", 1.0f);
         float fortuneBonus = JsonHelper.getFloat(json, "fortune_chance_bonus", 0.0f);
@@ -83,9 +79,6 @@ public class ChanceResult {
         return result;
     }
 
-    // -------------------------------------------------------------------------
-    // Network (de)serialization
-    // -------------------------------------------------------------------------
 
     public static ChanceResult read(PacketByteBuf buf) {
         ItemStack stack = buf.readItemStack();

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/glass_pane_noside",
+  "textures": {
+    "pane": "ewmedieval:block/tuff_carved_window"
+  }
+}

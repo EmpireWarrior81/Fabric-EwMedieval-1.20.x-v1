@@ -1,0 +1,13 @@
+{
+  "parent": "ewmedieval:item/big_weapon",
+  "textures": {
+    "layer0": "ewmedieval:item/edhel_steel_sword"
+  },
+  "display": {
+    "gui": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 0, 0],
+      "scale": [1.5, 1.5, 1.5]
+    }
+  }
+}

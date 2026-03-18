@@ -1,0 +1,6 @@
+{
+  "parent": "ewmedieval:item/big_weapon",
+  "textures": {
+    "layer0": "ewmedieval:item/edhel_steel_axe"
+  }
+}

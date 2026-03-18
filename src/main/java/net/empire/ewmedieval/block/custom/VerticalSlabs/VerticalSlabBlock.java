@@ -21,6 +21,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("deprecation")
+
 public class VerticalSlabBlock extends Block implements Waterloggable {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
@@ -37,7 +39,6 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         builder.add(FACING, WATERLOGGED, DOUBLE, SHAPE);
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public boolean hasSidedTransparency(BlockState state) {
@@ -57,7 +58,6 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         }
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
@@ -69,7 +69,6 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
 
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
@@ -83,14 +82,12 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         return true;
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -141,7 +138,6 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         }
     }
 
-    @SuppressWarnings("deprecation")
 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         Direction direction = (Direction) state.get(FACING);
@@ -192,7 +188,6 @@ public class VerticalSlabBlock extends Block implements Waterloggable {
         return super.mirror(state, mirror);
     }
 
-    @SuppressWarnings("deprecation")
 
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {

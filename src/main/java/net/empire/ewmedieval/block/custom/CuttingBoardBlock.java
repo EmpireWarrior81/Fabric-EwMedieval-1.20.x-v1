@@ -10,9 +10,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -30,7 +28,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-import net.empire.ewmedieval.block.entity.CuttingBoardBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.util.ModTags;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 

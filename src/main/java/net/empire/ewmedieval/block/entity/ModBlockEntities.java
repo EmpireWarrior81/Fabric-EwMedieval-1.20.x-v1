@@ -2,6 +2,9 @@ package net.empire.ewmedieval.block.entity;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.ModBlocks;
+import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.ForgeBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;

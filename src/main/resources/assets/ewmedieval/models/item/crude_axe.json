@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "ewmedieval:item/big_weapon",
   "textures": {
     "layer0": "ewmedieval:item/crude_axe"
   }

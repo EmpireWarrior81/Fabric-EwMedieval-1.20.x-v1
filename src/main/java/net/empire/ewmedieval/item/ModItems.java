@@ -194,6 +194,33 @@ public class ModItems {
     public static final Item CRUDE_HOE = registerItem("crude_hoe",
             new HoeItem(ModToolMaterial.CRUDE, -1, -1.0f, new FabricItemSettings()));
 
+    //TODO fixing the values
+
+    public static final Item EDHEL_STEEL_PICKAXE = registerItem("edhel_steel_pickaxe",
+            new PickaxeItem(ModToolMaterial.EDHEL_STEEL, 1, -2.8f, new FabricItemSettings()));
+    public static final Item EDHEL_STEEL_AXE = registerItem("edhel_steel_axe",
+            new AxeItem(ModToolMaterial.EDHEL_STEEL, 6, -3.0f, new FabricItemSettings()));
+    public static final Item EDHEL_STEEL_SHOVEL = registerItem("edhel_steel_shovel",
+            new ShovelItem(ModToolMaterial.EDHEL_STEEL, 2, -3.0f, new FabricItemSettings()));
+    public static final Item EDHEL_STEEL_HOE = registerItem("edhel_steel_hoe",
+            new HoeItem(ModToolMaterial.EDHEL_STEEL, -1, -1.0f, new FabricItemSettings()));
+    public static final Item EDHEL_STEEL_SWORD = registerItem("edhel_steel_sword",
+            new CustomSwordItem(ModToolMaterial.EDHEL_STEEL, 3, -2.4f, new FabricItemSettings()));
+
+    public static final Item MITHRIL_PICKAXE = registerItem("mithril_pickaxe",
+            new PickaxeItem(ModToolMaterial.MITHRIL, 1, -2.7f,
+                    new FabricItemSettings().fireproof()));
+    public static final Item MITHRIL_AXE = registerItem("mithril_axe",
+            new AxeItem(ModToolMaterial.MITHRIL, 6, -3.0f,
+                    new FabricItemSettings().fireproof()));
+    public static final Item MITHRIL_SHOVEL = registerItem("mithril_shovel",
+            new ShovelItem(ModToolMaterial.MITHRIL, 2, -3.0f,
+                    new FabricItemSettings().fireproof()));
+    public static final Item MITHRIL_HOE = registerItem("mithril_hoe",
+            new HoeItem(ModToolMaterial.MITHRIL, -2, -1.0f,
+                    new FabricItemSettings().fireproof()));
+
+
     public static final Item BRONZE_SHEARS = registerItem("bronze_shears",
             new BronzeShears(new Item.Settings().maxCount(1)));
 

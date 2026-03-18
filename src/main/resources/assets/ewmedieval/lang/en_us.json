@@ -513,9 +513,10 @@
   "block.ewmedieval.cutting_board.invalid_item": "This doesn't seem cuttable...",
   "block.ewmedieval.cutting_board.invalid_tool": "Maybe with a different tool...",
 
-  "itemgroup.ewmedieval_metals": "EwMedieval Metals",
-  "itemgroup.ewmedieval_food": "EwMedieval Food",
-  "itemgroup.ewmedieval_blocks": "EwMedieval Blocks",
-  "itemgroup.ewmedieval_artifacts": "EwMedieval Artifacts",
-  "itemgroup.ewmedieval_tools": "EwMedieval Tools"
+  "itemgroup.ewmedieval.artifacts": "EwM Artifacts",
+  "itemgroup.ewmedieval.metals": "EwM Metals",
+  "itemgroup.ewmedieval.tools": "EwM Tools",
+  "itemgroup.ewmedieval.food": "EwM Food",
+  "itemgroup.ewmedieval.nature": "EwM Nature",
+  "itemgroup.ewmedieval.blocks": "EwM Blocks"
 }

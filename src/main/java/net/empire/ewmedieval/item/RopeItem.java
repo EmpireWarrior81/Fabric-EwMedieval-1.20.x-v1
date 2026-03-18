@@ -11,7 +11,6 @@ import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class RopeItem extends BlockItem {
 

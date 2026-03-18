@@ -1,7 +1,7 @@
 package net.empire.ewmedieval.client.renderer;
 
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
-import net.empire.ewmedieval.block.entity.CuttingBoardBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.util.ModTags;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;

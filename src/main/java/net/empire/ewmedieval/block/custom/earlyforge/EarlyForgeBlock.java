@@ -1,6 +1,6 @@
 package net.empire.ewmedieval.block.custom.earlyforge;
 
-import net.empire.ewmedieval.block.entity.EarlyForgeBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;

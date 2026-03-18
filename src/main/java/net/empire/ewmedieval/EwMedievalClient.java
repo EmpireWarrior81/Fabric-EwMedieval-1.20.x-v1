@@ -40,9 +40,7 @@ public class EwMedievalClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
 
-        BlockEntityRendererFactories.register(
-                ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY,
-                CuttingBoardRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
 
     }
 }

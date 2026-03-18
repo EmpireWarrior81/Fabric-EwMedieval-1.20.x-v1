@@ -1,6 +1,6 @@
 package net.empire.ewmedieval.gui.earlyforge;
 
-import net.empire.ewmedieval.block.entity.EarlyForgeBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.entity.BlockEntity;
