@@ -107,8 +107,8 @@ public class ModItems {
     public static final Item SMOKED_HAM = registerItem("smoked_ham", new Item(new FabricItemSettings().food(ModFoodComponents.SMOKED_HAM)));
 
     public static final Item FRUIT_SALAD = registerItem("fruit_salad", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.FRUIT_SALAD).recipeRemainder(Items.BOWL).maxCount(16)));
-    public static final Item GLOW_BERRY_CUSTARD = registerItem("glow_berry_custard",
-            new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.GLOW_BERRY_CUSTARD).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item GLOW_BERRY_CUSTARD = registerItem("glow_berry_custard", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.GLOW_BERRY_CUSTARD)
+            .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
 
 
     public static final Item MIXED_SALAD = registerItem("mixed_salad", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.MIXED_SALAD).recipeRemainder(Items.BOWL).maxCount(16)));
@@ -129,7 +129,7 @@ public class ModItems {
 
 
     public static final Item COOKED_RICE = registerItem("cooked_rice", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.COOKED_RICE).recipeRemainder(Items.BOWL).maxCount(16)));
-    public static final Item BONE_BROTH = registerItem("bone_broth", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.BONE_BROTH).recipeRemainder(Items.BOWL).maxCount(16)));
+    public static final Item BONE_BROTH = registerItem("bone_broth", new DrinkableItem(new FabricItemSettings().food(ModFoodComponents.BONE_BROTH).recipeRemainder(Items.BOWL).maxCount(16)));
     public static final Item BEEF_STEW = registerItem("beef_stew", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.BEEF_STEW).recipeRemainder(Items.BOWL).maxCount(16)));
     public static final Item VEGETABLE_SOUP = registerItem("vegetable_soup", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.VEGETABLE_SOUP).recipeRemainder(Items.BOWL).maxCount(16)));
     public static final Item FISH_STEW = registerItem("fish_stew", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.FISH_STEW).recipeRemainder(Items.BOWL).maxCount(16)));
@@ -158,7 +158,7 @@ public class ModItems {
     public static final Item SHEPHERDS_PIE = registerItem("shepherds_pie", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.SHEPHERDS_PIE).recipeRemainder(Items.BOWL).maxCount(16)));
 
 
-    public static final Item APPLE_CIDER = registerItem("apple_cider", new ConsumableItem(new FabricItemSettings().food(ModFoodComponents.APPLE_CIDER).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item APPLE_CIDER = registerItem("apple_cider", new DrinkableItem(new FabricItemSettings().food(ModFoodComponents.APPLE_CIDER).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
 
 
     public static final Item LEMBAS = registerItem("lembas", new Item(new FabricItemSettings().food(ModFoodComponents.LEMBAS)));

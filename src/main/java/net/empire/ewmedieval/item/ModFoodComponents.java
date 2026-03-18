@@ -182,8 +182,7 @@ public class ModFoodComponents {
             .hunger(14).saturationModifier(0.75f).build();
 
 
-    public static final FoodComponent APPLE_CIDER = new FoodComponent.Builder()
-            .alwaysEdible()
+    public static final FoodComponent APPLE_CIDER = new FoodComponent.Builder().alwaysEdible()
             .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 0), 1.0F).build();
 
     public static final FoodComponent DOG_FOOD = new FoodComponent.Builder()
