@@ -55,6 +55,7 @@ public class ModItems {
     public static final Item STONE_PEBBLE = registerItem("stone_pebble", new Item(new FabricItemSettings()));
 
     public static final Item ROPE = registerItem("rope", new RopeItem(ModBlocks.ROPE, new FabricItemSettings()));
+    public static final Item GLASS_JUGG = registerItem("glass_jug", new Item(new FabricItemSettings()));
 
     public static final Item RAW_HORSE = registerItem("raw_horse", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_HORSE)));
     public static final Item RAW_SWAN = registerItem("raw_swan", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_SWAN)));
@@ -159,6 +160,12 @@ public class ModItems {
 
 
     public static final Item APPLE_CIDER = registerItem("apple_cider", new DrinkableItem(new FabricItemSettings().food(ModFoodComponents.APPLE_CIDER).recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item MELON_JUICE = registerItem("melon_juice",
+            new MelonJuiceItem(new FabricItemSettings().food(new FoodComponent.Builder().alwaysEdible().build())
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item HOT_COCOA = registerItem("hot_cocoa",
+            new HotCocoaItem(new FabricItemSettings().food(new FoodComponent.Builder().alwaysEdible().build())
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
 
 
     public static final Item LEMBAS = registerItem("lembas", new Item(new FabricItemSettings().food(ModFoodComponents.LEMBAS)));
