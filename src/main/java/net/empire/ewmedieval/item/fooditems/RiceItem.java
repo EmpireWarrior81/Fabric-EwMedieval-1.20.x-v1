@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

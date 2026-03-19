@@ -1,7 +1,9 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.toolitems;
 
 import com.google.common.collect.Sets;
 import net.empire.ewmedieval.enchantment.ModEnchantments;
+import net.empire.ewmedieval.item.CustomEnchantingBehaviorItem;
+import net.empire.ewmedieval.item.ModItems;
 import net.empire.ewmedieval.util.ModTags;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.*;

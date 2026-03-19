@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.empire.ewmedieval.util.ModTags;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;

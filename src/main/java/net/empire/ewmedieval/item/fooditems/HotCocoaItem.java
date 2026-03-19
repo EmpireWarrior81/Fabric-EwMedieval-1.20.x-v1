@@ -1,11 +1,10 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;

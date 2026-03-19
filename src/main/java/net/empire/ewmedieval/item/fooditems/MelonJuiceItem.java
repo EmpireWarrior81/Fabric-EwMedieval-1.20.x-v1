@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 public class MelonJuiceItem extends DrinkableItem {
 
     public MelonJuiceItem(Settings settings) {
-        super(settings, false, false);
+        super(settings, false, true);
     }
 
     @Override

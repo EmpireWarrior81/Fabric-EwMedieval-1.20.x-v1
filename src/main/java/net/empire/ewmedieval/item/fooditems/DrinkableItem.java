@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -8,8 +8,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-// DrinkableItem — like ConsumableItem but plays the drinking animation instead of eating.
-// Used for liquids like apple cider, bone broth, drinks etc.
+
 public class DrinkableItem extends ConsumableItem {
 
     public DrinkableItem(Settings settings) {
@@ -24,13 +23,11 @@ public class DrinkableItem extends ConsumableItem {
         super(settings, hasFoodEffectTooltip, hasCustomTooltip);
     }
 
-    // Drinks are consumed faster than food — 32 ticks instead of 40
     @Override
     public int getMaxUseTime(ItemStack stack) {
         return 32;
     }
 
-    // Play the drinking animation instead of the eating animation
     @Override
     public UseAction getUseAction(ItemStack stack) {
         return UseAction.DRINK;
@@ -41,8 +38,6 @@ public class DrinkableItem extends ConsumableItem {
         ItemStack heldStack = player.getStackInHand(hand);
 
         if (heldStack.isFood()) {
-            // Only allow drinking if the player can eat
-            // (alwaysEdible items can be consumed even when not hungry)
             boolean alwaysEdible = heldStack.getItem().getFoodComponent() != null
                     && heldStack.getItem().getFoodComponent().isAlwaysEdible();
 
@@ -54,7 +49,6 @@ public class DrinkableItem extends ConsumableItem {
             }
         }
 
-        // For non-food drinkables, start using instantly
         return ItemUsage.consumeHeldItem(world, player, hand);
     }
 }
