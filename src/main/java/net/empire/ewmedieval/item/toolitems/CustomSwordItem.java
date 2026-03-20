@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.toolitems;
 
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;

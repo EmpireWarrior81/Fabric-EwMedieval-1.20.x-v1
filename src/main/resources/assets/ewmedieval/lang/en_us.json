@@ -560,6 +560,14 @@
   "block.ewmedieval.cutting_board": "Cutting Board",
   "block.ewmedieval.cutting_board.invalid_item": "This doesn't seem cuttable...",
   "block.ewmedieval.cutting_board.invalid_tool": "Maybe with a different tool...",
+  "block.ewmedieval.rice.invalid_placement": "This crop won't survive well outside shallow water.",
+  "block.ewmedieval.feast.use_container": "You need a %s to eat this.",
+
+  "tooltip.ewmedieval.dog_food.when_feeding": "When fed to a tamed Wolf:",
+  "tooltip.ewmedieval.horse_feed.when_feeding": "When fed to a tamed mount:",
+  "tooltip.ewmedieval.milk_bottle": "Clears 1 Effect",
+  "tooltip.ewmedieval.hot_cocoa": "Clears 1 Harmful Effect",
+  "tooltip.ewmedieval.melon_juice": "Minor Instant Health",
 
   "itemgroup.ewmedieval.artifacts": "EwM Artifacts",
   "itemgroup.ewmedieval.metals": "EwM Metals",

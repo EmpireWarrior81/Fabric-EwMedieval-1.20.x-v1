@@ -6,6 +6,8 @@ import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.enchantment.ModEnchantments;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.empire.ewmedieval.item.*;
+import net.empire.ewmedieval.item.fooditems.DogFoodItem;
+import net.empire.ewmedieval.item.toolitems.KnifeItem;
 import net.empire.ewmedieval.recipe.ModRecipes;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.empire.ewmedieval.util.ModLootTableModifiers;

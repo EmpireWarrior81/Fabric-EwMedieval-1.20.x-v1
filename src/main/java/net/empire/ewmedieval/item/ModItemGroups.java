@@ -27,6 +27,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ASH_PIECE);
                         entries.add(ModItems.ROPE);
                         entries.add(ModBlocks.CUTTING_BOARD);
+                        entries.add(ModItems.GLASS_JUG);
                     }).build());
 
     public static final ItemGroup METALS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -189,8 +190,13 @@ public class ModItemGroups {
                         entries.add(ModItems.SHEPHERDS_PIE);
 
                         entries.add(ModItems.APPLE_CIDER);
+                        entries.add(ModItems.MELON_JUICE);
+                        entries.add(ModItems.HOT_COCOA);
                         entries.add(ModItems.TOMATO_SAUCE);
                         entries.add(ModItems.DOG_FOOD);
+                        entries.add(ModItems.MILK_BOTTLE);
+                        entries.add(ModBlocks.ROAST_CHICKEN_BLOCK);
+                        entries.add(ModBlocks.STUFFED_PUMPKIN_BLOCK);
                     }).build());
 
     public static final ItemGroup NATURE_GROUP = Registry.register(Registries.ITEM_GROUP,

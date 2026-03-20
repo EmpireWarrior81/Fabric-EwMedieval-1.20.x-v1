@@ -1,4 +1,4 @@
-package net.empire.ewmedieval.item;
+package net.empire.ewmedieval.item.fooditems;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
