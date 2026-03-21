@@ -87,6 +87,15 @@ public class ModItemGroups {
                         entries.add(ModItems.GOLDEN_KNIFE);
                         entries.add(ModItems.DIAMOND_KNIFE);
                         entries.add(ModItems.NETHERITE_KNIFE);
+                        entries.add(ModItems.MITHRIL_AXE);
+                        entries.add(ModItems.MITHRIL_SHOVEL);
+                        entries.add(ModItems.MITHRIL_PICKAXE);
+                        entries.add(ModItems.MITHRIL_HOE);
+                        entries.add(ModItems.EDHEL_STEEL_HOE);
+                        entries.add(ModItems.EDHEL_STEEL_AXE);
+                        entries.add(ModItems.EDHEL_STEEL_PICKAXE);
+                        entries.add(ModItems.EDHEL_STEEL_SHOVEL);
+                        entries.add(ModItems.EDHEL_STEEL_SWORD);
                     }).build());
 
     public static final ItemGroup FOOD_GROUP = Registry.register(Registries.ITEM_GROUP,
