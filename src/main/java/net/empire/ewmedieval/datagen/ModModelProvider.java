@@ -125,6 +125,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MITHRIL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_MITHRIL_BLOCK);
 
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.STRAW_BALE, TexturedModel.CUBE_COLUMN.andThen(tex -> tex
+                        .put(TextureKey.SIDE, new Identifier("ewmedieval", "block/straw_bale_side"))
+                        .put(TextureKey.END, new Identifier("ewmedieval", "block/straw_bale_top"))));
+
         // Polished Stone
         BlockStateModelGenerator.BlockTexturePool polishedStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_STONE);
         polishedStonePool.slab(ModBlocks.POLISHED_STONE_SLAB);
@@ -806,11 +810,18 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DUMPLINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.COD_ROLL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STUFFED_POTATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MELON_POPSICLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROTTEN_TOMATO, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.MELON_JUICE, Models.GENERATED);
         itemModelGenerator.register(ModItems.APPLE_CIDER, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOT_COCOA, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLOW_BERRY_CUSTARD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SWEET_BERRY_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HONEY_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.APPLE_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHOCOLATE_PIE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SWEET_BERRY_CHEESECAKE_SLICE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.MILK_BOTTLE, Models.GENERATED);
 
@@ -818,7 +829,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.ROPE, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLASS_JUG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GLASS_CHALICE, Models.GENERATED);
         itemModelGenerator.register(ModItems.DOG_FOOD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HORSE_FEED, Models.GENERATED);
 
 
 

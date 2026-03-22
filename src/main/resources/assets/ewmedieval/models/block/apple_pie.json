@@ -1,0 +1,9 @@
+{
+  "parent": "ewmedieval:block/pie",
+  "textures": {
+    "particle": "ewmedieval:block/apple_pie_top",
+    "bottom": "ewmedieval:block/pie_bottom",
+    "side": "ewmedieval:block/pie_side",
+    "top": "ewmedieval:block/apple_pie_top"
+  }
+}

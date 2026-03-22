@@ -4,7 +4,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 
-public class ModFoodComponents {
+public class ModFoods {
 
     public static final int BRIEF_DURATION = 600;    // 30 seconds
     public static final int SHORT_DURATION = 1200;   // 1 minute

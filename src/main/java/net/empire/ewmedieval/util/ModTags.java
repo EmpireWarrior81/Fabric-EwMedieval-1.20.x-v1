@@ -28,6 +28,8 @@ public class ModTags {
 
     public static final TagKey<EntityType<?>> DOG_FOOD_USERS = TagKey.of(RegistryKeys.ENTITY_TYPE, new Identifier("ewmedieval", "dog_food_users"));
 
+    public static final TagKey<EntityType<?>> HORSE_FEED_USERS = TagKey.of(RegistryKeys.ENTITY_TYPE, new Identifier("ewmedieval", "horse_feed_users"));
+
     public static class Blocks {
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(EwMedieval.MOD_ID, name));

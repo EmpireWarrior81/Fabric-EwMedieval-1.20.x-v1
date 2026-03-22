@@ -3,14 +3,17 @@ package net.empire.ewmedieval;
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.client.renderer.CuttingBoardRenderer;
+import net.empire.ewmedieval.entity.ModEntityTypes;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreen;
 import net.empire.ewmedieval.gui.forge.ForgeScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class EwMedievalClient implements ClientModInitializer {
 
@@ -41,6 +44,8 @@ public class EwMedievalClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
+
+        EntityRendererRegistry.register(ModEntityTypes.ROTTEN_TOMATO, FlyingItemEntityRenderer::new);
 
     }
 }

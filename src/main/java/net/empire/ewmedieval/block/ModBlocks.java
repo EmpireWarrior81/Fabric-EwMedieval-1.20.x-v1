@@ -3,8 +3,10 @@ package net.empire.ewmedieval.block;
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.custom.RopeBlock;
+import net.empire.ewmedieval.block.custom.StrawBaleBlock;
 import net.empire.ewmedieval.block.custom.cropblocks.*;
 import net.empire.ewmedieval.block.custom.feastblocks.FeastBlock;
+import net.empire.ewmedieval.block.custom.feastblocks.PieBlock;
 import net.empire.ewmedieval.block.custom.feastblocks.RoastChickenBlock;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
@@ -640,14 +642,26 @@ public class ModBlocks {
     public static final Block CUTTING_BOARD = registerBlock("cutting_board",
             new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
 
+    public static final Block STRAW_BALE = registerBlock("straw_bale",
+            new StrawBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
+
+
     public static final Block STUFFED_PUMPKIN_BLOCK = registerBlock("stuffed_pumpkin_block",
             new FeastBlock(FabricBlockSettings.copyOf(Blocks.PUMPKIN), () -> ModItems.STUFFED_PUMPKIN, false),
             new FabricItemSettings().maxCount(1));
 
-
     public static final Block ROAST_CHICKEN_BLOCK = registerBlock("roast_chicken_block",
             new RoastChickenBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.ROAST_CHICKEN, true),
             new FabricItemSettings().maxCount(1));
+
+    public static final Block APPLE_PIE = registerBlock("apple_pie",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.APPLE_PIE_SLICE));
+
+    public static final Block CHOCOLATE_PIE = registerBlock("chocolate_pie",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.CHOCOLATE_PIE_SLICE));
+
+    public static final Block SWEET_BERRY_CHEESECAKE = registerBlock("sweet_berry_cheesecake",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.SWEET_BERRY_CHEESECAKE_SLICE));
 
 
 

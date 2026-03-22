@@ -35,6 +35,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> CRUDE_SMELTABLES = List.of(ModItems.BRONZE_ASH_MIXTURE);
 
+    //TODO Fixing the meat
     private static final List<ItemConvertible> ASH_SMELTABLES = List.of(Items.BEEF, Items.PORKCHOP,
             Items.MUTTON, Items.RABBIT, Items.LEATHER, Items.BONE, Items.PUMPKIN, Items.MELON, Items.CACTUS,
             Items.CAKE, Items.PUMPKIN_PIE, Items.BOOK, Items.ENCHANTED_BOOK, Items.WRITABLE_BOOK, Items.WRITTEN_BOOK,

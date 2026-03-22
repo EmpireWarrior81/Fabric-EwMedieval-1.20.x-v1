@@ -18,5 +18,10 @@ public class ModEntityTagProvider extends FabricTagProvider<EntityType<?>> {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTags.DOG_FOOD_USERS)
                 .add(EntityType.WOLF);
+
+        getOrCreateTagBuilder(ModTags.HORSE_FEED_USERS)
+                .add(EntityType.HORSE)
+                .add(EntityType.DONKEY)
+                .add(EntityType.MULE);
     }
 }

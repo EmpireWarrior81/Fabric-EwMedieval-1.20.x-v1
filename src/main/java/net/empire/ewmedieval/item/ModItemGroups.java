@@ -28,6 +28,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ROPE);
                         entries.add(ModBlocks.CUTTING_BOARD);
                         entries.add(ModItems.GLASS_JUG);
+                        entries.add(ModItems.GLASS_CHALICE);
                     }).build());
 
     public static final ItemGroup METALS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -201,9 +202,18 @@ public class ModItemGroups {
                         entries.add(ModItems.APPLE_CIDER);
                         entries.add(ModItems.MELON_JUICE);
                         entries.add(ModItems.HOT_COCOA);
+                        entries.add(ModItems.MELON_POPSICLE);
                         entries.add(ModItems.TOMATO_SAUCE);
                         entries.add(ModItems.DOG_FOOD);
                         entries.add(ModItems.MILK_BOTTLE);
+                        entries.add(ModItems.SWEET_BERRY_COOKIE);
+                        entries.add(ModItems.HONEY_COOKIE);
+                        entries.add(ModItems.APPLE_PIE_SLICE);
+                        entries.add(ModBlocks.APPLE_PIE);
+                        entries.add(ModItems.CHOCOLATE_PIE_SLICE);
+                        entries.add(ModBlocks.CHOCOLATE_PIE);
+                        entries.add(ModItems.SWEET_BERRY_CHEESECAKE_SLICE);
+                        entries.add(ModBlocks.SWEET_BERRY_CHEESECAKE);
                         entries.add(ModBlocks.ROAST_CHICKEN_BLOCK);
                         entries.add(ModBlocks.STUFFED_PUMPKIN_BLOCK);
                     }).build());
