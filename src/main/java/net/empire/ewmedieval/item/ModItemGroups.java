@@ -216,6 +216,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SWEET_BERRY_CHEESECAKE);
                         entries.add(ModBlocks.ROAST_CHICKEN_BLOCK);
                         entries.add(ModBlocks.STUFFED_PUMPKIN_BLOCK);
+                        entries.add(ModBlocks.SHEPHERDS_PIE_BLOCK);
+                        entries.add(ModBlocks.HONEY_GLAZED_HAM_BLOCK);
+                        entries.add(ModBlocks.RICE_ROLL_MEDLEY_BLOCK);
                         entries.add(ModItems.HORSE_FEED);
                     }).build());
 
@@ -242,6 +245,16 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WILD_POTATOES);
                         entries.add(ModBlocks.WILD_BEETROOTS);
                         entries.add(ModBlocks.WILD_RICE);
+
+                        entries.add(ModItems.OAK_BARK);
+                        entries.add(ModItems.SPRUCE_BARK);
+                        entries.add(ModItems.DARK_OAK_BARK);
+                        entries.add(ModItems.BIRCH_BARK);
+                        entries.add(ModItems.JUNGLE_BARK);
+                        entries.add(ModItems.ACACIA_BARK);
+                        entries.add(ModItems.CHERRY_BARK);
+                        entries.add(ModItems.BAMBOO_BARK);
+
 
                     }).build());
 

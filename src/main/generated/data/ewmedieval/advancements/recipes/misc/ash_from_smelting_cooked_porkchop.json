@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_porkchop": {
+    "has_cooked_porkchop": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:porkchop"
+              "minecraft:cooked_porkchop"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ash_from_smelting_porkchop"
+        "recipe": "minecraft:ash_from_smelting_cooked_porkchop"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_porkchop",
+      "has_cooked_porkchop",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ash_from_smelting_porkchop"
+      "minecraft:ash_from_smelting_cooked_porkchop"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chicken": {
+    "has_cooked_mutton": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:chicken"
+              "minecraft:cooked_mutton"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ash_piece_from_smelting_chicken"
+        "recipe": "minecraft:ash_from_smelting_cooked_mutton"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_chicken",
+      "has_cooked_mutton",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ash_piece_from_smelting_chicken"
+      "minecraft:ash_from_smelting_cooked_mutton"
     ]
   },
   "sends_telemetry_event": false

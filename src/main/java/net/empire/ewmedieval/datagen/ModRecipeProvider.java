@@ -35,9 +35,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> CRUDE_SMELTABLES = List.of(ModItems.BRONZE_ASH_MIXTURE);
 
-    //TODO Fixing the meat
-    private static final List<ItemConvertible> ASH_SMELTABLES = List.of(Items.BEEF, Items.PORKCHOP,
-            Items.MUTTON, Items.RABBIT, Items.LEATHER, Items.BONE, Items.PUMPKIN, Items.MELON, Items.CACTUS,
+    //TODO Adding the new food items!
+    private static final List<ItemConvertible> ASH_SMELTABLES = List.of(Items.COOKED_BEEF, Items.COOKED_PORKCHOP,
+            Items.COOKED_MUTTON, Items.COOKED_RABBIT, Items.LEATHER, Items.BONE, Items.PUMPKIN, Items.MELON, Items.CACTUS,
             Items.CAKE, Items.PUMPKIN_PIE, Items.BOOK, Items.ENCHANTED_BOOK, Items.WRITABLE_BOOK, Items.WRITTEN_BOOK,
             Items.DRIED_KELP_BLOCK, Items.WHITE_WOOL, Items.LIGHT_GRAY_WOOL,
             Items.GRAY_WOOL, Items.BLACK_WOOL, Items.BROWN_WOOL, Items.RED_WOOL, Items.ORANGE_WOOL, Items.YELLOW_WOOL,
@@ -53,7 +53,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     private static final List<ItemConvertible> ASH_PIECE_SMELTABLES = List.of(Items.WHEAT, Items.BEETROOT, Items.CARROT,
             Items.POTATO, Items.POISONOUS_POTATO, Items.APPLE, Items.MELON_SLICE, Items.SWEET_BERRIES, Items.GLOW_BERRIES,
             Items.BROWN_MUSHROOM, Items.RED_MUSHROOM, Items.BAMBOO, Items.SUGAR_CANE, Items.PUMPKIN_SEEDS, Items.BEETROOT_SEEDS,
-            Items.MELON_SEEDS, Items.WHEAT_SEEDS, Items.ROTTEN_FLESH, Items.CHICKEN, Items.COD, Items.SALMON, Items.SPIDER_EYE,
+            Items.MELON_SEEDS, Items.WHEAT_SEEDS, Items.ROTTEN_FLESH, Items.COOKED_CHICKEN, Items.COOKED_COD, Items.COOKED_SALMON, Items.SPIDER_EYE,
             Items.STRING, Items.FEATHER, Items.PAPER, Items.RABBIT_HIDE, Items.BREAD, Items.PUFFERFISH, Items.TROPICAL_FISH,
             Items.DRIED_KELP, Items.COOKIE, ModItems.PEACH);
 

@@ -5,7 +5,7 @@
   "experience": 0.16,
   "group": "ash",
   "ingredient": {
-    "item": "minecraft:rabbit"
+    "item": "minecraft:cooked_mutton"
   },
   "result": "ewmedieval:ash"
 }

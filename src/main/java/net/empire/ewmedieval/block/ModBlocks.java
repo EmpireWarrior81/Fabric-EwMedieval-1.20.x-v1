@@ -646,32 +646,37 @@ public class ModBlocks {
 
     public static final Block STUFFED_PUMPKIN_BLOCK = registerBlock("stuffed_pumpkin_block",
             new FeastBlock(FabricBlockSettings.copyOf(Blocks.PUMPKIN), () -> ModItems.STUFFED_PUMPKIN, false),
-            new FabricItemSettings().maxCount(1));
+                new FabricItemSettings().maxCount(1));
 
     public static final Block ROAST_CHICKEN_BLOCK = registerBlock("roast_chicken_block",
             new RoastChickenBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.ROAST_CHICKEN, true),
-            new FabricItemSettings().maxCount(1));
+                new FabricItemSettings().maxCount(1));
 
     public static final Block HONEY_GLAZED_HAM_BLOCK = registerBlock("honey_glazed_ham_block",
             new HoneyGlazedHamBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
                     () -> ModItems.HONEY_GLAZED_HAM, true),
-            new FabricItemSettings().maxCount(1));
+                new FabricItemSettings().maxCount(1));
 
     public static final Block RICE_ROLL_MEDLEY_BLOCK = registerBlock("rice_roll_medley_block",
-            new RiceRollMedleyBlock(FabricBlockSettings.copyOf(Blocks.CAKE)));
+            new RiceRollMedleyBlock(FabricBlockSettings.copyOf(Blocks.CAKE)),
+                new FabricItemSettings().maxCount(1));
 
     public static final Block SHEPHERDS_PIE_BLOCK = registerBlock("shepherds_pie_block",
             new ShepherdsPieBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
-                    () -> ModItems.SHEPHERDS_PIE, true));
+                    () -> ModItems.SHEPHERDS_PIE, true),
+                new FabricItemSettings().maxCount(1));
 
     public static final Block APPLE_PIE = registerBlock("apple_pie",
-            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.APPLE_PIE_SLICE));
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.APPLE_PIE_SLICE),
+                new FabricItemSettings().maxCount(1));
 
     public static final Block CHOCOLATE_PIE = registerBlock("chocolate_pie",
-            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.CHOCOLATE_PIE_SLICE));
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.CHOCOLATE_PIE_SLICE),
+                new FabricItemSettings().maxCount(1));
 
     public static final Block SWEET_BERRY_CHEESECAKE = registerBlock("sweet_berry_cheesecake",
-            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.SWEET_BERRY_CHEESECAKE_SLICE));
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.SWEET_BERRY_CHEESECAKE_SLICE),
+                new FabricItemSettings().maxCount(1));
 
 
 

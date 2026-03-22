@@ -5,7 +5,7 @@
   "experience": 0.16,
   "group": "ash",
   "ingredient": {
-    "item": "minecraft:porkchop"
+    "item": "minecraft:cooked_rabbit"
   },
   "result": "ewmedieval:ash"
 }

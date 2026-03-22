@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rabbit": {
+    "has_cooked_rabbit": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:rabbit"
+              "minecraft:cooked_rabbit"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ash_from_smelting_rabbit"
+        "recipe": "minecraft:ash_from_smelting_cooked_rabbit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rabbit",
+      "has_cooked_rabbit",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ash_from_smelting_rabbit"
+      "minecraft:ash_from_smelting_cooked_rabbit"
     ]
   },
   "sends_telemetry_event": false

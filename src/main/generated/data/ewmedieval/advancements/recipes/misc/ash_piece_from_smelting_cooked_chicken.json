@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beef": {
+    "has_cooked_chicken": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:beef"
+              "minecraft:cooked_chicken"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ash_from_smelting_beef"
+        "recipe": "minecraft:ash_piece_from_smelting_cooked_chicken"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_beef",
+      "has_cooked_chicken",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ash_from_smelting_beef"
+      "minecraft:ash_piece_from_smelting_cooked_chicken"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_salmon": {
+    "has_cooked_cod": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:salmon"
+              "minecraft:cooked_cod"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ash_piece_from_smelting_salmon"
+        "recipe": "minecraft:ash_piece_from_smelting_cooked_cod"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_salmon",
+      "has_cooked_cod",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ash_piece_from_smelting_salmon"
+      "minecraft:ash_piece_from_smelting_cooked_cod"
     ]
   },
   "sends_telemetry_event": false
