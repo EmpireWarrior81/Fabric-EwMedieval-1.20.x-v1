@@ -64,5 +64,15 @@ public class EwMedieval implements ModInitializer {
         FuelRegistry.INSTANCE.add(ModItems.STRAW, 200);
         FuelRegistry.INSTANCE.add(ModBlocks.STRAW_BALE, 1800);
 
+        FuelRegistry.INSTANCE.add(ModItems.OAK_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.SPRUCE_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.BIRCH_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.JUNGLE_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.ACACIA_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.DARK_OAK_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.MANGROVE_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.CHERRY_BARK, 200);
+        FuelRegistry.INSTANCE.add(ModItems.BAMBOO_BARK, 200);
+
     }
 }

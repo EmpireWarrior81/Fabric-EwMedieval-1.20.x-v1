@@ -41,13 +41,17 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.STONE_KNIFE);
 
         getOrCreateTagBuilder(ModTags.AXES)
-                .add(ModItems.BRONZE_AXE);
+                .add(ModItems.BRONZE_AXE)
+                .add(ModItems.CRUDE_AXE)
+                .add(ModItems.EDHEL_STEEL_AXE)
+                .add(ModItems.MITHRIL_AXE);
 
         getOrCreateTagBuilder(ModTags.CUTTING_TOOLS)
                 .addTag(ModTags.KNIVES)
                 .addTag(ModTags.AXES)
                 .forceAddTag(ItemTags.AXES)
                 .forceAddTag(ItemTags.SWORDS)
+                .forceAddTag(ItemTags.PICKAXES)
                 .add(Items.SHEARS)
                 .add(ModItems.BRONZE_SHEARS);
 

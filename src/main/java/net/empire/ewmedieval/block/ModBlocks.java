@@ -5,9 +5,7 @@ import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.custom.RopeBlock;
 import net.empire.ewmedieval.block.custom.StrawBaleBlock;
 import net.empire.ewmedieval.block.custom.cropblocks.*;
-import net.empire.ewmedieval.block.custom.feastblocks.FeastBlock;
-import net.empire.ewmedieval.block.custom.feastblocks.PieBlock;
-import net.empire.ewmedieval.block.custom.feastblocks.RoastChickenBlock;
+import net.empire.ewmedieval.block.custom.feastblocks.*;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
 import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
@@ -653,6 +651,18 @@ public class ModBlocks {
     public static final Block ROAST_CHICKEN_BLOCK = registerBlock("roast_chicken_block",
             new RoastChickenBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.ROAST_CHICKEN, true),
             new FabricItemSettings().maxCount(1));
+
+    public static final Block HONEY_GLAZED_HAM_BLOCK = registerBlock("honey_glazed_ham_block",
+            new HoneyGlazedHamBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.HONEY_GLAZED_HAM, true),
+            new FabricItemSettings().maxCount(1));
+
+    public static final Block RICE_ROLL_MEDLEY_BLOCK = registerBlock("rice_roll_medley_block",
+            new RiceRollMedleyBlock(FabricBlockSettings.copyOf(Blocks.CAKE)));
+
+    public static final Block SHEPHERDS_PIE_BLOCK = registerBlock("shepherds_pie_block",
+            new ShepherdsPieBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.SHEPHERDS_PIE, true));
 
     public static final Block APPLE_PIE = registerBlock("apple_pie",
             new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.APPLE_PIE_SLICE));

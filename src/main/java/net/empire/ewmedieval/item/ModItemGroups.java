@@ -216,6 +216,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SWEET_BERRY_CHEESECAKE);
                         entries.add(ModBlocks.ROAST_CHICKEN_BLOCK);
                         entries.add(ModBlocks.STUFFED_PUMPKIN_BLOCK);
+                        entries.add(ModItems.HORSE_FEED);
                     }).build());
 
     public static final ItemGroup NATURE_GROUP = Registry.register(Registries.ITEM_GROUP,

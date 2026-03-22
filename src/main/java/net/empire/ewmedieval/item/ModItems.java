@@ -52,6 +52,25 @@ public class ModItems {
 
     public static final Item RAW_IRON_NUGGET = registerItem("raw_iron_nugget", new Item(new FabricItemSettings()));
 
+    public static final Item OAK_BARK = registerItem("oak_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item SPRUCE_BARK = registerItem("spruce_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item BIRCH_BARK = registerItem("birch_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item JUNGLE_BARK = registerItem("jungle_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item ACACIA_BARK = registerItem("acacia_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item DARK_OAK_BARK = registerItem("dark_oak_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item MANGROVE_BARK = registerItem("mangrove_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item CHERRY_BARK = registerItem("cherry_bark",
+            new Item(new FabricItemSettings()));
+    public static final Item BAMBOO_BARK = registerItem("bamboo_bark",
+            new Item(new FabricItemSettings()));
+
     public static final Item ASH = registerItem("ash", new Item(new FabricItemSettings()));
     public static final Item ASH_PIECE = registerItem("ash_piece", new Item(new FabricItemSettings()));
     public static final Item FUR = registerItem("fur", new Item(new FabricItemSettings()));

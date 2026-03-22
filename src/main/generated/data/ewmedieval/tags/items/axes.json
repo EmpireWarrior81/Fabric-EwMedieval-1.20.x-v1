@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "ewmedieval:bronze_axe"
+    "ewmedieval:bronze_axe",
+    "ewmedieval:crude_axe",
+    "ewmedieval:edhel_steel_axe",
+    "ewmedieval:mithril_axe"
   ]
 }
