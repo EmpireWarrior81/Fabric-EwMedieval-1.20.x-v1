@@ -8,6 +8,7 @@ import net.empire.ewmedieval.block.custom.cropblocks.*;
 import net.empire.ewmedieval.block.custom.feastblocks.*;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
+import net.empire.ewmedieval.block.custom.feastblocks.ExoticRollMedleyBlock;
 import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
 import net.empire.ewmedieval.item.ModItems;
 import net.empire.ewmedieval.sound.ModBlockSoundGroups;
@@ -679,6 +680,20 @@ public class ModBlocks {
                 new FabricItemSettings().maxCount(1));
 
 
+    public static final Block EGGPLANT_PARMESAN_BLOCK = registerBlock("eggplant_parmesan_block",
+            new EggplantFeastBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.EGGPLANT_PARMESAN, true),
+            new FabricItemSettings().maxCount(1));
+
+    public static final Block EXOTIC_ROLL_MEDLEY = registerBlock("exotic_roll_medley",
+            new ExoticRollMedleyBlock(FabricBlockSettings.copyOf(Blocks.CAKE)), new FabricItemSettings().maxCount(1));
+
+    public static final Block QUICHE = registerBlock("quiche",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.QUICHE_SLICE),
+            new FabricItemSettings().maxCount(1));
+
+
+
 
     public static final Block WILD_CABBAGES = registerBlock("wild_cabbages",
             new WildCropBlock(StatusEffects.STRENGTH, 6,
@@ -700,6 +715,17 @@ public class ModBlocks {
                     FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_RICE = registerBlock("wild_rice",
             new WildRiceBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_CUCUMBERS = registerBlock("wild_cucumbers",
+            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+    public static final Block WILD_EGGPLANTS = registerBlock("wild_eggplants",
+            new WildCropBlock(StatusEffects.STRENGTH, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+    public static final Block WILD_CORN = registerBlock("wild_corn",
+            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+    public static final Block WILD_CORN_DRY = registerBlock("wild_corn_dry",
+            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+
+
+
 
     public static final Block CABBAGE_CROP = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "cabbages"),
@@ -724,6 +750,17 @@ public class ModBlocks {
             new Identifier(EwMedieval.MOD_ID, "tomatoes"),
             new TomatoVineBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
+    public static final Block CUCUMBER_CROP = registerBlockWithoutItem("cucumbers",
+            new CucumberBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplants",
+            new EggplantsBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block CORN_CROP = registerBlockWithoutItem("corn",
+            new CornBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block CORN_UPPER_CROP = registerBlockWithoutItem("corn_upper",
+            new CornUpperBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
     public static final Block ROPE = Registry.register(Registries.BLOCK,
@@ -746,6 +783,11 @@ public class ModBlocks {
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(EwMedieval.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        Registry.register(Registries.BLOCK, new Identifier(EwMedieval.MOD_ID, name), block);
+        return block;
     }
 
     public static void registerModBlocks(){

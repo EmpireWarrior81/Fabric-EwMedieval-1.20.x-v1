@@ -5,6 +5,7 @@ import net.empire.ewmedieval.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FarmlandBlock;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +19,7 @@ import net.minecraft.world.WorldView;
 
 // BuddingTomatoBlock — the seedling stage of the tomato plant (age 0-4).
 // At age 4 it transforms into TomatoVineBlock via growPastMaxAge.
-public class BuddingTomatoBlock extends BuddingBushBlock implements net.minecraft.block.Fertilizable {
+public class BuddingTomatoBlock extends BuddingBushBlock implements Fertilizable {
 
     public BuddingTomatoBlock(Settings settings) {
         super(settings);

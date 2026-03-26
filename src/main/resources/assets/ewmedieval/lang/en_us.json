@@ -643,6 +643,9 @@
   "block.ewmedieval.rice.invalid_placement": "This crop won't survive well outside shallow water.",
   "block.ewmedieval.feast.use_container": "You need a %s to eat this.",
 
+  "effect.ewmedieval.nourishment": "Nourishment",
+  "effect.ewmedieval.comfort": "Comfort",
+  
   "tooltip.ewmedieval.dog_food.when_feeding": "When fed to a tamed Wolf:",
   "tooltip.ewmedieval.horse_feed.when_feeding": "When fed to a tamed mount:",
   "tooltip.ewmedieval.milk_bottle": "Clears 1 Effect",

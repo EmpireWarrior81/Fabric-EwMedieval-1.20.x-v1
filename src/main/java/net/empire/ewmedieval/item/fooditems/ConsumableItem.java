@@ -3,12 +3,15 @@ package net.empire.ewmedieval.item.fooditems;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -94,30 +97,46 @@ public class ConsumableItem extends Item {
             }
         }
     }
+
     /**
      * Override this in subclasses to apply custom effects to the consumer,
      * for example curing status effects or triggering special behaviour.
      */
     public void affectConsumer(ItemStack stack, World world, LivingEntity consumer) {
-        // no-op by default
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        // Custom translation tooltip — looks up "tooltip.ewmedieval.<item_id>" in your lang file
+    public void appendTooltip(ItemStack stack, @Nullable World world,
+                              List<Text> tooltip, TooltipContext context) {
         if (this.hasCustomTooltip) {
             String itemPath = Registries.ITEM.getId(this).getPath();
             tooltip.add(Text.translatable("tooltip.ewmedieval." + itemPath)
                     .formatted(Formatting.BLUE));
         }
 
-        // Food effect tooltip — shows status effects the food will apply
-        // In 1.20.1 vanilla already shows these for food items by default,
-        // but you can add extra lines here if you want custom formatting
         if (this.hasFoodEffectTooltip && this.isFood() && this.getFoodComponent() != null) {
             this.getFoodComponent().getStatusEffects().forEach(pair -> {
-                tooltip.add(pair.getFirst().getEffectType().getName()
-                        .copy().formatted(Formatting.GRAY));
+                StatusEffectInstance effect = pair.getFirst();
+                StatusEffect effectType = effect.getEffectType();
+
+                MutableText line = Text.translatable(effectType.getTranslationKey());
+
+                if (effect.getAmplifier() > 0) {
+                    line = line.append(" ")
+                            .append(Text.translatable("potion.potency." + effect.getAmplifier()));
+                }
+
+                if (effect.getDuration() > 20) {
+                    int seconds = effect.getDuration() / 20;
+                    int minutes = seconds / 60;
+                    int remainingSeconds = seconds % 60;
+                    String duration = minutes > 0
+                            ? String.format("%d:%02d", minutes, remainingSeconds)
+                            : String.format("0:%02d", remainingSeconds);
+                    line = line.append(" (").append(duration).append(")");
+                }
+
+                tooltip.add(line.formatted(effectType.getCategory().getFormatting()));
             });
         }
     }
