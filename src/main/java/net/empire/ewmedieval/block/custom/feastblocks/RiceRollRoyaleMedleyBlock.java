@@ -1,6 +1,5 @@
 package net.empire.ewmedieval.block.custom.feastblocks;
 
-/*
 import net.empire.ewmedieval.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -73,4 +72,3 @@ public class RiceRollRoyaleMedleyBlock extends FeastBlock {
     }
 }
 
- */
