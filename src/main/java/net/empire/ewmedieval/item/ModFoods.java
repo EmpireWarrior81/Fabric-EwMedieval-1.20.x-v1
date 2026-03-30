@@ -362,7 +362,8 @@ public class ModFoods {
 
     public static final FoodComponent COCOA_FUDGE =
             new FoodComponent.Builder().hunger(4).saturationModifier(0.8f)
-                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, FoodValues.MINIMAL_DURATION, 0), 1.0f).build();
+                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,
+                            FoodValues.MINIMAL_DURATION, 0), 1.0f).build();
 
     public static final FoodComponent SWEET_BERRY_JAM =
             new FoodComponent.Builder().hunger(4).saturationModifier(0.8f).build();
@@ -374,6 +375,8 @@ public class ModFoods {
     public static final FoodComponent FLAXEN_CHEESE =
             new FoodComponent.Builder().hunger(4).saturationModifier(1f).build();
     public static final FoodComponent SCARLET_CHEESE =
+            new FoodComponent.Builder().hunger(4).saturationModifier(1f).build();
+    public static final FoodComponent DORBLU_CHEESE =
             new FoodComponent.Builder().hunger(4).saturationModifier(1f).build();
 
 
@@ -439,9 +442,9 @@ public class ModFoods {
     public static final FoodComponent BAKED_POTATO_SLICES = new FoodComponent.Builder()
             .hunger(3).saturationModifier(0.6f).build();
     public static final FoodComponent CALAMARI_SLICE = new FoodComponent.Builder()
-            .hunger(1).saturationModifier(0.1f).build();
+            .hunger(1).saturationModifier(0.1f).snack().build();
     public static final FoodComponent COOKED_CALAMARI_SLICE = new FoodComponent.Builder()
-            .hunger(3).saturationModifier(0.6f).build();
+            .hunger(3).saturationModifier(0.6f).snack().build();
 
 
     public static final FoodComponent COFFEE = new FoodComponent.Builder()
@@ -473,7 +476,7 @@ public class ModFoods {
     public static final FoodComponent SYRUP_SANDWICH = new FoodComponent.Builder()
             .hunger(8).saturationModifier(0.7f).build();
     public static final FoodComponent FRUIT_BEIGNET = new FoodComponent.Builder()
-            .hunger(7).saturationModifier(0.6f)
+            .hunger(7).saturationModifier(0.6f).snack()
             .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0, false, false), 1.0f).build();
     public static final FoodComponent PANCAKE = new FoodComponent.Builder()
             .hunger(4).saturationModifier(0.6f).build();
@@ -495,11 +498,11 @@ public class ModFoods {
 
 
     public static final FoodComponent SLICED_CALAMARI_ROLL = new FoodComponent.Builder()
-            .hunger(7).saturationModifier(0.6f).build();
+            .hunger(7).saturationModifier(0.6f).snack().build();
     public static final FoodComponent CHERRY_BLOSSOM_ROLL = new FoodComponent.Builder()
-            .hunger(6).saturationModifier(0.5f).build();
+            .hunger(6).saturationModifier(0.5f).snack().build();
     public static final FoodComponent BELL_PEPPER_ROLL = new FoodComponent.Builder()
-            .hunger(7).saturationModifier(0.8f).build();
+            .hunger(7).saturationModifier(0.8f).snack().build();
     public static final FoodComponent STUFFED_BELL_PEPPER = new FoodComponent.Builder()
             .hunger(10).saturationModifier(0.7f).build();
 

@@ -912,6 +912,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FIERY_FONDUE, Models.GENERATED);
         itemModelGenerator.register(ModItems.FLAXEN_CHEESE_WEDGE, Models.GENERATED);
         itemModelGenerator.register(ModItems.SCARLET_CHEESE_WEDGE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DORBLU_CHEESE_WEDGE, Models.GENERATED);
 
 
 

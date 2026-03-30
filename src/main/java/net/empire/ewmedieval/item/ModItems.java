@@ -391,6 +391,8 @@ public class ModItems {
             new Item(new FabricItemSettings().food(ModFoods.FLAXEN_CHEESE)));
     public static final Item SCARLET_CHEESE_WEDGE = registerItem("scarlet_cheese_wedge",
             new Item(new FabricItemSettings().food(ModFoods.SCARLET_CHEESE)));
+    public static final Item DORBLU_CHEESE_WEDGE = registerItem("dorblu_cheese_wedge",
+            new Item(new FabricItemSettings().food(ModFoods.DORBLU_CHEESE)));
 
     public static final Item HAM_AND_CHEESE_SANDWICH = registerItem("ham_and_cheese_sandwich",
             new Item(new FabricItemSettings().food(ModFoods.HAM_AND_CHEESE_SANDWICH)));

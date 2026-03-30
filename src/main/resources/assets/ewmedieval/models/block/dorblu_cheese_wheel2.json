@@ -1,0 +1,10 @@
+{
+  "parent": "ewmedieval:block/cheese_wheel_template2",
+  "textures": {
+    "top": "ewmedieval:block/dorblu_cheese_wheel_top",
+    "side": "ewmedieval:block/dorblu_cheese_wheel_side",
+    "inside": "ewmedieval:block/dorblu_cheese_wheel_inside",
+    "bottom": "ewmedieval:block/dorblu_cheese_wheel_bottom",
+    "particle": "ewmedieval:block/dorblu_cheese_wheel_top"
+  }
+}

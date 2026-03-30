@@ -707,12 +707,21 @@ public class ModBlocks {
             new CheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
                     () -> ModItems.SCARLET_CHEESE_WEDGE), new FabricItemSettings().maxCount(1));
 
+        public static final Block DORBLU_CHEESE_WHEEL = registerBlock("dorblu_cheese_wheel",
+            new CheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.DORBLU_CHEESE_WEDGE), new FabricItemSettings().maxCount(1));
+
+
     public static final Block UNRIPE_FLAXEN_CHEESE_WHEEL = registerBlock("unripe_flaxen_cheese_wheel",
             new UnripeCheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModBlocks.FLAXEN_CHEESE_WHEEL),
             new FabricItemSettings().maxCount(1));
 
     public static final Block UNRIPE_SCARLET_CHEESE_WHEEL = registerBlock("unripe_scarlet_cheese_wheel",
             new UnripeCheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModBlocks.SCARLET_CHEESE_WHEEL),
+            new FabricItemSettings().maxCount(1));
+
+    public static final Block UNRIPE_DORBLU_CHEESE_WHEEL = registerBlock("unripe_dorblu_cheese_wheel",
+            new UnripeCheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModBlocks.DORBLU_CHEESE_WHEEL),
             new FabricItemSettings().maxCount(1));
 
 

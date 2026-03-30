@@ -1,0 +1,9 @@
+{
+  "parent": "ewmedieval:block/pie",
+  "textures": {
+    "particle": "ewmedieval:block/cherry_blossom_cheesecake_top",
+    "bottom": "ewmedieval:block/cherry_blossom_cheesecake_bottom",
+    "side": "ewmedieval:block/cherry_blossom_cheesecake_side",
+    "top": "ewmedieval:block/cherry_blossom_cheesecake_top"
+  }
+}

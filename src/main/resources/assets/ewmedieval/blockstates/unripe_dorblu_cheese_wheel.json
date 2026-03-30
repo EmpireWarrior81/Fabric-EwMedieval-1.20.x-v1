@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ewmedieval:block/unripe_dorblu_cheese_wheel"
+    },
+    "age=1": {
+      "model": "ewmedieval:block/semiripe_dorblu_cheese_wheel"
+    }
+  }
+}
