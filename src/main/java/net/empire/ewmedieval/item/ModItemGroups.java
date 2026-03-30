@@ -220,6 +220,52 @@ public class ModItemGroups {
                         entries.add(ModBlocks.HONEY_GLAZED_HAM_BLOCK);
                         entries.add(ModBlocks.RICE_ROLL_MEDLEY_BLOCK);
                         entries.add(ModItems.HORSE_FEED);
+
+                        entries.add(ModItems.PICKLE);
+                        entries.add(ModItems.SMOKED_EGGPLANT);
+                        entries.add(ModItems.SMOKED_TOMATO);
+                        entries.add(ModItems.SMOKED_WHITE_EGGPLANT);
+                        entries.add(ModItems.GINGER);
+                        entries.add(ModItems.SQUID);
+                        entries.add(ModItems.COOKED_SQUID);
+                        entries.add(ModItems.GLOW_SQUID);
+                        entries.add(ModItems.RAW_CALAMARI);
+                        entries.add(ModItems.COOKED_CALAMARI);
+                        entries.add(ModItems.CUT_AVOCADO);
+                        entries.add(ModItems.CUT_CUCUMBER);
+                        entries.add(ModItems.CUT_PICKLE);
+                        entries.add(ModItems.CUT_EGGPLANT);
+                        entries.add(ModItems.SMOKED_CUT_EGGPLANT);
+                        entries.add(ModItems.MIDORI_ROLL);
+                        entries.add(ModItems.MIDORI_ROLL_SLICE);
+                        entries.add(ModItems.EGG_ROLL);
+                        entries.add(ModItems.CHICKEN_ROLL);
+                        entries.add(ModItems.CHICKEN_ROLL_SLICE);
+                        entries.add(ModItems.PUFFERFISH_ROLL);
+                        entries.add(ModItems.TROPICAL_ROLL);
+                        entries.add(ModItems.RICE_BALL);
+                        entries.add(ModItems.CALAMARI_ROLL);
+                        entries.add(ModItems.CORN_DOUGH);
+                        entries.add(ModItems.TORTILLA);
+                        entries.add(ModItems.POPCORN);
+                        entries.add(ModItems.TORTILLA_CHIPS);
+                        entries.add(ModItems.ELOTE);
+                        entries.add(ModItems.EMPANADA);
+                        entries.add(ModItems.BEEF_BURRITO);
+                        entries.add(ModItems.MUTTON_SANDWICH);
+                        entries.add(ModItems.AVOCADO_TOAST);
+                        entries.add(ModItems.CREAMED_CORN);
+                        entries.add(ModItems.CHICKEN_TACO);
+                        entries.add(ModItems.PORK_WRAP);
+                        entries.add(ModItems.FISH_TACO);
+                        entries.add(ModItems.HEARTY_SALAD);
+                        entries.add(ModItems.EGGPLANT_PARMESAN);
+                        entries.add(ModItems.EGGPLANT_BURGER);
+                        entries.add(ModItems.SPICY_CURRY);
+                        entries.add(ModItems.POACHED_EGGPLANTS);
+                        entries.add(ModBlocks.EGGPLANT_PARMESAN_BLOCK);
+                        entries.add(ModBlocks.EXOTIC_ROLL_MEDLEY);
+
                     }).build());
 
     public static final ItemGroup NATURE_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -236,7 +282,17 @@ public class ModItemGroups {
                         entries.add(ModItems.TOMATO_SEEDS);
                         entries.add(ModItems.RICE);
                         entries.add(ModItems.RICE_PANICLE);
+                        entries.add(ModItems.CORN_KERNELS);
+                        entries.add(ModItems.CORN_COB);
+                        entries.add(ModItems.CUCUMBER);
+                        entries.add(ModItems.CUCUMBER_SEEDS);
+                        entries.add(ModItems.EGGPLANT);
+                        entries.add(ModItems.WHITE_EGGPLANT);
+                        entries.add(ModItems.EGGPLANT_SEEDS);
+
+
                         entries.add(ModItems.STRAW);
+                        entries.add(ModBlocks.STRAW_BALE);
 
                         entries.add(ModBlocks.WILD_CABBAGES);
                         entries.add(ModBlocks.WILD_ONIONS);

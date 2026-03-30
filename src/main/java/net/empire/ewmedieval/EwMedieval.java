@@ -3,6 +3,7 @@ package net.empire.ewmedieval;
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
+import net.empire.ewmedieval.effect.ModEffects;
 import net.empire.ewmedieval.enchantment.ModEnchantments;
 import net.empire.ewmedieval.entity.ModEntityTypes;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
@@ -33,6 +34,7 @@ public class EwMedieval implements ModInitializer {
 
 
         ModItemGroups.registerItemGroups();
+        ModEffects.registerEffects();
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
@@ -46,6 +48,7 @@ public class EwMedieval implements ModInitializer {
         ModScreenHandlers.registerScreenHandlers();
 
         ModRecipes.registerRecipes();
+
 
         ModSounds.registerModSounds();
 

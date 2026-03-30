@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ewmedieval:block/corn_upper_stage2"
+  }
+}

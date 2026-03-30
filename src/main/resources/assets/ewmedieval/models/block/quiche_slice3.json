@@ -1,0 +1,10 @@
+{
+  "parent": "ewmedieval:block/pie_slice3",
+  "textures": {
+    "particle": "ewmedieval:block/quiche_top",
+    "bottom": "ewmedieval:block/pie_bottom",
+    "inner": "ewmedieval:block/quiche_inner",
+    "side": "ewmedieval:block/pie_side",
+    "top": "ewmedieval:block/quiche_top"
+  }
+}
