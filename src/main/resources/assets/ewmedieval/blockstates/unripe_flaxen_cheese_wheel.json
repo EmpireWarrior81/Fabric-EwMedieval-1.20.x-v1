@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ewmedieval:block/unripe_flaxen_cheese_wheel"
+    },
+    "age=1": {
+      "model": "ewmedieval:block/semiripe_flaxen_cheese_wheel"
+    }
+  }
+}

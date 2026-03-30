@@ -266,6 +266,35 @@ public class ModItemGroups {
                         entries.add(ModBlocks.EGGPLANT_PARMESAN_BLOCK);
                         entries.add(ModBlocks.EXOTIC_ROLL_MEDLEY);
 
+                        entries.add(ModBlocks.QUICHE);
+                        entries.add(ModBlocks.PIZZA);
+                        entries.add(ModBlocks.FIERY_FONDUE_POT);
+                        entries.add(ModItems.QUICHE_SLICE);
+                        entries.add(ModItems.PIZZA_SLICE);
+                        entries.add(ModItems.FIERY_FONDUE);
+                        entries.add(ModItems.FLAXEN_CHEESE_WEDGE);
+                        entries.add(ModItems.SCARLET_CHEESE_WEDGE);
+                        entries.add(ModBlocks.UNRIPE_FLAXEN_CHEESE_WHEEL);
+                        entries.add(ModBlocks.UNRIPE_SCARLET_CHEESE_WHEEL);
+                        entries.add(ModBlocks.FLAXEN_CHEESE_WHEEL);
+                        entries.add(ModBlocks.SCARLET_CHEESE_WHEEL);
+
+                        entries.add(ModItems.VEGETABLE_OMELET);
+                        entries.add(ModItems.CREAMY_ONION_SOUP);
+                        entries.add(ModItems.CHEESY_PASTA);
+                        entries.add(ModItems.HORROR_LASAGNA);
+                        entries.add(ModItems.SCARLET_PIEROGI);
+
+                        entries.add(ModItems.HAM_AND_CHEESE_SANDWICH);
+                        entries.add(ModItems.KIMCHI);
+                        entries.add(ModItems.JERKY);
+                        entries.add(ModItems.PICKLED_PICKLES);
+                        entries.add(ModItems.KIPPERS);
+                        entries.add(ModItems.COCOA_FUDGE);
+                        entries.add(ModItems.SWEET_BERRY_JAM);
+                        entries.add(ModItems.GLOW_BERRY_MARMALADE);
+                        entries.add(ModItems.APPLE_JELLY);
+
                     }).build());
 
     public static final ItemGroup NATURE_GROUP = Registry.register(Registries.ITEM_GROUP,

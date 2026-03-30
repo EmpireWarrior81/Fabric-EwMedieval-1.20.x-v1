@@ -1,0 +1,9 @@
+{
+  "parent": "ewmedieval:block/cheese_wheel_template",
+  "textures": {
+    "top": "ewmedieval:block/scarlet_cheese_wheel_top",
+    "side": "ewmedieval:block/scarlet_cheese_wheel_side",
+    "bottom": "ewmedieval:block/scarlet_cheese_wheel_bottom",
+    "particle": "ewmedieval:block/scarlet_cheese_wheel_top"
+  }
+}

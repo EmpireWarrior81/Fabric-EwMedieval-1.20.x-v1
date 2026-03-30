@@ -692,6 +692,68 @@ public class ModBlocks {
             new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.QUICHE_SLICE),
             new FabricItemSettings().maxCount(1));
 
+    public static final Block PIZZA = registerBlock("pizza",
+            new PizzaBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.PIZZA_SLICE),
+            new FabricItemSettings().maxCount(1));
+
+    public static final Block FIERY_FONDUE_POT = registerBlock("fiery_fondue_pot",
+            new FieryFonduePotBlock(FabricBlockSettings.copyOf(Blocks.CAULDRON)), new FabricItemSettings().maxCount(1));
+
+    public static final Block FLAXEN_CHEESE_WHEEL = registerBlock("flaxen_cheese_wheel",
+            new CheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.FLAXEN_CHEESE_WEDGE), new FabricItemSettings().maxCount(1));
+
+    public static final Block SCARLET_CHEESE_WHEEL = registerBlock("scarlet_cheese_wheel",
+            new CheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE),
+                    () -> ModItems.SCARLET_CHEESE_WEDGE), new FabricItemSettings().maxCount(1));
+
+    public static final Block UNRIPE_FLAXEN_CHEESE_WHEEL = registerBlock("unripe_flaxen_cheese_wheel",
+            new UnripeCheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModBlocks.FLAXEN_CHEESE_WHEEL),
+            new FabricItemSettings().maxCount(1));
+
+    public static final Block UNRIPE_SCARLET_CHEESE_WHEEL = registerBlock("unripe_scarlet_cheese_wheel",
+            new UnripeCheeseWheelBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModBlocks.SCARLET_CHEESE_WHEEL),
+            new FabricItemSettings().maxCount(1));
+
+
+    public static final Block SYRUP_CHEESECAKE = registerBlock("syrup_cheesecake",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.SYRUP_CHEESECAKE_SLICE),
+            new FabricItemSettings().maxCount(1));
+    public static final Block CHERRY_BLOSSOM_CHEESECAKE = registerBlock("cherry_blossom_cheesecake",
+            new PieBlock(FabricBlockSettings.copyOf(Blocks.CAKE), () -> ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE),
+            new FabricItemSettings().maxCount(1));
+
+
+    public static final Block PANCAKES = registerBlock("pancakes",
+            new PancakeBlock(() -> ModItems.PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+    public static final Block HONEY_PANCAKES = registerBlock("honey_pancakes",
+            new PancakeBlock(() -> ModItems.HONEY_PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+    public static final Block CHOCOLATE_PANCAKES = registerBlock("chocolate_pancakes",
+            new PancakeBlock(() -> ModItems.CHOCOLATE_PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+    public static final Block CHERRY_BLOSSOM_PANCAKES = registerBlock("cherry_blossom_pancakes",
+            new PancakeBlock(() -> ModItems.CHERRY_BLOSSOM_PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+    public static final Block VEGETABLE_PANCAKES = registerBlock("vegetable_pancakes",
+            new PancakeBlock(() -> ModItems.VEGETABLE_PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+    public static final Block PUMPKIN_PANCAKES = registerBlock("pumpkin_pancakes",
+            new PancakeBlock(() -> ModItems.PUMPKIN_PANCAKE,
+                    FabricBlockSettings.copyOf(Blocks.CAKE).sounds(BlockSoundGroup.WOOD)),
+            new FabricItemSettings().maxCount(1));
+
+
+    public static final Block RICE_ROLL_ROYALE_MEDLEY = registerBlock("rice_roll_royale_medley",
+            new RiceRollRoyaleMedleyBlock(FabricBlockSettings.copyOf(Blocks.CAKE)),
+            new FabricItemSettings().maxCount(1));
+
 
 
 
@@ -716,14 +778,20 @@ public class ModBlocks {
     public static final Block WILD_RICE = registerBlock("wild_rice",
             new WildRiceBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_CUCUMBERS = registerBlock("wild_cucumbers",
-            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_EGGPLANTS = registerBlock("wild_eggplants",
-            new WildCropBlock(StatusEffects.STRENGTH, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+            new WildCropBlock(StatusEffects.STRENGTH, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_CORN = registerBlock("wild_corn",
-            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_CORN_DRY = registerBlock("wild_corn_dry",
-            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)));
+            new WildCropBlock(StatusEffects.HUNGER, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
 
+    public static final Block WILD_COTTON = registerBlock("wild_cotton",
+            new WildCropBlock(StatusEffects.SLOW_FALLING, 12, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_BELL_PEPPERS = registerBlock("wild_bell_peppers",
+            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 10, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_COFFEE = registerBlock("wild_coffee",
+            new WildCropBlock(StatusEffects.SPEED, 10, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
 
 
 
@@ -762,11 +830,43 @@ public class ModBlocks {
     public static final Block CORN_UPPER_CROP = registerBlockWithoutItem("corn_upper",
             new CornUpperBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
+    public static final Block COTTON_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "cotton"),
+            new CottonCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+
+    public static final Block BELL_PEPPER_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "bell_peppers"),
+            new BellPepperCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+
+    public static final Block COFFEE_CROP = Registry.register(Registries.BLOCK,
+            new Identifier(EwMedieval.MOD_ID, "coffee"),
+            new CoffeeCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+
 
     public static final Block ROPE = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "rope"),
             new RopeBlock(FabricBlockSettings.copyOf(Blocks.BROWN_CARPET)
                     .noCollision().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOL)));
+
+
+    public static final Block COTTON_SEEDS_BAG = registerBlock("cotton_seeds_bag",
+            new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+    public static final Block BELL_PEPPER_SEEDS_BAG = registerBlock("bell_pepper_seeds_bag",
+            new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+    public static final Block COFFEE_BEANS_BAG = registerBlock("coffee_beans_bag",
+            new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+    public static final Block ROASTED_COFFEE_BEANS_BAG = registerBlock("roasted_coffee_beans_bag",
+            new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+
+
+    public static final Block COTTON_BOLL_CRATE = registerBlock("cotton_boll_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
+    public static final Block BELL_PEPPER_GREEN_CRATE = registerBlock("bell_pepper_green_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
+    public static final Block BELL_PEPPER_YELLOW_CRATE = registerBlock("bell_pepper_yellow_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
+    public static final Block BELL_PEPPER_RED_CRATE = registerBlock("bell_pepper_red_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
 
 
     private static Block registerBlock(String name, Block block) {

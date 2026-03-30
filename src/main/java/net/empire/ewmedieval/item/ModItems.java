@@ -212,6 +212,13 @@ public class ModItems {
     public static final Item EGGPLANT_SEEDS = registerItem("eggplant_seeds",
             new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
 
+    public static final Item BELL_PEPPER_SEEDS = registerItem("bell_pepper_seeds",
+            new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
+    public static final Item COTTON_SEEDS = registerItem("cotton_seeds",
+            new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
+    public static final Item COFFEE_BEANS = registerItem("coffee_beans",
+            new AliasedBlockItem(ModBlocks.COFFEE_CROP, new FabricItemSettings()));
+
     public static final Item RICE_PANICLE = registerItem("rice_panicle",
             new Item(new FabricItemSettings()));
     public static final Item RICE = registerItem("rice",
@@ -360,7 +367,131 @@ public class ModItems {
      public static final Item PIZZA_SLICE = registerItem("pizza_slice",
             new Item(new FabricItemSettings().food(ModFoods.PIZZA_SLICE)));
 
+    public static final Item FIERY_FONDUE = registerItem("fiery_fondue",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.FIERY_FONDUE).recipeRemainder(Items.BOWL), true));
 
+    public static final Item VEGETABLE_OMELET = registerItem("vegetable_omelet",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.VEGETABLE_OMELET).recipeRemainder(Items.BOWL), true));
+    public static final Item CREAMY_ONION_SOUP = registerItem("creamy_onion_soup",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.CREAMY_ONION_SOUP).recipeRemainder(Items.BOWL), true));
+    public static final Item CHEESY_PASTA = registerItem("cheesy_pasta",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.CHEESY_PASTA).recipeRemainder(Items.BOWL), true));
+    public static final Item HORROR_LASAGNA = registerItem("horror_lasagna",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.HORROR_LASAGNA).recipeRemainder(Items.BOWL), true));
+    public static final Item SCARLET_PIEROGI = registerItem("scarlet_pierogi",
+            new ConsumableItem(new FabricItemSettings()
+                    .maxCount(16).food(ModFoods.SCARLET_PIEROGI).recipeRemainder(Items.BOWL), true));
+
+    public static final Item FLAXEN_CHEESE_WEDGE = registerItem("flaxen_cheese_wedge",
+            new Item(new FabricItemSettings().food(ModFoods.FLAXEN_CHEESE)));
+    public static final Item SCARLET_CHEESE_WEDGE = registerItem("scarlet_cheese_wedge",
+            new Item(new FabricItemSettings().food(ModFoods.SCARLET_CHEESE)));
+
+    public static final Item HAM_AND_CHEESE_SANDWICH = registerItem("ham_and_cheese_sandwich",
+            new Item(new FabricItemSettings().food(ModFoods.HAM_AND_CHEESE_SANDWICH)));
+
+    public static final Item KIMCHI = registerItem("kimchi",
+            new Item(new FabricItemSettings().food(ModFoods.KIMCHI)));
+    public static final Item JERKY = registerItem("jerky",
+            new Item(new FabricItemSettings().food(ModFoods.JERKY)));
+    public static final Item PICKLED_PICKLES = registerItem("pickled_pickles",
+            new Item(new FabricItemSettings().food(ModFoods.PICKLED_PICKLES)));
+    public static final Item KIPPERS = registerItem("kippers",
+            new Item(new FabricItemSettings().food(ModFoods.KIPPERS)));
+    public static final Item COCOA_FUDGE = registerItem("cocoa_fudge",
+            new Item(new FabricItemSettings().food(ModFoods.COCOA_FUDGE)));
+
+    public static final Item SWEET_BERRY_JAM = registerItem("sweet_berry_jam",
+            new JamJarItem(new FabricItemSettings().maxCount(16).recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(ModFoods.SWEET_BERRY_JAM)));
+    public static final Item GLOW_BERRY_MARMALADE = registerItem("glow_berry_marmalade",
+            new JamJarItem(new FabricItemSettings().maxCount(16).recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(ModFoods.GLOW_BERRY_MARMALADE)));
+    public static final Item APPLE_JELLY = registerItem("apple_jelly",
+            new JamJarItem(new FabricItemSettings().maxCount(16).recipeRemainder(Items.GLASS_BOTTLE)
+                    .food(ModFoods.APPLE_JELLY)));
+
+
+
+
+    public static final Item COTTON_BOLL = registerItem("cotton_boll",
+            new Item(new FabricItemSettings()));
+    public static final Item BELL_PEPPER_GREEN = registerItem("bell_pepper_green",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER)));
+    public static final Item BELL_PEPPER_YELLOW = registerItem("bell_pepper_yellow",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER)));
+    public static final Item BELL_PEPPER_RED = registerItem("bell_pepper_red",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER)));
+
+    public static final Item ROASTED_COFFEE_BEANS = registerItem("roasted_coffee_beans",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_COFFEE_BEANS)));
+    public static final Item GOLDEN_COFFEE_BEANS = registerItem("golden_coffee_beans",
+            new Item(new FabricItemSettings().food(ModFoods.GOLDEN_COFFEE_BEANS)));
+
+    public static final Item ROASTED_BELL_PEPPER_GREEN = registerItem("roasted_bell_pepper_green",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER)));
+    public static final Item ROASTED_BELL_PEPPER_YELLOW = registerItem("roasted_bell_pepper_yellow",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER)));
+    public static final Item ROASTED_BELL_PEPPER_RED = registerItem("roasted_bell_pepper_red",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER)));
+    public static final Item COFFEE = registerItem("coffee",
+              new DrinkableItem(new FabricItemSettings().food(ModFoods.COFFEE)
+                      .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16), true));
+    public static final Item MILK_COFFEE = registerItem("milk_coffee",
+              new MilkCoffeeItem(new FabricItemSettings().food(ModFoods.MILK_COFFEE)
+                      .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item CHOCOLATE_COFFEE = registerItem("chocolate_coffee",
+              new ChocolateCoffeeItem(new FabricItemSettings().food(ModFoods.CHOCOLATE_COFFEE)
+                      .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item HONEY_COFFEE = registerItem("honey_coffee",
+            new MilkCoffeeItem(new FabricItemSettings().food(ModFoods.HONEY_COFFEE)
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item SYRUP_COFFEE = registerItem("syrup_coffee",
+            new MilkCoffeeItem(new FabricItemSettings().food(ModFoods.SYRUP_COFFEE)
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item DARK_COFFEE = registerItem("dark_coffee",
+            new DrinkableItem(new FabricItemSettings().food(ModFoods.DARK_COFFEE)
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16), true));
+
+    public static final Item COOKING_OIL = registerItem("cooking_oil",
+            new DrinkableItem(new FabricItemSettings().food(ModFoods.COOKING_OIL)
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16)));
+    public static final Item SYRUP = registerItem("syrup",
+            new DrinkableItem(new FabricItemSettings().food(ModFoods.SYRUP)
+                    .recipeRemainder(Items.GLASS_BOTTLE).maxCount(16), true));
+    public static final Item BATTER = registerItem("batter",
+            new ConsumableItem(new FabricItemSettings().food(ModFoods.BATTER)
+                    .recipeRemainder(Items.BOWL).maxCount(16), true));
+
+
+    public static final Item POTATO_SLICES = registerItem("potato_slices",
+            new Item(new FabricItemSettings().food(ModFoods.POTATO_SLICES)));
+    public static final Item BAKED_POTATO_SLICES = registerItem("baked_potato_slices",
+            new Item(new FabricItemSettings().food(ModFoods.BAKED_POTATO_SLICES)));
+
+    public static final Item BELL_PEPPER_SLICE_GREEN = registerItem("bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER_SLICE)));
+    public static final Item BELL_PEPPER_SLICE_YELLOW = registerItem("bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER_SLICE)));
+    public static final Item BELL_PEPPER_SLICE_RED = registerItem("bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.BELL_PEPPER_SLICE)));
+
+    public static final Item ROASTED_BELL_PEPPER_SLICE_GREEN = registerItem("roasted_bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER_SLICE)));
+    public static final Item ROASTED_BELL_PEPPER_SLICE_YELLOW = registerItem("roasted_bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER_SLICE)));
+    public static final Item ROASTED_BELL_PEPPER_SLICE_RED = registerItem("roasted_bell_pepper_slice_green",
+            new Item(new FabricItemSettings().food(ModFoods.ROASTED_BELL_PEPPER_SLICE)));
+
+    public static final Item CALAMARI_SLICE = registerItem("calamari_slice",
+            new Item(new FabricItemSettings().food(ModFoods.CALAMARI_SLICE)));
+    public static final Item COOKED_CALAMARI_SLICE = registerItem("cooked_calamari_slice",
+            new Item(new FabricItemSettings().food(ModFoods.COOKED_CALAMARI_SLICE)));
 
 
 

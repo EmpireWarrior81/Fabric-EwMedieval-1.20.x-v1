@@ -1,0 +1,10 @@
+{
+  "parent": "ewmedieval:block/cheese_wheel_template3",
+  "textures": {
+    "top": "ewmedieval:block/flaxen_cheese_wheel_top",
+    "side": "ewmedieval:block/flaxen_cheese_wheel_side",
+    "inside": "ewmedieval:block/flaxen_cheese_wheel_inside",
+    "bottom": "ewmedieval:block/flaxen_cheese_wheel_bottom",
+    "particle": "ewmedieval:block/flaxen_cheese_wheel_top"
+  }
+}

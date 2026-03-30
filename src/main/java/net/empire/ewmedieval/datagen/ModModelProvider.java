@@ -521,6 +521,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CORN_DRY, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_EGGPLANTS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CUCUMBERS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_COTTON, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_BELL_PEPPERS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_COFFEE, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 
         registerVerticalSlab(blockStateModelGenerator, ModBlocks.BLUE_TUFF_VERTICAL_SLAB, ModBlocks.BLUE_TUFF);
@@ -906,9 +909,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.QUICHE_SLICE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PIZZA_SLICE, Models.GENERATED);
 
-
-        /*
         itemModelGenerator.register(ModItems.FIERY_FONDUE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLAXEN_CHEESE_WEDGE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SCARLET_CHEESE_WEDGE, Models.GENERATED);
+
+
+
         itemModelGenerator.register(ModItems.VEGETABLE_OMELET, Models.GENERATED);
         itemModelGenerator.register(ModItems.CREAMY_ONION_SOUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHEESY_PASTA, Models.GENERATED);
@@ -925,10 +931,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SWEET_BERRY_JAM, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLOW_BERRY_MARMALADE, Models.GENERATED);
         itemModelGenerator.register(ModItems.APPLE_JELLY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLAXEN_CHEESE_WEDGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SCARLET_CHEESE_WEDGE, Models.GENERATED);
 
-         */
+
+
 
 
 

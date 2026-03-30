@@ -1,12 +1,12 @@
 package net.empire.ewmedieval.block.custom.feastblocks;
 
-import net.empire.ewmedieval.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -24,6 +24,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
+import java.util.function.Supplier;
+
 @SuppressWarnings("deprecation")
 public class PizzaBlock extends Block {
 
@@ -39,9 +41,16 @@ public class PizzaBlock extends Block {
             Block.createCuboidShape(0, 0, 0, 16, 2, 16)};
 
 
-    public PizzaBlock(Settings settings) {
+    public final Supplier<Item> sliceItem;
+
+    public PizzaBlock(Settings settings, Supplier<Item> sliceItem) {
         super(settings);
+        this.sliceItem = sliceItem;
         this.setDefaultState(this.getDefaultState().with(SERVINGS, 3));
+    }
+
+    public ItemStack getSliceItem() {
+        return new ItemStack(this.sliceItem.get());
     }
 
     @Override
@@ -55,7 +64,6 @@ public class PizzaBlock extends Block {
         if (world.isClient) {
             return ActionResult.SUCCESS;
         }
-
         return takeServing(world, pos, state, player, hand);
     }
 
@@ -63,23 +71,23 @@ public class PizzaBlock extends Block {
                                      BlockState state, PlayerEntity player, Hand hand) {
         int servings = state.get(SERVINGS);
         ItemStack held = player.getStackInHand(hand);
-        if (held.isEmpty() || held.isOf(ModItems.PIZZA_SLICE)) {
-            if (held.isOf(ModItems.PIZZA_SLICE) && held.getCount() < held.getMaxCount()) {
+        ItemStack slice = getSliceItem();
+
+
+        if (held.isEmpty() || held.isOf(slice.getItem())) {
+            if (held.isOf(slice.getItem()) && held.getCount() < held.getMaxCount()) {
                 held.increment(1);
             } else {
-                player.setStackInHand(hand, new ItemStack(ModItems.PIZZA_SLICE));
+                player.setStackInHand(hand, slice);
             }
         } else {
-            dropStack(world, pos, new ItemStack(ModItems.PIZZA_SLICE));
+            dropStack(world, pos, slice);
         }
-        world.playSound(
-                null,
-                pos,
+
+        world.playSound(null, pos,
                 SoundEvents.BLOCK_SLIME_BLOCK_PLACE,
-                SoundCategory.BLOCKS,
-                1.0F,
-                1.0F
-        );
+                SoundCategory.BLOCKS, 1.0F, 1.0F);
+
         if (servings <= 0) {
             world.breakBlock(pos, false);
         } else {
@@ -88,9 +96,11 @@ public class PizzaBlock extends Block {
 
         return ActionResult.SUCCESS;
     }
+
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState,
-                                                WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction,
+                                                BlockState neighborState, WorldAccess world,
+                                                BlockPos pos, BlockPos neighborPos) {
         if (direction == Direction.DOWN && !this.canPlaceAt(state, world, pos)) {
             return Blocks.AIR.getDefaultState();
         }
@@ -116,8 +126,6 @@ public class PizzaBlock extends Block {
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
     }
-
-
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
