@@ -295,6 +295,86 @@ public class ModItemGroups {
                         entries.add(ModItems.GLOW_BERRY_MARMALADE);
                         entries.add(ModItems.APPLE_JELLY);
 
+                        entries.add(ModItems.PANCAKE);
+                        entries.add(ModItems.PUMPKIN_PANCAKE);
+                        entries.add(ModItems.CHERRY_BLOSSOM_PANCAKE);
+                        entries.add(ModItems.VEGETABLE_PANCAKE);
+                        entries.add(ModItems.CHOCOLATE_PANCAKE);
+                        entries.add(ModItems.HONEY_PANCAKE);
+
+                        entries.add(ModItems.DARK_COFFEE);
+                        entries.add(ModItems.COFFEE);
+                        entries.add(ModItems.MILK_COFFEE);
+                        entries.add(ModItems.CHOCOLATE_COFFEE);
+                        entries.add(ModItems.HONEY_COFFEE);
+
+                        entries.add(ModItems.COFFEE_COOKIE);
+
+                        entries.add(ModItems.COOKING_OIL);
+                        entries.add(ModItems.BATTER);
+
+                        entries.add(ModItems.COOKED_CALAMARI_SLICE);
+                        entries.add(ModItems.CALAMARI_SLICE);
+                        entries.add(ModItems.SLICED_CALAMARI_ROLL);
+
+                        entries.add(ModItems.COFFEE_BEANS);
+                        entries.add(ModItems.COFFEE_BRAISED_BEEF);
+
+                        entries.add(ModItems.BELL_PEPPER_GREEN);
+                        entries.add(ModItems.BELL_PEPPER_RED);
+                        entries.add(ModItems.BELL_PEPPER_YELLOW);
+
+                        entries.add(ModItems.BELL_PEPPER_SLICE_GREEN);
+                        entries.add(ModItems.BELL_PEPPER_SLICE_RED);
+                        entries.add(ModItems.BELL_PEPPER_SLICE_YELLOW);
+
+                        entries.add(ModItems.POTATO_SLICES);
+                        entries.add(ModItems.BAKED_POTATO_SLICES);
+                        entries.add(ModItems.POTATO_SALAD);
+
+                        entries.add(ModItems.BELL_PEPPER_PASTA);
+
+                        entries.add(ModItems.BELL_PEPPER_ROLL_GREEN);
+                        entries.add(ModItems.BELL_PEPPER_ROLL_RED);
+                        entries.add(ModItems.BELL_PEPPER_ROLL_YELLOW);
+
+                        entries.add(ModItems.SYRUP);
+                        entries.add(ModItems.SYRUP_COFFEE);
+
+                        entries.add(ModItems.ROASTED_COFFEE_BEANS);
+                        entries.add(ModItems.GOLDEN_COFFEE_BEANS);
+
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_GREEN);
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_YELLOW);
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_RED);
+
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_SLICE_GREEN);
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_SLICE_YELLOW);
+                        entries.add(ModItems.ROASTED_BELL_PEPPER_SLICE_RED);
+
+                        entries.add(ModItems.STUFFED_BELL_PEPPER_GREEN);
+                        entries.add(ModItems.STUFFED_BELL_PEPPER_YELLOW);
+                        entries.add(ModItems.STUFFED_BELL_PEPPER_RED);
+
+                        entries.add(ModItems.FRIED_CALAMARI);
+                        entries.add(ModItems.FRIED_CHICKEN);
+                        entries.add(ModItems.FRIED_MUSHROOMS);
+
+                        entries.add(ModItems.SYRUP_COOKIE);
+                        entries.add(ModItems.CHERRY_BLOSSOM_COOKIE);
+
+                        entries.add(ModItems.FRUIT_BEIGNET);
+
+                        entries.add(ModItems.SWEET_SALAD);
+                        entries.add(ModItems.BELL_PEPPER_SOUP);
+
+                        entries.add(ModItems.FRIED_DOUGH);
+                        entries.add(ModItems.FRIED_DUMPLINGS);
+                        entries.add(ModItems.SPRING_ROLLS);
+
+                        entries.add(ModItems.CHERRY_BLOSSOM_ROLL);
+
+
                     }).build());
 
     public static final ItemGroup NATURE_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -304,6 +384,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.TOMATO))
                     .entries((displayContext, entries) -> {
 
+                        entries.add(ModItems.AVOCADO);
                         entries.add(ModItems.CABBAGE);
                         entries.add(ModItems.CABBAGE_SEEDS);
                         entries.add(ModItems.ONION);
@@ -318,7 +399,22 @@ public class ModItemGroups {
                         entries.add(ModItems.EGGPLANT);
                         entries.add(ModItems.WHITE_EGGPLANT);
                         entries.add(ModItems.EGGPLANT_SEEDS);
-
+                        entries.add(ModItems.BELL_PEPPER_GREEN);
+                        entries.add(ModItems.BELL_PEPPER_RED);
+                        entries.add(ModItems.BELL_PEPPER_YELLOW);
+                        entries.add(ModItems.BELL_PEPPER_SEEDS);
+                        entries.add(ModItems.COTTON_BOLL);
+                        entries.add(ModItems.COTTON_SEEDS);
+                        entries.add(ModItems.COFFEE_BEANS);
+                        entries.add(ModItems.BROCCOLI);
+                        entries.add(ModItems.BROCCOLI_SEEDS);
+                        entries.add(ModItems.CAULIFLOWER);
+                        entries.add(ModItems.CAULIFLOWER_SEEDS);
+                        entries.add(ModItems.SWEET_POTATO);
+                        entries.add(ModItems.TURNIP);
+                        entries.add(ModItems.TURNIP_SEEDS);
+                        entries.add(ModItems.ZUCCHINI);
+                        entries.add(ModItems.ZUCCHINI_SEEDS);
 
                         entries.add(ModItems.STRAW);
                         entries.add(ModBlocks.STRAW_BALE);
@@ -330,6 +426,14 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WILD_POTATOES);
                         entries.add(ModBlocks.WILD_BEETROOTS);
                         entries.add(ModBlocks.WILD_RICE);
+                        entries.add(ModBlocks.WILD_COFFEE);
+                        entries.add(ModBlocks.WILD_COTTON);
+                        entries.add(ModBlocks.WILD_BELL_PEPPERS);
+                        entries.add(ModBlocks.WILD_BROCCOLI);
+                        entries.add(ModBlocks.WILD_CAULIFLOWERS);
+                        entries.add(ModBlocks.WILD_SWEET_POTATOES);
+                        entries.add(ModBlocks.WILD_TURNIPS);
+                        entries.add(ModBlocks.WILD_ZUCCHINIS);
 
                         entries.add(ModItems.OAK_BARK);
                         entries.add(ModItems.SPRUCE_BARK);

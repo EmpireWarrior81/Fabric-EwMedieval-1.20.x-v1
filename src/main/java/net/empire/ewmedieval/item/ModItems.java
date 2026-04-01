@@ -213,11 +213,35 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
 
     public static final Item BELL_PEPPER_SEEDS = registerItem("bell_pepper_seeds",
-            new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
+            new AliasedBlockItem(ModBlocks.BELL_PEPPER_CROP, new FabricItemSettings()));
     public static final Item COTTON_SEEDS = registerItem("cotton_seeds",
-            new AliasedBlockItem(ModBlocks.EGGPLANT_CROP, new FabricItemSettings()));
+            new AliasedBlockItem(ModBlocks.COTTON_CROP, new FabricItemSettings()));
     public static final Item COFFEE_BEANS = registerItem("coffee_beans",
             new AliasedBlockItem(ModBlocks.COFFEE_CROP, new FabricItemSettings()));
+
+    public static final Item SWEET_POTATO = registerItem("sweet_potato",
+            new AliasedBlockItem(ModBlocks.SWEET_POTATO_CROP, new FabricItemSettings().food(ModFoods.SWEET_POTATO)));
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
+            new AliasedBlockItem(ModBlocks.CAULIFLOWER_CROP, new FabricItemSettings()));
+    public static final Item BROCCOLI_SEEDS = registerItem("broccoli_seeds",
+            new AliasedBlockItem(ModBlocks.BROCCOLI_CROP, new FabricItemSettings()));
+    public static final Item ZUCCHINI_SEEDS = registerItem("zucchini_seeds",
+            new AliasedBlockItem(ModBlocks.ZUCCHINI_CROP, new FabricItemSettings()));
+    public static final Item TURNIP_SEEDS = registerItem("turnip_seeds",
+            new AliasedBlockItem(ModBlocks.TURNIP_CROP, new FabricItemSettings()));
+
+    public static final Item BROCCOLI = registerItem("broccoli",
+            new Item(new FabricItemSettings().food(ModFoods.BROCCOLI)));
+    public static final Item CAULIFLOWER = registerItem("cauliflower",
+            new Item(new FabricItemSettings().food(ModFoods.CAULIFLOWER)));
+    public static final Item ZUCCHINI = registerItem("zucchini",
+            new Item(new FabricItemSettings().food(ModFoods.ZUCCHINI)));
+    public static final Item TURNIP = registerItem("turnip",
+            new Item(new FabricItemSettings().food(ModFoods.TURNIP)));
+    public static final Item DANDELION_LEAF = registerItem("dandelion_leaf",
+            new Item(new FabricItemSettings().food(ModFoods.DANDELION_LEAF)));
+
+
 
     public static final Item RICE_PANICLE = registerItem("rice_panicle",
             new Item(new FabricItemSettings()));

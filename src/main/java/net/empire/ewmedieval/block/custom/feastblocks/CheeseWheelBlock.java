@@ -82,7 +82,7 @@ public class CheeseWheelBlock extends Block {
         }
         if (world.isClient) {
             player.sendMessage(
-                    Text.translatable("block.cheese.feast.use_knife"),
+                    Text.translatable("block.ewmedieval.cheese.feast.use_knife"),
                     true
             );
         }

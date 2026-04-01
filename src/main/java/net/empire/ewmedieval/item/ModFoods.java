@@ -498,11 +498,11 @@ public class ModFoods {
 
 
     public static final FoodComponent SLICED_CALAMARI_ROLL = new FoodComponent.Builder()
-            .hunger(7).saturationModifier(0.6f).snack().build();
+            .hunger(7).saturationModifier(0.6f).build();
     public static final FoodComponent CHERRY_BLOSSOM_ROLL = new FoodComponent.Builder()
-            .hunger(6).saturationModifier(0.5f).snack().build();
+            .hunger(6).saturationModifier(0.5f).build();
     public static final FoodComponent BELL_PEPPER_ROLL = new FoodComponent.Builder()
-            .hunger(7).saturationModifier(0.8f).snack().build();
+            .hunger(7).saturationModifier(0.8f).build();
     public static final FoodComponent STUFFED_BELL_PEPPER = new FoodComponent.Builder()
             .hunger(10).saturationModifier(0.7f).build();
 
@@ -540,4 +540,23 @@ public class ModFoods {
     public static final FoodComponent COFFEE_BRAISED_BEEF = new FoodComponent.Builder()
             .hunger(14).saturationModifier(0.75f)
             .statusEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, FoodValues.LONG_DURATION, 0), 1.0f).build();
+
+    public static final FoodComponent SWEET_POTATO = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.4f).build();
+    public static final FoodComponent BROCCOLI = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.4f).build();
+    public static final FoodComponent CAULIFLOWER = new FoodComponent.Builder()
+            .hunger(4).saturationModifier(0.4f).build();
+    public static final FoodComponent TURNIP = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.4f).build();
+    public static final FoodComponent ZUCCHINI = new FoodComponent.Builder()
+            .hunger(3).saturationModifier(0.4f).build();
+    public static final FoodComponent DANDELION_LEAF = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0.1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0), 1.0f).build();
+
+
+
+
+
 }

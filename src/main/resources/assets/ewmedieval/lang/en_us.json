@@ -642,6 +642,7 @@
   "block.ewmedieval.cutting_board.invalid_tool": "Maybe with a different tool...",
   "block.ewmedieval.rice.invalid_placement": "This crop won't survive well outside shallow water.",
   "block.ewmedieval.feast.use_container": "You need a %s to eat this.",
+  "block.ewmedieval.cheese.feast.use_knife": "Use a knife to cut this cheese",
 
   "effect.ewmedieval.nourishment": "Nourishment",
   "effect.ewmedieval.comfort": "Comfort",

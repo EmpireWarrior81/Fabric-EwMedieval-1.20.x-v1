@@ -22,7 +22,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.BlockView;
 
 public class ModBlocks {
 
@@ -802,6 +804,26 @@ public class ModBlocks {
     public static final Block WILD_COFFEE = registerBlock("wild_coffee",
             new WildCropBlock(StatusEffects.SPEED, 10, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
 
+    public static final Block WILD_BROCCOLI = registerBlock("wild_broccoli",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_CAULIFLOWERS = registerBlock("wild_cauliflowers",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_ZUCCHINIS = registerBlock("wild_zucchinis",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_SWEET_POTATOES = registerBlock("wild_sweet_potatoes",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_TURNIPS = registerBlock("wild_turnips",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision())
+
+        {
+            @Override
+            protected boolean canPlantOnTop (BlockState floor, BlockView world, BlockPos pos){
+            return super.canPlantOnTop(floor, world, pos)
+                    || floor.isOf(Blocks.SAND)
+                    || floor.isOf(Blocks.RED_SAND);
+
+        }});
+
 
 
     public static final Block CABBAGE_CROP = Registry.register(Registries.BLOCK,
@@ -841,15 +863,26 @@ public class ModBlocks {
 
     public static final Block COTTON_CROP = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "cotton"),
-            new CottonCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+            new CottonCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
     public static final Block BELL_PEPPER_CROP = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "bell_peppers"),
-            new BellPepperCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+            new BellPepperCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
     public static final Block COFFEE_CROP = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "coffee"),
-            new CoffeeCropBlock(FabricBlockSettings.copyOf(Blocks.CARROTS).noCollision()));
+            new CoffeeCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+
+    public static final Block SWEET_POTATO_CROP = registerBlockWithoutItem("sweet_potatoes",
+            new SweetPotatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block CAULIFLOWER_CROP = registerBlockWithoutItem("cauliflower",
+            new CauliflowerCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block BROCCOLI_CROP = registerBlockWithoutItem("broccoli",
+            new BroccoliCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block ZUCCHINI_CROP = registerBlockWithoutItem("zucchini",
+            new ZucchiniCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block TURNIP_CROP = registerBlockWithoutItem("turnip",
+            new TurnipCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
     public static final Block ROPE = Registry.register(Registries.BLOCK,

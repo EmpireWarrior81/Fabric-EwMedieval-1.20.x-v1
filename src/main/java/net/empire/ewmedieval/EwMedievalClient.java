@@ -41,6 +41,11 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.WILD_COFFEE,
                 ModBlocks.WILD_COTTON,
                 ModBlocks.WILD_BELL_PEPPERS,
+                ModBlocks.WILD_TURNIPS,
+                ModBlocks.WILD_ZUCCHINIS,
+                ModBlocks.WILD_BROCCOLI,
+                ModBlocks.WILD_CAULIFLOWERS,
+                ModBlocks.WILD_SWEET_POTATOES,
                 ModBlocks.ONION_CROP,
                 ModBlocks.CABBAGE_CROP,
                 ModBlocks.RICE_CROP,
@@ -51,7 +56,16 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.CUCUMBER_CROP,
                 ModBlocks.EGGPLANT_CROP,
                 ModBlocks.CORN_CROP,
-                ModBlocks.CORN_UPPER_CROP);
+                ModBlocks.CORN_UPPER_CROP,
+                ModBlocks.COTTON_CROP,
+                ModBlocks.COFFEE_CROP,
+                ModBlocks.BELL_PEPPER_CROP,
+                ModBlocks.CAULIFLOWER_CROP,
+                ModBlocks.BROCCOLI_CROP,
+                ModBlocks.SWEET_POTATO_CROP,
+                ModBlocks.TURNIP_CROP,
+                ModBlocks.ZUCCHINI_CROP
+                );
 
 
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);

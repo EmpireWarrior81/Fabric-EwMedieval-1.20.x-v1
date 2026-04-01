@@ -3,30 +3,22 @@ package net.empire.ewmedieval.datagen;
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabShape;
-import net.empire.ewmedieval.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
-import net.minecraft.data.client.Models;
 import net.minecraft.util.Identifier;
-import net.minecraft.data.client.TextureMap;
-import net.minecraft.data.client.TexturedModel;
-import net.minecraft.data.client.TextureKey;
 import net.minecraft.util.math.Direction;
+
 import java.util.List;
 import java.util.Optional;
 
-import net.minecraft.data.client.VariantSettings;
-
-
-public class ModModelProvider extends FabricModelProvider {
-    public ModModelProvider(FabricDataOutput output) {
+public class ModBlockModelProvider extends FabricModelProvider {
+    public ModBlockModelProvider(FabricDataOutput output) {
         super(output);
     }
 
-    //Vertical Slab
 
     public static final Model VERTICAL_SLAB = new Model(
             Optional.of(new Identifier("minecraft", "block/block")), // parent = simpel blockmodel
@@ -103,9 +95,15 @@ public class ModModelProvider extends FabricModelProvider {
 
     }
 
+    @Override
+    public String getName() {
+        return "Ew medieval Block Models";
+    }
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_ORE);
@@ -128,8 +126,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         blockStateModelGenerator.registerAxisRotated(ModBlocks.STRAW_BALE, TexturedModel.CUBE_COLUMN.andThen(tex -> tex
-                        .put(TextureKey.SIDE, new Identifier("ewmedieval", "block/straw_bale_side"))
-                        .put(TextureKey.END, new Identifier("ewmedieval", "block/straw_bale_top"))));
+                .put(TextureKey.SIDE, new Identifier("ewmedieval", "block/straw_bale_side"))
+                .put(TextureKey.END, new Identifier("ewmedieval", "block/straw_bale_top"))));
 
         // Polished Stone
         BlockStateModelGenerator.BlockTexturePool polishedStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.POLISHED_STONE);
@@ -524,6 +522,11 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_COTTON, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_BELL_PEPPERS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_COFFEE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_BROCCOLI, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_CAULIFLOWERS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_TURNIPS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_ZUCCHINIS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_SWEET_POTATOES, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 
         registerVerticalSlab(blockStateModelGenerator, ModBlocks.BLUE_TUFF_VERTICAL_SLAB, ModBlocks.BLUE_TUFF);
@@ -531,91 +534,91 @@ public class ModModelProvider extends FabricModelProvider {
 
 
 // Chiseled Blokken
-        List<CustomBlockTextures> customBlocks = List.of(
-                new CustomBlockTextures(ModBlocks.CHISELED_DEEPSLATE_BRICKS,
+        List<ModBlockModelProvider.CustomBlockTextures> customBlocks = List.of(
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_DEEPSLATE_BRICKS,
                         "block/chiseled_deepslate_bricks",
                         "block/chiseled_deepslate_bricks_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_DEEPSLATE_TILES,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_DEEPSLATE_TILES,
                         "block/chiseled_deepslate_tiles",
                         "block/chiseled_deepslate_tiles_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_DEEPSLATE,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_POLISHED_DEEPSLATE,
                         "block/chiseled_polished_deepslate",
                         "block/chiseled_polished_deepslate_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_DEEPSLATE,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_DEEPSLATE,
                         "block/chiseled_smooth_deepslate",
                         "block/chiseled_smooth_deepslate_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_TUFF,
                         "block/chiseled_tuff",
                         "block/chiseled_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_TUFF_BRICKS,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_TUFF_BRICKS,
                         "block/chiseled_tuff_bricks",
                         "block/chiseled_tuff_bricks_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_STONE,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_STONE,
                         "block/chiseled_smooth_stone",
                         "block/chiseled_smooth_stone_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_STONE,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_STONE,
                         "block/chiseled_stone",
                         "block/chiseled_stone_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_STONE,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_POLISHED_STONE,
                         "block/chiseled_polished_stone",
                         "block/chiseled_polished_stone_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_STONE_TILES,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_STONE_TILES,
                         "block/chiseled_stone_tiles",
                         "block/chiseled_stone_tiles_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_BLUE_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_POLISHED_BLUE_TUFF,
                         "block/chiseled_polished_blue_tuff",
                         "block/chiseled_polished_blue_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_BLUE_TUFF_BRICKS,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_BLUE_TUFF_BRICKS,
                         "block/chiseled_blue_tuff_bricks",
                         "block/chiseled_blue_tuff_bricks_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_POLISHED_GREEN_TUFF,
                         "block/chiseled_polished_green_tuff",
                         "block/chiseled_polished_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF,
                         "block/chiseled_green_tuff",
                         "block/chiseled_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF_BRICKS,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF_BRICKS,
                         "block/chiseled_green_tuff_bricks",
                         "block/chiseled_green_tuff_bricks_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF_TILES,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_GREEN_TUFF_TILES,
                         "block/chiseled_green_tuff_tiles",
                         "block/chiseled_green_tuff_tiles_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_GREEN_TUFF,
                         "block/chiseled_smooth_green_tuff",
                         "block/chiseled_smooth_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.GILDED_CHISELED_POLISHED_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GILDED_CHISELED_POLISHED_GREEN_TUFF,
                         "block/gilded_chiseled_polished_green_tuff",
                         "block/gilded_chiseled_polished_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF,
                         "block/gilded_chiseled_green_tuff",
                         "block/gilded_chiseled_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF_BRICKS,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF_BRICKS,
                         "block/gilded_chiseled_green_tuff_bricks",
                         "block/gilded_chiseled_green_tuff_bricks_top"),
-                new CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF_TILES,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GILDED_CHISELED_GREEN_TUFF_TILES,
                         "block/gilded_chiseled_green_tuff_tiles",
                         "block/gilded_chiseled_green_tuff_tiles_top"),
-                new CustomBlockTextures(ModBlocks.GILDED_CHISELED_SMOOTH_GREEN_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GILDED_CHISELED_SMOOTH_GREEN_TUFF,
                         "block/gilded_chiseled_smooth_green_tuff",
                         "block/gilded_chiseled_smooth_green_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_POLISHED_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_POLISHED_TUFF,
                         "block/chiseled_polished_tuff",
                         "block/chiseled_polished_tuff_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_TUFF_TILES,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_TUFF_TILES,
                         "block/chiseled_tuff_tiles",
                         "block/chiseled_tuff_tiles_top"),
-                new CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_TUFF,
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CHISELED_SMOOTH_TUFF,
                         "block/chiseled_smooth_tuff",
                         "block/chiseled_smooth_tuff_top")
 
-                );
+        );
 
-        for (CustomBlockTextures data : customBlocks) {
+        for (ModBlockModelProvider.CustomBlockTextures data : customBlocks) {
             blockStateModelGenerator.registerCubeWithCustomTextures(
                     data.block(),
                     data.block(),
                     (b1, b2) -> TextureMap.of(
-                            TextureKey.SIDE, new Identifier("ewmedieval", data.side()))
+                                    TextureKey.SIDE, new Identifier("ewmedieval", data.side()))
                             .put(TextureKey.UP,    new Identifier("ewmedieval", data.top()))
                             .put(TextureKey.DOWN, new Identifier("ewmedieval", data.top()))
                             .put(TextureKey.PARTICLE,new Identifier("ewmedieval", data.side()))
@@ -623,25 +626,25 @@ public class ModModelProvider extends FabricModelProvider {
         }
 
 
-        List<CustomBlockTextures> pillarBlocks = List.of(
-                new CustomBlockTextures(ModBlocks.DEEPSLATE_PILLAR, "block/deepslate_pillar", "block/deepslate_pillar_top"),
-                new CustomBlockTextures(ModBlocks.MOSSY_DEEPSLATE_PILLAR, "block/mossy_deepslate_pillar", "block/mossy_deepslate_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_DEEPSLATE_PILLAR, "block/cracked_deepslate_pillar", "block/cracked_deepslate_pillar_top"),
-                new CustomBlockTextures(ModBlocks.STONE_PILLAR, "block/stone_pillar" , "block/stone_pillar_top"),
-                new CustomBlockTextures(ModBlocks.MOSSY_STONE_PILLAR, "block/mossy_stone_pillar" , "block/mossy_stone_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_STONE_PILLAR, "block/cracked_stone_pillar" , "block/cracked_stone_pillar_top"),
-                new CustomBlockTextures(ModBlocks.BLUE_TUFF_PILLAR, "block/blue_tuff_pillar", "block/blue_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.MOSSY_BLUE_TUFF_PILLAR, "block/mossy_blue_tuff_pillar", "block/mossy_blue_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_BLUE_TUFF_PILLAR, "block/cracked_blue_tuff_pillar", "block/cracked_blue_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.GREEN_TUFF_PILLAR, "block/green_tuff_pillar", "block/green_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.MOSSY_GREEN_TUFF_PILLAR, "block/mossy_green_tuff_pillar", "block/mossy_green_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_GREEN_TUFF_PILLAR, "block/cracked_green_tuff_pillar", "block/cracked_green_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.TUFF_PILLAR, "block/tuff_pillar", "block/tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.MOSSY_TUFF_PILLAR, "block/mossy_tuff_pillar", "block/mossy_tuff_pillar_top"),
-                new CustomBlockTextures(ModBlocks.CRACKED_TUFF_PILLAR, "block/cracked_tuff_pillar", "block/cracked_tuff_pillar_top")
-                );
+        List<ModBlockModelProvider.CustomBlockTextures> pillarBlocks = List.of(
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.DEEPSLATE_PILLAR, "block/deepslate_pillar", "block/deepslate_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.MOSSY_DEEPSLATE_PILLAR, "block/mossy_deepslate_pillar", "block/mossy_deepslate_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CRACKED_DEEPSLATE_PILLAR, "block/cracked_deepslate_pillar", "block/cracked_deepslate_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.STONE_PILLAR, "block/stone_pillar" , "block/stone_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.MOSSY_STONE_PILLAR, "block/mossy_stone_pillar" , "block/mossy_stone_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CRACKED_STONE_PILLAR, "block/cracked_stone_pillar" , "block/cracked_stone_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.BLUE_TUFF_PILLAR, "block/blue_tuff_pillar", "block/blue_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.MOSSY_BLUE_TUFF_PILLAR, "block/mossy_blue_tuff_pillar", "block/mossy_blue_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CRACKED_BLUE_TUFF_PILLAR, "block/cracked_blue_tuff_pillar", "block/cracked_blue_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.GREEN_TUFF_PILLAR, "block/green_tuff_pillar", "block/green_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.MOSSY_GREEN_TUFF_PILLAR, "block/mossy_green_tuff_pillar", "block/mossy_green_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CRACKED_GREEN_TUFF_PILLAR, "block/cracked_green_tuff_pillar", "block/cracked_green_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.TUFF_PILLAR, "block/tuff_pillar", "block/tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.MOSSY_TUFF_PILLAR, "block/mossy_tuff_pillar", "block/mossy_tuff_pillar_top"),
+                new ModBlockModelProvider.CustomBlockTextures(ModBlocks.CRACKED_TUFF_PILLAR, "block/cracked_tuff_pillar", "block/cracked_tuff_pillar_top")
+        );
 
-        for (CustomBlockTextures data : pillarBlocks) {
+        for (ModBlockModelProvider.CustomBlockTextures data : pillarBlocks) {
             Identifier side = new Identifier("ewmedieval", data.side()); // zijtexture
             Identifier end  = new Identifier("ewmedieval", data.top());  // uiteinden (top + bottom)
 
@@ -652,293 +655,11 @@ public class ModModelProvider extends FabricModelProvider {
                             .put(TextureKey.END,  end)
                     )
             );
-}
-
         }
+    }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.TIN_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TIN_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_TIN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SILVER_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SILVER_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_SILVER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KHAZAD_STEEL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KHAZAD_STEEL_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BURZUM_STEEL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BURZUM_STEEL_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EDHEL_STEEL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EDHEL_STEEL_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRUDE_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRUDE_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_LEAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LEAD_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LEAD_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MITHRIL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MITHRIL_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_MITHRIL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BRONZE_MIXTURE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BRONZE_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BRONZE_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COPPER_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_IRON_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STEEL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STEEL_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BRONZE_ASH_MIXTURE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.RAW_HORSE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_SWAN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_GOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_HORSE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_SWAN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_GOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BAT_WING, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_BAT_WING, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_WOLF, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_WOLF, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.LEMBAS, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.CAKE_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PUMPKIN_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STUFFED_PUMPKIN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROAST_CHICKEN, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.CACTUS_FLESH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CACTUS_STEAK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRANBERRY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FIG, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KIWI, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LEMON, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MANGO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ORANGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEACH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEAR, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BAKED_PEAR, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.ARKENSTONE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FUR, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ASH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ASH_PIECE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.STONE_PEBBLE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.CRUDE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.CRUDE_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.CRUDE_SHOVEL, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.EDHEL_STEEL_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.EDHEL_STEEL_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.EDHEL_STEEL_HOE, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.MITHRIL_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.MITHRIL_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.MITHRIL_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.MITHRIL_AXE, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.BRONZE_SHEARS, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_KNIFE, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.IRON_KNIFE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.GOLDEN_KNIFE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.DIAMOND_KNIFE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.NETHERITE_KNIFE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.STONE_KNIFE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.FLINT_KNIFE, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.BACON, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MINCED_BEEF, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CABBAGE_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CABBAGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ONION, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RICE_PANICLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_CUTS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MUTTON_CHOPS, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.TOMATO_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HAM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CABBAGE_ROLLS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SALMON_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HAMBURGER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SALMON_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FRUIT_SALAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RATATOUILLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MIXED_SALAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NETHER_SALAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STRAW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BARBECUE_STICK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_BACON, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_MUTTON_CHOPS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_CHICKEN_CUTS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_COD_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_SALMON_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PIE_CRUST, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_PATTY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_HAM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COD_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.WHEAT_DOUGH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGG_SANDWICH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CABBAGE_LEAF, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_PASTA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FRIED_EGG, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_RICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KELP_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KELP_ROLL_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_STEW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FISH_STEW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VEGETABLE_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FRIED_RICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PUMPKIN_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BAKED_COD_STEW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NOODLE_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BACON_AND_EGGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STEAK_AND_POTATOES, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VEGETABLE_NOODLES, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BONE_BROTH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PASTA_WITH_MEATBALLS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PASTA_WITH_MUTTON_CHOP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MUSHROOM_RICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROASTED_MUTTON_CHOPS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SQUID_INK_PASTA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GRILLED_SALMON, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HONEY_GLAZED_HAM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TOMATO_SAUCE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SHEPHERDS_PIE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_SANDWICH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BACON_SANDWICH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MUTTON_WRAP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DUMPLINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COD_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.STUFFED_POTATO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MELON_POPSICLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROTTEN_TOMATO, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.MELON_JUICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_CIDER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HOT_COCOA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GLOW_BERRY_CUSTARD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SWEET_BERRY_COOKIE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HONEY_COOKIE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_PIE_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHOCOLATE_PIE_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SWEET_BERRY_CHEESECAKE_SLICE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.MILK_BOTTLE, Models.GENERATED);
-
-
-        itemModelGenerator.register(ModItems.BAMBOO_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BIRCH_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SPRUCE_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.OAK_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DARK_OAK_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHERRY_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.JUNGLE_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MANGROVE_BARK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ACACIA_BARK, Models.GENERATED);
-
-
-
-        itemModelGenerator.register(ModItems.ROPE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GLASS_JUG, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GLASS_CHALICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DOG_FOOD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HORSE_FEED, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.CUCUMBER_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGGPLANT_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CORN_KERNELS, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.AVOCADO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CUCUMBER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PICKLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_WHITE_EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.WHITE_EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CORN_COB, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GINGER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SQUID, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_SQUID, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GLOW_SQUID, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_CALAMARI, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COOKED_CALAMARI, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CUT_AVOCADO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CUT_CUCUMBER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CUT_PICKLE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CUT_EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_CUT_EGGPLANT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MIDORI_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MIDORI_ROLL_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGG_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_ROLL_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PUFFERFISH_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TROPICAL_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RICE_BALL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CALAMARI_ROLL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CORN_DOUGH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TORTILLA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POPCORN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TORTILLA_CHIPS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ELOTE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EMPANADA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BEEF_BURRITO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MUTTON_SANDWICH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.AVOCADO_TOAST, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CREAMED_CORN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HEARTY_SALAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SPICY_CURRY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POACHED_EGGPLANTS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHICKEN_TACO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PORK_WRAP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FISH_TACO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SMOKED_TOMATO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGGPLANT_BURGER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EGGPLANT_PARMESAN, Models.GENERATED);
-
-
-        itemModelGenerator.register(ModItems.QUICHE_SLICE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PIZZA_SLICE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.FIERY_FONDUE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLAXEN_CHEESE_WEDGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SCARLET_CHEESE_WEDGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DORBLU_CHEESE_WEDGE, Models.GENERATED);
-
-
-
-        itemModelGenerator.register(ModItems.VEGETABLE_OMELET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CREAMY_ONION_SOUP, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHEESY_PASTA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HORROR_LASAGNA, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SCARLET_PIEROGI, Models.GENERATED);
-
-
-        itemModelGenerator.register(ModItems.HAM_AND_CHEESE_SANDWICH, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KIMCHI, Models.GENERATED);
-        itemModelGenerator.register(ModItems.JERKY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PICKLED_PICKLES, Models.GENERATED);
-        itemModelGenerator.register(ModItems.KIPPERS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.COCOA_FUDGE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SWEET_BERRY_JAM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GLOW_BERRY_MARMALADE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.APPLE_JELLY, Models.GENERATED);
-
-
-
-
-
-
-
 
     }
 }
