@@ -652,6 +652,10 @@
   "tooltip.ewmedieval.milk_bottle": "Clears 1 Effect",
   "tooltip.ewmedieval.hot_cocoa": "Clears 1 Harmful Effect",
   "tooltip.ewmedieval.melon_juice": "Minor Instant Health",
+  "tooltip.ewmedieval.chocolate_coffee": "Clears 1 Harmful Effect",
+  "tooltip.ewmedieval.honey_coffee": "Clears 1 Effect",
+  "tooltip.ewmedieval.milk_coffee": "Clears 1 Effect",
+  "tooltip.ewmedieval.syrup_coffee": "Clears 1 Effect",
 
   "itemgroup.ewmedieval.artifacts": "EwM Artifacts",
   "itemgroup.ewmedieval.metals": "EwM Metals",
