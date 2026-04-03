@@ -5,6 +5,7 @@ import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.ForgeBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.StoveBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
@@ -27,6 +28,11 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "cutting_board_be"),
                     FabricBlockEntityTypeBuilder.create(CuttingBoardBlockEntity::new,
                             ModBlocks.CUTTING_BOARD).build());
+
+    public static final BlockEntityType<StoveBlockEntity> STOVE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "stove"),
+                    FabricBlockEntityTypeBuilder.create(StoveBlockEntity::new,
+                            ModBlocks.STOVE).build());
 
     public static void registerBlockEntities() {
         EwMedieval.LOGGER.info("Registering Block Entities for " + EwMedieval.MOD_ID);

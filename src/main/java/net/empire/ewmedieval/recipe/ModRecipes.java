@@ -10,10 +10,13 @@ public class ModRecipes {
     public static RecipeType<CuttingBoardRecipe> CUTTING_TYPE;
     public static CuttingBoardRecipe.Serializer CUTTING_SERIALIZER;
 
+ //   public static RecipeType<StoveRecipe> STOVE_TYPE;
+  //  public static StoveRecipe.Serializer STOVE_SERIALIZER;
+
     public static void registerRecipes() {
         Registry.register(Registries.RECIPE_TYPE,
                 new Identifier("ewmedieval", ForgeRecipe.Type.ID), ForgeRecipe.Type.INSTANCE);
-        
+
         Registry.register(Registries.RECIPE_SERIALIZER,
                 ForgeRecipe.Serializer.ID, ForgeRecipe.Serializer.INSTANCE);
 
@@ -26,12 +29,32 @@ public class ModRecipes {
                 new Identifier("ewmedieval", "cutting"),
                 new RecipeType<CuttingBoardRecipe>() {
                     @Override
-                    public String toString() { return "ewmedieval:cutting"; }
+                    public String toString() {
+                        return "ewmedieval:cutting";
+                    }
                 });
 
         CUTTING_SERIALIZER = Registry.register(
                 Registries.RECIPE_SERIALIZER,
                 new Identifier("ewmedieval", "cutting"),
                 new CuttingBoardRecipe.Serializer());
+/*
+        STOVE_TYPE = Registry.register(
+                Registries.RECIPE_TYPE,
+                new Identifier("ewmedieval", "stove"),
+                new RecipeType<StoveRecipe>() {
+                    @Override
+                    public String toString() {return "ewmedieval:stove"; }
+                });
+
+        STOVE_SERIALIZER = Registry.register(
+                Registries.RECIPE_SERIALIZER,
+                new Identifier("ewmedieval", "stove"),
+                new StoveRecipe.Serializer());
+    }
+
+
+ */
+
     }
 }

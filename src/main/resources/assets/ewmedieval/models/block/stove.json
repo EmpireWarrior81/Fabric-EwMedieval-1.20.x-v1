@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "ewmedieval:block/stove_bottom",
+    "front": "ewmedieval:block/stove_front",
+    "side": "ewmedieval:block/stove_side",
+    "top": "ewmedieval:block/stove_top"
+  }
+}

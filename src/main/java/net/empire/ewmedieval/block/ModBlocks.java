@@ -1,9 +1,7 @@
 package net.empire.ewmedieval.block;
 
 import net.empire.ewmedieval.EwMedieval;
-import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
-import net.empire.ewmedieval.block.custom.RopeBlock;
-import net.empire.ewmedieval.block.custom.StrawBaleBlock;
+import net.empire.ewmedieval.block.custom.*;
 import net.empire.ewmedieval.block.custom.cropblocks.*;
 import net.empire.ewmedieval.block.custom.feastblocks.*;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
@@ -643,6 +641,11 @@ public class ModBlocks {
     public static final Block CUTTING_BOARD = registerBlock("cutting_board",
             new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
 
+    public static final Block STOVE = registerBlock("stove",
+            new StoveBlock(FabricBlockSettings.copyOf(Blocks.BRICKS)
+                    .luminance(state -> state.get(StoveBlock.LIT) ? 13 : 0)));
+
+
     public static final Block STRAW_BALE = registerBlock("straw_bale",
             new StrawBaleBlock(FabricBlockSettings.copyOf(Blocks.HAY_BLOCK)));
 
@@ -885,6 +888,10 @@ public class ModBlocks {
             new TurnipCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
 
+    public static final Block MATURE_DANDELION = registerBlock("mature_dandelion",
+            new DandelionBlock(FabricBlockSettings.copyOf(Blocks.DANDELION)));
+
+
     public static final Block ROPE = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "rope"),
             new RopeBlock(FabricBlockSettings.copyOf(Blocks.BROWN_CARPET)
@@ -909,6 +916,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
     public static final Block BELL_PEPPER_RED_CRATE = registerBlock("bell_pepper_red_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
+
 
 
     private static Block registerBlock(String name, Block block) {

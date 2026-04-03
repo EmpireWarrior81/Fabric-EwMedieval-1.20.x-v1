@@ -46,6 +46,7 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.WILD_BROCCOLI,
                 ModBlocks.WILD_CAULIFLOWERS,
                 ModBlocks.WILD_SWEET_POTATOES,
+                ModBlocks.MATURE_DANDELION,
                 ModBlocks.ONION_CROP,
                 ModBlocks.CABBAGE_CROP,
                 ModBlocks.RICE_CROP,
