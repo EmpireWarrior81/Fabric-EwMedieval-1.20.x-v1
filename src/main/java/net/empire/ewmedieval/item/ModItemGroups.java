@@ -373,6 +373,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SPRING_ROLLS);
 
                         entries.add(ModItems.CHERRY_BLOSSOM_ROLL);
+                        entries.add(ModItems.AVOCADO);
 
 
                     }).build());

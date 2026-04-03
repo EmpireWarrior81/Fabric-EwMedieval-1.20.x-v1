@@ -172,6 +172,23 @@
   "item.ewmedieval.apple_pie_slice": "Apple Pie Slice",
   "item.ewmedieval.chocolate_pie_slice": "Chocolate Pie Slice",
   "item.ewmedieval.sweet_berry_cheesecake_slice": "Sweet Berry Cheesecake Slice",
+  "item.ewmedieval.apple_jelly": "Apple Jelly",
+  "item.ewmedieval.avocado": "Avocado",
+  "item.ewmedieval.avocado_toast": "Avocado Toast",
+  "item.ewmedieval.baked_potato_slices": "Baked Potato Slices",
+  "item.ewmedieval.batter": "Batter",
+  "item.ewmedieval.calamari_roll": "Calamari Roll",
+  "item.ewmedieval.chicken_roll_slice": "Chicken Roll Slice",
+  "item.ewmedieval.calamari_slice": "Calamari Slice",
+  "item.ewmedieval.cheesy_pasta": "Cheesy Pasta",
+  "item.ewmedieval.bell_pepper_green": "Bell Pepper Green",
+  "item.ewmedieval.bell_pepper_yellow": "Bell Pepper Yellow",
+  "item.ewmedieval.bell_pepper_red": "Bell Pepper Red",
+  "item.ewmedieval.bell_pepper_slice_green": "Bell Pepper Slice Green",
+  "item.ewmedieval.bell_pepper_slice_yellow": "Bell Pepper Slice Yellow",
+  "item.ewmedieval.bell_pepper_slice_red": "Bell Pepper Slice Red",
+
+
 
   "block.ewmedieval.rope": "Rope",
   "block.ewmedieval.wild_cabbages": "Wild Cabbages",
