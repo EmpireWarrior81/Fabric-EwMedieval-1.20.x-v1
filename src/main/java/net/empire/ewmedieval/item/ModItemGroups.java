@@ -374,6 +374,20 @@ public class ModItemGroups {
 
                         entries.add(ModItems.CHERRY_BLOSSOM_ROLL);
                         entries.add(ModItems.AVOCADO);
+                        entries.add(ModItems.CABBAGE);
+                        entries.add(ModItems.ONION);
+                        entries.add(ModItems.TOMATO);
+                        entries.add(ModItems.RICE);
+                        entries.add(ModItems.CORN_COB);
+                        entries.add(ModItems.CUCUMBER);
+                        entries.add(ModItems.EGGPLANT);
+                        entries.add(ModItems.WHITE_EGGPLANT);
+                        entries.add(ModItems.SWEET_POTATO);
+                        entries.add(ModItems.BROCCOLI);
+                        entries.add(ModItems.CAULIFLOWER);
+                        entries.add(ModItems.TURNIP);
+                        entries.add(ModItems.ZUCCHINI);
+                        entries.add(ModItems.DANDELION_LEAF);
 
 
                     }).build());

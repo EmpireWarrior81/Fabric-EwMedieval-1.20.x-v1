@@ -374,6 +374,7 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TURNIP, Models.GENERATED);
         itemModelGenerator.register(ModItems.TURNIP_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.SWEET_POTATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DANDELION_LEAF, Models.GENERATED);
 
 
 
