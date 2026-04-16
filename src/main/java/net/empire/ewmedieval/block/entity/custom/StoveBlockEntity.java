@@ -50,6 +50,10 @@ public class StoveBlockEntity extends SyncedBlockEntity {
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
+        // Reset all slots first so items removed on the server also clear on the client
+        for (int i = 0; i < INVENTORY_SLOT_COUNT; i++) {
+            inventory[i] = ItemStack.EMPTY;
+        }
         NbtList itemList = nbt.getList("Inventory", NbtCompound.COMPOUND_TYPE);
         for (int i = 0; i < itemList.size(); i++) {
             NbtCompound slotNbt = itemList.getCompound(i);

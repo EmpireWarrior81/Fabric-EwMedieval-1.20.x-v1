@@ -219,6 +219,11 @@ public class ModItems {
     public static final Item COFFEE_BEANS = registerItem("coffee_beans",
             new AliasedBlockItem(ModBlocks.COFFEE_CROP, new FabricItemSettings()));
 
+    public static final Item SOYA_BEAN_POD = registerItem("soya_bean_pod",
+            new Item(new FabricItemSettings()));
+    public static final Item GARLIC = registerItem("garlic",
+            new Item(new FabricItemSettings()));
+
     public static final Item SWEET_POTATO = registerItem("sweet_potato",
             new AliasedBlockItem(ModBlocks.SWEET_POTATO_CROP, new FabricItemSettings().food(ModFoods.SWEET_POTATO)));
     public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
@@ -229,6 +234,18 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.ZUCCHINI_CROP, new FabricItemSettings()));
     public static final Item TURNIP_SEEDS = registerItem("turnip_seeds",
             new AliasedBlockItem(ModBlocks.TURNIP_CROP, new FabricItemSettings()));
+    public static final Item SOYA_BEANS = registerItem("soya_beans",
+            new AliasedBlockItem(ModBlocks.SOYA_CROP, new FabricItemSettings().food(ModFoods.SOY_BEANS)));
+    public static final Item YUCA = registerItem("yuca",
+            new AliasedBlockItem(ModBlocks.YUCA_CROP, new FabricItemSettings().food(ModFoods.YUCA)));
+    public static final Item AJI_AMARILLO_SEEDS = registerItem("aji_amarillo_seeds",
+            new AliasedBlockItem(ModBlocks.AJI_AMARILLO_CROP, new FabricItemSettings()));
+    public static final Item GARLIC_CLOVE = registerItem("garlic_clove",
+            new AliasedBlockItem(ModBlocks.GARLIC_CROP, new FabricItemSettings().food(ModFoods.GARLIC_CLOVE)));
+
+
+    public static final Item AJI_AMARILLO = registerItem("aji_amarillo",
+            new Item(new FabricItemSettings().food(ModFoods.AJI_AMARILLO)));
 
     public static final Item BROCCOLI = registerItem("broccoli",
             new Item(new FabricItemSettings().food(ModFoods.BROCCOLI)));

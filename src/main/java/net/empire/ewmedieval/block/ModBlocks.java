@@ -828,6 +828,13 @@ public class ModBlocks {
         }});
 
 
+    public static final Block WILD_AJI_AMARILLO = registerBlock("wild_aji_amarillo",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+     public static final Block WILD_SOYA = registerBlock("wild_soya",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+     public static final Block WILD_YUCA = registerBlock("wild_yuca",
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+
 
     public static final Block CABBAGE_CROP = Registry.register(Registries.BLOCK,
             new Identifier(EwMedieval.MOD_ID, "cabbages"),
@@ -886,6 +893,16 @@ public class ModBlocks {
             new ZucchiniCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static final Block TURNIP_CROP = registerBlockWithoutItem("turnip",
             new TurnipCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+
+    public static final Block SOYA_CROP = registerBlockWithoutItem("soya",
+            new SoyaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+    public static final Block YUCA_CROP = registerBlockWithoutItem("yuca",
+            new YucaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+    public static final Block AJI_AMARILLO_CROP = registerBlockWithoutItem("aji_amarillo",
+            new AjiAmarilloCropBlock(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH).noCollision()));
+
+    public static final Block GARLIC_CROP = registerBlockWithoutItem("garlic",
+            new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
 
     public static final Block MATURE_DANDELION = registerBlock("mature_dandelion",

@@ -555,6 +555,17 @@ public class ModFoods {
             .hunger(1).saturationModifier(0.1f)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0), 1.0f).build();
 
+    public static final FoodComponent AJI_AMARILLO = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 200, 0), 1.0f).build();
+    public static final FoodComponent YUCA = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.5f).build();
+    public static final FoodComponent SOY_BEANS = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0.2f).build();
+
+    public static final FoodComponent GARLIC_CLOVE = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0.1f).snack().build();
+
 
 
 

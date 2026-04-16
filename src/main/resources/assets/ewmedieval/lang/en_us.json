@@ -679,5 +679,6 @@
   "itemgroup.ewmedieval.tools": "EwM Tools",
   "itemgroup.ewmedieval.food": "EwM Food",
   "itemgroup.ewmedieval.nature": "EwM Nature",
-  "itemgroup.ewmedieval.blocks": "EwM Blocks"
+  "itemgroup.ewmedieval.blocks": "EwM Blocks",
+  "itemgroup.ewmedieval.functional_blocks": "EwM Functional Blocks"
 }

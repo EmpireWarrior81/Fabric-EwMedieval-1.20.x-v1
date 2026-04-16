@@ -21,12 +21,9 @@ public class ModItemGroups {
                         entries.add(ModItems.ARKENSTONE);
                         entries.add(ModItems.FUR);
                         entries.add(ModItems.STONE_PEBBLE);
-                        entries.add(ModBlocks.FORGE);
-                        entries.add(ModBlocks.EARLY_FORGE);
                         entries.add(ModItems.ASH);
                         entries.add(ModItems.ASH_PIECE);
                         entries.add(ModItems.ROPE);
-                        entries.add(ModBlocks.CUTTING_BOARD);
                         entries.add(ModItems.GLASS_JUG);
                         entries.add(ModItems.GLASS_CHALICE);
                     }).build());
@@ -388,6 +385,12 @@ public class ModItemGroups {
                         entries.add(ModItems.TURNIP);
                         entries.add(ModItems.ZUCCHINI);
                         entries.add(ModItems.DANDELION_LEAF);
+                        entries.add(ModItems.GARLIC);
+                        entries.add(ModItems.GARLIC_CLOVE);
+                        entries.add(ModItems.SOYA_BEAN_POD);
+                        entries.add(ModItems.SOYA_BEANS);
+                        entries.add(ModItems.YUCA);
+                        entries.add(ModItems.AJI_AMARILLO);
 
 
                     }).build());
@@ -430,6 +433,13 @@ public class ModItemGroups {
                         entries.add(ModItems.TURNIP_SEEDS);
                         entries.add(ModItems.ZUCCHINI);
                         entries.add(ModItems.ZUCCHINI_SEEDS);
+                        entries.add(ModItems.GARLIC_CLOVE);
+                        entries.add(ModItems.GARLIC);
+                        entries.add(ModItems.SOYA_BEANS);
+                        entries.add(ModItems.SOYA_BEAN_POD);
+                        entries.add(ModItems.YUCA);
+                        entries.add(ModItems.AJI_AMARILLO_SEEDS);
+                        entries.add(ModItems.AJI_AMARILLO);
 
                         entries.add(ModItems.STRAW);
                         entries.add(ModBlocks.STRAW_BALE);
@@ -449,6 +459,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WILD_SWEET_POTATOES);
                         entries.add(ModBlocks.WILD_TURNIPS);
                         entries.add(ModBlocks.WILD_ZUCCHINIS);
+                        entries.add(ModBlocks.WILD_SOYA);
+                        entries.add(ModBlocks.WILD_YUCA);
+                        entries.add(ModBlocks.WILD_AJI_AMARILLO);
 
                         entries.add(ModItems.OAK_BARK);
                         entries.add(ModItems.SPRUCE_BARK);
@@ -822,6 +835,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.TUFF_BRICKWORK_SLAB);
                         entries.add(ModBlocks.TUFF_BRICKWORK_STAIRS);
                         entries.add(ModBlocks.TUFF_BRICKWORK_WALL);
+                    }).build());
+
+    public static final ItemGroup FUNCTIONAL_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(EwMedieval.MOD_ID, "functional_blocks"),
+            FabricItemGroup.builder()
+                    .displayName(Text.translatable("itemgroup.ewmedieval.functional_blocks"))
+                    .icon(() -> new ItemStack(ModBlocks.STOVE))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.STOVE);
+                        entries.add(ModBlocks.CUTTING_BOARD);
+                        entries.add(ModBlocks.FORGE);
+                        entries.add(ModBlocks.EARLY_FORGE);
                     }).build());
 
     public static void registerItemGroups() {

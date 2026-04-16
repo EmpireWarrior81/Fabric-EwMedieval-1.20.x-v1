@@ -3,6 +3,7 @@ package net.empire.ewmedieval;
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.client.renderer.CuttingBoardRenderer;
+import net.empire.ewmedieval.client.renderer.StoveBlockEntityRenderer;
 import net.empire.ewmedieval.entity.ModEntityTypes;
 import net.empire.ewmedieval.gui.ComfortHealthOverlay;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
@@ -46,7 +47,14 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.WILD_BROCCOLI,
                 ModBlocks.WILD_CAULIFLOWERS,
                 ModBlocks.WILD_SWEET_POTATOES,
+                ModBlocks.WILD_AJI_AMARILLO,
+                ModBlocks.WILD_SOYA,
+                ModBlocks.WILD_YUCA,
                 ModBlocks.MATURE_DANDELION,
+                ModBlocks.SOYA_CROP,
+                ModBlocks.YUCA_CROP,
+                ModBlocks.AJI_AMARILLO_CROP,
+                ModBlocks.GARLIC_CROP,
                 ModBlocks.ONION_CROP,
                 ModBlocks.CABBAGE_CROP,
                 ModBlocks.RICE_CROP,
@@ -73,6 +81,7 @@ public class EwMedievalClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.STOVE, StoveBlockEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntityTypes.ROTTEN_TOMATO, FlyingItemEntityRenderer::new);
 
