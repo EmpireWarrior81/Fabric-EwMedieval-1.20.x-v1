@@ -8,6 +8,7 @@ import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
 import net.empire.ewmedieval.block.custom.feastblocks.ExoticRollMedleyBlock;
 import net.empire.ewmedieval.block.custom.forge.ForgeBlock;
+import net.empire.ewmedieval.block.custom.tree.FruitingLeaves;
 import net.empire.ewmedieval.item.ModItems;
 import net.empire.ewmedieval.sound.ModBlockSoundGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -926,7 +927,19 @@ public class ModBlocks {
     public static final Block BELL_PEPPER_RED_CRATE = registerBlock("bell_pepper_red_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)));
 
+    public static final Block AVOCADO_LOG = registerBlock("avocado_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.JUNGLE_LOG)));
 
+    public static final Block AVOCADO_WOOD = registerBlock("avocado_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.JUNGLE_WOOD)));
+
+    public static final Block AVOCADO_LEAVES = registerBlock("avocado_leaves",
+            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.JUNGLE_LEAVES)));
+
+    public static final Block FRUITING_AVOCADO_LEAVES = registerBlock("fruiting_avocado_leaves",
+            new FruitingLeaves(FabricBlockSettings.copyOf(Blocks.JUNGLE_LEAVES)
+                    .nonOpaque()
+                    .ticksRandomly()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
