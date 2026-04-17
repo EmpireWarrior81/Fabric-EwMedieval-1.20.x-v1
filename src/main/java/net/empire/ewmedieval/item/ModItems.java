@@ -242,10 +242,17 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.AJI_AMARILLO_CROP, new FabricItemSettings()));
     public static final Item GARLIC_CLOVE = registerItem("garlic_clove",
             new AliasedBlockItem(ModBlocks.GARLIC_CROP, new FabricItemSettings().food(ModFoods.GARLIC_CLOVE)));
+    public static final Item CHICKPEA = registerItem("chickpea",
+            new AliasedBlockItem(ModBlocks.CHICKPEA_CROP, new FabricItemSettings().food(ModFoods.CHICKPEA)));
+    public static final Item PARSLEY_SEEDS = registerItem("parsley_seeds",
+            new AliasedBlockItem(ModBlocks.PARSLEY_CROP, new FabricItemSettings()));
 
 
     public static final Item AJI_AMARILLO = registerItem("aji_amarillo",
             new Item(new FabricItemSettings().food(ModFoods.AJI_AMARILLO)));
+    public static final Item PARSLEY = registerItem("parsley",
+            new Item(new FabricItemSettings().food(ModFoods.PARSLEY)));
+
 
     public static final Item BROCCOLI = registerItem("broccoli",
             new Item(new FabricItemSettings().food(ModFoods.BROCCOLI)));

@@ -27,6 +27,10 @@ public class ModFoods {
             .hunger(1).saturationModifier(0.3f).build();
     public static final FoodComponent ONION = new FoodComponent.Builder()
             .hunger(2).saturationModifier(0.4f).build();
+    public static final FoodComponent CHICKPEA = new FoodComponent.Builder()
+            .hunger(2).saturationModifier(0.1f).build();
+    public static final FoodComponent PARSLEY = new FoodComponent.Builder()
+            .hunger(1).saturationModifier(0f).build();
 
 
     public static final FoodComponent FRIED_EGG = new FoodComponent.Builder()

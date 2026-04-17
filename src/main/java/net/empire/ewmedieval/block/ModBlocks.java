@@ -897,6 +897,11 @@ public class ModBlocks {
     public static final Block GARLIC_CROP = registerBlockWithoutItem("garlic",
             new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
+ public static final Block CHICKPEA_CROP = registerBlockWithoutItem("chickpea",
+            new ChickpeaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+ public static final Block PARSLEY_CROP = registerBlockWithoutItem("parsley",
+            new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+
 
     public static final Block MATURE_DANDELION = registerBlock("mature_dandelion",
             new DandelionBlock(FabricBlockSettings.copyOf(Blocks.DANDELION)));
