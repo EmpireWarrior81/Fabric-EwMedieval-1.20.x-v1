@@ -531,6 +531,7 @@ public class ModBlockModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_AJI_AMARILLO, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_SOYA, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_YUCA, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.SANDY_SHRUB, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 
         registerVerticalSlab(blockStateModelGenerator, ModBlocks.BLUE_TUFF_VERTICAL_SLAB, ModBlocks.BLUE_TUFF);

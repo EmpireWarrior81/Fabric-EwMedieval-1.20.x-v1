@@ -73,7 +73,8 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.BROCCOLI_CROP,
                 ModBlocks.SWEET_POTATO_CROP,
                 ModBlocks.TURNIP_CROP,
-                ModBlocks.ZUCCHINI_CROP
+                ModBlocks.ZUCCHINI_CROP,
+                ModBlocks.SANDY_SHRUB
                 );
 
 

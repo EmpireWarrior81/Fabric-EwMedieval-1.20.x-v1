@@ -816,47 +816,42 @@ public class ModBlocks {
     public static final Block WILD_SWEET_POTATOES = registerBlock("wild_sweet_potatoes",
             new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
     public static final Block WILD_TURNIPS = registerBlock("wild_turnips",
-            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision())
-
-        {
-            @Override
-            protected boolean canPlantOnTop (BlockState floor, BlockView world, BlockPos pos){
-            return super.canPlantOnTop(floor, world, pos)
-                    || floor.isOf(Blocks.SAND)
-                    || floor.isOf(Blocks.RED_SAND);
-
-        }});
+            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()) {
+                @Override
+                protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+                    return super.canPlantOnTop(floor, world, pos)
+                            || floor.isOf(Blocks.SAND)
+                            || floor.isOf(Blocks.RED_SAND);
+                }
+            });
 
 
     public static final Block WILD_AJI_AMARILLO = registerBlock("wild_aji_amarillo",
-            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
-     public static final Block WILD_SOYA = registerBlock("wild_soya",
-            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
-     public static final Block WILD_YUCA = registerBlock("wild_yuca",
-            new WildCropBlock(StatusEffects.LUCK, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+            new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 10, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_SOYA = registerBlock("wild_soya",
+            new WildCropBlock(StatusEffects.REGENERATION, 8, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+    public static final Block WILD_YUCA = registerBlock("wild_yuca",
+            new WildCropBlock(StatusEffects.SATURATION, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
+
+    public static final Block SANDY_SHRUB = registerBlock("sandy_shrub",
+            new SandyShrubBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH).noCollision()));
 
 
-    public static final Block CABBAGE_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "cabbages"),
+    public static final Block CABBAGE_CROP = registerBlockWithoutItem("cabbages",
             new CabbageBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block ONION_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "onions"),
+    public static final Block ONION_CROP = registerBlockWithoutItem("onions",
             new OnionBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block RICE_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "rice"),
+    public static final Block RICE_CROP = registerBlockWithoutItem("rice",
             new RiceBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).strength(0.2f)));
-    public static final Block RICE_CROP_PANICLES = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "rice_panicles"),
+    public static final Block RICE_CROP_PANICLES = registerBlockWithoutItem("rice_panicles",
             new RicePaniclesBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block BUDDING_TOMATO_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "budding_tomatoes"),
+    public static final Block BUDDING_TOMATO_CROP = registerBlockWithoutItem("budding_tomatoes",
             new BuddingTomatoBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "tomatoes"),
+    public static final Block TOMATO_CROP = registerBlockWithoutItem("tomatoes",
             new TomatoVineBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     public static final Block CUCUMBER_CROP = registerBlockWithoutItem("cucumbers",
@@ -871,16 +866,13 @@ public class ModBlocks {
     public static final Block CORN_UPPER_CROP = registerBlockWithoutItem("corn_upper",
             new CornUpperBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block COTTON_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "cotton"),
+    public static final Block COTTON_CROP = registerBlockWithoutItem("cotton",
             new CottonCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
-    public static final Block BELL_PEPPER_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "bell_peppers"),
+    public static final Block BELL_PEPPER_CROP = registerBlockWithoutItem("bell_peppers",
             new BellPepperCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
-    public static final Block COFFEE_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(EwMedieval.MOD_ID, "coffee"),
+    public static final Block COFFEE_CROP = registerBlockWithoutItem("coffee",
             new CoffeeCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
     public static final Block SWEET_POTATO_CROP = registerBlockWithoutItem("sweet_potatoes",
@@ -899,7 +891,7 @@ public class ModBlocks {
     public static final Block YUCA_CROP = registerBlockWithoutItem("yuca",
             new YucaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
     public static final Block AJI_AMARILLO_CROP = registerBlockWithoutItem("aji_amarillo",
-            new AjiAmarilloCropBlock(FabricBlockSettings.copyOf(Blocks.SWEET_BERRY_BUSH).noCollision()));
+            new AjiAmarilloCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
     public static final Block GARLIC_CROP = registerBlockWithoutItem("garlic",
             new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));

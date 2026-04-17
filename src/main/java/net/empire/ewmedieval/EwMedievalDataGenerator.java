@@ -17,8 +17,8 @@ public class EwMedievalDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModBlockModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModEntityTagProvider::new);
+        pack.addProvider(ModWorldGenProvider::new);
   //      pack.addProvider(ModRegistryDataGenerator::new);
    //     pack.addProvider(ModBannerPatternTagProvider::new);
-
     }
 }

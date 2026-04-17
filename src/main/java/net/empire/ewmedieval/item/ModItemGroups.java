@@ -462,6 +462,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WILD_SOYA);
                         entries.add(ModBlocks.WILD_YUCA);
                         entries.add(ModBlocks.WILD_AJI_AMARILLO);
+                        entries.add(ModBlocks.SANDY_SHRUB);
 
                         entries.add(ModItems.OAK_BARK);
                         entries.add(ModItems.SPRUCE_BARK);

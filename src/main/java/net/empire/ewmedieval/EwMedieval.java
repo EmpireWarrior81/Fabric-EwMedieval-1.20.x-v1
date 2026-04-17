@@ -14,6 +14,8 @@ import net.empire.ewmedieval.item.toolitems.KnifeItem;
 import net.empire.ewmedieval.recipe.ModRecipes;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.empire.ewmedieval.util.ModLootTableModifiers;
+import net.empire.ewmedieval.datagen.ModWorldGenProvider;
+import net.empire.ewmedieval.world.feature.ModFeatureTypes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
@@ -49,10 +51,12 @@ public class EwMedieval implements ModInitializer {
 
         ModRecipes.registerRecipes();
 
+        ModFeatureTypes.register();
 
         ModSounds.registerModSounds();
 
         ModEntityTypes.registerEntityTypes();
+        ModWorldGenProvider.registerBiomeFeatures();
 
         HorseFeedItem.init();
         CuttingBoardBlock.init();
