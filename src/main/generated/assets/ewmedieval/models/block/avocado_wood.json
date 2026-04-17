@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ewmedieval:block/avocado_log",
+    "side": "ewmedieval:block/avocado_log"
+  }
+}

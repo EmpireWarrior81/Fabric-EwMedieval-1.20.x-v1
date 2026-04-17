@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ewmedieval:block/fruiting_avocado_leaves_0"
+    },
+    "age=1": {
+      "model": "ewmedieval:block/fruiting_avocado_leaves_1"
+    },
+    "age=2": {
+      "model": "ewmedieval:block/fruiting_avocado_leaves_2"
+    },
+    "age=3": {
+      "model": "ewmedieval:block/fruiting_avocado_leaves_3"
+    },
+    "age=4": {
+      "model": "ewmedieval:block/fruiting_avocado_leaves_4"
+    }
+  }
+}

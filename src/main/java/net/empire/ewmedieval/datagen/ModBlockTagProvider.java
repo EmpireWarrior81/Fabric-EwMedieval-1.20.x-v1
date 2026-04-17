@@ -481,5 +481,21 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.ROPE);
 
+
+        getOrCreateTagBuilder(BlockTags.LOGS)
+                .add(ModBlocks.AVOCADO_LOG)
+                .add(ModBlocks.AVOCADO_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.AVOCADO_LEAVES)
+                .add(ModBlocks.FRUITING_AVOCADO_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.AVOCADO_SAPLING);
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.AVOCADO_LOG)
+                .add(ModBlocks.AVOCADO_WOOD);
+
     }
 }

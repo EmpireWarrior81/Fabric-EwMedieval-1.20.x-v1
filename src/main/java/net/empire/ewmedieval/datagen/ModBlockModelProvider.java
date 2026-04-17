@@ -533,6 +533,18 @@ public class ModBlockModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlocks.WILD_YUCA, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlocks.SANDY_SHRUB, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        // Avocado wood
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.AVOCADO_LOG,
+                TexturedModel.CUBE_COLUMN.andThen(tex -> tex
+                        .put(TextureKey.SIDE, new Identifier("ewmedieval", "block/avocado_log"))
+                        .put(TextureKey.END,  new Identifier("ewmedieval", "block/avocado_log_top"))));
+        blockStateModelGenerator.registerAxisRotated(ModBlocks.AVOCADO_WOOD,
+                TexturedModel.CUBE_COLUMN.andThen(tex -> tex
+                        .put(TextureKey.SIDE, new Identifier("ewmedieval", "block/avocado_log"))
+                        .put(TextureKey.END,  new Identifier("ewmedieval", "block/avocado_log"))));
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.AVOCADO_LEAVES);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.AVOCADO_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
 
         registerVerticalSlab(blockStateModelGenerator, ModBlocks.BLUE_TUFF_VERTICAL_SLAB, ModBlocks.BLUE_TUFF);
 

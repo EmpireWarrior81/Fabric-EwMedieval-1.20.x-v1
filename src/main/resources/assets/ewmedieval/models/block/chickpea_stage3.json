@@ -1,0 +1,5 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": { "crop": "ewmedieval:block/chickpea_stage3" },
+  "render_type": "minecraft:cutout"
+}

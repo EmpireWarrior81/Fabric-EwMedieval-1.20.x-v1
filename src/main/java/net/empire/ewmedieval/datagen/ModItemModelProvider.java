@@ -231,6 +231,9 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOYA_BEAN_POD, Models.GENERATED);
         itemModelGenerator.register(ModItems.GARLIC, Models.GENERATED);
         itemModelGenerator.register(ModItems.GARLIC_CLOVE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHICKPEA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PARSLEY_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PARSLEY, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.AVOCADO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CUCUMBER, Models.GENERATED);

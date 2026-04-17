@@ -74,8 +74,17 @@ public class EwMedievalClient implements ClientModInitializer {
                 ModBlocks.SWEET_POTATO_CROP,
                 ModBlocks.TURNIP_CROP,
                 ModBlocks.ZUCCHINI_CROP,
-                ModBlocks.SANDY_SHRUB
+                ModBlocks.SANDY_SHRUB,
+                ModBlocks.AVOCADO_SAPLING,
+                ModBlocks.AVOCADO_PIT,
+                ModBlocks.CHICKPEA_CROP,
+                ModBlocks.PARSLEY_CROP
                 );
+
+        // Leaves need CUTOUT_MIPPED (like vanilla oak leaves) to avoid a black box
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutoutMipped(),
+                ModBlocks.AVOCADO_LEAVES
+        );
 
 
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);

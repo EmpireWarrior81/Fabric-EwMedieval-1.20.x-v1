@@ -1,90 +1,107 @@
 {
-  "type": "minecraft:random_patch",
+  "type": "ewmedieval:wild_crop",
   "config": {
-    "feature": {
+    "floor_feature": {
       "feature": {
-        "type": "minecraft:simple_random_selector",
+        "type": "minecraft:simple_block",
         "config": {
-          "features": [
-            {
-              "feature": {
-                "type": "minecraft:simple_block",
-                "config": {
-                  "to_place": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "ewmedieval:wild_cauliflowers"
-                    }
-                  }
-                }
-              },
-              "placement": [
-                {
-                  "type": "minecraft:block_predicate_filter",
-                  "predicate": {
-                    "type": "minecraft:all_of",
-                    "predicates": [
-                      {
-                        "type": "minecraft:matching_blocks",
-                        "blocks": "minecraft:air"
-                      },
-                      {
-                        "type": "minecraft:matching_block_tag",
-                        "offset": [
-                          0,
-                          -1,
-                          0
-                        ],
-                        "tag": "minecraft:dirt"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "feature": {
-                "type": "minecraft:simple_block",
-                "config": {
-                  "to_place": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "minecraft:grass"
-                    }
-                  }
-                }
-              },
-              "placement": [
-                {
-                  "type": "minecraft:block_predicate_filter",
-                  "predicate": {
-                    "type": "minecraft:all_of",
-                    "predicates": [
-                      {
-                        "type": "minecraft:matching_blocks",
-                        "blocks": "minecraft:air"
-                      },
-                      {
-                        "type": "minecraft:matching_block_tag",
-                        "offset": [
-                          0,
-                          -1,
-                          0
-                        ],
-                        "tag": "minecraft:dirt"
-                      }
-                    ]
-                  }
-                }
-              ]
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:coarse_dirt"
             }
-          ]
+          }
         }
       },
-      "placement": []
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_block_tag",
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "tag": "minecraft:dirt"
+          }
+        }
+      ]
     },
-    "tries": 10,
-    "xz_spread": 7,
+    "primary_feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "ewmedieval:wild_cauliflowers"
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              },
+              {
+                "type": "minecraft:matching_block_tag",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "tag": "minecraft:dirt"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "secondary_feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:grass"
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              },
+              {
+                "type": "minecraft:matching_block_tag",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "tag": "minecraft:dirt"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 64,
+    "xz_spread": 6,
     "y_spread": 3
   }
 }

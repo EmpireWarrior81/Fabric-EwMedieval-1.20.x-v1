@@ -49,7 +49,7 @@
                   "to_place": {
                     "type": "minecraft:simple_state_provider",
                     "state": {
-                      "Name": "minecraft:fern"
+                      "Name": "minecraft:grass"
                     }
                   }
                 }
@@ -83,7 +83,7 @@
       },
       "placement": []
     },
-    "tries": 10,
+    "tries": 64,
     "xz_spread": 7,
     "y_spread": 3
   }

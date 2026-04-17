@@ -4,6 +4,8 @@ import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.custom.*;
 import net.empire.ewmedieval.block.custom.cropblocks.*;
 import net.empire.ewmedieval.block.custom.feastblocks.*;
+import net.empire.ewmedieval.block.custom.tree.AvocadoPitBlock;
+import net.empire.ewmedieval.world.tree.AvocadoTreeSaplingGenerator;
 import net.empire.ewmedieval.block.custom.VerticalSlabs.VerticalSlabBlock;
 import net.empire.ewmedieval.block.custom.earlyforge.EarlyForgeBlock;
 import net.empire.ewmedieval.block.custom.feastblocks.ExoticRollMedleyBlock;
@@ -897,10 +899,10 @@ public class ModBlocks {
     public static final Block GARLIC_CROP = registerBlockWithoutItem("garlic",
             new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
- public static final Block CHICKPEA_CROP = registerBlockWithoutItem("chickpea",
+    public static final Block CHICKPEA_CROP = registerBlockWithoutItem("chickpea",
             new ChickpeaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
- public static final Block PARSLEY_CROP = registerBlockWithoutItem("parsley",
-            new GarlicCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+    public static final Block PARSLEY_CROP = registerBlockWithoutItem("parsley",
+            new ParsleyCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 
 
     public static final Block MATURE_DANDELION = registerBlock("mature_dandelion",
@@ -944,6 +946,16 @@ public class ModBlocks {
     public static final Block FRUITING_AVOCADO_LEAVES = registerBlock("fruiting_avocado_leaves",
             new FruitingLeaves(FabricBlockSettings.copyOf(Blocks.JUNGLE_LEAVES)
                     .nonOpaque()
+                    .ticksRandomly()));
+
+    // AVOCADO_SAPLING must be declared before AVOCADO_PIT so the pit's grow() can reference it.
+    public static final Block AVOCADO_SAPLING = registerBlock("avocado_sapling",
+            new SaplingBlock(new AvocadoTreeSaplingGenerator(),
+                    FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+
+    public static final Block AVOCADO_PIT = registerBlock("avocado_pit",
+            new AvocadoPitBlock(FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)
+                    .noCollision()
                     .ticksRandomly()));
 
     private static Block registerBlock(String name, Block block) {

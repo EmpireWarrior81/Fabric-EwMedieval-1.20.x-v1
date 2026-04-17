@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ewmedieval:block/avocado_sapling"
+  }
+}

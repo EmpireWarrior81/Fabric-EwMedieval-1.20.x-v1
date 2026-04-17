@@ -21,7 +21,7 @@ import net.minecraft.world.event.GameEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.sound.SoundCategory;
 
-
+@SuppressWarnings("deprecation")
 public class FruitingLeaves extends LeavesBlock implements Fertilizable {
     public static final int MAX_AGE = 4;
     public static final IntProperty AGE = IntProperty.of("age", 0, MAX_AGE);
@@ -42,13 +42,13 @@ public class FruitingLeaves extends LeavesBlock implements Fertilizable {
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(DISTANCE) == 7 && !state.get(PERSISTENT)) {
-
             this.dropStacks(state, world, pos);
             world.removeBlock(pos, false);
             return;
         }
         int age = state.get(AGE);
-        if (age < MAX_AGE) {
+
+        if (age < MAX_AGE && random.nextFloat() < 0.25f) {
             world.setBlockState(pos, state.with(AGE, age + 1), 2);
         }
     }
@@ -59,8 +59,8 @@ public class FruitingLeaves extends LeavesBlock implements Fertilizable {
         boolean ripe = age == MAX_AGE;
         if (ripe) {
             if (!world.isClient) {
-                int j = 1 + world.random.nextInt(2);
-                ItemStack drop = new ItemStack(ModItems.AVOCADO, j + 1);
+                int count = 2 + world.random.nextInt(2); // 2 or 3 avocados
+                ItemStack drop = new ItemStack(ModItems.AVOCADO, count);
                 ItemScatterer.spawn((ServerWorld) world,
                         pos.getX() + 0.5,
                         pos.getY() + 0.5,

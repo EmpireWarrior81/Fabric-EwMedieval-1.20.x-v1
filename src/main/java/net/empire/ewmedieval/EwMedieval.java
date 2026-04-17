@@ -17,6 +17,7 @@ import net.empire.ewmedieval.util.ModLootTableModifiers;
 import net.empire.ewmedieval.datagen.ModWorldGenProvider;
 import net.empire.ewmedieval.world.feature.ModFeatureTypes;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,6 +71,15 @@ public class EwMedieval implements ModInitializer {
         FuelRegistry.INSTANCE.add(ModItems.ROPE, 200);
         FuelRegistry.INSTANCE.add(ModItems.STRAW, 200);
         FuelRegistry.INSTANCE.add(ModBlocks.STRAW_BALE, 1800);
+
+        // Avocado wood — same burn properties as vanilla wood
+        FlammableBlockRegistry flammable = FlammableBlockRegistry.getDefaultInstance();
+        flammable.add(ModBlocks.AVOCADO_LOG,    5, 5);
+        flammable.add(ModBlocks.AVOCADO_WOOD,   5, 5);
+        flammable.add(ModBlocks.AVOCADO_LEAVES, 30, 60);
+
+        FuelRegistry.INSTANCE.add(ModBlocks.AVOCADO_LOG,  300);
+        FuelRegistry.INSTANCE.add(ModBlocks.AVOCADO_WOOD, 300);
 
         FuelRegistry.INSTANCE.add(ModItems.OAK_BARK, 200);
         FuelRegistry.INSTANCE.add(ModItems.SPRUCE_BARK, 200);

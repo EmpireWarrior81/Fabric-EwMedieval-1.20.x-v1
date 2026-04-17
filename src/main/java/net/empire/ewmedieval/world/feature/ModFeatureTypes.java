@@ -14,7 +14,13 @@ public class ModFeatureTypes {
             new EwWildCropFeature()
     );
 
-    /** Call once during mod init to trigger the static registration above. */
+    public static final Feature<EwWildRiceConfig> WILD_RICE = Registry.register(
+            Registries.FEATURE,
+            new Identifier(EwMedieval.MOD_ID, "wild_rice"),
+            new EwWildRiceFeature()
+    );
+
+    /** Call once during mod init to trigger the static registrations above. */
     public static void register() {
         EwMedieval.LOGGER.debug("Registering ModFeatureTypes for " + EwMedieval.MOD_ID);
     }
