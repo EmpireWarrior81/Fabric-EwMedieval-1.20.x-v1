@@ -11,6 +11,7 @@ import net.empire.ewmedieval.item.*;
 import net.empire.ewmedieval.item.fooditems.DogFoodItem;
 import net.empire.ewmedieval.item.fooditems.HorseFeedItem;
 import net.empire.ewmedieval.item.toolitems.KnifeItem;
+import net.empire.ewmedieval.particle.ModParticles;
 import net.empire.ewmedieval.recipe.ModRecipes;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.empire.ewmedieval.util.ModLootTableModifiers;
@@ -50,6 +51,7 @@ public class EwMedieval implements ModInitializer {
         ModBlockEntities.registerBlockEntities();
         ModScreenHandlers.registerScreenHandlers();
 
+        ModParticles.registerParticles();
         ModRecipes.registerRecipes();
 
         ModFeatureTypes.register();

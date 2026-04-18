@@ -697,6 +697,7 @@
   "enchantment.ewmedieval.backstabbing": "Backstabbing",
 
 
+  "block.ewmedieval.cooking_pot": "Cooking Pot",
   "block.ewmedieval.cutting_board": "Cutting Board",
   "block.ewmedieval.cutting_board.invalid_item": "This doesn't seem cuttable...",
   "block.ewmedieval.cutting_board.invalid_tool": "Maybe with a different tool...",

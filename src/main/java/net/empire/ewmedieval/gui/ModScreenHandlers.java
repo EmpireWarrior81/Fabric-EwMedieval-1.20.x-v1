@@ -1,6 +1,7 @@
 package net.empire.ewmedieval.gui;
 
 import net.empire.ewmedieval.EwMedieval;
+import net.empire.ewmedieval.gui.cookingpot.CookingPotScreenHandler;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreenHandler;
 import net.empire.ewmedieval.gui.forge.ForgeScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
@@ -17,6 +18,10 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<EarlyForgeScreenHandler> EARLY_FORGE_SCREEN_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, new Identifier(EwMedieval.MOD_ID, "earlyforge"),
                     new ExtendedScreenHandlerType<>(EarlyForgeScreenHandler::new));
+
+    public static final ScreenHandlerType<CookingPotScreenHandler> COOKING_POT_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, new Identifier(EwMedieval.MOD_ID, "cooking_pot"),
+                    new ExtendedScreenHandlerType<>(CookingPotScreenHandler::new));
 
     public static void registerScreenHandlers() {
         EwMedieval.LOGGER.info("Registering Screen Handlers for" + EwMedieval.MOD_ID);

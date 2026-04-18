@@ -958,6 +958,12 @@ public class ModBlocks {
                     .noCollision()
                     .ticksRandomly()));
 
+    public static final Block COOKING_POT = registerBlock("cooking_pot",
+            new net.empire.ewmedieval.block.custom.cookingpot.CookingPotBlock(
+                    FabricBlockSettings.copyOf(Blocks.CAULDRON)
+                            .strength(2.0f)
+                            .nonOpaque()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(EwMedieval.MOD_ID, name), block);

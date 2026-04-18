@@ -22,6 +22,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        addDrop(ModBlocks.COOKING_POT);
         addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.RAW_TIN_BLOCK);
         addDrop(ModBlocks.SILVER_BLOCK);

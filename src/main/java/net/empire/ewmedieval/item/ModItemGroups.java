@@ -845,6 +845,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModBlocks.STOVE))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.STOVE);
+                        entries.add(ModBlocks.COOKING_POT);
                         entries.add(ModBlocks.CUTTING_BOARD);
                         entries.add(ModBlocks.FORGE);
                         entries.add(ModBlocks.EARLY_FORGE);

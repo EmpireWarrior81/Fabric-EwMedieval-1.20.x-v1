@@ -2,16 +2,20 @@ package net.empire.ewmedieval;
 
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
+import net.empire.ewmedieval.client.particle.SteamParticle;
 import net.empire.ewmedieval.client.renderer.CuttingBoardRenderer;
 import net.empire.ewmedieval.client.renderer.StoveBlockEntityRenderer;
 import net.empire.ewmedieval.entity.ModEntityTypes;
 import net.empire.ewmedieval.gui.ComfortHealthOverlay;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.empire.ewmedieval.gui.NourishmentHungerOverlay;
+import net.empire.ewmedieval.gui.cookingpot.CookingPotScreen;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreen;
 import net.empire.ewmedieval.gui.forge.ForgeScreen;
+import net.empire.ewmedieval.particle.ModParticles;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -25,6 +29,7 @@ public class EwMedievalClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                ModBlocks.COOKING_POT,
                 ModBlocks.TUFF_CARVED_WINDOW,
                 ModBlocks.TUFF_CARVED_WINDOW_PANE,
                 ModBlocks.ROAST_CHICKEN_BLOCK,
@@ -87,8 +92,11 @@ public class EwMedievalClient implements ClientModInitializer {
         );
 
 
+        ParticleFactoryRegistry.getInstance().register(ModParticles.STEAM, SteamParticle.Factory::new);
+
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
+        HandledScreens.register(ModScreenHandlers.COOKING_POT_SCREEN_HANDLER, CookingPotScreen::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.STOVE, StoveBlockEntityRenderer::new);

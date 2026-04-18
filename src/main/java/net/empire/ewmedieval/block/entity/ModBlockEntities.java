@@ -2,6 +2,7 @@ package net.empire.ewmedieval.block.entity;
 
 import net.empire.ewmedieval.EwMedieval;
 import net.empire.ewmedieval.block.ModBlocks;
+import net.empire.ewmedieval.block.entity.custom.CookingPotBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.ForgeBlockEntity;
@@ -33,6 +34,11 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "stove"),
                     FabricBlockEntityTypeBuilder.create(StoveBlockEntity::new,
                             ModBlocks.STOVE).build());
+
+    public static final BlockEntityType<CookingPotBlockEntity> COOKING_POT =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "cooking_pot"),
+                    FabricBlockEntityTypeBuilder.create(CookingPotBlockEntity::new,
+                            ModBlocks.COOKING_POT).build());
 
     public static void registerBlockEntities() {
         EwMedieval.LOGGER.info("Registering Block Entities for " + EwMedieval.MOD_ID);

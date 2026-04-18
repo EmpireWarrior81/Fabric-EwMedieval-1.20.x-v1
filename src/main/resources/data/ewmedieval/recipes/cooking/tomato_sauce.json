@@ -1,0 +1,11 @@
+{
+  "type": "ewmedieval:cooking",
+  "ingredients": [
+    {"item": "ewmedieval:tomato"},
+    {"item": "ewmedieval:tomato"}
+  ],
+  "container": {"item": "minecraft:bowl"},
+  "result": {"item": "ewmedieval:tomato_sauce", "count": 1},
+  "cookingtime": 300,
+  "experience": 0.2
+}
