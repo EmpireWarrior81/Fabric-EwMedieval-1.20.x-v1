@@ -117,8 +117,8 @@
     "category": "block",
     "subtitle": "subtitles.block.cutting_board.knife",
     "sounds": [
-      "ewmedieval:block/cutting_board/knife1",
-      "ewmedieval:block/cutting_board/knife2"
+      "ewmedieval:cutting_board/knife1",
+      "ewmedieval:cutting_board/knife2"
     ]
   }
 }

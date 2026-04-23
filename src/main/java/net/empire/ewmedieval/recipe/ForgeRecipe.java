@@ -29,6 +29,7 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
+        if (inventory.size() < 4) return false;
         // Tel hoeveel echte items en hoeveel lege plekken dit recept verwacht
         java.util.List<Ingredient> requiredItems = new java.util.ArrayList<>();
         int requiredEmpty = 0;
@@ -149,6 +150,7 @@ public class ForgeRecipe implements Recipe<SimpleInventory> {
         @Override
         public ForgeRecipe read(Identifier id, PacketByteBuf buf) {
             int size = buf.readInt();
+            if (size < 0 || size > 4) throw new IllegalStateException("Too many forge ingredients: " + size);
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
             for (int i = 0; i < size; i++) {

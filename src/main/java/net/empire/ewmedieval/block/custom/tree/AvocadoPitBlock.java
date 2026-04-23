@@ -49,6 +49,8 @@ public class AvocadoPitBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        float seasonMod = net.empire.ewmedieval.season.SeasonCropRegistry.getModifier(this, world, pos);
+        if (seasonMod <= 0f || (seasonMod < 1f && random.nextFloat() >= seasonMod)) return;
         if (random.nextFloat() < 0.25f) {
             world.setBlockState(pos, ModBlocks.AVOCADO_SAPLING.getDefaultState(), Block.NOTIFY_ALL);
         }

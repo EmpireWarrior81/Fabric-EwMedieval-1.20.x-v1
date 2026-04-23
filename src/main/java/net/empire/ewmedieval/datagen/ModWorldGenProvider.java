@@ -263,7 +263,7 @@ public class ModWorldGenProvider implements DataProvider {
                     null,
                     BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.SAVANNA, BiomeKeys.WINDSWEPT_SAVANNA,
                     BiomeKeys.BADLANDS, BiomeKeys.ERODED_BADLANDS),
-            cropWith("wild_soya", 10, 80, null,
+            cropWith("wild_soybean", 10, 80, null,
                     BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.BIRCH_FOREST),
 
             mixedCropWith("wild_tomatoes", 64, 100, "minecraft:dead_bush", FloorType.SAND,
@@ -288,7 +288,7 @@ public class ModWorldGenProvider implements DataProvider {
                     BiomeKeys.SAVANNA, BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE),
             mixedCropWith("wild_aji_amarillo", 6, 160, "ewmedieval:sandy_shrub", FloorType.SAND,
                     BiomeKeys.SAVANNA, BiomeKeys.BADLANDS, BiomeKeys.ERODED_BADLANDS),
-            mixedCropWith("wild_yuca", 6, 160, "ewmedieval:sandy_shrub",
+            mixedCropWith("wild_cassava", 6, 160, "ewmedieval:sandy_shrub",
                     FloorType.SAND,
                     BiomeKeys.SAVANNA, BiomeKeys.DESERT, BiomeKeys.JUNGLE),
 

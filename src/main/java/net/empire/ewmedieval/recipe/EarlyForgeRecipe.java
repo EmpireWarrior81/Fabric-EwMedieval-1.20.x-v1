@@ -149,6 +149,7 @@ public class EarlyForgeRecipe implements Recipe<SimpleInventory> {
         @Override
         public EarlyForgeRecipe read(Identifier id, PacketByteBuf buf) {
             int size = buf.readInt();
+            if (size < 0 || size > 4) throw new IllegalStateException("Too many early-forge ingredients: " + size);
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
             for (int i = 0; i < size; i++) {

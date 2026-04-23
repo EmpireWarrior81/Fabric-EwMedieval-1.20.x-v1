@@ -142,7 +142,6 @@ public class StoveBlockEntity extends SyncedBlockEntity {
         }
     }
 
-    //TODO fixing the smoke particles
 
     // --- Cooking logic ---
 

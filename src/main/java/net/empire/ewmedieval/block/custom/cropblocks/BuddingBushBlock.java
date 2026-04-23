@@ -82,6 +82,8 @@ public abstract class BuddingBushBlock extends PlantBlock {
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (!world.isChunkLoaded(pos)) return;
+        float seasonMod = net.empire.ewmedieval.season.SeasonCropRegistry.getModifier(this, world, pos);
+        if (seasonMod <= 0f || (seasonMod < 1f && random.nextFloat() >= seasonMod)) return;
         if (world.getLightLevel(pos, 0) >= 9) {
             int age = getAge(state);
             if (age <= getMaxAge()) {

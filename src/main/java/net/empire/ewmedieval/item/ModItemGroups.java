@@ -61,6 +61,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BRONZE_MIXTURE);
                         entries.add(ModItems.BRONZE_NUGGET);
                         entries.add(ModItems.BRONZE_INGOT);
+                        entries.add(ModItems.COPPER_NUGGET);
                     }).build());
 
     public static final ItemGroup TOOLS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -216,6 +217,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SHEPHERDS_PIE_BLOCK);
                         entries.add(ModBlocks.HONEY_GLAZED_HAM_BLOCK);
                         entries.add(ModBlocks.RICE_ROLL_MEDLEY_BLOCK);
+                        entries.add(ModBlocks.RICE_ROLL_ROYALE_MEDLEY);
                         entries.add(ModItems.HORSE_FEED);
 
                         entries.add(ModItems.PICKLE);
@@ -247,6 +249,7 @@ public class ModItemGroups {
                         entries.add(ModItems.POPCORN);
                         entries.add(ModItems.TORTILLA_CHIPS);
                         entries.add(ModItems.ELOTE);
+                        entries.add(ModItems.SMOKED_CORN);
                         entries.add(ModItems.EMPANADA);
                         entries.add(ModItems.BEEF_BURRITO);
                         entries.add(ModItems.MUTTON_SANDWICH);
@@ -271,10 +274,13 @@ public class ModItemGroups {
                         entries.add(ModItems.FIERY_FONDUE);
                         entries.add(ModItems.FLAXEN_CHEESE_WEDGE);
                         entries.add(ModItems.SCARLET_CHEESE_WEDGE);
+                        entries.add(ModItems.DORBLU_CHEESE_WEDGE);
                         entries.add(ModBlocks.UNRIPE_FLAXEN_CHEESE_WHEEL);
                         entries.add(ModBlocks.UNRIPE_SCARLET_CHEESE_WHEEL);
+                        entries.add(ModBlocks.UNRIPE_DORBLU_CHEESE_WHEEL);
                         entries.add(ModBlocks.FLAXEN_CHEESE_WHEEL);
                         entries.add(ModBlocks.SCARLET_CHEESE_WHEEL);
+                        entries.add(ModBlocks.DORBLU_CHEESE_WHEEL);
 
                         entries.add(ModItems.VEGETABLE_OMELET);
                         entries.add(ModItems.CREAMY_ONION_SOUP);
@@ -298,6 +304,12 @@ public class ModItemGroups {
                         entries.add(ModItems.VEGETABLE_PANCAKE);
                         entries.add(ModItems.CHOCOLATE_PANCAKE);
                         entries.add(ModItems.HONEY_PANCAKE);
+                        entries.add(ModBlocks.PANCAKES);
+                        entries.add(ModBlocks.PUMPKIN_PANCAKES);
+                        entries.add(ModBlocks.CHERRY_BLOSSOM_PANCAKES);
+                        entries.add(ModBlocks.VEGETABLE_PANCAKES);
+                        entries.add(ModBlocks.CHOCOLATE_PANCAKES);
+                        entries.add(ModBlocks.HONEY_PANCAKES);
 
                         entries.add(ModItems.DARK_COFFEE);
                         entries.add(ModItems.COFFEE);
@@ -358,6 +370,11 @@ public class ModItemGroups {
                         entries.add(ModItems.FRIED_MUSHROOMS);
 
                         entries.add(ModItems.SYRUP_COOKIE);
+                        entries.add(ModItems.SYRUP_CHEESECAKE_SLICE);
+                        entries.add(ModBlocks.SYRUP_CHEESECAKE);
+                        entries.add(ModItems.SYRUP_SANDWICH);
+                        entries.add(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE);
+                        entries.add(ModBlocks.CHERRY_BLOSSOM_CHEESECAKE);
                         entries.add(ModItems.CHERRY_BLOSSOM_COOKIE);
 
                         entries.add(ModItems.FRUIT_BEIGNET);
@@ -387,10 +404,13 @@ public class ModItemGroups {
                         entries.add(ModItems.DANDELION_LEAF);
                         entries.add(ModItems.GARLIC);
                         entries.add(ModItems.GARLIC_CLOVE);
-                        entries.add(ModItems.SOYA_BEAN_POD);
-                        entries.add(ModItems.SOYA_BEANS);
-                        entries.add(ModItems.YUCA);
+                        entries.add(ModItems.SOYBEAN_POD);
+                        entries.add(ModItems.SOYBEANS);
+                        entries.add(ModItems.CASSAVA);
                         entries.add(ModItems.AJI_AMARILLO);
+                        entries.add(ModItems.CHICKPEA);
+                        entries.add(ModItems.PARSLEY);
+
 
 
                     }).build());
@@ -435,11 +455,16 @@ public class ModItemGroups {
                         entries.add(ModItems.ZUCCHINI_SEEDS);
                         entries.add(ModItems.GARLIC_CLOVE);
                         entries.add(ModItems.GARLIC);
-                        entries.add(ModItems.SOYA_BEANS);
-                        entries.add(ModItems.SOYA_BEAN_POD);
-                        entries.add(ModItems.YUCA);
+                        entries.add(ModItems.SOYBEANS);
+                        entries.add(ModItems.SOYBEAN_POD);
+                        entries.add(ModItems.CASSAVA);
                         entries.add(ModItems.AJI_AMARILLO_SEEDS);
                         entries.add(ModItems.AJI_AMARILLO);
+                        entries.add(ModItems.CHICKPEA);
+                        entries.add(ModItems.PARSLEY);
+                        entries.add(ModItems.PARSLEY_SEEDS);
+
+                        entries.add(ModItems.ROTTEN_TOMATO);
 
                         entries.add(ModItems.STRAW);
                         entries.add(ModBlocks.STRAW_BALE);
@@ -459,10 +484,22 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WILD_SWEET_POTATOES);
                         entries.add(ModBlocks.WILD_TURNIPS);
                         entries.add(ModBlocks.WILD_ZUCCHINIS);
-                        entries.add(ModBlocks.WILD_SOYA);
-                        entries.add(ModBlocks.WILD_YUCA);
+                        entries.add(ModBlocks.WILD_SOYBEAN);
+                        entries.add(ModBlocks.WILD_CASSAVA);
                         entries.add(ModBlocks.WILD_AJI_AMARILLO);
+                        entries.add(ModBlocks.WILD_CORN);
+                        entries.add(ModBlocks.WILD_CORN_DRY);
+                        entries.add(ModBlocks.WILD_EGGPLANTS);
+                        entries.add(ModBlocks.WILD_CUCUMBERS);
                         entries.add(ModBlocks.SANDY_SHRUB);
+                        entries.add(ModBlocks.MATURE_DANDELION);
+
+                        entries.add(ModBlocks.AVOCADO_LOG);
+                        entries.add(ModBlocks.AVOCADO_WOOD);
+                        entries.add(ModBlocks.AVOCADO_LEAVES);
+                        entries.add(ModBlocks.FRUITING_AVOCADO_LEAVES);
+                        entries.add(ModBlocks.AVOCADO_SAPLING);
+                        entries.add(ModBlocks.AVOCADO_PIT);
 
                         entries.add(ModItems.OAK_BARK);
                         entries.add(ModItems.SPRUCE_BARK);
@@ -470,6 +507,7 @@ public class ModItemGroups {
                         entries.add(ModItems.BIRCH_BARK);
                         entries.add(ModItems.JUNGLE_BARK);
                         entries.add(ModItems.ACACIA_BARK);
+                        entries.add(ModItems.MANGROVE_BARK);
                         entries.add(ModItems.CHERRY_BARK);
                         entries.add(ModItems.BAMBOO_BARK);
 
@@ -489,12 +527,15 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SLATE_TIN_ORE);
                         entries.add(ModBlocks.RAW_SILVER_BLOCK);
                         entries.add(ModBlocks.SILVER_BLOCK);
+                        entries.add(ModBlocks.CUT_SILVER);
                         entries.add(ModBlocks.DEEPSLATE_SILVER_ORE);
                         entries.add(ModBlocks.RAW_LEAD_BLOCK);
                         entries.add(ModBlocks.LEAD_BLOCK);
+                        entries.add(ModBlocks.CUT_LEAD);
                         entries.add(ModBlocks.DEEPSLATE_LEAD_ORE);
                         entries.add(ModBlocks.RAW_MITHRIL_BLOCK);
                         entries.add(ModBlocks.MITHRIL_BLOCK);
+                        entries.add(ModBlocks.KHAZAD_STEEL_BLOCK);
                         entries.add(ModBlocks.BURZUM_STEEL_BLOCK);
                         entries.add(ModBlocks.EDHEL_STEEL_BLOCK);
                         entries.add(ModBlocks.CRUDE_BLOCK);
@@ -693,6 +734,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_SLAB);
                         entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_STAIRS);
                         entries.add(ModBlocks.MOSSY_COBBLED_BLUE_TUFF_WALL);
+                        entries.add(ModBlocks.BLUE_TUFF_VERTICAL_SLAB);
 
                         entries.add(ModBlocks.GREEN_TUFF);
                         entries.add(ModBlocks.GREEN_TUFF_SLAB);

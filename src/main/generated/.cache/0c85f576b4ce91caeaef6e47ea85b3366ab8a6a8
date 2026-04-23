@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-18T10:11:18.9531268	Ew medieval/Recipes
+// 1.20.1	2026-04-22T18:42:25.6394103	Ew medieval/Recipes
 041dc15a0db5bbb71071d2ca677dacdabed16d79 data\ewmedieval\advancements\recipes\misc\ash_piece_from_smelting_wheat_seeds.json
 bc4489e559b02baf7a60717b37ba6b4de6d081bb data\ewmedieval\recipes\cooked_horse_smoking.json
 fec8c8876dc6091fa4b3819dfd0bc737cb8cdd4e data\ewmedieval\advancements\recipes\building_blocks\polished_slate.json
@@ -30,8 +30,8 @@ d433c4bf8eb30cc51a4508d33a42111f6e7a6224 data\ewmedieval\recipes\ash_from_smelti
 3dd12b8900af8d6267f5da5e8f532e6ec3689ada data\ewmedieval\advancements\recipes\misc\ash_from_smelting_purple_wool.json
 ff7722bb73584dc15de07d609784c6a7d69a5f49 data\ewmedieval\advancements\recipes\building_blocks\slate_wall.json
 a17145f7f3c6512bb3a0e89aaa1224a50a4592b0 data\ewmedieval\advancements\recipes\misc\ash_piece_from_smelting_melon_seeds.json
-cf58dece8fc3f293711bce4d4aebe9f1e4a6034f data\ewmedieval\advancements\recipes\misc\ash_from_smelting_book.json
 aa47c9f3125413a83af47b4d884f06df8d826b88 data\ewmedieval\advancements\recipes\misc\ash_from_smelting_leather.json
+cf58dece8fc3f293711bce4d4aebe9f1e4a6034f data\ewmedieval\advancements\recipes\misc\ash_from_smelting_book.json
 5190d4d8910765e07f03ee2573ce9c83780a9166 data\ewmedieval\advancements\recipes\misc\crude_nugget_from_ingot.json
 ad5395f4ce0d985ba59b13b2c6b74e4a38ea3f15 data\ewmedieval\recipes\slate_bricks_slab.json
 2c5e84d9a978c794ffe2c5ef46c9e01d4825a645 data\ewmedieval\advancements\recipes\building_blocks\slate_wall_from_slate_stonecutting.json

@@ -831,9 +831,9 @@ public class ModBlocks {
 
     public static final Block WILD_AJI_AMARILLO = registerBlock("wild_aji_amarillo",
             new WildCropBlock(StatusEffects.FIRE_RESISTANCE, 10, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
-    public static final Block WILD_SOYA = registerBlock("wild_soya",
+    public static final Block WILD_SOYBEAN = registerBlock("wild_soybean",
             new WildCropBlock(StatusEffects.REGENERATION, 8, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
-    public static final Block WILD_YUCA = registerBlock("wild_yuca",
+    public static final Block WILD_CASSAVA = registerBlock("wild_cassava",
             new WildCropBlock(StatusEffects.SATURATION, 5, FabricBlockSettings.copyOf(Blocks.TALL_GRASS).noCollision()));
 
     public static final Block SANDY_SHRUB = registerBlock("sandy_shrub",
@@ -889,10 +889,10 @@ public class ModBlocks {
     public static final Block TURNIP_CROP = registerBlockWithoutItem("turnip",
             new TurnipCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
-    public static final Block SOYA_CROP = registerBlockWithoutItem("soya",
-            new SoyaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
-    public static final Block YUCA_CROP = registerBlockWithoutItem("yuca",
-            new YucaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+    public static final Block SOYBEAN_CROP = registerBlockWithoutItem("soybean",
+            new SoybeanCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
+    public static final Block CASSAVA_CROP = registerBlockWithoutItem("cassava",
+            new CassavaCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
     public static final Block AJI_AMARILLO_CROP = registerBlockWithoutItem("aji_amarillo",
             new AjiAmarilloCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT).noCollision()));
 

@@ -88,7 +88,7 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Forge");
+        return Text.translatable("block.ewmedieval.forge");
     }
 
     @Override
@@ -96,6 +96,7 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("forge.progress", progress);
+        nbt.putInt("forge.maxProgress", maxProgress);
         nbt.putInt("forge.burnTime", burnTime);
         nbt.putInt("forge.fuelTime", fuelTime);
     }
@@ -105,6 +106,8 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("forge.progress");
+        maxProgress = nbt.getInt("forge.maxProgress");
+        if (maxProgress <= 0) maxProgress = 200;
         burnTime = nbt.getInt("forge.burnTime");
         fuelTime = nbt.getInt("forge.fuelTime");
     }
@@ -123,13 +126,15 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
 
         boolean wasBurning = isBurning();
 
-        // Verminder brandtijd als er brandstof brandt
         if (isBurning()) {
             burnTime--;
         }
 
-        // Start nieuwe fuel als er een recept is en fuel aanwezig
-        if (!isBurning() && hasValidRecipe() && !getStack(FUEL_SLOT).isEmpty()) {
+        SimpleInventory inv = getInputInventory();
+        java.util.Optional<ForgeRecipe> match = world.getRecipeManager()
+                .getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world);
+
+        if (!isBurning() && match.isPresent() && !getStack(FUEL_SLOT).isEmpty()) {
             ItemStack fuelStack = getStack(FUEL_SLOT);
             Integer fuelTicks = FuelRegistry.INSTANCE.get(fuelStack.getItem());
             if (fuelTicks != null && fuelTicks > 0) {
@@ -143,30 +148,32 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
                 }
             }
         }
-
-        boolean hasRecipe = hasValidRecipe();
-        boolean canInsert = canInsertResult();
+        boolean hasRecipe = match.isPresent();
+        boolean canInsert = match.map(recipe -> {
+            ItemStack result = recipe.craft(inv, world.getRegistryManager());
+            ItemStack output = getStack(OUTPUT_SLOT);
+            return output.isEmpty() ||
+                    (output.getItem() == result.getItem() &&
+                            output.getCount() + result.getCount() <= output.getMaxCount());
+        }).orElse(false);
         boolean changed = false;
 
         if (hasRecipe && canInsert) {
             if (isBurning()) {
-                // Recept + brandstof: voortgang omhoog
                 progress++;
                 changed = true;
                 if (progress >= maxProgress) {
                     craftItem();
                     progress = 0;
-                    changed = true;
+                    markDirty(world, pos, state);
                 }
             } else {
-                // Recept aanwezig maar geen brandstof: langzaam teruglopen
                 if (progress > 0) {
                     progress--;
                     changed = true;
                 }
             }
         } else {
-            // Geen recept of geen plek in output: direct reset
             if (progress != 0) {
                 progress = 0;
                 changed = true;
@@ -174,7 +181,7 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         }
 
         if (changed) {
-            markDirty(world, pos, state);
+            markDirty();
         }
 
         // Update visuals als brandstatus verandert
@@ -183,7 +190,6 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         }
     }
 
-    // ---- Helper methods ----
     private SimpleInventory getInputInventory() {
         SimpleInventory inv = new SimpleInventory(4);
         inv.setStack(0, getStack(INPUT_SLOT_1));
@@ -191,30 +197,6 @@ public class ForgeBlockEntity extends BlockEntity implements ExtendedScreenHandl
         inv.setStack(2, getStack(INPUT_SLOT_3));
         inv.setStack(3, getStack(INPUT_SLOT_4));
         return inv;
-    }
-
-    private boolean hasValidRecipe() {
-        if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
-        return world.getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world)
-                .isPresent();
-    }
-
-    private boolean canInsertResult() {
-        if (world == null) return false;
-        SimpleInventory inv = getInputInventory();
-
-        return world.getRecipeManager()
-                .getFirstMatch(ForgeRecipe.Type.INSTANCE, inv, world)
-                .map(recipe -> {
-                    ItemStack result = recipe.craft(inv, world.getRegistryManager());
-                    ItemStack output = getStack(OUTPUT_SLOT);
-                    return output.isEmpty() ||
-                            (output.getItem() == result.getItem() &&
-                                    output.getCount() + result.getCount() <= output.getMaxCount());
-                })
-                .orElse(false);
     }
 
     private void craftItem() {

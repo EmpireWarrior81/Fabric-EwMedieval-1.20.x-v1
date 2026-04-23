@@ -56,6 +56,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.BRONZE_SHEARS);
 
         getOrCreateTagBuilder(ModTags.FLAT_ON_CUTTING_BOARD);
+
+        getOrCreateTagBuilder(ModTags.FORGE_COAL_SORTS)
+                .add(Items.COAL)
+                .add(Items.CHARCOAL);
     }
 
 }

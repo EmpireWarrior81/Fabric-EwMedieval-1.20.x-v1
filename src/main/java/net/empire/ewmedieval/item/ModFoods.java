@@ -295,6 +295,8 @@ public class ModFoods {
             new FoodComponent.Builder().hunger(2).saturationModifier(0.3f).snack().build();
     public static final FoodComponent ELOTE =
             new FoodComponent.Builder().hunger(7).saturationModifier(0.7f).build();
+    public static final FoodComponent SMOKED_CORN =
+            new FoodComponent.Builder().hunger(5).saturationModifier(0.7f).build();
     public static final FoodComponent EMPANADA =
             new FoodComponent.Builder().hunger(6).saturationModifier(0.6f).build();
     public static final FoodComponent BEEF_BURRITO =
@@ -562,9 +564,9 @@ public class ModFoods {
     public static final FoodComponent AJI_AMARILLO = new FoodComponent.Builder()
             .hunger(2).saturationModifier(0.1f)
             .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 200, 0), 1.0f).build();
-    public static final FoodComponent YUCA = new FoodComponent.Builder()
+    public static final FoodComponent CASSAVA = new FoodComponent.Builder()
             .hunger(2).saturationModifier(0.5f).build();
-    public static final FoodComponent SOY_BEANS = new FoodComponent.Builder()
+    public static final FoodComponent SOYBEANS = new FoodComponent.Builder()
             .hunger(1).saturationModifier(0.2f).build();
 
     public static final FoodComponent GARLIC_CLOVE = new FoodComponent.Builder()

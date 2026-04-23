@@ -1,6 +1,7 @@
 package net.empire.ewmedieval;
 
 import net.empire.ewmedieval.block.ModBlocks;
+import net.empire.ewmedieval.nutrition.ModNutrition;
 import net.empire.ewmedieval.block.custom.CuttingBoardBlock;
 import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.effect.ModEffects;
@@ -16,8 +17,12 @@ import net.empire.ewmedieval.recipe.ModRecipes;
 import net.empire.ewmedieval.sound.ModSounds;
 import net.empire.ewmedieval.util.ModLootTableModifiers;
 import net.empire.ewmedieval.datagen.ModWorldGenProvider;
+import net.empire.ewmedieval.command.SeasonCommand;
+import net.empire.ewmedieval.season.SeasonCropRegistry;
+import net.empire.ewmedieval.season.SeasonManager;
 import net.empire.ewmedieval.world.feature.ModFeatureTypes;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
@@ -39,9 +44,15 @@ public class EwMedieval implements ModInitializer {
 
         ModItemGroups.registerItemGroups();
         ModEffects.registerEffects();
+        ModNutrition.init();
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+
+        SeasonCropRegistry.init();
+        SeasonManager.init();
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
+                SeasonCommand.register(dispatcher));
 
         ModLootTableModifiers.modifyLootTables();
         ModLootTableModifiers.replaceLootTables();

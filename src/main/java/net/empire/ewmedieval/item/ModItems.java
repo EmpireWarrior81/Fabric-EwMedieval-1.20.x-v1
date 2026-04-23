@@ -219,7 +219,7 @@ public class ModItems {
     public static final Item COFFEE_BEANS = registerItem("coffee_beans",
             new AliasedBlockItem(ModBlocks.COFFEE_CROP, new FabricItemSettings()));
 
-    public static final Item SOYA_BEAN_POD = registerItem("soya_bean_pod",
+    public static final Item SOYBEAN_POD = registerItem("soybean_pod",
             new Item(new FabricItemSettings()));
     public static final Item GARLIC = registerItem("garlic",
             new Item(new FabricItemSettings()));
@@ -234,10 +234,10 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.ZUCCHINI_CROP, new FabricItemSettings()));
     public static final Item TURNIP_SEEDS = registerItem("turnip_seeds",
             new AliasedBlockItem(ModBlocks.TURNIP_CROP, new FabricItemSettings()));
-    public static final Item SOYA_BEANS = registerItem("soya_beans",
-            new AliasedBlockItem(ModBlocks.SOYA_CROP, new FabricItemSettings().food(ModFoods.SOY_BEANS)));
-    public static final Item YUCA = registerItem("yuca",
-            new AliasedBlockItem(ModBlocks.YUCA_CROP, new FabricItemSettings().food(ModFoods.YUCA)));
+    public static final Item SOYBEANS = registerItem("soybeans",
+            new AliasedBlockItem(ModBlocks.SOYBEAN_CROP, new FabricItemSettings().food(ModFoods.SOYBEANS)));
+    public static final Item CASSAVA = registerItem("cassava",
+            new AliasedBlockItem(ModBlocks.CASSAVA_CROP, new FabricItemSettings().food(ModFoods.CASSAVA)));
     public static final Item AJI_AMARILLO_SEEDS = registerItem("aji_amarillo_seeds",
             new AliasedBlockItem(ModBlocks.AJI_AMARILLO_CROP, new FabricItemSettings()));
     public static final Item GARLIC_CLOVE = registerItem("garlic_clove",
@@ -375,6 +375,8 @@ public class ModItems {
             new Item(new FabricItemSettings().food(ModFoods.TORTILLA_CHIPS)));
     public static final Item ELOTE = registerItem("elote",
             new Item(new FabricItemSettings().food(ModFoods.ELOTE)));
+    public static final Item SMOKED_CORN = registerItem("smoked_corn",
+            new Item(new FabricItemSettings().food(ModFoods.SMOKED_CORN)));
     public static final Item EMPANADA = registerItem("empanada",
             new Item(new FabricItemSettings().food(ModFoods.EMPANADA)));
     public static final Item BEEF_BURRITO = registerItem("beef_burrito",

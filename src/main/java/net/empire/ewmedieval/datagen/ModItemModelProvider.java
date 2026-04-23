@@ -224,11 +224,11 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CUCUMBER_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.EGGPLANT_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORN_KERNELS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOYA_BEANS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.YUCA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOYBEANS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CASSAVA, Models.GENERATED);
         itemModelGenerator.register(ModItems.AJI_AMARILLO_SEEDS, Models.GENERATED);
         itemModelGenerator.register(ModItems.AJI_AMARILLO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SOYA_BEAN_POD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOYBEAN_POD, Models.GENERATED);
         itemModelGenerator.register(ModItems.GARLIC, Models.GENERATED);
         itemModelGenerator.register(ModItems.GARLIC_CLOVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHICKPEA, Models.GENERATED);
@@ -268,6 +268,7 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.POPCORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TORTILLA_CHIPS, Models.GENERATED);
         itemModelGenerator.register(ModItems.ELOTE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SMOKED_CORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.EMPANADA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BEEF_BURRITO, Models.GENERATED);
         itemModelGenerator.register(ModItems.MUTTON_SANDWICH, Models.GENERATED);
@@ -362,6 +363,9 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FRIED_MUSHROOMS, Models.GENERATED);
         itemModelGenerator.register(ModItems.FRIED_CHICKEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.SYRUP_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SYRUP_CHEESECAKE_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SYRUP_SANDWICH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHERRY_BLOSSOM_CHEESECAKE_SLICE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHERRY_BLOSSOM_COOKIE, Models.GENERATED);
         itemModelGenerator.register(ModItems.FRUIT_BEIGNET, Models.GENERATED);
         itemModelGenerator.register(ModItems.SWEET_SALAD, Models.GENERATED);

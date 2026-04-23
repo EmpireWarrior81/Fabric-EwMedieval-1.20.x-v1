@@ -91,7 +91,8 @@ public class CornBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-
+        float seasonMod = net.empire.ewmedieval.season.SeasonCropRegistry.getModifier(this, world, pos);
+        if (seasonMod <= 0f || (seasonMod < 1f && random.nextFloat() >= seasonMod)) return;
         if (world.getBaseLightLevel(pos, 0) < 6) return;
 
         int age = this.getAge(state);

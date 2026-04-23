@@ -15,7 +15,7 @@ public class ModEntityTypes {
             EntityType.Builder.<RottenTomatoEntity>create(RottenTomatoEntity::new, SpawnGroup.MISC)
                     .trackingTickInterval(10)
                     .maxTrackingRange(4)
-                    .build("rotten_tomato"));
+                    .build(""));
 
     public static void registerEntityTypes() {
         EwMedieval.LOGGER.info("Registering entity types for " + EwMedieval.MOD_ID);

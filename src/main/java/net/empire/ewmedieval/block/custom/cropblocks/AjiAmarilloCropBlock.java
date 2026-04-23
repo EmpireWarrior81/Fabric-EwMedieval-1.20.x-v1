@@ -54,6 +54,8 @@ public class AjiAmarilloCropBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        float seasonMod = net.empire.ewmedieval.season.SeasonCropRegistry.getModifier(this, world, pos);
+        if (seasonMod <= 0f || (seasonMod < 1f && random.nextFloat() >= seasonMod)) return;
         int age = state.get(AGE);
         if (age < MAX_AGE && world.getBaseLightLevel(pos.up(), 0) >= 9 && random.nextInt(5) == 0) {
             world.setBlockState(pos, state.with(AGE, age + 1), 2);

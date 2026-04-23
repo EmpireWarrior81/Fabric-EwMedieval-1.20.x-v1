@@ -187,7 +187,6 @@ public class StoveBlock extends BlockWithEntity {
         }
     }
 
-    //TODO Fixing the smoke particles here
 
     @Nullable
     @Override

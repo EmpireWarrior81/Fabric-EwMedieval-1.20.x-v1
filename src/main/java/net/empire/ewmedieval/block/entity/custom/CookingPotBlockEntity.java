@@ -216,7 +216,7 @@ public class CookingPotBlockEntity extends SyncedBlockEntity
                 new ArrayList<>(recipe.getIngredients());
         for (net.minecraft.recipe.Ingredient ing : toConsume) {
             for (int i = 0; i < INGREDIENT_SLOT_COUNT; i++) {
-                if (ing.test(inventory.get(i))) {
+                if (!inventory.get(i).isEmpty() && ing.test(inventory.get(i))) {
                     inventory.get(i).decrement(1);
                     break;
                 }

@@ -1,13 +1,21 @@
-{
+﻿{
       "required": true,
       "package": "net.empire.ewmedieval.mixin",
       "compatibilityLevel": "JAVA_21",
       "mixins": [
-        "ExampleMixin",
         "MiningToolItemMixin",
         "EnchantementMixin",
-        "LivingEntityBackstabMixin"
-
+        "LivingEntityBackstabMixin",
+        "PlayerEatFoodMixin",
+        "PlayerNutritionMixin",
+        "CropSeasonMixin",
+        "SaplingSeasonMixin",
+        "StemSeasonMixin",
+        "SugarCaneSeasonMixin",
+        "SweetBerrySeasonMixin"
+      ],
+      "client": [
+        "InventoryScreenMixin"
       ],
       "injectors": {
         "defaultRequire": 1

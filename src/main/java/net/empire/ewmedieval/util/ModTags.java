@@ -26,6 +26,8 @@ public class ModTags {
 
     public static final TagKey<Item> FLAT_ON_CUTTING_BOARD = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "flat_on_cutting_board"));
 
+    public static final TagKey<Item> FORGE_COAL_SORTS = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "forge_coal_sorts"));
+
     public static final TagKey<EntityType<?>> DOG_FOOD_USERS = TagKey.of(RegistryKeys.ENTITY_TYPE, new Identifier("ewmedieval", "dog_food_users"));
 
     public static final TagKey<EntityType<?>> HORSE_FEED_USERS = TagKey.of(RegistryKeys.ENTITY_TYPE, new Identifier("ewmedieval", "horse_feed_users"));
