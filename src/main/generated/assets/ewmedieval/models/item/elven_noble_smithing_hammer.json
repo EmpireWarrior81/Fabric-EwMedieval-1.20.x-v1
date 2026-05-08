@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ewmedieval:item/elven_noble_smithing_hammer"
+  }
+}

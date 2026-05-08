@@ -1,0 +1,30 @@
+{
+  "parent": "ewmedieval:stone_age",
+  "display": {
+    "icon": { "item": "ewmedieval:flint_knife" },
+    "title": { "translate": "ewmedieval.advancement.get_knife" },
+    "description": { "translate": "ewmedieval.advancement.get_knife.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{
+          "items": [
+            "ewmedieval:flint_knife",
+            "ewmedieval:stone_knife",
+            "ewmedieval:bronze_knife",
+            "ewmedieval:iron_knife",
+            "ewmedieval:golden_knife",
+            "ewmedieval:diamond_knife",
+            "ewmedieval:netherite_knife"
+          ]
+        }]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

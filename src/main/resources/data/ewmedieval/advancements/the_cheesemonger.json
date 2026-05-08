@@ -1,0 +1,18 @@
+{
+  "parent": "ewmedieval:get_unripe_cheese",
+  "display": {
+    "icon": { "item": "ewmedieval:flaxen_cheese_wheel" },
+    "title": { "translate": "ewmedieval.advancement.the_cheesemonger" },
+    "description": { "translate": "ewmedieval.advancement.the_cheesemonger.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "flaxen_cheese_wheel":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:flaxen_cheese_wheel"] }] } },
+    "scarlet_cheese_wheel": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:scarlet_cheese_wheel"] }] } },
+    "dorblu_cheese_wheel":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:dorblu_cheese_wheel"] }] } }
+  },
+  "requirements": [["flaxen_cheese_wheel", "scarlet_cheese_wheel", "dorblu_cheese_wheel"]],
+  "rewards": { "experience": 30 }
+}

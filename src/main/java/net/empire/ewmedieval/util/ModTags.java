@@ -15,6 +15,10 @@ public class ModTags {
     public static final TagKey<Block> MINEABLE_WITH_KNIFE = TagKey.of(RegistryKeys.BLOCK, new Identifier("ewmedieval", "mineable/knife"));
     public static final TagKey<Block> DROPS_CAKE_SLICE = TagKey.of(RegistryKeys.BLOCK, new Identifier("ewmedieval", "drops_cake_slice"));
 
+    public static final TagKey<Block> SMITHING = TagKey.of(RegistryKeys.BLOCK, new Identifier("ewmedieval", "smithing"));
+
+    public static final TagKey<Item> KNAPPABLE = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "knappable"));
+
     public static final TagKey<Item> KNIVES = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "knives"));
 
     public static final TagKey<Item> AXES = TagKey.of(RegistryKeys.ITEM, new Identifier("ewmedieval", "axes"));

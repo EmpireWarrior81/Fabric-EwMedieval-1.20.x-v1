@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/bronze_ash_mixture",
+  "display": {
+    "icon": { "item": "ewmedieval:crude_ingot" },
+    "title": { "translate": "ewmedieval.advancement.crude_ingot" },
+    "description": { "translate": "ewmedieval.advancement.crude_ingot.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crude_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:crude_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 35 }
+}

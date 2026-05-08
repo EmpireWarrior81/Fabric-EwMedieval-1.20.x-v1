@@ -1,6 +1,7 @@
 package net.empire.ewmedieval.entity;
 
 import net.empire.ewmedieval.EwMedieval;
+import net.empire.ewmedieval.entity.custom.TieredArrowEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -14,6 +15,14 @@ public class ModEntityTypes {
             new Identifier(EwMedieval.MOD_ID, "rotten_tomato"),
             EntityType.Builder.<RottenTomatoEntity>create(RottenTomatoEntity::new, SpawnGroup.MISC)
                     .trackingTickInterval(10)
+                    .maxTrackingRange(4)
+                    .build(""));
+
+    public static final EntityType<TieredArrowEntity> TIERED_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            new Identifier(EwMedieval.MOD_ID, "tiered_arrow"),
+            EntityType.Builder.<TieredArrowEntity>create(TieredArrowEntity::new, SpawnGroup.MISC)
+                    .trackingTickInterval(20)
                     .maxTrackingRange(4)
                     .build(""));
 

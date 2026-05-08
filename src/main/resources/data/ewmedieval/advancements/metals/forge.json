@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:metals/earlyforge",
+  "display": {
+    "icon": { "item": "ewmedieval:forge" },
+    "title": { "translate": "ewmedieval.advancement.forge" },
+    "description": { "translate": "ewmedieval.advancement.forge.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "place_forge": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:forge"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 40 }
+}

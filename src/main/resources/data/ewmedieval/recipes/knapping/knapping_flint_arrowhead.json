@@ -1,0 +1,16 @@
+{
+  "type": "ewmedieval:knapping",
+  "pattern": [
+    " x",
+    "x ",
+    " x"
+  ],
+  "ingredient": {
+    "tag": "ewmedieval:knappable_flint"
+  },
+  "result": {
+    "item": "ewmedieval:flint_arrowhead",
+    "count": 2
+  },
+  "mirrored": true
+}

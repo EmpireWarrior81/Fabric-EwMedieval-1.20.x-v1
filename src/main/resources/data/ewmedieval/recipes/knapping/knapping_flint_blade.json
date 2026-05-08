@@ -1,0 +1,15 @@
+﻿{
+  "type": "ewmedieval:knapping",
+  "pattern": [
+    "x",
+    "x",
+    "x"
+  ],
+  "ingredient": {
+    "tag": "ewmedieval:knappable_stone"
+  },
+  "result": {
+    "item": "minecraft:flint",
+    "count": 2
+  }
+}

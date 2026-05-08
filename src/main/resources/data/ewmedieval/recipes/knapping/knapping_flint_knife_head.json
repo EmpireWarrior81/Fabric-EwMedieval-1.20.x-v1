@@ -1,0 +1,14 @@
+{
+  "type": "ewmedieval:knapping",
+  "pattern": [
+    " x",
+    "x "
+  ],
+  "ingredient": {
+    "tag": "ewmedieval:knappable_flint"
+  },
+  "result": {
+    "item": "ewmedieval:flint_knife_head",
+    "count": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:root",
+  "display": {
+    "icon": { "item": "ewmedieval:raw_tin" },
+    "title": { "translate": "ewmedieval.advancement.tin" },
+    "description": { "translate": "ewmedieval.advancement.tin.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "raw_tin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:raw_tin"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

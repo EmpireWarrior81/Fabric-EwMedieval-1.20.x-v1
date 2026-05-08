@@ -7,6 +7,9 @@ import net.minecraft.util.Identifier;
 
 public class ModRecipes {
 
+    public static RecipeType<KnappingRecipe> KNAPPING_TYPE;
+    public static KnappingRecipe.Serializer KNAPPING_SERIALIZER;
+
     public static RecipeType<CuttingBoardRecipe> CUTTING_TYPE;
     public static CuttingBoardRecipe.Serializer CUTTING_SERIALIZER;
 
@@ -17,6 +20,11 @@ public class ModRecipes {
   //  public static StoveRecipe.Serializer STOVE_SERIALIZER;
 
     public static void registerRecipes() {
+        KNAPPING_TYPE = Registry.register(Registries.RECIPE_TYPE,
+                new Identifier("ewmedieval", KnappingRecipe.Type.ID), KnappingRecipe.Type.INSTANCE);
+        KNAPPING_SERIALIZER = Registry.register(Registries.RECIPE_SERIALIZER,
+                KnappingRecipe.Serializer.ID, KnappingRecipe.Serializer.INSTANCE);
+
         Registry.register(Registries.RECIPE_TYPE,
                 new Identifier("ewmedieval", ForgeRecipe.Type.ID), ForgeRecipe.Type.INSTANCE);
 

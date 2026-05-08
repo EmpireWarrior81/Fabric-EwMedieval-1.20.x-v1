@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/bronze",
+  "display": {
+    "icon": { "item": "minecraft:iron_ingot" },
+    "title": { "translate": "ewmedieval.advancement.iron" },
+    "description": { "translate": "ewmedieval.advancement.iron.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["minecraft:iron_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 30 }
+}

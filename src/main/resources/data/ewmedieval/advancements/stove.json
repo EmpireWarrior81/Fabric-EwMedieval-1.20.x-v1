@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:light_campfire",
+  "display": {
+    "icon": { "item": "ewmedieval:stove" },
+    "title": { "translate": "ewmedieval.advancement.stove" },
+    "description": { "translate": "ewmedieval.advancement.stove.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "place_stove": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:stove"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

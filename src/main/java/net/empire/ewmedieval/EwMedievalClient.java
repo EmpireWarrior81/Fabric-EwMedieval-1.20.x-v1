@@ -5,32 +5,43 @@ import net.empire.ewmedieval.block.entity.ModBlockEntities;
 import net.empire.ewmedieval.client.particle.SteamParticle;
 import net.empire.ewmedieval.client.renderer.CuttingBoardRenderer;
 import net.empire.ewmedieval.client.renderer.StoveBlockEntityRenderer;
+import net.empire.ewmedieval.client.renderer.TieredArrowEntityRenderer;
 import net.empire.ewmedieval.entity.ModEntityTypes;
 import net.empire.ewmedieval.gui.ComfortHealthOverlay;
 import net.empire.ewmedieval.gui.ModScreenHandlers;
 import net.empire.ewmedieval.gui.NourishmentHungerOverlay;
+//import net.empire.ewmedieval.gui.ThirstHudOverlay;
 import net.empire.ewmedieval.gui.cookingpot.CookingPotScreen;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreen;
 import net.empire.ewmedieval.gui.forge.ForgeScreen;
+import net.empire.ewmedieval.gui.knapping.KnappingScreen;
 import net.empire.ewmedieval.nutrition.NutritionFoodLoader;
 import net.empire.ewmedieval.nutrition.NutritionFoodValues;
 import net.empire.ewmedieval.particle.ModParticles;
 import net.empire.ewmedieval.network.NutritionSyncPacket;
+//import net.empire.ewmedieval.network.ThirstSyncPacket;
 import net.empire.ewmedieval.nutrition.ClientNutritionData;
+//import net.empire.ewmedieval.thirst.ClientThirstData;
+import net.empire.ewmedieval.season.SeasonColors;
+import net.empire.ewmedieval.season.SeasonConfig;
 import net.empire.ewmedieval.season.SeasonCropRegistry;
+import net.empire.ewmedieval.season.SeasonManager;
 import net.empire.ewmedieval.season.SeasonPeriod;
-import net.empire.ewmedieval.season.SeasonTooltipConfig;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+//import net.empire.ewmedieval.item.LeatherFlaskItem;
+import net.empire.ewmedieval.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
@@ -38,6 +49,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
 public class EwMedievalClient implements ClientModInitializer {
 
@@ -113,11 +125,13 @@ public class EwMedievalClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.FORGE_SCREEN_SCREEN_HANDLER, ForgeScreen::new);
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
         HandledScreens.register(ModScreenHandlers.COOKING_POT_SCREEN_HANDLER, CookingPotScreen::new);
+        HandledScreens.register(ModScreenHandlers.KNAPPING_SCREEN_HANDLER, KnappingScreen::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.STOVE, StoveBlockEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntityTypes.ROTTEN_TOMATO, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.TIERED_ARROW, TieredArrowEntityRenderer::new);
 
         HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
                 ComfortHealthOverlay.onRenderGuiOverlayPost(drawContext, tickDelta));
@@ -125,10 +139,24 @@ public class EwMedievalClient implements ClientModInitializer {
         HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
                 NourishmentHungerOverlay.onRenderGuiOverlayPost(drawContext, tickDelta));
 
-ClientPlayNetworking.registerGlobalReceiver(NutritionSyncPacket.ID, (client, handler, buf, responseSender) -> {
+        /*HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
+                ThirstHudOverlay.render(drawContext, tickDelta));*/
+
+        ClientPlayNetworking.registerGlobalReceiver(NutritionSyncPacket.ID, (client, handler, buf, responseSender) -> {
             net.empire.ewmedieval.nutrition.NutritionData incoming = NutritionSyncPacket.read(buf);
             client.execute(() -> ClientNutritionData.update(incoming));
         });
+
+        /*ClientPlayNetworking.registerGlobalReceiver(ThirstSyncPacket.ID, (client, handler, buf, responseSender) -> {
+            int level = ThirstSyncPacket.read(buf);
+            client.execute(() -> ClientThirstData.update(level));
+        });*/
+
+        /*ModelPredicateProviderRegistry.register(
+                ModItems.LEATHER_FLASK,
+                new Identifier(EwMedieval.MOD_ID, "filled"),
+                (stack, world, entity, seed) -> LeatherFlaskItem.getFillLevel(stack) > 0 ? 1.0f : 0.0f
+        );*/
 
         ItemTooltipCallback.EVENT.register((stack, tooltipContext, lines) -> {
             if (!Screen.hasShiftDown()) return;
@@ -152,10 +180,21 @@ ClientPlayNetworking.registerGlobalReceiver(NutritionSyncPacket.ID, (client, han
             }
         });
 
+        // Update client-side currentPeriod so biome precipitation mixins see the correct season,
+        // and force a full chunk re-render whenever the period advances (for color changes).
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (client.world != null) {
+                SeasonManager.currentPeriod = SeasonManager.fromAbsoluteTime(client.world.getTimeOfDay());
+                if (SeasonColors.checkPeriodChanged()) {
+                    client.worldRenderer.reload();
+                }
+            }
+        });
+
         // Season tooltip — brief line on normal hover, full grid on shift+hover
-        SeasonTooltipConfig.load();
+        SeasonConfig.load();
         ItemTooltipCallback.EVENT.register((stack, tooltipContext, lines) -> {
-            if (!SeasonTooltipConfig.isEnabled()) return;
+            if (!SeasonConfig.isTooltipEnabled()) return;
             if (!(stack.getItem() instanceof BlockItem bi)) return;
             Block block = bi.getBlock();
             float[] mods = SeasonCropRegistry.getRawModifiers(block);

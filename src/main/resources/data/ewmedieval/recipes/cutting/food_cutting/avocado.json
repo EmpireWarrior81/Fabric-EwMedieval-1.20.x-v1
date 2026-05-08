@@ -1,0 +1,12 @@
+{
+  "type": "ewmedieval:cutting",
+  "ingredients": [
+    { "item": "ewmedieval:avocado" }
+  ],
+  "tool": { "tag": "ewmedieval:knives" },
+  "result": [
+    { "item": "ewmedieval:cut_avocado", "count": 2, "chance": 1.0 },
+    { "item": "ewmedieval:avocado_pit", "count": 1, "chance": 1.0 }
+  ],
+  "sound": "ewmedieval:block.cutting_board.knife"
+}

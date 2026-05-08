@@ -8,14 +8,21 @@
         "LivingEntityBackstabMixin",
         "PlayerEatFoodMixin",
         "PlayerNutritionMixin",
+        "BoneMealItemMixin",
         "CropSeasonMixin",
+        "VillagerSeasonalPriceMixin",
+        "CropYieldMixin",
         "SaplingSeasonMixin",
         "StemSeasonMixin",
         "SugarCaneSeasonMixin",
-        "SweetBerrySeasonMixin"
+        "SweetBerrySeasonMixin",
+        "BiomePrecipitationMixin",
+        "AnimalBreedingSeasonMixin"
       ],
       "client": [
-        "InventoryScreenMixin"
+        "InventoryScreenMixin",
+        "BiomeSeasonColorMixin",
+        "FoliageSeasonColorMixin"
       ],
       "injectors": {
         "defaultRequire": 1

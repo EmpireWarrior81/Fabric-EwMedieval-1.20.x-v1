@@ -120,5 +120,34 @@
       "ewmedieval:cutting_board/knife1",
       "ewmedieval:cutting_board/knife2"
     ]
+  },
+  "item.fill_flask": {
+    "category": "player",
+    "sounds": [
+      "ewmedieval:fill_flask_1",
+      "ewmedieval:fill_flask_2"
+    ]
+  },
+  "item.water_sip": {
+    "category": "player",
+    "sounds": [
+      "ewmedieval:water_sip_1",
+      "ewmedieval:water_sip_2",
+      "ewmedieval:water_sip_3"
+    ]
+  },
+  "item.empty_flask": {
+    "category": "player",
+    "sounds": [
+      "ewmedieval:empty_flask_1",
+      "ewmedieval:empty_flask_2"
+    ]
+  },
+  "block.cauldron.bubble": {
+    "category": "block",
+    "sounds": [
+      "ewmedieval:cauldron_bubble_1",
+      "ewmedieval:cauldron_bubble_2"
+    ]
   }
 }

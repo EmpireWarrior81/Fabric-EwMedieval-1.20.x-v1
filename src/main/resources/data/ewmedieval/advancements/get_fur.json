@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:get_knife",
+  "display": {
+    "icon": { "item": "ewmedieval:fur" },
+    "title": { "translate": "ewmedieval.advancement.get_fur" },
+    "description": { "translate": "ewmedieval.advancement.get_fur.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_fur": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:fur"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 15 }
+}

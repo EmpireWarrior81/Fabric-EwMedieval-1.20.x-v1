@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:metals/tin_ingot",
+  "display": {
+    "icon": { "item": "ewmedieval:earlyforge" },
+    "title": { "translate": "ewmedieval.advancement.earlyforge" },
+    "description": { "translate": "ewmedieval.advancement.earlyforge.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "place_earlyforge": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:earlyforge"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

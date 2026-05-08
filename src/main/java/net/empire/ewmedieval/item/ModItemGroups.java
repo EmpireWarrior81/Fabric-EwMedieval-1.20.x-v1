@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModItems.ARKENSTONE);
                         entries.add(ModItems.FUR);
                         entries.add(ModItems.STONE_PEBBLE);
+                        entries.add(ModItems.KNAPPABLE_ROCK);
                         entries.add(ModItems.ASH);
                         entries.add(ModItems.ASH_PIECE);
                         entries.add(ModItems.ROPE);
@@ -70,6 +71,47 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.ewmedieval.tools"))
                     .icon(() -> new ItemStack(ModItems.BRONZE_PICKAXE))
                     .entries((displayContext, entries) -> {
+                        entries.add(ModItems.FLINT_ARROWHEAD);
+                        entries.add(ModItems.FLINT_KNIFE_HEAD);
+                        entries.add(ModItems.FLINT_SWORD_BLADE);
+                        entries.add(ModItems.FLINT_PICKAXE_HEAD);
+                        entries.add(ModItems.FLINT_AXE_HEAD);
+                        entries.add(ModItems.FLINT_SHOVEL_HEAD);
+                        entries.add(ModItems.FLINT_HOE_HEAD);
+                        entries.add(ModItems.FLINT_HAMMER_HEAD);
+                        entries.add(ModItems.STONE_PICKAXE_HEAD);
+                        entries.add(ModItems.STONE_AXE_HEAD);
+                        entries.add(ModItems.STONE_SHOVEL_HEAD);
+                        entries.add(ModItems.STONE_HOE_HEAD);
+                        entries.add(ModItems.STONE_HAMMER_HEAD);
+                        entries.add(ModItems.STONE_SWORD_BLADE);
+                        entries.add(ModItems.STONE_KNIFE_HEAD);
+                        entries.add(ModItems.IRON_ARROWHEAD);
+                        entries.add(ModItems.STEEL_ARROWHEAD);
+                        entries.add(ModItems.IRON_ARROW);
+                        entries.add(ModItems.STEEL_ARROW);
+                        entries.add(ModItems.COPPER_PICKAXE_HEAD);
+                        entries.add(ModItems.COPPER_AXE_HEAD);
+                        entries.add(ModItems.COPPER_SHOVEL_HEAD);
+                        entries.add(ModItems.COPPER_HOE_HEAD);
+                        entries.add(ModItems.COPPER_HAMMER_HEAD);
+                        entries.add(ModItems.COPPER_SWORD_BLADE);
+                        entries.add(ModItems.COPPER_KNIFE_HEAD);
+                        entries.add(ModItems.IRON_PICKAXE_HEAD);
+                        entries.add(ModItems.IRON_AXE_HEAD);
+                        entries.add(ModItems.IRON_SHOVEL_HEAD);
+                        entries.add(ModItems.IRON_HOE_HEAD);
+                        entries.add(ModItems.IRON_SWORD_BLADE);
+                        entries.add(ModItems.IRON_KNIFE_HEAD);
+                        entries.add(ModItems.STEEL_PICKAXE_HEAD);
+                        entries.add(ModItems.STEEL_AXE_HEAD);
+                        entries.add(ModItems.STEEL_SHOVEL_HEAD);
+                        entries.add(ModItems.STEEL_HOE_HEAD);
+                        entries.add(ModItems.STEEL_SWORD_BLADE);
+                        entries.add(ModItems.STEEL_KNIFE_HEAD);
+                        entries.add(ModItems.STEEL_HAMMER_HEAD);
+                        entries.add(ModItems.STONE_SMITHING_HAMMER);
+                        entries.add(ModItems.SMITHING_HAMMER);
                         entries.add(ModItems.CRUDE_PICKAXE);
                         entries.add(ModItems.CRUDE_AXE);
                         entries.add(ModItems.CRUDE_SHOVEL);

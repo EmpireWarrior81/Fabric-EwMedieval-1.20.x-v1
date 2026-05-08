@@ -1,0 +1,27 @@
+{
+  "parent": "ewmedieval:grand_feast",
+  "display": {
+    "icon": { "item": "ewmedieval:apple_pie" },
+    "title": { "translate": "ewmedieval.advancement.sweet_spread" },
+    "description": { "translate": "ewmedieval.advancement.sweet_spread.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "apple_pie":                 { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:apple_pie"] }] } },
+    "chocolate_pie":             { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:chocolate_pie"] }] } },
+    "sweet_berry_cheesecake":    { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:sweet_berry_cheesecake"] }] } },
+    "syrup_cheesecake":          { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:syrup_cheesecake"] }] } },
+    "cherry_blossom_cheesecake": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:cherry_blossom_cheesecake"] }] } },
+    "quiche":                    { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:quiche"] }] } },
+    "pancakes":                  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:pancakes"] }] } },
+    "honey_pancakes":            { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:honey_pancakes"] }] } },
+    "chocolate_pancakes":        { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:chocolate_pancakes"] }] } },
+    "cherry_blossom_pancakes":   { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:cherry_blossom_pancakes"] }] } },
+    "vegetable_pancakes":        { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:vegetable_pancakes"] }] } },
+    "pumpkin_pancakes":          { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:pumpkin_pancakes"] }] } }
+  },
+  "requirements": [["apple_pie", "chocolate_pie", "sweet_berry_cheesecake", "syrup_cheesecake", "cherry_blossom_cheesecake", "quiche", "pancakes", "honey_pancakes", "chocolate_pancakes", "cherry_blossom_pancakes", "vegetable_pancakes", "pumpkin_pancakes"]],
+  "rewards": { "experience": 30 }
+}

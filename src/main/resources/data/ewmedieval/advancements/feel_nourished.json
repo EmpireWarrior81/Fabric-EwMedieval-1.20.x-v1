@@ -1,0 +1,22 @@
+{
+  "parent": "ewmedieval:feel_comfort",
+  "display": {
+    "icon": { "item": "ewmedieval:mixed_salad" },
+    "title": { "translate": "ewmedieval.advancement.feel_nourished" },
+    "description": { "translate": "ewmedieval.advancement.feel_nourished.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "nourishment": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "ewmedieval:nourishment": {}
+        }
+      }
+    }
+  },
+  "rewards": { "experience": 50 }
+}

@@ -56,6 +56,55 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.STEEL_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRONZE_ASH_MIXTURE, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.KNAPPABLE_ROCK, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.FLINT_ARROWHEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_KNIFE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_SWORD_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_PICKAXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_AXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_SHOVEL_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_HOE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_HAMMER_HEAD, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.STONE_PICKAXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_AXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_SHOVEL_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_HOE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_HAMMER_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_SWORD_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_KNIFE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_ARROWHEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_ARROWHEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_ARROW, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_ARROW, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.COPPER_PICKAXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_AXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_SHOVEL_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_HOE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_HAMMER_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_SWORD_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_KNIFE_HEAD, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.IRON_PICKAXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_AXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_SHOVEL_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_HOE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_SWORD_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_KNIFE_HEAD, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.STEEL_PICKAXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_AXE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_SHOVEL_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_HOE_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_SWORD_BLADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_KNIFE_HEAD, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.STEEL_HAMMER_HEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STONE_SMITHING_HAMMER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SMITHING_HAMMER, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.RAW_HORSE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_SWAN, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_GOAT, Models.GENERATED);
@@ -120,6 +169,32 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NETHERITE_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.STONE_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_KNIFE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.WOODEN_TONGS, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.IRON_TONGS, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STEEL_TONGS, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.COPPER_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ORCISH_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DWARVEN_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NOBLE_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELVEN_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MITHRIL_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ORCISH_ELITE_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.DWARVEN_NOBLE_SMITHING_HAMMER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELVEN_NOBLE_SMITHING_HAMMER, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.HEATED_IRON_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_COPPER_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_GOLD_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_TIN_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_SILVER_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_BRONZE_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_STEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_CRUDE_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_EDHEL_STEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_KHAZAD_STEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_MITHRIL_INGOT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.BACON, Models.GENERATED);
         itemModelGenerator.register(ModItems.MINCED_BEEF, Models.GENERATED);

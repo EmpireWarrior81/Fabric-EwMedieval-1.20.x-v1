@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "A",
+    "S",
+    "F"
+  ],
+  "key": {
+    "A": { "item": "ewmedieval:iron_arrowhead" },
+    "S": { "item": "minecraft:stick" },
+    "F": { "item": "minecraft:feather" }
+  },
+  "result": {
+    "item": "ewmedieval:iron_arrow",
+    "count": 4
+  },
+  "show_notification": true
+}

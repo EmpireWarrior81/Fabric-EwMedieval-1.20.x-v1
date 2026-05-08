@@ -1,0 +1,13 @@
+﻿{
+  "type": "ewmedieval:knapping",
+  "pattern": [
+    "xxx"
+  ],
+  "ingredient": {
+    "tag": "ewmedieval:knappable_stone"
+  },
+  "result": {
+    "item": "ewmedieval:stone_pickaxe_head",
+    "count": 1
+  }
+}

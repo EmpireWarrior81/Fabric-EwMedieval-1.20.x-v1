@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:root",
+  "display": {
+    "icon": { "item": "minecraft:flint" },
+    "title": { "translate": "ewmedieval.advancement.stone_age" },
+    "description": { "translate": "ewmedieval.advancement.stone_age.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_flint": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["minecraft:flint"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 5 }
+}

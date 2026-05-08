@@ -8,12 +8,14 @@ import net.minecraft.util.Identifier;
 
 public class ModEffects {
 
-    public static final StatusEffect NOURISHMENT = register("nourishment", new NourishmentEffect());
-    public static final StatusEffect COMFORT     = register("comfort",     new ComfortEffect());
-    public static final StatusEffect SLUGGISH    = register("sluggish",    new SlugEffect());
-    public static final StatusEffect FAMISHED    = register("famished",    new FamishedEffect());
-    public static final StatusEffect BRITTLE     = register("brittle",     new BrittleEffect());
-    public static final StatusEffect FEVERISH    = register("feverish",    new FeverishEffect());
+    public static final StatusEffect NOURISHMENT    = register("nourishment",    new NourishmentEffect());
+    public static final StatusEffect COMFORT        = register("comfort",        new ComfortEffect());
+    public static final StatusEffect SLUGGISH       = register("sluggish",       new SlugEffect());
+    public static final StatusEffect FAMISHED       = register("famished",       new FamishedEffect());
+    public static final StatusEffect BRITTLE        = register("brittle",        new BrittleEffect());
+    public static final StatusEffect FEVERISH       = register("feverish",       new FeverishEffect());
+    //public static final StatusEffect THIRST_EFFECT    = register("thirst",        new ThirstEffect());
+    //public static final StatusEffect HYDRATION_EFFECT = register("hydration",    new HydrationEffect());
 
     private static StatusEffect register(String name, StatusEffect effect) {
         return Registry.register(Registries.STATUS_EFFECT,

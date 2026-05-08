@@ -1,0 +1,62 @@
+{
+  "parent": "ewmedieval:grand_feast",
+  "display": {
+    "icon": { "item": "ewmedieval:honey_glazed_ham" },
+    "title": { "translate": "ewmedieval.advancement.master_chef" },
+    "description": { "translate": "ewmedieval.advancement.master_chef.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "beef_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:beef_stew"] } }
+    },
+    "fish_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:fish_stew"] } }
+    },
+    "chicken_soup": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:chicken_soup"] } }
+    },
+    "noodle_soup": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:noodle_soup"] } }
+    },
+    "pasta_with_meatballs": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:pasta_with_meatballs"] } }
+    },
+    "ratatouille": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:ratatouille"] } }
+    },
+    "steak_and_potatoes": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:steak_and_potatoes"] } }
+    },
+    "roast_chicken": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:roast_chicken"] } }
+    },
+    "honey_glazed_ham": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:honey_glazed_ham"] } }
+    },
+    "shepherds_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:shepherds_pie"] } }
+    },
+    "stuffed_pumpkin": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:stuffed_pumpkin"] } }
+    },
+    "bacon_and_eggs": {
+      "trigger": "minecraft:consume_item",
+      "conditions": { "item": { "items": ["ewmedieval:bacon_and_eggs"] } }
+    }
+  },
+  "rewards": { "experience": 100 }
+}

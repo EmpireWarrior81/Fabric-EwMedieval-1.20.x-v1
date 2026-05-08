@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:aji_amarillo"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ewmedieval:aji_amarillo",
+          "properties": { "age": "7" }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:aji_amarillo_seeds"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    { "function": "minecraft:explosion_decay" }
+  ]
+}

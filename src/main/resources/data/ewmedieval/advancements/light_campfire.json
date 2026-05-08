@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:get_knife",
+  "display": {
+    "icon": { "item": "minecraft:campfire" },
+    "title": { "translate": "ewmedieval.advancement.light_campfire" },
+    "description": { "translate": "ewmedieval.advancement.light_campfire.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "place_campfire": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:campfire"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

@@ -14,6 +14,9 @@ public enum ModToolMaterial implements ToolMaterial {
     FLINT(1, 111, 4.0f, 1.0f, 5,
             () -> Ingredient.ofItems(Items.FLINT)),
 
+    COPPER(1, 150, 4.5f, 1.0f, 12,
+            () -> Ingredient.ofItems(Items.COPPER_INGOT)),
+
     BRONZE(1, 200, 5.5f, 1.5f, 12,
             () -> Ingredient.ofItems(ModItems.BRONZE_INGOT)),
 

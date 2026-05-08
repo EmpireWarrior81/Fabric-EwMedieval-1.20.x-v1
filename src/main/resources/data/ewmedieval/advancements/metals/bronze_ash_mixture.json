@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/bronze",
+  "display": {
+    "icon": { "item": "ewmedieval:bronze_ash_mixture" },
+    "title": { "translate": "ewmedieval.advancement.bronze_ash_mixture" },
+    "description": { "translate": "ewmedieval.advancement.bronze_ash_mixture.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "bronze_ash_mixture": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:bronze_ash_mixture"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

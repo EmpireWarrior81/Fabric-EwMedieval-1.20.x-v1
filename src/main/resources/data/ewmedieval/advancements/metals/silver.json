@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:root",
+  "display": {
+    "icon": { "item": "ewmedieval:raw_silver" },
+    "title": { "translate": "ewmedieval.advancement.silver" },
+    "description": { "translate": "ewmedieval.advancement.silver.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "raw_silver": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:raw_silver"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

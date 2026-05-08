@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:grow_avocado",
+  "display": {
+    "icon": { "item": "ewmedieval:avocado" },
+    "title": { "translate": "ewmedieval.advancement.harvest_avocado" },
+    "description": { "translate": "ewmedieval.advancement.harvest_avocado.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "get_avocado": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:avocado"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 30 }
+}

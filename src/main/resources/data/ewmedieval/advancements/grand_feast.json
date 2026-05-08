@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:feel_nourished",
+  "display": {
+    "icon": { "item": "ewmedieval:roast_chicken_block" },
+    "title": { "translate": "ewmedieval.advancement.grand_feast" },
+    "description": { "translate": "ewmedieval.advancement.grand_feast.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "roast_chicken_block":     { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:roast_chicken_block"] }] } },
+    "honey_glazed_ham_block":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:honey_glazed_ham_block"] }] } },
+    "shepherds_pie_block":     { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:shepherds_pie_block"] }] } },
+    "stuffed_pumpkin_block":   { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:stuffed_pumpkin_block"] }] } },
+    "eggplant_parmesan_block": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:eggplant_parmesan_block"] }] } },
+    "rice_roll_medley_block":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:rice_roll_medley_block"] }] } },
+    "exotic_roll_medley":      { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:exotic_roll_medley"] }] } },
+    "rice_roll_royale_medley": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:rice_roll_royale_medley"] }] } },
+    "pizza":                   { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:pizza"] }] } },
+    "fiery_fondue_pot":        { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:fiery_fondue_pot"] }] } }
+  },
+  "requirements": [["roast_chicken_block", "honey_glazed_ham_block", "shepherds_pie_block", "stuffed_pumpkin_block", "eggplant_parmesan_block", "rice_roll_medley_block", "exotic_roll_medley", "rice_roll_royale_medley", "pizza", "fiery_fondue_pot"]],
+  "rewards": { "experience": 60 }
+}

@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:plant_crop",
+  "display": {
+    "icon": { "item": "ewmedieval:avocado_pit" },
+    "title": { "translate": "ewmedieval.advancement.grow_avocado" },
+    "description": { "translate": "ewmedieval.advancement.grow_avocado.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "plant_avocado_pit": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:avocado_pit"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

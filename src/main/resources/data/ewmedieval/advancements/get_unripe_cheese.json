@@ -1,0 +1,18 @@
+{
+  "parent": "ewmedieval:grand_feast",
+  "display": {
+    "icon": { "item": "ewmedieval:unripe_flaxen_cheese_wheel" },
+    "title": { "translate": "ewmedieval.advancement.get_unripe_cheese" },
+    "description": { "translate": "ewmedieval.advancement.get_unripe_cheese.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "unripe_flaxen":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:unripe_flaxen_cheese_wheel"] }] } },
+    "unripe_scarlet": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:unripe_scarlet_cheese_wheel"] }] } },
+    "unripe_dorblu":  { "trigger": "minecraft:inventory_changed", "conditions": { "items": [{ "items": ["ewmedieval:unripe_dorblu_cheese_wheel"] }] } }
+  },
+  "requirements": [["unripe_flaxen", "unripe_scarlet", "unripe_dorblu"]],
+  "rewards": { "experience": 20 }
+}

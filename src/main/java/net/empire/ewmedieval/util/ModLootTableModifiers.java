@@ -5,12 +5,14 @@ import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.LootManager;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.condition.RandomChanceWithLootingLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.util.Identifier;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.enchantment.Enchantments;
@@ -25,6 +27,15 @@ public class ModLootTableModifiers {
 
     private static final Identifier IRON_ORE_ID =
             new Identifier("minecraft", "blocks/iron_ore");
+
+    private static final Identifier GRASS_ID =
+            new Identifier("minecraft", "blocks/grass");
+
+    private static final Identifier GRAVEL_ID =
+            new Identifier("minecraft", "blocks/gravel");
+
+    private static final Identifier COBBLESTONE_ID =
+            new Identifier("minecraft", "blocks/cobblestone");
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
@@ -43,6 +54,43 @@ public class ModLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.85f))
                         .with(ItemEntry.builder(ModItems.RAW_GOAT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 2.0f)).build());
+
+                tableBuilder.pool(poolBuilder.build());
+            }
+            // Knappable rocks drop from gravel (50% chance, 1–2) and cobblestone (25%, 1)
+            if (GRAVEL_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(ModItems.KNAPPABLE_ROCK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (COBBLESTONE_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(ModItems.KNAPPABLE_ROCK))
+                        .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if (GRASS_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(MatchToolLootCondition.builder(
+                                ItemPredicate.Builder.create()
+                                        .items(
+                                                ModItems.FLINT_KNIFE,
+                                                ModItems.STONE_KNIFE,
+                                                ModItems.BRONZE_KNIFE,
+                                                ModItems.IRON_KNIFE,
+                                                ModItems.GOLDEN_KNIFE,
+                                                ModItems.DIAMOND_KNIFE,
+                                                ModItems.NETHERITE_KNIFE
+                                        )
+                        ))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.STRAW));
 
                 tableBuilder.pool(poolBuilder.build());
             }

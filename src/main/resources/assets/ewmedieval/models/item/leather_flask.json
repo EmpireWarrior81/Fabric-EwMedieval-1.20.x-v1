@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ewmedieval:item/empty_leather_flask"
+  },
+  "overrides": [
+    { "predicate": { "ewmedieval:filled": 1.0 }, "model": "ewmedieval:item/leather_flask_filled" }
+  ]
+}

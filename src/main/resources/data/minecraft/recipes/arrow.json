@@ -1,0 +1,3 @@
+{
+  "fabric:load_conditions": [{"condition": "fabric:never"}]
+}

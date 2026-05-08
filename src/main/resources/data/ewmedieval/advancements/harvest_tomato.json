@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:get_knife",
+  "display": {
+    "icon": { "item": "ewmedieval:tomato" },
+    "title": { "translate": "ewmedieval.advancement.harvest_tomato" },
+    "description": { "translate": "ewmedieval.advancement.harvest_tomato.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "harvest_tomato": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:tomato"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

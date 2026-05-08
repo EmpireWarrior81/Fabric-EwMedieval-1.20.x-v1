@@ -36,7 +36,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> CRUDE_SMELTABLES = List.of(ModItems.BRONZE_ASH_MIXTURE);
 
-    //TODO Adding the new food items!
+    //TODO Adding the new food items! + adding blocktags instead of all the blocks.
     private static final List<ItemConvertible> ASH_SMELTABLES = List.of(Items.COOKED_BEEF, Items.COOKED_PORKCHOP,
             Items.COOKED_MUTTON, Items.COOKED_RABBIT, Items.LEATHER, Items.BONE, Items.PUMPKIN, Items.MELON, Items.CACTUS,
             Items.CAKE, Items.PUMPKIN_PIE, Items.BOOK, Items.ENCHANTED_BOOK, Items.WRITABLE_BOOK, Items.WRITTEN_BOOK,
@@ -551,13 +551,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BRONZE_SHEARS, 1)
                 .pattern(" #")
                 .pattern("# ")
-
                 .input('#', ModItems.BRONZE_INGOT)
                 .criterion("has_bronze_ingot", conditionsFromItem(ModItems.BRONZE_INGOT))
                 .offerTo(exporter);
 
-
-
+// Nature / Fiber
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ROPE, 1)
+                .pattern("S")
+                .pattern("S")
+                .pattern("S")
+                .input('S', ModItems.STRAW)
+                .criterion("has_straw", conditionsFromItem(ModItems.STRAW))
+                .offerTo(exporter, new Identifier("ewmedieval", "rope_from_straw"));
 
     }
 }

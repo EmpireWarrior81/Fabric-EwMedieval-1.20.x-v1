@@ -1,0 +1,127 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    { "function": "minecraft:explosion_decay" }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:bell_peppers",
+            "properties": { "age": "7" }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ewmedieval:bell_peppers",
+          "properties": { "age": "7" }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "add": false,
+              "count": { "type": "minecraft:uniform", "min": 1.0, "max": 2.0 }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "parameters": { "bonusMultiplier": 1 }
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ewmedieval:bell_peppers",
+          "properties": { "age": "7" }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_red",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_green"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_yellow"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ewmedieval:bell_peppers",
+          "properties": { "age": "7" }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.15
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_green"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ewmedieval:bell_peppers",
+          "properties": { "age": "7" }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.15
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ewmedieval:bell_pepper_yellow"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "ewmedieval:blocks/bell_peppers"
+}

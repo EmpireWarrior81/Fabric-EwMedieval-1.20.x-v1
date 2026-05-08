@@ -1,0 +1,44 @@
+{
+  "parent": "ewmedieval:root",
+  "display": {
+    "icon": { "item": "ewmedieval:cabbage_seeds" },
+    "title": { "translate": "ewmedieval.advancement.get_seed" },
+    "description": { "translate": "ewmedieval.advancement.get_seed.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_seed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{
+          "items": [
+            "ewmedieval:cabbage_seeds",
+            "ewmedieval:tomato_seeds",
+            "ewmedieval:cucumber_seeds",
+            "ewmedieval:corn_kernels",
+            "ewmedieval:eggplant_seeds",
+            "ewmedieval:bell_pepper_seeds",
+            "ewmedieval:cotton_seeds",
+            "ewmedieval:coffee_beans",
+            "ewmedieval:cauliflower_seeds",
+            "ewmedieval:broccoli_seeds",
+            "ewmedieval:zucchini_seeds",
+            "ewmedieval:turnip_seeds",
+            "ewmedieval:soybeans",
+            "ewmedieval:cassava",
+            "ewmedieval:aji_amarillo_seeds",
+            "ewmedieval:garlic_clove",
+            "ewmedieval:chickpea",
+            "ewmedieval:parsley_seeds",
+            "ewmedieval:sweet_potato",
+            "ewmedieval:onion",
+            "ewmedieval:rice"
+          ]
+        }]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

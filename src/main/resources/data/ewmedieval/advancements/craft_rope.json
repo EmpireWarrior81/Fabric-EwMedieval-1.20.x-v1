@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:get_straw",
+  "display": {
+    "icon": { "item": "ewmedieval:rope" },
+    "title": { "translate": "ewmedieval.advancement.craft_rope" },
+    "description": { "translate": "ewmedieval.advancement.craft_rope.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_rope": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:rope"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 20 }
+}

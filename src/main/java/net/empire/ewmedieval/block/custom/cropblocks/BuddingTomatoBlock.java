@@ -2,6 +2,7 @@ package net.empire.ewmedieval.block.custom.cropblocks;
 
 import net.empire.ewmedieval.block.ModBlocks;
 import net.empire.ewmedieval.item.ModItems;
+import net.empire.ewmedieval.season.SeasonCropRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FarmlandBlock;
@@ -68,6 +69,8 @@ public class BuddingTomatoBlock extends BuddingBushBlock implements Fertilizable
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        if (!SeasonCropRegistry.CREATIVE_BONEMEAL.get() &&
+                world instanceof ServerWorld sw && SeasonCropRegistry.getModifier(this, sw, pos) <= 0f) return false;
         return true;
     }
 

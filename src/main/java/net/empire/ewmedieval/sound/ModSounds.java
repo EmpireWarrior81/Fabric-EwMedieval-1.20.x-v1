@@ -23,6 +23,11 @@ public class ModSounds {
 
     public static final SoundEvent BLOCK_CUTTING_BOARD_KNIFE = register("block.cutting_board.knife");
 
+    //public static final SoundEvent FILL_FLASK      = register("item.fill_flask");
+    //public static final SoundEvent WATER_SIP       = register("item.water_sip");
+    //public static final SoundEvent EMPTY_FLASK     = register("item.empty_flask");
+    //public static final SoundEvent CAULDRON_BUBBLE = register("block.cauldron.bubble");
+
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(EwMedieval.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));

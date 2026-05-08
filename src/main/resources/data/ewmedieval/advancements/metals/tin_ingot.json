@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/tin",
+  "display": {
+    "icon": { "item": "ewmedieval:tin_ingot" },
+    "title": { "translate": "ewmedieval.advancement.tin_ingot" },
+    "description": { "translate": "ewmedieval.advancement.tin_ingot.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "tin_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:tin_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 15 }
+}

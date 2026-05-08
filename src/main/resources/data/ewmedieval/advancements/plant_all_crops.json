@@ -1,0 +1,42 @@
+{
+  "parent": "ewmedieval:plant_rice",
+  "display": {
+    "icon": { "item": "ewmedieval:corn_cob" },
+    "title": { "translate": "ewmedieval.advancement.plant_all_crops" },
+    "description": { "translate": "ewmedieval.advancement.plant_all_crops.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cabbage":      { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:cabbages" }] } },
+    "onion":        { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:onions" }] } },
+    "tomato":       { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:budding_tomatoes" }] } },
+    "rice":         { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:rice" }] } },
+    "cucumber":     { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:cucumbers" }] } },
+    "eggplant":     { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:eggplants" }] } },
+    "corn":         { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:corn" }] } },
+    "cotton":       { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:cotton" }] } },
+    "bell_pepper":  { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:bell_peppers" }] } },
+    "coffee":       { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:coffee" }] } },
+    "sweet_potato": { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:sweet_potatoes" }] } },
+    "cauliflower":  { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:cauliflower" }] } },
+    "broccoli":     { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:broccoli" }] } },
+    "zucchini":     { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:zucchini" }] } },
+    "turnip":       { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:turnip" }] } },
+    "soybean":      { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:soybean" }] } },
+    "cassava":      { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:cassava" }] } },
+    "aji_amarillo": { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:aji_amarillo" }] } },
+    "garlic":       { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:garlic" }] } },
+    "chickpea":     { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:chickpea" }] } },
+    "parsley":      { "trigger": "minecraft:placed_block", "conditions": { "location": [{ "condition": "minecraft:block_state_property", "block": "ewmedieval:parsley" }] } }
+  },
+  "requirements": [
+    ["cabbage"], ["onion"], ["tomato"], ["rice"], ["cucumber"], ["eggplant"],
+    ["corn"], ["cotton"], ["bell_pepper"], ["coffee"], ["sweet_potato"],
+    ["cauliflower"], ["broccoli"], ["zucchini"], ["turnip"], ["soybean"],
+    ["cassava"], ["aji_amarillo"], ["garlic"], ["chickpea"], ["parsley"]
+  ],
+  "rewards": { "experience": 100 }
+}

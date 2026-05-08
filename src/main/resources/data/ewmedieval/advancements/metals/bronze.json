@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/bronze_mixture",
+  "display": {
+    "icon": { "item": "ewmedieval:bronze_ingot" },
+    "title": { "translate": "ewmedieval.advancement.bronze" },
+    "description": { "translate": "ewmedieval.advancement.bronze.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "bronze_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:bronze_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 30 }
+}

@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "ewmedieval:rice_panicles",
+                  "properties": { "age": "3" }
+                },
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": { "tag": "farmersdelight:tools/knives" }
+                }
+              ],
+              "name": "ewmedieval:rice"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "ewmedieval:rice_panicles",
+                  "properties": { "age": "3" }
+                }
+              ],
+              "name": "ewmedieval:rice_panicle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": [
+    { "function": "minecraft:explosion_decay" }
+  ]
+}

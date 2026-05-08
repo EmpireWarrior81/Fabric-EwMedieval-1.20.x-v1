@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:plant_crop",
+  "display": {
+    "icon": { "item": "ewmedieval:cotton_boll" },
+    "title": { "translate": "ewmedieval.advancement.get_cotton" },
+    "description": { "translate": "ewmedieval.advancement.get_cotton.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_cotton": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:cotton_boll"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 15 }
+}

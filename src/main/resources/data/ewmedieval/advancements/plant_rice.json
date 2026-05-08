@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:plant_crop",
+  "display": {
+    "icon": { "item": "ewmedieval:rice" },
+    "title": { "translate": "ewmedieval.advancement.plant_rice" },
+    "description": { "translate": "ewmedieval.advancement.plant_rice.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "plant_rice": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:rice"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 15 }
+}

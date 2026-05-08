@@ -1,0 +1,15 @@
+{
+  "display": {
+    "icon": { "item": "ewmedieval:arkenstone" },
+    "title": { "translate": "ewmedieval.advancement.root" },
+    "description": { "translate": "ewmedieval.advancement.root.desc" },
+    "background": "minecraft:textures/block/bricks.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

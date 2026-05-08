@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/khazad_steel",
+  "display": {
+    "icon": { "item": "ewmedieval:raw_mithril" },
+    "title": { "translate": "ewmedieval.advancement.mithril" },
+    "description": { "translate": "ewmedieval.advancement.mithril.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "raw_mithril": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:raw_mithril"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 150 }
+}

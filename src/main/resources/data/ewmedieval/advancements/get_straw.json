@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:get_knife",
+  "display": {
+    "icon": { "item": "ewmedieval:straw" },
+    "title": { "translate": "ewmedieval.advancement.get_straw" },
+    "description": { "translate": "ewmedieval.advancement.get_straw.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "get_straw": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:straw"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 10 }
+}

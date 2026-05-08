@@ -1,0 +1,25 @@
+{
+  "parent": "ewmedieval:get_knife",
+  "display": {
+    "icon": { "item": "ewmedieval:cutting_board" },
+    "title": { "translate": "ewmedieval.advancement.cutting_board" },
+    "description": { "translate": "ewmedieval.advancement.cutting_board.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "place_cutting_board": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "ewmedieval:cutting_board"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": { "experience": 15 }
+}

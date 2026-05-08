@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/iron",
+  "display": {
+    "icon": { "item": "ewmedieval:steel_ingot" },
+    "title": { "translate": "ewmedieval.advancement.steel" },
+    "description": { "translate": "ewmedieval.advancement.steel.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "steel_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:steel_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 50 }
+}

@@ -1,6 +1,7 @@
 package net.empire.ewmedieval.block.custom.cropblocks;
 
 import net.empire.ewmedieval.item.ModItems;
+import net.empire.ewmedieval.season.SeasonCropRegistry;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -69,6 +70,8 @@ public class AjiAmarilloCropBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        if (!SeasonCropRegistry.CREATIVE_BONEMEAL.get() &&
+                world instanceof ServerWorld sw && SeasonCropRegistry.getModifier(this, sw, pos) <= 0f) return false;
         return true;
     }
 

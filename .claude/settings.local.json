@@ -8,7 +8,9 @@
       "Bash(sort -u wc -l /tmp/modItems.txt /tmp/modelItems.txt comm -23 /tmp/modItems.txt /tmp/modelItems.txt)",
       "Bash(grep -r \"commented out\\\\|//\" /c/Users/imren/Coding/Fabric-EwMedieval-1.20.x-v1/src/main/java/net/empire/ewmedieval/*.java)",
       "Bash(grep -E \"^\\\\s*//\")",
-      "Bash(xargs grep *)"
+      "Bash(xargs grep *)",
+      "mcp__ide__getDiagnostics",
+      "PowerShell(Copy-Item *)"
     ]
   }
 }

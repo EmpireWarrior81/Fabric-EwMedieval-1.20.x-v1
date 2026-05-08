@@ -1,0 +1,20 @@
+{
+  "parent": "ewmedieval:metals/steel",
+  "display": {
+    "icon": { "item": "ewmedieval:burzum_steel_ingot" },
+    "title": { "translate": "ewmedieval.advancement.burzum_steel" },
+    "description": { "translate": "ewmedieval.advancement.burzum_steel.desc" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "burzum_steel_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["ewmedieval:burzum_steel_ingot"] }]
+      }
+    }
+  },
+  "rewards": { "experience": 75 }
+}
