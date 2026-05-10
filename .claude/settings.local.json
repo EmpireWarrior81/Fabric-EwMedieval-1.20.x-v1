@@ -10,7 +10,8 @@
       "Bash(grep -E \"^\\\\s*//\")",
       "Bash(xargs grep *)",
       "mcp__ide__getDiagnostics",
-      "PowerShell(Copy-Item *)"
+      "PowerShell(Copy-Item *)",
+      "Read(//tmp/**)"
     ]
   }
 }

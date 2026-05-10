@@ -6,6 +6,7 @@ import net.empire.ewmedieval.block.entity.custom.CookingPotBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.CuttingBoardBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.EarlyForgeBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.ForgeBlockEntity;
+import net.empire.ewmedieval.block.entity.custom.SmithingAnvilBlockEntity;
 import net.empire.ewmedieval.block.entity.custom.StoveBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
@@ -14,6 +15,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModBlockEntities {
+    public static final BlockEntityType<SmithingAnvilBlockEntity> SMITHING_ANVIL_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "smithing_anvil_be"),
+                    FabricBlockEntityTypeBuilder.create(SmithingAnvilBlockEntity::new,
+                            ModBlocks.SMITHING_ANVIL).build());
+
     public static final BlockEntityType<ForgeBlockEntity> FORGE_BLOCK_ENTITY =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(EwMedieval.MOD_ID, "forge_be"),
                     FabricBlockEntityTypeBuilder.create(ForgeBlockEntity::new,

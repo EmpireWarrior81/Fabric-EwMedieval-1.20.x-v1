@@ -14,6 +14,11 @@ import net.empire.ewmedieval.item.*;
 import net.empire.ewmedieval.item.fooditems.DogFoodItem;
 import net.empire.ewmedieval.item.fooditems.HorseFeedItem;
 import net.empire.ewmedieval.item.toolitems.KnifeItem;
+import net.empire.ewmedieval.forging.GrindingHandler;
+import net.empire.ewmedieval.forging.HotItemCoolingHandler;
+import net.empire.ewmedieval.network.AnvilCancelMinigamePacket;
+import net.empire.ewmedieval.network.AnvilForgeRequestPacket;
+import net.empire.ewmedieval.network.AnvilStrikePacket;
 import net.empire.ewmedieval.network.KnappingChipPacket;
 import net.empire.ewmedieval.particle.ModParticles;
 import net.empire.ewmedieval.recipe.ModRecipes;
@@ -80,6 +85,11 @@ public class EwMedieval implements ModInitializer {
         ModScreenHandlers.registerScreenHandlers();
 
         KnappingChipPacket.register();
+        AnvilForgeRequestPacket.register();
+        AnvilStrikePacket.register();
+        AnvilCancelMinigamePacket.register();
+        HotItemCoolingHandler.init();
+        GrindingHandler.init();
 
         UseItemCallback.EVENT.register((player, world, hand) -> {
             if (hand != Hand.MAIN_HAND) return TypedActionResult.pass(player.getStackInHand(hand));

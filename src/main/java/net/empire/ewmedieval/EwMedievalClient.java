@@ -15,6 +15,12 @@ import net.empire.ewmedieval.gui.cookingpot.CookingPotScreen;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreen;
 import net.empire.ewmedieval.gui.forge.ForgeScreen;
 import net.empire.ewmedieval.gui.knapping.KnappingScreen;
+import net.empire.ewmedieval.gui.smithinganvil.SmithingAnvilScreen;
+import net.empire.ewmedieval.client.SmithingMinigameOverlay;
+import net.empire.ewmedieval.client.renderer.SmithingAnvilBlockEntityRenderer;
+import net.empire.ewmedieval.forging.ForgingQualityHelper;
+import net.empire.ewmedieval.forging.SmithingMinigameState;
+import net.empire.ewmedieval.network.AnvilStartMinigamePacket;
 import net.empire.ewmedieval.nutrition.NutritionFoodLoader;
 import net.empire.ewmedieval.nutrition.NutritionFoodValues;
 import net.empire.ewmedieval.particle.ModParticles;
@@ -28,9 +34,13 @@ import net.empire.ewmedieval.season.SeasonCropRegistry;
 import net.empire.ewmedieval.season.SeasonManager;
 import net.empire.ewmedieval.season.SeasonPeriod;
 import net.fabricmc.api.ClientModInitializer;
+import net.empire.ewmedieval.network.AnvilCancelMinigamePacket;
+import net.empire.ewmedieval.network.AnvilStrikePacket;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.minecraft.block.Blocks;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -50,6 +60,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 
 public class EwMedievalClient implements ClientModInitializer {
 
@@ -126,12 +137,17 @@ public class EwMedievalClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.EARLY_FORGE_SCREEN_SCREEN_HANDLER, EarlyForgeScreen::new);
         HandledScreens.register(ModScreenHandlers.COOKING_POT_SCREEN_HANDLER, CookingPotScreen::new);
         HandledScreens.register(ModScreenHandlers.KNAPPING_SCREEN_HANDLER, KnappingScreen::new);
+        HandledScreens.register(ModScreenHandlers.SMITHING_ANVIL_SCREEN_HANDLER, SmithingAnvilScreen::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.CUTTING_BOARD_BLOCK_ENTITY, CuttingBoardRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.STOVE, StoveBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.SMITHING_ANVIL_BLOCK_ENTITY, SmithingAnvilBlockEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntityTypes.ROTTEN_TOMATO, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.TIERED_ARROW, TieredArrowEntityRenderer::new);
+
+        HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
+                SmithingMinigameOverlay.render(drawContext, tickDelta));
 
         HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
                 ComfortHealthOverlay.onRenderGuiOverlayPost(drawContext, tickDelta));
@@ -141,6 +157,49 @@ public class EwMedievalClient implements ClientModInitializer {
 
         /*HudRenderCallback.EVENT.register((drawContext, tickDelta) ->
                 ThirstHudOverlay.render(drawContext, tickDelta));*/
+
+        AnvilStartMinigamePacket.registerClient();
+
+        // Client-side: intercept grindstone right-click to prevent vanilla GUI from
+        // flashing when our server-side handler would handle it instead.
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            if (!world.isClient()) return net.minecraft.util.ActionResult.PASS;
+            if (!world.getBlockState(hitResult.getBlockPos()).isOf(Blocks.GRINDSTONE)) return net.minecraft.util.ActionResult.PASS;
+
+            BlockPos grindPos = hitResult.getBlockPos();
+
+            // Active quality-upgrade grindstone session
+            if (SmithingMinigameState.active && grindPos.equals(SmithingMinigameState.anvilPos)) {
+                if (player.isSneaking()) {
+                    SmithingMinigameState.reset();
+                    AnvilCancelMinigamePacket.send(grindPos);
+                    return net.minecraft.util.ActionResult.SUCCESS;
+                }
+                long now = world.getTime();
+                if (now - SmithingMinigameState.lastStrikeTick < SmithingMinigameState.STRIKE_COOLDOWN) {
+                    return net.minecraft.util.ActionResult.SUCCESS;
+                }
+                SmithingMinigameState.lastStrikeTick = now;
+                int hitType = SmithingMinigameState.getHitType();
+                SmithingMinigameState.onStrike(hitType);
+                AnvilStrikePacket.send(grindPos, hitType);
+                return net.minecraft.util.ActionResult.SUCCESS;
+            }
+
+            // Mirror server-side path A + B logic to prevent vanilla GUI flash
+            net.minecraft.item.ItemStack mainHand = player.getMainHandStack();
+            net.minecraft.item.ItemStack offHand  = player.getOffHandStack();
+            boolean needsGrind = ForgingQualityHelper.needsGrinding(mainHand)
+                    || ForgingQualityHelper.needsGrinding(offHand);
+            boolean damagedSneak = player.isSneaking()
+                    && ((!mainHand.isEmpty() && mainHand.isDamageable() && mainHand.getDamage() > 0)
+                        || (!offHand.isEmpty() && offHand.isDamageable() && offHand.getDamage() > 0));
+            if (needsGrind || damagedSneak) {
+                return net.minecraft.util.ActionResult.SUCCESS;
+            }
+
+            return net.minecraft.util.ActionResult.PASS;
+        });
 
         ClientPlayNetworking.registerGlobalReceiver(NutritionSyncPacket.ID, (client, handler, buf, responseSender) -> {
             net.empire.ewmedieval.nutrition.NutritionData incoming = NutritionSyncPacket.read(buf);
@@ -157,6 +216,13 @@ public class EwMedievalClient implements ClientModInitializer {
                 new Identifier(EwMedieval.MOD_ID, "filled"),
                 (stack, world, entity, seed) -> LeatherFlaskItem.getFillLevel(stack) > 0 ? 1.0f : 0.0f
         );*/
+
+        ItemTooltipCallback.EVENT.register((stack, tooltipContext, lines) -> {
+            net.minecraft.nbt.NbtCompound nbt = stack.getNbt();
+            if (nbt != null && nbt.contains("ForgedBy")) {
+                lines.add(Text.literal("Made by: " + nbt.getString("ForgedBy")).formatted(Formatting.GRAY));
+            }
+        });
 
         ItemTooltipCallback.EVENT.register((stack, tooltipContext, lines) -> {
             if (!Screen.hasShiftDown()) return;
@@ -183,6 +249,7 @@ public class EwMedievalClient implements ClientModInitializer {
         // Update client-side currentPeriod so biome precipitation mixins see the correct season,
         // and force a full chunk re-render whenever the period advances (for color changes).
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            SmithingMinigameState.tick();
             if (client.world != null) {
                 SeasonManager.currentPeriod = SeasonManager.fromAbsoluteTime(client.world.getTimeOfDay());
                 if (SeasonColors.checkPeriodChanged()) {

@@ -22,7 +22,8 @@
       "client": [
         "InventoryScreenMixin",
         "BiomeSeasonColorMixin",
-        "FoliageSeasonColorMixin"
+        "FoliageSeasonColorMixin",
+        "ForgingQualityTooltipMixin"
       ],
       "injectors": {
         "defaultRequire": 1

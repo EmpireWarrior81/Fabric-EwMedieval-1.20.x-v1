@@ -1,0 +1,13 @@
+{
+  "type": "ewmedieval:earlyforge",
+  "ingredients": [
+    { "item": "minecraft:copper_ingot" },
+    {},
+    {},
+    {}
+  ],
+  "result": {
+    "item": "ewmedieval:heated_copper_ingot",
+    "count": 1
+  }
+}

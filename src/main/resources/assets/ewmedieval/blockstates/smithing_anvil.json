@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ewmedieval:block/smithing_anvil" },
+    "facing=south": { "model": "ewmedieval:block/smithing_anvil", "y": 180 },
+    "facing=west":  { "model": "ewmedieval:block/smithing_anvil", "y": 270 },
+    "facing=east":  { "model": "ewmedieval:block/smithing_anvil", "y": 90 }
+  }
+}

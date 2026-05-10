@@ -30,6 +30,8 @@ public class HeatedIngotItem extends Item {
         this.coolTicks = coolTicks;
     }
 
+    public Item getCooledItem() { return cooledItem; }
+
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (world.isClient()) return;

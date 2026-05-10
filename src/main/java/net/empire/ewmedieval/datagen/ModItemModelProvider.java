@@ -52,6 +52,7 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BRONZE_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.COPPER_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_IRON_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CRUDE_STEEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STEEL_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.STEEL_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRONZE_ASH_MIXTURE, Models.GENERATED);
@@ -141,10 +142,30 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ASH_PIECE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.STONE_PEBBLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEATHER_STRIP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HILT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.STEEL_RING, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_PLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SMALL_STEEL_PLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STEEL_CHAINMAIL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CRUDE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CRUDE_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.CRUDE_SHOVEL, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.COPPER_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.COPPER_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.COPPER_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.COPPER_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.COPPER_SWORD, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.STEEL_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STEEL_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STEEL_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STEEL_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.STEEL_SWORD, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.EDHEL_STEEL_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.EDHEL_STEEL_SHOVEL, Models.HANDHELD);
@@ -163,6 +184,7 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
 
+        itemModelGenerator.register(ModItems.COPPER_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.IRON_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.GOLDEN_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.DIAMOND_KNIFE, Models.HANDHELD);
@@ -195,6 +217,7 @@ public class ModItemModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HEATED_EDHEL_STEEL_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEATED_KHAZAD_STEEL_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEATED_MITHRIL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HEATED_CRUDE_STEEL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.BACON, Models.GENERATED);
         itemModelGenerator.register(ModItems.MINCED_BEEF, Models.GENERATED);

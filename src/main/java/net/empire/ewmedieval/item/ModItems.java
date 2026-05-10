@@ -48,6 +48,7 @@ public class ModItems {
     public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(new FabricItemSettings()));
     public static final Item BRONZE_NUGGET = registerItem("bronze_nugget", new Item(new FabricItemSettings()));
     public static final Item COPPER_NUGGET = registerItem("copper_nugget", new Item(new FabricItemSettings()));
+    public static final Item CRUDE_STEEL = registerItem("crude_steel", new Item(new FabricItemSettings()));
     public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
     public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
 
@@ -134,6 +135,17 @@ public class ModItems {
     public static final Item ROPE = registerItem("rope", new RopeItem(ModBlocks.ROPE, new FabricItemSettings()));
     public static final Item GLASS_JUG = registerItem("glass_jug", new Item(new FabricItemSettings()));
     public static final Item GLASS_CHALICE = registerItem("glass_chalice", new Item(new FabricItemSettings()));
+
+
+    public static final Item STEEL_RING = registerItem("steel_ring", new Item(new FabricItemSettings()));
+    public static final Item STEEL_PLATE = registerItem("steel_plate", new Item(new FabricItemSettings()));
+    public static final Item STEEL_CHAINMAIL = registerItem("steel_chainmail", new Item(new FabricItemSettings()));
+    public static final Item SMALL_STEEL_PLATE = registerItem("small_steel_plate", new Item(new FabricItemSettings()));
+
+    public static final Item LEATHER_STRIP = registerItem("leather_strip", new Item(new FabricItemSettings()));
+    public static final Item HILT  = registerItem("hilt", new Item(new FabricItemSettings()));
+    public static final Item POLE = registerItem("pole", new Item(new FabricItemSettings()));
+
 
     /*
     public static final Item PURIFIED_WATER_BOTTLE = registerItem("purified_water_bottle",
@@ -704,6 +716,28 @@ public class ModItems {
     public static final Item CRUDE_HOE = registerItem("crude_hoe",
             new HoeItem(ModToolMaterial.CRUDE, -1, -1.0f, new FabricItemSettings()));
 
+    public static final Item COPPER_PICKAXE = registerItem("copper_pickaxe",
+            new PickaxeItem(ModToolMaterial.COPPER, 1, -2.8f, new FabricItemSettings()));
+    public static final Item COPPER_AXE = registerItem("copper_axe",
+            new AxeItem(ModToolMaterial.COPPER, 5, -3.0f, new FabricItemSettings()));
+    public static final Item COPPER_SHOVEL = registerItem("copper_shovel",
+            new ShovelItem(ModToolMaterial.COPPER, 1.5f, -3.0f, new FabricItemSettings()));
+    public static final Item COPPER_HOE = registerItem("copper_hoe",
+            new HoeItem(ModToolMaterial.COPPER, -1, -1.5f, new FabricItemSettings()));
+    public static final Item COPPER_SWORD = registerItem("copper_sword",
+            new SwordItem(ModToolMaterial.COPPER, 3, -2.4f, new FabricItemSettings()));
+
+    public static final Item STEEL_PICKAXE = registerItem("steel_pickaxe",
+            new PickaxeItem(ModToolMaterial.STEEL, 1, -2.8f, new FabricItemSettings()));
+    public static final Item STEEL_AXE = registerItem("steel_axe",
+            new AxeItem(ModToolMaterial.STEEL, 5, -3.0f, new FabricItemSettings()));
+    public static final Item STEEL_SHOVEL = registerItem("steel_shovel",
+            new ShovelItem(ModToolMaterial.STEEL, 1, -3.0f, new FabricItemSettings()));
+    public static final Item STEEL_HOE = registerItem("steel_hoe",
+            new HoeItem(ModToolMaterial.STEEL, -3, -0.5f, new FabricItemSettings()));
+    public static final Item STEEL_SWORD = registerItem("steel_sword",
+            new SwordItem(ModToolMaterial.STEEL, 3, -2.4f, new FabricItemSettings()));
+
     //TODO fixing the values
 
     public static final Item EDHEL_STEEL_PICKAXE = registerItem("edhel_steel_pickaxe",
@@ -745,6 +779,8 @@ public class ModItems {
 
     public static final Item BRONZE_KNIFE = registerItem("bronze_knife",
             new KnifeItem(ModToolMaterial.BRONZE, 0.5f, -2.0f, new FabricItemSettings()));
+    public static final Item COPPER_KNIFE = registerItem("copper_knife",
+            new KnifeItem(ModToolMaterial.COPPER, 0.5f, -2.0f, new FabricItemSettings()));
     public static final Item IRON_KNIFE = registerItem("iron_knife",
             new KnifeItem(ToolMaterials.IRON, 0.5f, -2.0f, new FabricItemSettings()));
     public static final Item GOLDEN_KNIFE = registerItem("golden_knife",
@@ -808,6 +844,8 @@ public class ModItems {
             new HeatedIngotItem(ModItems.KHAZAD_STEEL_INGOT, 2400, new FabricItemSettings().maxCount(16)));
     public static final Item HEATED_MITHRIL_INGOT = registerItem("heated_mithril_ingot",
             new HeatedIngotItem(ModItems.MITHRIL_INGOT, 2000, new FabricItemSettings().maxCount(16)));
+    public static final Item HEATED_CRUDE_STEEL = registerItem("heated_crude_steel",
+            new HeatedIngotItem(ModItems.CRUDE_STEEL, 1600, new FabricItemSettings().maxCount(16)));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {

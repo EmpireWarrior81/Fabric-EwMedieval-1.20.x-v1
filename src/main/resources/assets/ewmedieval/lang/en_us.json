@@ -109,6 +109,8 @@
   "item.ewmedieval.bronze_ash_mixture": "Bronze Ash Mixture",
   "item.ewmedieval.ash": "Ash",
   "item.ewmedieval.ash_piece": "Ash Piece",
+  "item.ewmedieval.crude_steel": "Crude Steel",
+  "item.ewmedieval.heated_crude_steel": "Heated Crude Steel",
   "item.ewmedieval.steel_nugget": "Steel Nugget",
   "item.ewmedieval.steel_ingot": "Steel Ingot",
   "item.ewmedieval.raw_iron_nugget": "Raw Iron Nugget",
@@ -173,6 +175,18 @@
   "item.ewmedieval.crude_pickaxe": "Crude Pickaxe",
   "item.ewmedieval.crude_axe": "Crude Axe",
   "item.ewmedieval.crude_shovel": "Crude Shovel",
+
+  "item.ewmedieval.copper_pickaxe": "Copper Pickaxe",
+  "item.ewmedieval.copper_axe": "Copper Axe",
+  "item.ewmedieval.copper_shovel": "Copper Shovel",
+  "item.ewmedieval.copper_hoe": "Copper Hoe",
+  "item.ewmedieval.copper_sword": "Copper Sword",
+
+  "item.ewmedieval.steel_pickaxe": "Steel Pickaxe",
+  "item.ewmedieval.steel_axe": "Steel Axe",
+  "item.ewmedieval.steel_shovel": "Steel Shovel",
+  "item.ewmedieval.steel_hoe": "Steel Hoe",
+  "item.ewmedieval.steel_sword": "Steel Sword",
 
   "item.ewmedieval.edhel_steel_shovel": "Edhel Steel Shovel",
   "item.ewmedieval.edhel_steel_axe": "Edhel Steel Axe",
@@ -874,5 +888,19 @@
   "item.ewmedieval.purified_water_bottle": "Purified Water Bottle",
   "item.ewmedieval.leather_flask": "Leather Flask",
 
-  "death.attack.thirst": "%1$s died of dehydration"
+  "death.attack.thirst": "%1$s died of dehydration",
+
+  "forging.ewmedieval.quality.poor": "Poorly Forged",
+  "forging.ewmedieval.quality.well": "Well Forged",
+  "forging.ewmedieval.quality.expert": "Expertly Forged",
+  "forging.ewmedieval.quality.perfect": "Perfectly Forged",
+  "forging.ewmedieval.quality.master": "Master Forged",
+  "forging.ewmedieval.quality.none": "Unforged",
+  "forging.ewmedieval.heated": "Heated",
+  "forging.ewmedieval.needs_grinding": "Unpolished",
+
+  "block.ewmedieval.smithing_anvil": "Smithing Anvil",
+  "gui.ewmedieval.smithing_anvil": "Smithing Anvil",
+  "gui.ewmedieval.smithing_anvil.forge": "Forge",
+  "gui.ewmedieval.smithing_anvil.click_hint": "Click to strike!"
 }

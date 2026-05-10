@@ -635,6 +635,10 @@ public class ModBlocks {
             new VerticalSlabBlock(FabricBlockSettings.copyOf(ModBlocks.BLUE_TUFF)));
 
 
+    public static final Block SMITHING_ANVIL = registerBlock("smithing_anvil",
+            new net.empire.ewmedieval.block.custom.smithinganvil.SmithingAnvilBlock(
+                    FabricBlockSettings.copyOf(Blocks.ANVIL).nonOpaque()));
+
     public static final Block FORGE = registerBlock("forge",
             new ForgeBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
 

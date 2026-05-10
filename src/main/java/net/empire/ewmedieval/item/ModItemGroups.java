@@ -56,6 +56,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_MITHRIL);
                         entries.add(ModItems.MITHRIL_INGOT);
                         entries.add(ModItems.MITHRIL_NUGGET);
+                        entries.add(ModItems.CRUDE_STEEL);
                         entries.add(ModItems.STEEL_INGOT);
                         entries.add(ModItems.STEEL_NUGGET);
                         entries.add(ModItems.RAW_IRON_NUGGET);
@@ -63,6 +64,18 @@ public class ModItemGroups {
                         entries.add(ModItems.BRONZE_NUGGET);
                         entries.add(ModItems.BRONZE_INGOT);
                         entries.add(ModItems.COPPER_NUGGET);
+                        entries.add(ModItems.HEATED_IRON_INGOT);
+                        entries.add(ModItems.HEATED_COPPER_INGOT);
+                        entries.add(ModItems.HEATED_GOLD_INGOT);
+                        entries.add(ModItems.HEATED_TIN_INGOT);
+                        entries.add(ModItems.HEATED_SILVER_INGOT);
+                        entries.add(ModItems.HEATED_BRONZE_INGOT);
+                        entries.add(ModItems.HEATED_STEEL_INGOT);
+                        entries.add(ModItems.HEATED_CRUDE_INGOT);
+                        entries.add(ModItems.HEATED_EDHEL_STEEL_INGOT);
+                        entries.add(ModItems.HEATED_KHAZAD_STEEL_INGOT);
+                        entries.add(ModItems.HEATED_MITHRIL_INGOT);
+                        entries.add(ModItems.HEATED_CRUDE_STEEL);
                     }).build());
 
     public static final ItemGroup TOOLS_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -112,16 +125,39 @@ public class ModItemGroups {
                         entries.add(ModItems.STEEL_HAMMER_HEAD);
                         entries.add(ModItems.STONE_SMITHING_HAMMER);
                         entries.add(ModItems.SMITHING_HAMMER);
+                        entries.add(ModItems.COPPER_SMITHING_HAMMER);
+                        entries.add(ModItems.ORCISH_SMITHING_HAMMER);
+                        entries.add(ModItems.DWARVEN_SMITHING_HAMMER);
+                        entries.add(ModItems.NOBLE_SMITHING_HAMMER);
+                        entries.add(ModItems.ELVEN_SMITHING_HAMMER);
+                        entries.add(ModItems.MITHRIL_SMITHING_HAMMER);
+                        entries.add(ModItems.ORCISH_ELITE_SMITHING_HAMMER);
+                        entries.add(ModItems.DWARVEN_NOBLE_SMITHING_HAMMER);
+                        entries.add(ModItems.ELVEN_NOBLE_SMITHING_HAMMER);
+                        entries.add(ModItems.WOODEN_TONGS);
+                        entries.add(ModItems.IRON_TONGS);
+                        entries.add(ModItems.STEEL_TONGS);
                         entries.add(ModItems.CRUDE_PICKAXE);
                         entries.add(ModItems.CRUDE_AXE);
                         entries.add(ModItems.CRUDE_SHOVEL);
                         entries.add(ModItems.CRUDE_HOE);
+                        entries.add(ModItems.COPPER_PICKAXE);
+                        entries.add(ModItems.COPPER_AXE);
+                        entries.add(ModItems.COPPER_SHOVEL);
+                        entries.add(ModItems.COPPER_HOE);
+                        entries.add(ModItems.COPPER_SWORD);
+                        entries.add(ModItems.STEEL_PICKAXE);
+                        entries.add(ModItems.STEEL_AXE);
+                        entries.add(ModItems.STEEL_SHOVEL);
+                        entries.add(ModItems.STEEL_HOE);
+                        entries.add(ModItems.STEEL_SWORD);
                         entries.add(ModItems.BRONZE_PICKAXE);
                         entries.add(ModItems.BRONZE_AXE);
                         entries.add(ModItems.BRONZE_SHOVEL);
                         entries.add(ModItems.BRONZE_HOE);
                         entries.add(ModItems.BRONZE_SHEARS);
                         entries.add(ModItems.BRONZE_KNIFE);
+                        entries.add(ModItems.COPPER_KNIFE);
                         entries.add(ModItems.FLINT_KNIFE);
                         entries.add(ModItems.STONE_KNIFE);
                         entries.add(ModItems.IRON_KNIFE);
@@ -933,6 +969,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CUTTING_BOARD);
                         entries.add(ModBlocks.FORGE);
                         entries.add(ModBlocks.EARLY_FORGE);
+                        entries.add(ModBlocks.SMITHING_ANVIL);
                     }).build());
 
     public static void registerItemGroups() {

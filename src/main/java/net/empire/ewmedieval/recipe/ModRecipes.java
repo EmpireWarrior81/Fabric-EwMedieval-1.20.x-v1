@@ -62,6 +62,11 @@ public class ModRecipes {
                 Registries.RECIPE_SERIALIZER,
                 new Identifier("ewmedieval", "cooking"),
                 new CookingPotRecipe.Serializer());
+
+        Registry.register(Registries.RECIPE_TYPE,
+                new Identifier("ewmedieval", ForgingRecipe.Type.ID), ForgingRecipe.Type.INSTANCE);
+        Registry.register(Registries.RECIPE_SERIALIZER,
+                ForgingRecipe.Serializer.ID, ForgingRecipe.Serializer.INSTANCE);
 /*
         STOVE_TYPE = Registry.register(
                 Registries.RECIPE_TYPE,

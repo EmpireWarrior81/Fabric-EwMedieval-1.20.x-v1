@@ -21,7 +21,7 @@ public class KnappingScreen extends HandledScreen<KnappingScreenHandler> {
     private static final Identifier STONE_TILE =
             new Identifier("minecraft", "textures/block/stone.png");
     private static final Identifier FLINT_TILE =
-            new Identifier("minecraft", "textures/item/flint.png");
+            new Identifier(EwMedieval.MOD_ID, "textures/block/flint_block.png");
 
     private static final int GRID_ORIGIN_X = 32;
     private static final int GRID_ORIGIN_Y = 19;

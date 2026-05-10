@@ -1,0 +1,16 @@
+{
+  "type": "ewmedieval:smithing_anvil",
+  "pattern": [
+    "CCC",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "C": { "item": "ewmedieval:heated_copper_ingot" }
+  },
+  "result": {
+    "item": "ewmedieval:copper_pickaxe_head",
+    "count": 1
+  },
+  "hits": 3
+}

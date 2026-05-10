@@ -7,7 +7,7 @@
     { "tag": "ewmedieval:forge_coal_sorts" }
   ],
   "result": {
-    "item": "ewmedieval:steel_ingot",
-    "count": 2
+    "item": "ewmedieval:crude_steel",
+    "count": 4
   }
 }

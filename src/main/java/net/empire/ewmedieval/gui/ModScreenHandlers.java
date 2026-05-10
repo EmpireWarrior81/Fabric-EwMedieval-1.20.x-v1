@@ -5,6 +5,7 @@ import net.empire.ewmedieval.gui.cookingpot.CookingPotScreenHandler;
 import net.empire.ewmedieval.gui.earlyforge.EarlyForgeScreenHandler;
 import net.empire.ewmedieval.gui.forge.ForgeScreenHandler;
 import net.empire.ewmedieval.gui.knapping.KnappingScreenHandler;
+import net.empire.ewmedieval.gui.smithinganvil.SmithingAnvilScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -27,6 +28,10 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<KnappingScreenHandler> KNAPPING_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, new Identifier(EwMedieval.MOD_ID, "knapping"),
                     new ExtendedScreenHandlerType<>((syncId, inv, buf) -> new KnappingScreenHandler(syncId, inv)));
+
+    public static final ScreenHandlerType<net.empire.ewmedieval.gui.smithinganvil.SmithingAnvilScreenHandler> SMITHING_ANVIL_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, new Identifier(EwMedieval.MOD_ID, "smithing_anvil"),
+                    new ExtendedScreenHandlerType<>(net.empire.ewmedieval.gui.smithinganvil.SmithingAnvilScreenHandler::new));
 
     public static void registerScreenHandlers() {
         EwMedieval.LOGGER.info("Registering Screen Handlers for" + EwMedieval.MOD_ID);
